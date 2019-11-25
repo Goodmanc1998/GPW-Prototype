@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class MouseInput : MonoBehaviour
-{//Mouse starting and current position
+{
+    
+    //Mouse starting and current position
     Vector3 leftMouseStart;
     Vector3 leftMouseCurrent;
 
@@ -39,16 +42,22 @@ public class MouseInput : MonoBehaviour
     void Start()
     {
         playerMovement = GetComponent<Player>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        /*
+        if (Input.GetMouseButton(2))
+            Debug.Log("We got it");*/
+
         //Checking if the left mouse button is being held down
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             leftMouseHold = true;
             leftMouseStart = Input.mousePosition;
+
         }
 
         //Checking when the left mouse button is released
@@ -66,7 +75,7 @@ public class MouseInput : MonoBehaviour
 
         }
 
-        if (Input.GetKeyUp(KeyCode.Mouse1))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             rightMouseCurrent = Input.mousePosition;
             rightMouseHold = false;

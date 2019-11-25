@@ -53,7 +53,7 @@ public class Player : Entities
     void Update()
     {
 
-        Vector3 camOffset = new Vector3(4f, 4, -7.5f);
+        Vector3 camOffset = new Vector3(0f, 3, -7.5f);
         FindObjectOfType<Camera>().transform.position = transform.position + camOffset;
         transform.position = entityRgbdy.position;
         //transform.rotation = entityRgbdy.rotation;
