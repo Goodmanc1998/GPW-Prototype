@@ -35,9 +35,9 @@ public class PlayerMovement : MonoBehaviour
             {
 
                 Vector3 hitPoint = hit.point;
-                if(hit.collider.gameObject.tag == "Target")
+                if (hit.collider.gameObject.tag == "Target")
                 {
-                    if(hit.collider.gameObject == targetEnemy)
+                    if (hit.collider.gameObject == targetEnemy)
                     {
                         targetEnemy = null;
                     }
@@ -62,7 +62,7 @@ public class PlayerMovement : MonoBehaviour
             playerRigidbody.transform.LookAt(targetEnemy.transform);
         }
 
-        
+
     }
 
 
