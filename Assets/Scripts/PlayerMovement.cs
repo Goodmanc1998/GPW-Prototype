@@ -266,7 +266,7 @@ public class PlayerMovement : MonoBehaviour
         {
             Vector3 newLook = new Vector3(targetEnemy.transform.position.x, 0, targetEnemy.transform.position.z);
 
-            playerRigidbody.transform.LookAt(targetEnemy.transform);
+            playerRigidbody.transform.LookAt(newLook);
         }
 
 
