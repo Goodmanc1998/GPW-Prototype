@@ -7,6 +7,6 @@ public class castedSpellSpeed : MonoBehaviour
     
     void Update()
     {
-        GetComponent<Rigidbody>().transform.position += Vector3.one * Time.deltaTime;
+        GetComponent<Rigidbody>().transform.position += GetComponent<Rigidbody>().transform.forward * Time.deltaTime;
     }
 }

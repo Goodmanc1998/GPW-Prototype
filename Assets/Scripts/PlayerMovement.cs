@@ -20,6 +20,8 @@ public class PlayerMovement : MonoBehaviour
     public GameObject TraingleSpell;
     public GameObject XSpell;
 
+    public GameObject spawnPoint;
+
     [Header("square spell collider array")]
     public hasHit[] sqaureColliders;
     [Header("circle spell collider array")]
@@ -81,7 +83,7 @@ public class PlayerMovement : MonoBehaviour
                                                     if (sqaureColliders[11]._hasHit == true)
                                                     {
                                                         Debug.Log("Big ass spell time wooooohooooo");
-                                                        Instantiate(spellCasted, transform.position, transform.rotation);
+                                                        Instantiate(spellCasted, spawnPoint.transform.position, spawnPoint.transform.rotation);
                                                         for (int i = 0; i < 12; i++)
                                                         {
 
@@ -125,7 +127,7 @@ public class PlayerMovement : MonoBehaviour
                                                     if (circleColliders[11]._hasHit == true)
                                                     {
                                                         Debug.Log("Big ass spell time wooooohooooo");
-                                                        Instantiate(spellCasted, transform.position, transform.rotation);
+                                                        Instantiate(spellCasted, spawnPoint.transform.position, spawnPoint.transform.rotation);
                                                         for (int i = 0; i < 12; i++)
                                                         {
                                                             circleColliders[i]._hasHit = false;
@@ -168,7 +170,7 @@ public class PlayerMovement : MonoBehaviour
                                                     if (traingleColliders[11]._hasHit == true)
                                                     {
                                                         Debug.Log("Big ass spell time wooooohooooo");
-                                                        Instantiate(spellCasted, transform.position, transform.rotation);
+                                                        Instantiate(spellCasted, spawnPoint.transform.position, spawnPoint.transform.rotation);
                                                         for (int i = 0; i < 12; i++)
                                                         {
                                                             traingleColliders[i]._hasHit = false;
@@ -211,7 +213,7 @@ public class PlayerMovement : MonoBehaviour
                                                     if (xColliders[11]._hasHit == true)
                                                     {
                                                         Debug.Log("Big ass spell time wooooohooooo");
-                                                        Instantiate(spellCasted, transform.position, transform.rotation);
+                                                        Instantiate(spellCasted, spawnPoint.transform.position, spawnPoint.transform.rotation);
                                                         for (int i = 0; i < 12; i++)
                                                         {
                                                             xColliders[i]._hasHit = false;
@@ -264,7 +266,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (targetEnemy != null)
         {
-            Vector3 newLook = new Vector3(targetEnemy.transform.position.x, 0, targetEnemy.transform.position.z);
+            Vector3 newLook = new Vector3(targetEnemy.transform.position.x, transform.position.y, targetEnemy.transform.position.z);
 
             playerRigidbody.transform.LookAt(newLook);
         }
