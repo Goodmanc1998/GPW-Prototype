@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class PlayerMovement : MonoBehaviour
 {
-    Camera viewCamera;
+    public Camera viewCamera;
     public NavMeshAgent player;
 
     public Rigidbody playerRigidbody;
@@ -36,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        viewCamera = Camera.main;
+        //viewCamera = Camera.main;
         sqaureColliders = new hasHit[12];
         circleColliders = new hasHit[12];
         traingleColliders = new hasHit[12];
@@ -83,7 +83,9 @@ public class PlayerMovement : MonoBehaviour
                                                     if (sqaureColliders[11]._hasHit == true)
                                                     {
                                                         Debug.Log("Big ass spell time wooooohooooo");
-                                                        Instantiate(spellCasted, spawnPoint.transform.position, spawnPoint.transform.rotation);
+                                                        
+
+                                                        Destroy(Instantiate(spellCasted, spawnPoint.transform.position, spawnPoint.transform.rotation), 5);
                                                         for (int i = 0; i < 12; i++)
                                                         {
 
@@ -127,7 +129,9 @@ public class PlayerMovement : MonoBehaviour
                                                     if (circleColliders[11]._hasHit == true)
                                                     {
                                                         Debug.Log("Big ass spell time wooooohooooo");
-                                                        Instantiate(spellCasted, spawnPoint.transform.position, spawnPoint.transform.rotation);
+
+
+                                                        Destroy(Instantiate(spellCasted, spawnPoint.transform.position, spawnPoint.transform.rotation), 5);
                                                         for (int i = 0; i < 12; i++)
                                                         {
                                                             circleColliders[i]._hasHit = false;
@@ -170,7 +174,7 @@ public class PlayerMovement : MonoBehaviour
                                                     if (traingleColliders[11]._hasHit == true)
                                                     {
                                                         Debug.Log("Big ass spell time wooooohooooo");
-                                                        Instantiate(spellCasted, spawnPoint.transform.position, spawnPoint.transform.rotation);
+                                                        Destroy(Instantiate(spellCasted, spawnPoint.transform.position, spawnPoint.transform.rotation), 5);
                                                         for (int i = 0; i < 12; i++)
                                                         {
                                                             traingleColliders[i]._hasHit = false;
@@ -213,7 +217,7 @@ public class PlayerMovement : MonoBehaviour
                                                     if (xColliders[11]._hasHit == true)
                                                     {
                                                         Debug.Log("Big ass spell time wooooohooooo");
-                                                        Instantiate(spellCasted, spawnPoint.transform.position, spawnPoint.transform.rotation);
+                                                        Destroy(Instantiate(spellCasted, spawnPoint.transform.position, spawnPoint.transform.rotation), 5);
                                                         for (int i = 0; i < 12; i++)
                                                         {
                                                             xColliders[i]._hasHit = false;

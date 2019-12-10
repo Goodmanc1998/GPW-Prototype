@@ -25,4 +25,9 @@ public class EnemyScript : MonoBehaviour
             agent.SetDestination(target.position);
         }
     }
+
+    public void Remove()
+    {
+        Destroy(gameObject);
+    }
 }

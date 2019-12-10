@@ -1567,7 +1567,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnpoints:
-  - position: {x: -10.38227, y: 0, z: -7.48}
+  - position: {x: -10.99, y: 0, z: -7.48}
   - position: {x: -5.4, y: 0, z: 11.63}
   - position: {x: 10.649582, y: 0, z: -7.33}
   waves:
@@ -1576,15 +1576,10 @@ MonoBehaviour:
     waveStartTime: 2
     averageSpawningDuration: 8
     spawnDurationRandomness: 0
-  - enemyAmount: 10
-    difficulty: 1
-    waveStartTime: 10
-    averageSpawningDuration: 5
-    spawnDurationRandomness: 0
-  showSpawnpoints: 1
+  showSpawnpoints: 0
   player: {fileID: 0}
   enemy: {fileID: -982454169559851143, guid: 01e2d5f041d922a43a9058489056c201, type: 3}
-  playerBlockSpawnRange: 0
+  playerBlockSpawnRange: 5
   enemySpawnLimit: -1
 --- !u!1 &1786705147
 GameObject:
