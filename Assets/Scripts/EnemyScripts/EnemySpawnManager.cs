@@ -40,7 +40,7 @@ public class EnemySpawnManager : MonoBehaviour
             StartCoroutine(SpawnWave(waves[i]));
             yield return new WaitForSeconds(waves[i + 1].waveStartTime - waves[i].waveStartTime);
         }
-        Debug.Log("Waves finished spawning");
+        //Debug.Log("Waves finished spawning");
     }
 
     IEnumerator SpawnWave(Wave wave)
@@ -48,10 +48,10 @@ public class EnemySpawnManager : MonoBehaviour
         int totalSpawned = 0;
         while (totalSpawned < wave.enemyAmount)
         {
-            Debug.Log("Attempting spawn");
+            //Debug.Log("Attempting spawn");
             if (SpawnEnemy())
             {
-                Debug.Log("Spawn successful");
+                //Debug.Log("Spawn successful");
                 totalSpawned++;
             }
             yield return new WaitForSeconds(wave.SpawnRate());
