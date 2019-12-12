@@ -4,20 +4,15 @@ using UnityEngine;
 
 public class Entities : MonoBehaviour
 {
-    int health;
+    public int health;
+    public float speed;
+    public Rigidbody entityRgbdy;
 
-    public virtual void applyDamage(int dmgToDo)
+    public int applyDamage(int dmgToDo, int currentHealth)
     {
-        //applies a damage to current health;
-
-        if (health <= dmgToDo)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            health -= dmgToDo;
-        }
+        //applies a damage to current health and returns the value;
+         var newHealth = currentHealth - dmgToDo;
+        return newHealth;
     }
 
     public int applyHeal(int healAmount, int currentHealth)
@@ -27,4 +22,10 @@ public class Entities : MonoBehaviour
         return newHealth;
     }
 
+    public virtual Vector3 applyMovement(Vector3 currentPos, Vector3 dir, float speed)
+    {
+        // implement code here.
+        Vector3 newPos = currentPos + dir * speed;
+        return newPos;
+    }
 }
