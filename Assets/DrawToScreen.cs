@@ -111,7 +111,11 @@ public class DrawToScreen : MonoBehaviour
             Result gestureResult = PointCloudRecognizer.Classify(candidate, gestureCheckList.ToArray());
 
             message = gestureResult.GestureClass + " " + gestureResult.Score;
-            Debug.Log(message);
+            
+            FindObjectOfType<PlayerMovement>().castSpell(gestureResult.GestureClass, gestureResult.Score);
+            
+            
+            
             recognized = true;
         }
         else {
