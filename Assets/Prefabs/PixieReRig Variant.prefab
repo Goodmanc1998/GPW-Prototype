@@ -74,15 +74,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   startingHealth: 10
-  movementSpeed: 10
   spell: {fileID: 6599201895962909512, guid: 75772c5a105c10d4498b4830bf617dd4, type: 3}
   spellSpawnAttack: {fileID: 2004355842}
-  toggleSpellAttack: 1
+  toggleSpellAttack: 0
   attackRadius: 10
   timeBetweenAttacks: 5
   toggleSlowAttack: 0
   slowDownRange: 10
   slowDownAmount: 5
+  agent: {fileID: 0}
 --- !u!195 &1261308894
 NavMeshAgent:
   m_ObjectHideFlags: 0

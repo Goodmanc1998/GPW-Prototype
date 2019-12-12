@@ -108,7 +108,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   lifeTime: 5
-  trapTime: 10000
+  damage: 1
+  trapTime: 2
+  trapRange: 5
+  pullAmount: 10
 --- !u!54 &6369509238839543120
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -3,13 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyScript : Entities
+public class EnemyScript : MonoBehaviour
 {
     public Transform target;
     int health;
     public int startingHealth;
-
-
 
     public GameObject spell;
     public Transform spellSpawnAttack;
@@ -22,14 +20,31 @@ public class EnemyScript : Entities
     public bool toggleSlowAttack;
     public int slowDownRange;
     public float slowDownAmount;
-    float startingPlayerSpeed;
 
-    NavMeshAgent agent;
+    float startingPlayerSpeed;
+    float startingSpeed;
+    float startingAcc;
+    float startingAngSpeed;
+
+    public NavMeshAgent agent;
+
+    bool pushBack;
+
+    Vector3 pushDirection;
+    int pushAmount;
+
+    bool pullIn;
+    Vector3 pullDirection;
+    int pullAmount;
 
     private void Start()
     {
         health = startingHealth;
         timer = timeBetweenAttacks;
+
+        startingSpeed = agent.speed;
+        startingAcc = agent.acceleration;
+        startingAngSpeed = agent.angularSpeed;
 
         if (target == null)
         {
@@ -44,6 +59,16 @@ public class EnemyScript : Entities
         if (target != null)
         {
             agent.SetDestination(target.position);
+        }
+
+        if(pushBack)
+        {
+            agent.velocity = pushDirection * pushAmount;
+        }
+
+        if(pullIn)
+        {
+            agent.velocity = pullDirection * pullAmount;
         }
 
         
@@ -82,7 +107,7 @@ public class EnemyScript : Entities
         }
     }
 
-    public override void applyDamage(int dmgToDo)
+    public void applyDamage(int dmgToDo)
     {
         //applies a damage to current health and returns the value;
 
@@ -96,61 +121,68 @@ public class EnemyScript : Entities
         }
 
     }
-    
-    public void WaterTrap(float waitTime)
+
+    public void GetTarget()
     {
-        Rigidbody rb = GetComponent<Rigidbody>();
+        target = GameObject.FindGameObjectWithTag("Player").transform;
+    }
 
-        rb.velocity = Vector3.zero;
+    public void PushBack(float pushTime, int pushAmt, Vector3 pushDir)
+    {
+        StartCoroutine(PushBackIE(pushTime, pushAmt, pushDir));
 
-        bool finished = false;
+        Debug.Log("Push F Called");
+    }
 
-        agent.enabled = false;
+    IEnumerator PushBackIE(float pushTime,int pushAmt, Vector3 pushDir)
+    {
+        pushDirection = pushDir;
+        pushAmount = pushAmt;
 
-        float t = 0;
+        Debug.Log("Push ");
 
-        while (finished != true)
-        {
-            if (t < waitTime)
-            {
-                t += Time.deltaTime;
-            }
-            else
-            {
-                agent.enabled = true;
-                finished = true;
+        pushBack = true;
 
-            }
-        }
+        agent.speed = 10;
+        agent.angularSpeed = 0f;
+        agent.acceleration = 20;
 
+        yield return new WaitForSeconds(pushTime);
 
+        pushBack = false;
+        agent.speed = startingSpeed;
+        agent.angularSpeed = startingAngSpeed;
+        agent.acceleration = startingAcc;
 
     }
 
-    /*
-public IEnumerator WaterTrap(float waitTime)
-{
-    Rigidbody rb = GetComponent<Rigidbody>();
-
-    agent.enabled = false;
-    float timer = 0;
-
-    while(timer < waitTime)
+    public void PullIn(float pullTime,int pullAmt, Vector3 pullDir)
     {
-        if (timer < waitTime)
-        {
-            timer += Time.deltaTime;
-            rb.velocity = Vector3.zero;
-        }
-        else
-        {
-            yield return null;
-
-        }
+        StartCoroutine(PullInIE(pullTime, pullAmt, pullDir));
     }
-    //agent.enabled = true;
 
-}*/
+    IEnumerator PullInIE(float pullTime, int pullAmt, Vector3 pullDir)
+    {
+        pullDirection = pullDir;
+        pullAmount = pullAmt;
+
+        Debug.Log("Pull ");
+
+        pullIn = true;
+
+        agent.speed = 10;
+        agent.angularSpeed = 0f;
+        agent.acceleration = 20;
+
+        yield return new WaitForSeconds(pullTime);
+
+        pullIn = false;
+        agent.speed = startingSpeed;
+        agent.angularSpeed = startingAngSpeed;
+        agent.acceleration = startingAcc;
+
+    }
+
 
     public void Remove()
     {
