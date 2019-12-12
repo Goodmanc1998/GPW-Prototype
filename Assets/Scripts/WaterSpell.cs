@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class WaterSpell : SpellMovement
 {
+    public int damage;
     public float trapTime;
+    public float trapRange;
+
+    public int pullAmount;
+
+
 
     private void Start()
     {
@@ -22,19 +28,39 @@ public class WaterSpell : SpellMovement
         GetComponent<Rigidbody>().transform.position += (GetComponent<Rigidbody>().transform.forward * speed) * Time.deltaTime;
     }
 
+    public void PullIn()
+    {
+
+        Collider[] collidersWithinRange = Physics.OverlapSphere(transform.position, trapRange);
+
+        //Debug.Log("Colliders in Range :" + collidersWithinRange.Length);
+
+        int count = 0;
+
+        while (count < collidersWithinRange.Length)
+        {
+            if (collidersWithinRange[count].gameObject.GetComponent<EnemyScript>())
+            {
+                collidersWithinRange[count].gameObject.GetComponent<EnemyScript>().PullIn(trapTime, pullAmount, (transform.position - collidersWithinRange[count].gameObject.transform.position));
+            }
+
+            count++;
+        }
+
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.GetComponent<EnemyScript>() != null)
         {
             //collision.gameObject.GetComponent<EnemyScript>().Remove();
-            Debug.Log("Collision Enemy");
+            //Debug.Log("Collision Enemy");
 
-            EnemyScript enemyScript = collision.gameObject.GetComponent<EnemyScript>();
+            EnemyScript target = collision.gameObject.GetComponent<EnemyScript>();
 
-            enemyScript.WaterTrap(trapTime);
+            target.applyDamage(damage);
 
-            
-
+            PullIn();
 
             Destroy(gameObject);
 

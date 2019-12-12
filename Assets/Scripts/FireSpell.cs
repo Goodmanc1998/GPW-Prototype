@@ -7,7 +7,7 @@ public class FireSpell : SpellMovement
     public int damage;
     public float fireRange;
 
-    public ParticleSystem fireEffect;
+    //public ParticleSystem fireEffect;
 
 
     // Start is called before the first frame update
@@ -33,8 +33,6 @@ public class FireSpell : SpellMovement
         Collider[] collidersWithinRange = Physics.OverlapSphere(transform.position, fireRange);
 
         int count = 0;
-
-        Destroy(Instantiate(fireEffect, transform.position, fireEffect.transform.rotation), 2.5f);
 
         while (count < collidersWithinRange.Length)
         {
