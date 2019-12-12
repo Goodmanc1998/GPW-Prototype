@@ -15,7 +15,7 @@ public class EnemySpawnManager : MonoBehaviour
     public Transform player;
     public EnemyScript enemy;
 
-    public float playerBlockSpawnRange; // When a spawn location is within this range of the player, no enemies will be spawned from it
+    public bool blockOnScreenSpawns; // When a spawn location is within this range of the player, no enemies will be spawned from it
     public int enemySpawnLimit; // The maximum amount of enemies allowed to be present in the world, set to -1 for no limit
 
     System.Random randomGen = new System.Random();
@@ -49,7 +49,7 @@ public class EnemySpawnManager : MonoBehaviour
         while (totalSpawned < wave.enemyAmount)
         {
             //Debug.Log("Attempting spawn");
-            if (SpawnEnemy())
+            if (SpawnEnemy(wave.difficulty))
             {
                 //Debug.Log("Spawn successful");
                 totalSpawned++;
@@ -58,21 +58,36 @@ public class EnemySpawnManager : MonoBehaviour
         }
     }
 
-    public bool SpawnEnemy()
+    public bool SpawnEnemy(float difficulty)
     {
         if (enemyCount >= enemySpawnLimit && enemySpawnLimit >= 0)
         {
             return false;
         }
         List<EnemySpawn> possibleSpawns = new List<EnemySpawn>();
-        foreach (EnemySpawn spawnpoint in spawnpoints)
+        if (blockOnScreenSpawns)
         {
-            //if (Vector3.Distance(spawnpoint.position, player.position) > playerBlockSpawnRange)
+            foreach (EnemySpawn spawnpoint in spawnpoints)
             {
-                possibleSpawns.Add(spawnpoint);
+                Vector3 p = Camera.main.WorldToViewportPoint(spawnpoint.position);
+                if (!(p.x > 0 && p.x < 1 && p.y > 0 && p.y < 1 && p.z > 0))
+                {
+                    possibleSpawns.Add(spawnpoint);
+                }
             }
         }
-        Instantiate(enemy, possibleSpawns[Random.Range(0, possibleSpawns.Count)].position, Quaternion.identity);
+        else
+        {
+            possibleSpawns = spawnpoints;
+        }
+        if (possibleSpawns.Count == 0)
+        {
+            Debug.Log("No spawnpoints found. Spawn aborted.");
+            return false;
+        }
+        EnemyScript spawnedEnemy = Instantiate(enemy, possibleSpawns[Random.Range(0, possibleSpawns.Count)].position, Quaternion.identity);
+        spawnedEnemy.startingHealth = (int)(spawnedEnemy.startingHealth * difficulty);
+        spawnedEnemy.timeBetweenAttacks /= difficulty;
         return true;
     }
 

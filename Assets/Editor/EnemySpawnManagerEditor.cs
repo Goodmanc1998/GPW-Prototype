@@ -57,20 +57,39 @@ public class EnemySpawnManagerEditor : Editor
         {
             manager.enemySpawnLimit = -1;
         }
-        manager.playerBlockSpawnRange = EditorGUILayout.FloatField("Player Block Spawn Range", manager.playerBlockSpawnRange);
+        manager.blockOnScreenSpawns = EditorGUILayout.Toggle("Block On-Screen Spawning", manager.blockOnScreenSpawns);
 
         // Wave options
         for (int i = 0; i < manager.waves.Count; i++)
         {
             EditorGUILayout.Space();
-            manager.waves[i].enemyAmount = EditorGUILayout.IntField("Enemy Amount", manager.waves[i].enemyAmount);
-            manager.waves[i].waveStartTime = EditorGUILayout.FloatField("Time Wave Begins (s)", Mathf.Max(0, manager.waves[i].waveStartTime));
-            manager.waves[i].averageSpawningDuration = EditorGUILayout.FloatField("Estimated Wave Duration", manager.waves[i].averageSpawningDuration);
-            if (GUILayout.Button("Remove Wave"))
+            EditorGUILayout.BeginVertical("Box");
+            EditorGUILayout.BeginHorizontal();
+            EditorGUILayout.LabelField("Wave " + (i + 1), EditorStyles.boldLabel);
+            if (GUILayout.Button("X", EditorStyles.miniButtonRight, GUILayout.Width(25)))
             {
                 manager.waves.RemoveAt(i);
                 break;
             }
+            EditorGUILayout.EndHorizontal();
+
+            manager.waves[i].enemyAmount = EditorGUILayout.IntField("Enemy Amount", manager.waves[i].enemyAmount);
+
+            EditorGUILayout.BeginHorizontal();
+            EditorGUILayout.PrefixLabel("Time Wave Begins");
+            GUILayout.Label(string.Format("{0:0}:{1:00}", Mathf.FloorToInt(manager.waves[i].waveStartTime / 60), manager.waves[i].waveStartTime % 60), GUILayout.MaxWidth(40));
+            manager.waves[i].waveStartTime = GUILayout.HorizontalSlider(manager.waves[i].waveStartTime, 0, 300);
+            EditorGUILayout.EndHorizontal();
+
+            EditorGUILayout.BeginHorizontal();
+            EditorGUILayout.PrefixLabel("Estimated Wave Duration");
+            GUILayout.Label(string.Format("{0:0}:{1:00}", Mathf.FloorToInt(manager.waves[i].averageSpawningDuration / 60), manager.waves[i].averageSpawningDuration % 60), GUILayout.MaxWidth(40));
+            manager.waves[i].averageSpawningDuration = GUILayout.HorizontalSlider(manager.waves[i].averageSpawningDuration, 0, 300);
+            EditorGUILayout.EndHorizontal();
+
+            manager.waves[i].difficulty = EditorGUILayout.Slider("Difficulty Scaling", manager.waves[i].difficulty, 0.5f, 2f);
+
+            EditorGUILayout.EndVertical();
             EditorGUILayout.Space();
         }
         if (GUILayout.Button("Add Wave"))
