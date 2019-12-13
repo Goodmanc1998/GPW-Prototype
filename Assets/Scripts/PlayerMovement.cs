@@ -72,7 +72,6 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         viewCamera = Camera.main;
-        
     }
 
     // Update is called once per frame

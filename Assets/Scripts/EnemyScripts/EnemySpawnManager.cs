@@ -38,9 +38,8 @@ public class EnemySpawnManager : MonoBehaviour
         for (int i = 0; i < waves.Count; i++)
         {
             StartCoroutine(SpawnWave(waves[i]));
-            yield return new WaitForSeconds(waves[i + 1].waveStartTime - waves[i].waveStartTime);
+            if (i < waves.Count - 1) yield return new WaitForSeconds(waves[i + 1].waveStartTime - waves[i].waveStartTime);
         }
-        //Debug.Log("Waves finished spawning");
     }
 
     IEnumerator SpawnWave(Wave wave)
