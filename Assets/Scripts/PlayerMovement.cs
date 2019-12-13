@@ -18,26 +18,33 @@ public class PlayerMovement : MonoBehaviour
     //spells effect prefabs
     public Transform speedBuff;
 
-    
+    public GameObject FireSpell;
+    public GameObject AirSpell;
+    public GameObject waterSpell;
+    public Transform spellSpawn;
 
-    public float rotSpeed;
-    public void castSpell(string ShapeDrawn,float percentMatch)
+        public void castSpell(string ShapeDrawn,float percentMatch)
     {
-        if(percentMatch >= 0.9f)
+        if(percentMatch >= 0.8f)
         {
             if(ShapeDrawn == "circle")
             {
                 //cast circle spell here by instatiating spell object.
-                Debug.Log("Circle");
+                //Debug.Log("Circle");
+
+                Instantiate(FireSpell, spellSpawn.position, spellSpawn.rotation);
+
             }else if (ShapeDrawn == "triangle")
             {
                 //cast triangle spell here by instatiating spell object.
-                Debug.Log("triangle");
+                //Debug.Log("triangle");
+                Instantiate(AirSpell, spellSpawn.position, spellSpawn.rotation);
             }
             else if (ShapeDrawn == "square")
             {
                 //cast square spell here by instatiating spell object.
-                Debug.Log("square");
+                //Debug.Log("square");
+                Instantiate(waterSpell, spellSpawn.position, spellSpawn.rotation);
             }
             else if (ShapeDrawn == "skull")
             {
