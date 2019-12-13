@@ -925,6 +925,7 @@ GameObject:
   - component: {fileID: 347794224}
   - component: {fileID: 347794223}
   - component: {fileID: 347794222}
+  - component: {fileID: 347794226}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: Untagged
@@ -1014,6 +1015,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 72.95, y: 0, z: 0}
+--- !u!114 &347794226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 347794221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27dc636b862b70141a00b407ad2b4590, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gesturePrefab: {fileID: 400000, guid: 971129baafd304455a111daa5207b8a1, type: 3}
+  drawArea:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 0
+    height: 0
 --- !u!1 &372136812
 GameObject:
   m_ObjectHideFlags: 0
@@ -2670,7 +2690,13 @@ MonoBehaviour:
     m_Bits: 512
   targetEnemy: {fileID: 0}
   speedBuff: {fileID: 0}
-  rotSpeed: 0
+  FireSpell: {fileID: 6599201895962909512, guid: 75772c5a105c10d4498b4830bf617dd4,
+    type: 3}
+  AirSpell: {fileID: 6888926045383392168, guid: 3b782e28cae7fff4793b22cb0a3e82d2,
+    type: 3}
+  waterSpell: {fileID: 7033720853173906871, guid: 0217e34eda5bff94bb65fa47c3054cc8,
+    type: 3}
+  spellSpawn: {fileID: 372136813}
 --- !u!195 &1544748239
 NavMeshAgent:
   m_ObjectHideFlags: 0

@@ -131,15 +131,12 @@ public class EnemyScript : MonoBehaviour
     {
         StartCoroutine(PushBackIE(pushTime, pushAmt, pushDir));
 
-        Debug.Log("Push F Called");
     }
 
     IEnumerator PushBackIE(float pushTime,int pushAmt, Vector3 pushDir)
     {
         pushDirection = pushDir;
         pushAmount = pushAmt;
-
-        Debug.Log("Push ");
 
         pushBack = true;
 
@@ -165,8 +162,6 @@ public class EnemyScript : MonoBehaviour
     {
         pullDirection = pullDir;
         pullAmount = pullAmt;
-
-        Debug.Log("Pull ");
 
         pullIn = true;
 

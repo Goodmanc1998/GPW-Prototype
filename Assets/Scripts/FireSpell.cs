@@ -7,9 +7,6 @@ public class FireSpell : SpellMovement
     public int damage;
     public float fireRange;
 
-    //public ParticleSystem fireEffect;
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -50,7 +47,6 @@ public class FireSpell : SpellMovement
     {
         if (collision.gameObject.GetComponent<EnemyScript>() != null)
         {
-            //collision.gameObject.GetComponent<EnemyScript>().Remove();
             Debug.Log("Collision Enemy");
 
             EnemyScript target = collision.gameObject.GetComponent<EnemyScript>();

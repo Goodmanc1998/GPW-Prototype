@@ -33,8 +33,6 @@ public class WaterSpell : SpellMovement
 
         Collider[] collidersWithinRange = Physics.OverlapSphere(transform.position, trapRange);
 
-        //Debug.Log("Colliders in Range :" + collidersWithinRange.Length);
-
         int count = 0;
 
         while (count < collidersWithinRange.Length)
@@ -53,9 +51,6 @@ public class WaterSpell : SpellMovement
     {
         if (collision.gameObject.GetComponent<EnemyScript>() != null)
         {
-            //collision.gameObject.GetComponent<EnemyScript>().Remove();
-            //Debug.Log("Collision Enemy");
-
             EnemyScript target = collision.gameObject.GetComponent<EnemyScript>();
 
             target.applyDamage(damage);

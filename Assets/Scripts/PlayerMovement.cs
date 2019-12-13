@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject FireSpell;
     public GameObject AirSpell;
     public GameObject waterSpell;
+    public GameObject groundSpell;
     public Transform spellSpawn;
 
         public void castSpell(string ShapeDrawn,float percentMatch)
@@ -32,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
                 //cast circle spell here by instatiating spell object.
                 //Debug.Log("Circle");
 
-                Instantiate(FireSpell, spellSpawn.position, spellSpawn.rotation);
+                Instantiate(waterSpell, spellSpawn.position, spellSpawn.rotation);
 
             }else if (ShapeDrawn == "triangle")
             {
@@ -44,12 +45,14 @@ public class PlayerMovement : MonoBehaviour
             {
                 //cast square spell here by instatiating spell object.
                 //Debug.Log("square");
-                Instantiate(waterSpell, spellSpawn.position, spellSpawn.rotation);
+                Instantiate(groundSpell, spellSpawn.position, spellSpawn.rotation);
             }
             else if (ShapeDrawn == "skull")
             {
                 //cast skull spell here by instatiating spell object.
                 Debug.Log("skull");
+                Instantiate(FireSpell, spellSpawn.position, spellSpawn.rotation);
+
             }
             else if (ShapeDrawn == "lightning")
             {
@@ -122,7 +125,7 @@ public class PlayerMovement : MonoBehaviour
         {
             Vector3 newLook = new Vector3(targetEnemy.transform.position.x, 0, targetEnemy.transform.position.z);
 
-            playerRigidbody.transform.LookAt(targetEnemy.transform);
+            playerRigidbody.transform.LookAt(newLook);
         }
 
 

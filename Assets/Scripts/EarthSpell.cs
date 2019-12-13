@@ -36,8 +36,6 @@ public class EarthSpell : SpellMovement
 
     public void CreateWall()
     {
-        //Vector3 positionToSpawn = (player.transform.forward * distanceForWallSpawn);
-
         Destroy(Instantiate(wall, transform.position, Quaternion.identity), lifeTime);
 
         Destroy(gameObject);
