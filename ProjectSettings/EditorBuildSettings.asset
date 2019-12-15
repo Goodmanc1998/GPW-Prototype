@@ -6,9 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Main Menu.unity
-    guid: 4c21707f4146c474fb6977a195233486
-  - enabled: 1
-    path: Assets/Scenes/Colosseum Placeholder.unity
-    guid: 22bba85666356a943a1f37a1fa042c9f
+    path: Assets/Scenes/SampleScene.unity
+    guid: d1c3109bdb54ad54c8a2b2838528e640
   m_configObjects: {}

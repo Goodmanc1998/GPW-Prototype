@@ -4,16 +4,16 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 
-using PDollarGestureRecognizer;
+using PsybersGestureRecognizer;
 
 public class DrawToScreen : MonoBehaviour
 {
     public Transform gesturePrefab;
 
-    private List<Gesture> gestureCheckList = new List<Gesture>();
+    private List<Drawn> gestureCheckList = new List<Drawn>();
 
-    private List<Point> points = new List<Point>();
-    private int strokeId = -1;
+    private List<Vector> vectors = new List<Vector>();
+    private int strokeNum = -1;
 
     private Vector3 virtualKeyPosition = Vector2.zero;
     public Rect drawArea;
@@ -27,22 +27,36 @@ public class DrawToScreen : MonoBehaviour
 
     private bool recognized;
     private string message;
+
+    public void clearPoint()
+    {
+        recognized = false;
+        strokeNum = -1;
+
+        vectors.Clear();
+        //for all the drawns in our list clear then list and destroy the drawn.
+        foreach (LineRenderer lineRenderer in gestureLinesRenderer)
+        {
+
+            lineRenderer.SetVertexCount(0);
+            Destroy(lineRenderer.gameObject);
+        }
+
+        gestureLinesRenderer.Clear();
+    }
     void Start()
     {
 
-        Debug.Log("datapath : " + Application.persistentDataPath);
+        Debug.Log("datapath : " + Application.persistentDataPath); // path if you use demo to create defined gestures.
         platform = Application.platform;
         drawArea = new Rect(0, 0, Screen.width, Screen.height);
 
         //Load pre-made gestures
-        TextAsset[] gesturesXml = Resources.LoadAll<TextAsset>("GestureSet/10-stylus-MEDIUM/");
-        foreach (TextAsset gestureXml in gesturesXml)
-            gestureCheckList.Add(GestureIO.ReadGestureFromXML(gestureXml.text));
+        TextAsset[] drawnsXml = Resources.LoadAll<TextAsset>("GestureSet/");
+        foreach (TextAsset drawnXml in drawnsXml)
+            gestureCheckList.Add(DrawReader.ReadDrawnFromXML(drawnXml.text));
 
-        //Load user custom gestures
-        //string[] filePaths = Directory.GetFiles(Application.persistentDataPath, "*.xml");
-        //foreach (string filePath in filePaths)
-        //    gestureCheckList.Add(GestureIO.ReadGestureFromFile(filePath));
+        
     }
 
     void Update()
@@ -74,9 +88,9 @@ public class DrawToScreen : MonoBehaviour
                 {
 
                     recognized = false;
-                    strokeId = -1;
+                    strokeNum = -1;
 
-                    points.Clear();
+                    vectors.Clear();
                     //for all the drawns in our list clear then list and destroy the drawn.
                     foreach (LineRenderer lineRenderer in gestureLinesRenderer)
                     {
@@ -88,7 +102,7 @@ public class DrawToScreen : MonoBehaviour
                     gestureLinesRenderer.Clear();
                 }
 
-                ++strokeId;
+                ++strokeNum;
                 // if nothing has been drawn then start drawing.
                 Transform currGesture = Instantiate(gesturePrefab, transform.position, transform.rotation) as Transform;
                 //set the current drawn gesture to a variable.
@@ -102,27 +116,29 @@ public class DrawToScreen : MonoBehaviour
             if (Input.GetMouseButton(0))
             {
                 //we add all the x and y positions and strokeID to points 
-                points.Add(new Point(virtualKeyPosition.x, -virtualKeyPosition.y, strokeId));
+                vectors.Add(new Vector(virtualKeyPosition.x, -virtualKeyPosition.y, strokeNum));
                 //and increase the drawn line vertex count to increase until drawn is complete.
                 currentGestureLineRenderer.SetVertexCount(++vertexCount);
                 currentGestureLineRenderer.SetPosition(vertexCount - 1, Camera.main.ScreenToWorldPoint(new Vector3(virtualKeyPosition.x, virtualKeyPosition.y, 10)));
             }
-            Gesture candidate = new Gesture(points.ToArray());
-            Result gestureResult = PointCloudRecognizer.Classify(candidate, gestureCheckList.ToArray());
+            
+                Drawn candidate = new Drawn(vectors.ToArray());
+                RcnzdGesture gestureResult = VectorRcnzr.GetType(candidate, gestureCheckList.ToArray());
 
-            message = gestureResult.GestureClass + " " + gestureResult.Score;
+                message = gestureResult.GestureType + " " + gestureResult.PercentMatch;
             
-            FindObjectOfType<PlayerMovement>().castSpell(gestureResult.GestureClass, gestureResult.Score);
-            
-            
+
+                FindObjectOfType<PlayerMovement>().castSpell(gestureResult.GestureType, gestureResult.PercentMatch);
+                
             
             recognized = true;
+
         }
         else {
             recognized = false;
-            strokeId = -1;
+            strokeNum = -1;
 
-            points.Clear();
+            vectors.Clear();
             //for all the drawns in our list clear then list and destroy the drawn.
             foreach (LineRenderer lineRenderer in gestureLinesRenderer)
             {
@@ -135,10 +151,5 @@ public class DrawToScreen : MonoBehaviour
         }
     }
 
-    void OnGUI()
-    {
-        // lables the draw area
-        
-
-    }
+  
 }

@@ -475,36 +475,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &693309751
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 693309752}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &693309752
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 693309751}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1072196903}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &755000154
 GameObject:
   m_ObjectHideFlags: 0
@@ -662,14 +632,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   targetEnemy: {fileID: 0}
-  speedBuff: {fileID: 421294, guid: f3b6bcc909e8cd2498f7c7e6191e0e98, type: 3}
-  FireSpell: {fileID: 6599201895962909512, guid: 75772c5a105c10d4498b4830bf617dd4,
+  speedBuff: {fileID: 3551180399939912065, guid: 0f19e248c1ddda744bbdf5d94ad797f9,
     type: 3}
-  AirSpell: {fileID: 6888926045383392168, guid: 3b782e28cae7fff4793b22cb0a3e82d2,
-    type: 3}
-  waterSpell: {fileID: 7033720853173906871, guid: 0217e34eda5bff94bb65fa47c3054cc8,
-    type: 3}
-  spellSpawn: {fileID: 693309752}
+  rotSpeed: 0
 --- !u!195 &1072196898
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -778,8 +743,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 693309752}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -18,47 +18,52 @@ public class PlayerMovement : MonoBehaviour
     //spells effect prefabs
     public Transform speedBuff;
 
-    public GameObject FireSpell;
-    public GameObject AirSpell;
-    public GameObject waterSpell;
-    public GameObject groundSpell;
-    public Transform spellSpawn;
+    
 
-        public void castSpell(string ShapeDrawn,float percentMatch)
+    public float rotSpeed;
+    public void castSpell(string ShapeDrawn,float percentMatch)
     {
-        if(percentMatch >= 0.8f)
+        if(percentMatch >= 0.9f)
         {
-            if(ShapeDrawn == "circle")
+            if(ShapeDrawn == "Circle")
             {
                 //cast circle spell here by instatiating spell object.
-                //Debug.Log("Circle");
-
-                Instantiate(waterSpell, spellSpawn.position, spellSpawn.rotation);
-
+                Debug.Log("Circle");
             }else if (ShapeDrawn == "triangle")
             {
                 //cast triangle spell here by instatiating spell object.
-                //Debug.Log("triangle");
-                Instantiate(AirSpell, spellSpawn.position, spellSpawn.rotation);
+                Debug.Log("triangle");
             }
-            else if (ShapeDrawn == "square")
+            else if (ShapeDrawn == "Square")
             {
                 //cast square spell here by instatiating spell object.
-                //Debug.Log("square");
-                Instantiate(groundSpell, spellSpawn.position, spellSpawn.rotation);
+                Debug.Log("Square");
             }
-            else if (ShapeDrawn == "skull")
+            else if (ShapeDrawn == "Air")
             {
                 //cast skull spell here by instatiating spell object.
-                Debug.Log("skull");
-                Instantiate(FireSpell, spellSpawn.position, spellSpawn.rotation);
-
+                Debug.Log("Air");
             }
-            else if (ShapeDrawn == "lightning")
+            else if (ShapeDrawn == "Penta")
             {
+                
                 //cast lightning spell here by instatiating spell object.
-                Debug.Log("lightning");
-                Instantiate(speedBuff,gameObject.transform.position, Quaternion.identity);
+                Debug.Log("Penta");
+                int count = 0;
+                if (count == 0)
+                {
+                    _ = Instantiate(speedBuff, gameObject.transform.position, Quaternion.identity) as Transform;
+                    count = 1;
+                    if(count >= 1)
+                    {
+                        
+                            FindObjectOfType<DrawToScreen>().clearPoint();
+                        
+                        
+                    }
+                    
+                }
+                
                 player.speed += 5;
                 speedBuffCounter += 1;
             }
@@ -72,6 +77,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         viewCamera = Camera.main;
+        
     }
 
     // Update is called once per frame
@@ -124,7 +130,7 @@ public class PlayerMovement : MonoBehaviour
         {
             Vector3 newLook = new Vector3(targetEnemy.transform.position.x, 0, targetEnemy.transform.position.z);
 
-            playerRigidbody.transform.LookAt(newLook);
+            playerRigidbody.transform.LookAt(targetEnemy.transform);
         }
 
 
