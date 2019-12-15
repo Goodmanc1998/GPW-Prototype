@@ -3,7 +3,27 @@ guid: 55253f1567abccc4091ef93a8231b685
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: aiStandardSurface1
+    second: {fileID: 2100000, guid: 307a8f8a2b1137441ab1b29a0842af3c, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Mud Wall ReUV_initialShadingGroup_AlbedoTransparency
+    second: {fileID: 2800000, guid: f7fa0a7273b73914b812ff86f8a9a629, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Mud Wall ReUV_initialShadingGroup_MetallicSmoothness
+    second: {fileID: 2800000, guid: d5c7ccd84c1777a4e868b4e1a0cfef8b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Mud Wall ReUV_initialShadingGroup_Normal
+    second: {fileID: 2800000, guid: 030670923c996cc49ab7982600d5fd7a, type: 3}
   materials:
     importMaterials: 1
     materialName: 0
@@ -81,7 +101,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.5
+    globalScale: 50
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
