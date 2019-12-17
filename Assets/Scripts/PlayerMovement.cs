@@ -116,6 +116,7 @@ public class PlayerMovement : MonoBehaviour
                 else
                 {
                     player.SetDestination(hitPoint);
+                    Debug.Log(player.velocity);
                 }
             }
         }
