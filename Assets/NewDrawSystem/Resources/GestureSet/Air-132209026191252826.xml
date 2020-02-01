@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Drawn Name = "Air">
+	<Stroke>
+		<Vector X = "1027.574" Y = "-744.5005" T = "0" Pressure = "0" />
+		<Vector X = "1027.574" Y = "-744.5005" T = "0" Pressure = "0" />
+		<Vector X = "1027.574" Y = "-744.5005" T = "0" Pressure = "0" />
+		<Vector X = "1027.574" Y = "-744.5005" T = "0" Pressure = "0" />
+		<Vector X = "1027.574" Y = "-744.5005" T = "0" Pressure = "0" />
+		<Vector X = "1027.574" Y = "-744.5005" T = "0" Pressure = "0" />
+		<Vector X = "1034.687" Y = "-740.944" T = "0" Pressure = "0" />
+		<Vector X = "1046.542" Y = "-732.6454" T = "0" Pressure = "0" />
+		<Vector X = "1060.768" Y = "-719.6048" T = "0" Pressure = "0" />
+		<Vector X = "1071.438" Y = "-706.5642" T = "0" Pressure = "0" />
+		<Vector X = "1076.18" Y = "-693.5236" T = "0" Pressure = "0" />
+		<Vector X = "1076.18" Y = "-679.2975" T = "0" Pressure = "0" />
+		<Vector X = "1069.067" Y = "-667.4424" T = "0" Pressure = "0" />
+		<Vector X = "1056.026" Y = "-657.9583" T = "0" Pressure = "0" />
+		<Vector X = "1040.615" Y = "-656.7728" T = "0" Pressure = "0" />
+		<Vector X = "1029.945" Y = "-660.3293" T = "0" Pressure = "0" />
+		<Vector X = "1024.018" Y = "-668.6279" T = "0" Pressure = "0" />
+		<Vector X = "1020.461" Y = "-680.483" T = "0" Pressure = "0" />
+		<Vector X = "1020.461" Y = "-692.3381" T = "0" Pressure = "0" />
+		<Vector X = "1027.574" Y = "-707.7497" T = "0" Pressure = "0" />
+		<Vector X = "1039.429" Y = "-719.6048" T = "0" Pressure = "0" />
+		<Vector X = "1052.47" Y = "-726.7179" T = "0" Pressure = "0" />
+		<Vector X = "1064.325" Y = "-731.4599" T = "0" Pressure = "0" />
+		<Vector X = "1071.438" Y = "-732.6454" T = "0" Pressure = "0" />
+		<Vector X = "1073.809" Y = "-732.6454" T = "0" Pressure = "0" />
+	</Stroke>
+</Drawn>
