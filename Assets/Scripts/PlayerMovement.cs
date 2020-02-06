@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
 
     public LayerMask target;
     public GameObject targetEnemy;
+    public float targetRange;
 
     private int speedBuffCounter = 0;
 
@@ -24,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject groundSpell;
     public Transform spellSpawn;
 
-        public void castSpell(string ShapeDrawn,float percentMatch)
+    public void castSpell(string ShapeDrawn,float percentMatch)
     {
         if(percentMatch >= 0.8f)
         {
@@ -68,10 +69,13 @@ public class PlayerMovement : MonoBehaviour
             //spell was a failure do little fizzle out of a spell to indicate to player they were close to casting.
         }
     }
+
+
     // Start is called before the first frame update
     void Start()
     {
         viewCamera = Camera.main;
+
     }
 
     // Update is called once per frame
@@ -97,38 +101,64 @@ public class PlayerMovement : MonoBehaviour
             {
 
                 Vector3 hitPoint = hit.point;
-                if (hit.collider.gameObject.tag == "Target")
-                {
-                    if (hit.collider.gameObject == targetEnemy)
-                    {
-                        targetEnemy = null;
-                    }
-                    else
-                    {
-                        targetEnemy = hit.collider.gameObject;
-                    }
 
-
-                }else if (hit.collider.gameObject.tag == "SpellBook")
-                {
-
-                }
-                else
+                if(hit.collider.gameObject.name == "Terrain")
                 {
                     player.SetDestination(hitPoint);
-                    Debug.Log(player.velocity);
                 }
+
             }
         }
 
+        CheckTarget();
+
         if (targetEnemy != null)
         {
-            Vector3 newLook = new Vector3(targetEnemy.transform.position.x, 0, targetEnemy.transform.position.z);
-
-            playerRigidbody.transform.LookAt(newLook);
+            PlayerLook();
         }
 
 
+    }
+
+    public void PlayerLook()
+    {
+        Vector3 lookDir = targetEnemy.transform.position - transform.position;
+
+        Quaternion lookRotation = Quaternion.LookRotation(lookDir);
+
+        Vector3 rotation = Quaternion.Lerp(transform.rotation, lookRotation, Time.deltaTime * player.angularSpeed).eulerAngles;
+
+        transform.rotation = Quaternion.Euler(0.0f, rotation.y, 0.0f);
+    }
+
+    public void CheckTarget()
+    {
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Target");
+
+        GameObject nearestEnemy = null;
+        float closestDistance = Mathf.Infinity;
+
+        foreach (GameObject enemy in enemies)
+        {
+
+            float targetDistance = Vector3.Distance(transform.position, enemy.transform.position);
+
+            if(targetDistance <= closestDistance)
+            {
+                closestDistance = targetDistance;
+                nearestEnemy = enemy;
+            }
+
+        }
+
+        if(nearestEnemy != null && closestDistance < targetRange)
+        {
+            targetEnemy = nearestEnemy;
+        }
+        else
+        {
+            targetEnemy = null;
+        }
     }
 
 
