@@ -13814,9 +13814,9 @@ NavMeshAgent:
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 3.5
-  m_Acceleration: 8
+  m_Acceleration: 60
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 300
   m_StoppingDistance: 1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
@@ -16860,6 +16860,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   targetEnemy: {fileID: 0}
+  targetRange: 10
   speedBuff: {fileID: 0}
   FireSpell: {fileID: 6599201895962909512, guid: 75772c5a105c10d4498b4830bf617dd4,
     type: 3}
@@ -16867,7 +16868,8 @@ MonoBehaviour:
     type: 3}
   waterSpell: {fileID: 7033720853173906871, guid: 0217e34eda5bff94bb65fa47c3054cc8,
     type: 3}
-  groundSpell: {fileID: 0}
+  groundSpell: {fileID: 1926935264743425830, guid: 1e52974ebe6900f43aac54026371d1aa,
+    type: 3}
   spellSpawn: {fileID: 372136813}
 --- !u!195 &1544748239
 NavMeshAgent:
