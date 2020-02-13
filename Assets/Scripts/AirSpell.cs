@@ -59,7 +59,7 @@ public class AirSpell : SpellMovement
 
             EnemyScript target = collision.gameObject.GetComponent<EnemyScript>();
 
-            target.applyDamage(damage);
+            target.TakeDamage(damage, "Air");
 
             PushBack();
 

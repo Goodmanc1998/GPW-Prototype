@@ -3,30 +3,39 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyScript : MonoBehaviour
+public class EnemyScript : Entities
 {
-    public Transform target;
-    int health;
-    public int startingHealth;
+    //Target transform and NavMesh Agent
+    Transform target;
+    NavMeshAgent agent;
 
-    public GameObject spell;
-    public Transform spellSpawnAttack;
+    enum enemyState
+    {
+        Idle,
+        Moving,
+        MeleeAttack,
+        Dead
+    };
 
-    public bool toggleSpellAttack;
-    public int attackRadius;
+    enemyState currentState;
+
+    bool hasTarget;
+
+    public float meleeAttackRange;
+    public float meleeDamage;
     public float timeBetweenAttacks;
-    float timer;
+    float nextAttackTime;
 
-    public bool toggleSlowAttack;
-    public int slowDownRange;
-    public float slowDownAmount;
 
-    float startingPlayerSpeed;
-    float startingSpeed;
-    float startingAcc;
-    float startingAngSpeed;
 
-    public NavMeshAgent agent;
+
+
+    private float startingPlayerSpeed;
+    private float startingSpeed;
+    private float startingAcc;
+    private float startingAngSpeed;
+
+    
 
     bool pushBack;
 
@@ -37,29 +46,37 @@ public class EnemyScript : MonoBehaviour
     Vector3 pullDirection;
     int pullAmount;
 
-    private void Start()
+    private void Awake()
     {
-        health = startingHealth;
-        timer = timeBetweenAttacks;
+        if (target == null || agent == null)
+        {
+            target = GameObject.FindGameObjectWithTag("Player").transform;
+            agent = gameObject.GetComponent<NavMeshAgent>();
+
+            hasTarget = true;
+
+        }
+    }
+
+    protected override void Start()
+    {
+        base.Start();
 
         startingSpeed = agent.speed;
         startingAcc = agent.acceleration;
         startingAngSpeed = agent.angularSpeed;
 
-        if (target == null)
+        startingPlayerSpeed = target.GetComponent<NavMeshAgent>().speed;
+
+        if (hasTarget == true)
         {
-            target = GameObject.FindGameObjectWithTag("Player").transform;
-            startingPlayerSpeed = target.GetComponent<NavMeshAgent>().speed;
+            currentState = enemyState.Moving;
         }
-        agent = GetComponent<NavMeshAgent>();
+
     }
 
     private void Update()
     {
-        if (target != null)
-        {
-            agent.SetDestination(target.position);
-        }
 
         if(pushBack)
         {
@@ -71,61 +88,73 @@ public class EnemyScript : MonoBehaviour
             agent.velocity = pullDirection * pullAmount;
         }
 
+        if(dead == true)
+        {
+            currentState = enemyState.Dead;
+            
+            Remove();
+        }
+
+
+        if(currentState == enemyState.Moving)
+        {
+            agent.SetDestination(target.position);
+        }
+
+        if(Vector3.Distance(transform.position, target.position) < meleeAttackRange && currentState == enemyState.Moving)
+        {
+            if(Time.time > nextAttackTime)
+            {
+                //currentState = enemyState.MeleeAttack;
+                StartCoroutine(Attack());
+                nextAttackTime += Time.time + timeBetweenAttacks;
+
+            }
+        }
         
-        if(toggleSpellAttack)
-        {
-            if (Vector3.Distance(transform.position, target.position) < attackRadius)
-            {
-                if (timer > timeBetweenAttacks)
-                {
-                    Destroy(Instantiate(spell, spellSpawnAttack.position, transform.rotation), 3);
-                    timer = 0;
-                }
-                else
-                {
-                    timer += Time.deltaTime;
-                }
-            }
-        }
-
-        if(toggleSlowAttack)
-        {
-            if (Vector3.Distance(transform.position, target.position) < slowDownRange)
-            {
-                if (target.GetComponent<NavMeshAgent>() != null)
-                {
-                    target.GetComponent<NavMeshAgent>().speed = slowDownAmount;
-                }
-            }
-            else
-            {
-                if (target.GetComponent<NavMeshAgent>() != null)
-                {
-                    target.GetComponent<NavMeshAgent>().speed = startingPlayerSpeed;
-                }
-            }
-        }
     }
 
-    public void applyDamage(int dmgToDo)
+    public float attackSpeed;
+
+
+    IEnumerator Attack()
     {
-        //applies a damage to current health and returns the value;
 
-        if (health <= dmgToDo)
+        currentState = enemyState.MeleeAttack;
+        agent.enabled = false;
+
+        Vector3 startingAttackPosition = transform.position;
+        Vector3 dirToTarget = (target.position - transform.position).normalized;
+        Vector3 attackPosition = target.position - dirToTarget;
+
+        float percent = 0;
+
+        bool hasAppliedDamage = false;
+
+        while (percent <= 1)
         {
-            Destroy(gameObject);
-        }
-        else
-        {
-            health -= dmgToDo;
+
+            if (percent >= .5f && !hasAppliedDamage)
+            {
+                hasAppliedDamage = true;
+                target.gameObject.GetComponent<PlayerMovement>().TakeDamage(meleeDamage, "Melee");
+            }
+
+            percent += Time.deltaTime * attackSpeed;
+            float interpolation = (-Mathf.Pow(percent, 2) + percent) * 4;
+            transform.position = Vector3.Lerp(startingAttackPosition, attackPosition, interpolation);
+
+            Debug.Log(interpolation);
+
+            yield return null;
         }
 
+        currentState = enemyState.Moving;
+        agent.enabled = true;
     }
 
-    public void GetTarget()
-    {
-        target = GameObject.FindGameObjectWithTag("Player").transform;
-    }
+
+
 
     public void PushBack(float pushTime, int pushAmt, Vector3 pushDir)
     {

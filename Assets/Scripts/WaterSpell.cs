@@ -53,7 +53,7 @@ public class WaterSpell : SpellMovement
         {
             EnemyScript target = collision.gameObject.GetComponent<EnemyScript>();
 
-            target.applyDamage(damage);
+            target.TakeDamage(damage, "Water");
 
             PullIn();
 
