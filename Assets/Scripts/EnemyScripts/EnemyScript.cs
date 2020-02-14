@@ -11,7 +11,7 @@ public class EnemyScript : Entities
     Transform target;
     NavMeshAgent agent;
 
-    enum enemyState
+    enum EnemyState
     {
         Idle,
         Moving,
@@ -19,7 +19,7 @@ public class EnemyScript : Entities
         Dead
     };
 
-    enemyState currentState;
+    EnemyState currentState;
 
     bool hasTarget;
 
@@ -72,7 +72,7 @@ public class EnemyScript : Entities
 
         if (hasTarget == true)
         {
-            currentState = enemyState.Moving;
+            currentState = EnemyState.Moving;
         }
 
     }
@@ -97,18 +97,18 @@ public class EnemyScript : Entities
             {
                 wave.EnemyKilled();
             }
-            currentState = enemyState.Dead;
+            currentState = EnemyState.Dead;
             
             Remove();
         }
 
 
-        if(currentState == enemyState.Moving)
+        if(currentState == EnemyState.Moving)
         {
             agent.SetDestination(target.position);
         }
 
-        if(Vector3.Distance(transform.position, target.position) < meleeAttackRange && currentState == enemyState.Moving)
+        if(Vector3.Distance(transform.position, target.position) < meleeAttackRange && currentState == EnemyState.Moving)
         {
             if(Time.time > nextAttackTime)
             {
@@ -127,7 +127,7 @@ public class EnemyScript : Entities
     IEnumerator Attack()
     {
 
-        currentState = enemyState.MeleeAttack;
+        currentState = EnemyState.MeleeAttack;
         agent.enabled = false;
 
         Vector3 startingAttackPosition = transform.position;
@@ -151,12 +151,10 @@ public class EnemyScript : Entities
             float interpolation = (-Mathf.Pow(percent, 2) + percent) * 4;
             transform.position = Vector3.Lerp(startingAttackPosition, attackPosition, interpolation);
 
-            Debug.Log(interpolation);
-
             yield return null;
         }
 
-        currentState = enemyState.Moving;
+        currentState = EnemyState.Moving;
         agent.enabled = true;
     }
 
