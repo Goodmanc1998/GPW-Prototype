@@ -4,8 +4,9 @@
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: Golem 1
   m_Shader: {fileID: 4800000, guid: 4f726be83ba72084792ae45251375596, type: 3}
   m_ShaderKeywords: _EMISSION
@@ -47,13 +48,13 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionTex:
-        m_Texture: {fileID: 2800000, guid: a3559c42d9e864c418df28c1b4185a54, type: 3}
-        m_Scale: {x: 2, y: 1}
-        m_Offset: {x: 0, y: 0}
+        m_Texture: {fileID: 2800000, guid: 68636e928f41319458c64df671866a0a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0.5, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: c098fe8a666c4c04e89a3806760d1d11, type: 3}
-        m_Scale: {x: 0.25, y: 0.25}
-        m_Offset: {x: 0.25, y: 0}
+        m_Texture: {fileID: 2800000, guid: 68636e928f41319458c64df671866a0a, type: 3}
+        m_Scale: {x: 0.5, y: 0.5}
+        m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -68,8 +69,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BumpScale: 1
-    - _Cutoff: 0.322
-    - _CutoutThickness: 0.01
+    - _Cutoff: 0
+    - _CutoutThickness: 1
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _Glossiness: 0.5
@@ -83,7 +84,7 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _BorderColor: {r: 2.8849998, g: 0.38183823, b: 0.38183823, a: 1}
-    - _Color: {r: 0, g: 0, b: 0, a: 1}
-    - _EmissionColor: {r: 0.413, g: 0, b: 0, a: 1}
+    - _BorderColor: {r: 3.4136643, g: 0.78544486, b: 5.769999, a: 1}
+    - _Color: {r: 0.81789505, g: 0.5007565, b: 0.8773585, a: 1}
+    - _EmissionColor: {r: 4.2771797, g: 0, b: 13.176474, a: 1}
     - _TintColor: {r: 6, g: 2.1943207, b: 0.7941177, a: 1}

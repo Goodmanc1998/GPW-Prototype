@@ -9,6 +9,7 @@ using PDollarGestureRecognizer;
 public class DrawToScreen : MonoBehaviour
 {
     public Transform gesturePrefab;
+    public Canvas drawCanvas;
 
     private List<Gesture> gestureCheckList = new List<Gesture>();
 
@@ -91,6 +92,7 @@ public class DrawToScreen : MonoBehaviour
                 ++strokeId;
                 // if nothing has been drawn then start drawing.
                 Transform currGesture = Instantiate(gesturePrefab, transform.position, transform.rotation) as Transform;
+                //currGesture.SetParent(Camera.main.transform.GetChild(1).transform);
                 //set the current drawn gesture to a variable.
                 currentGestureLineRenderer = currGesture.GetComponent<LineRenderer>();
                 //add the current drawn gesture to the list.
@@ -101,11 +103,15 @@ public class DrawToScreen : MonoBehaviour
             // are we holding the mouse button down
             if (Input.GetMouseButton(0))
             {
-                //we add all the x and y positions and strokeID to points 
                 points.Add(new Point(virtualKeyPosition.x, -virtualKeyPosition.y, strokeId));
                 //and increase the drawn line vertex count to increase until drawn is complete.
                 currentGestureLineRenderer.SetVertexCount(++vertexCount);
-                currentGestureLineRenderer.SetPosition(vertexCount - 1, Camera.main.ScreenToWorldPoint(new Vector3(virtualKeyPosition.x, virtualKeyPosition.y, 10)));
+                // using the mouse postion and the camera to cast a ray to post point location
+                Ray mouseRay = Camera.main.ScreenPointToRay(virtualKeyPosition);
+                //set the gesture y height using done this way incase of player stading on object etc it will grab the mouse one in screen space then minus 13 give us middle of the player character.
+                Vector2 yPos = Camera.main.ScreenToWorldPoint(virtualKeyPosition);
+                currentGestureLineRenderer.SetPosition(vertexCount - 1, new Vector3(mouseRay.GetPoint(13).x,yPos.y - 13, mouseRay.GetPoint(14).z));
+                
             }
             Gesture candidate = new Gesture(points.ToArray());
             Result gestureResult = PointCloudRecognizer.Classify(candidate, gestureCheckList.ToArray());

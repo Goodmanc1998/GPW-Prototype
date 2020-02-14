@@ -4,8 +4,9 @@
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: Dragon
   m_Shader: {fileID: 4800000, guid: 18cc8fe7d50c89741b56c1ae6a5baa66, type: 3}
   m_ShaderKeywords: BlendAlpha Clip_OFF FrameBlend_OFF SoftParticles_OFF USE_FRESNEL
@@ -53,8 +54,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _NoiseTex:
         m_Texture: {fileID: 2800000, guid: 959861c33862ded44aca231d85a12ccc, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
+        m_Scale: {x: 2.69, y: 0.79}
+        m_Offset: {x: 0, y: 0.6}
     - _OcclusionMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -70,7 +71,7 @@ Material:
     - _BumpScale: 1
     - _CullMode: 0
     - _Cutoff: 0.5
-    - _Cutout: 0.93
+    - _Cutout: 0.878
     - _CutoutThreshold: 0.015
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
@@ -108,6 +109,6 @@ Material:
     - _DistortionSpeedScale: {r: 3, g: -3, b: 0.15, a: 0.15}
     - _EmissionColor: {r: 3, g: 1.8416836, b: 1.2132354, a: 1}
     - _FogColorMultiplier: {r: 0, g: 0, b: 0, a: 0}
-    - _FresnelColor: {r: 2, g: 0.9572008, b: 0.57352936, a: 1}
+    - _FresnelColor: {r: 0.7099524, g: 0.356821, b: 2.2923045, a: 1}
     - _Tiling: {r: 800, g: 800, b: 8, a: 8}
-    - _TintColor: {r: 1.871, g: 0.8842665, b: 0.4402353, a: 1}
+    - _TintColor: {r: 0.6056117, g: 0.15673208, b: 2.215147, a: 1}

@@ -81,9 +81,10 @@ public class Demo : MonoBehaviour {
 
 				++strokeId;
 				// if nothing has been drawn then start drawing.
-				Transform tmpGesture = Instantiate(gestureOnScreenPrefab, transform.position, transform.rotation) as Transform;
+				Transform tmpGesture = Instantiate(gestureOnScreenPrefab,transform.position, transform.rotation) as Transform;
+                Camera.main.WorldToScreenPoint(tmpGesture.transform.position);
                 //set the current drawn gesture to a variable.
-				currentGestureLineRenderer = tmpGesture.GetComponent<LineRenderer>();
+                currentGestureLineRenderer = tmpGesture.GetComponent<LineRenderer>();
 				//add the current drawn gesture to the list.
 				gestureLinesRenderer.Add(currentGestureLineRenderer);
 				
