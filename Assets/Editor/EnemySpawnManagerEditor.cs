@@ -91,7 +91,7 @@ public class EnemySpawnManagerEditor : Editor
                 EditorGUILayout.EndVertical();
             }
 
-            manager.waves[i].enemy = (EnemyScript)EditorGUILayout.ObjectField(new GUIContent("Enemy"), manager.waves[i].enemy, typeof(EnemyScript), true);
+            manager.waves[i].enemy = (Entities)EditorGUILayout.ObjectField(new GUIContent("Enemy"), manager.waves[i].enemy, typeof(Entities), true);
 
             manager.waves[i].enemyAmount = EditorGUILayout.IntField("Enemy Amount", manager.waves[i].enemyAmount);
 
