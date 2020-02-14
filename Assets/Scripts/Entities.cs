@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Entities : MonoBehaviour
 {
+    public Wave wave; // The wave the enemy was spawned in
+
     public float startingHealth;
     public float health;
     protected bool dead;
@@ -32,6 +34,12 @@ public class Entities : MonoBehaviour
         if(damageIn >= health)
         {
             dead = true;
+
+            // Once the enemy is declared dead, tell the wave an enemy has died if there is one
+            if (wave != null)
+            {
+                wave.EnemyKilled();
+            }
         }
         else
         {

@@ -5,8 +5,6 @@ using UnityEngine.AI;
 
 public class EnemyScript : Entities
 {
-    public Wave wave; // The wave the enemy was spawned in
-
     //Target transform and NavMesh Agent
     Transform target;
     NavMeshAgent agent;
@@ -92,11 +90,6 @@ public class EnemyScript : Entities
 
         if(dead == true)
         {
-            // Once the enemy is declared dead, tell the wave an enemy has died if there is one
-            if (wave != null)
-            {
-                wave.EnemyKilled();
-            }
             currentState = EnemyState.Dead;
             
             Remove();

@@ -6,7 +6,7 @@ using UnityEngine;
 public class Wave
 {
     public List<EnemySpawn> spawnpoints; // The list of possible spawn locations for the enemies
-    public EnemyScript enemy; // Array of enemies that can be spawned in this wave
+    public Entities enemy; // Array of enemies that can be spawned in this wave
     public int enemyAmount; // The total number of enemies that are spawned throughout the wave
     public float difficulty; // Can be used to balance enemy health, strength etc. individually for each wave
     public float waveStartTime; // The time after the start wave method is called before enemies start spawning

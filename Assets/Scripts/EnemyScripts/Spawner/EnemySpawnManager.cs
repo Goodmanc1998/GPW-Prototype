@@ -68,10 +68,9 @@ public class EnemySpawnManager : MonoBehaviour
             Debug.LogWarning("No spawnpoints found. Spawn aborted.");
             return false;
         }
-        EnemyScript spawnedEnemy = Instantiate(wave.enemy, possibleSpawns[Random.Range(0, possibleSpawns.Count)].position, Quaternion.identity);
+        Entities spawnedEnemy = Instantiate(wave.enemy, possibleSpawns[Random.Range(0, possibleSpawns.Count)].position, Quaternion.identity);
         spawnedEnemy.wave = wave;
         spawnedEnemy.startingHealth = (int)(spawnedEnemy.startingHealth * wave.difficulty);
-        spawnedEnemy.timeBetweenAttacks /= wave.difficulty;
         return true;
     }
 
