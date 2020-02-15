@@ -119,7 +119,7 @@ public class DrawToScreen : MonoBehaviour
             message = gestureResult.GestureClass + " " + gestureResult.Score;
             
             FindObjectOfType<PlayerMovement>().castSpell(gestureResult.GestureClass, gestureResult.Score);
-            
+            Debug.Log(message);
             
             
             recognized = true;
