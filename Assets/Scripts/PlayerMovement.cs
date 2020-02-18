@@ -27,22 +27,22 @@ public class PlayerMovement : Entities
 
     public void castSpell(string ShapeDrawn,float percentMatch)
     {
-        if(percentMatch >= 0.8f)
+        if(percentMatch >= 0.9f)
         {
-            if(ShapeDrawn == "circle")
+            if(ShapeDrawn == "line")
             {
                 //cast circle spell here by instatiating spell object.
                 //Debug.Log("Circle");
 
                 Instantiate(waterSpell, spellSpawn.position, spellSpawn.rotation);
 
-            }else if (ShapeDrawn == "triangle")
+            }else if (ShapeDrawn == "lightening")
             {
                 //cast triangle spell here by instatiating spell object.
                 //Debug.Log("triangle");
                 Instantiate(AirSpell, spellSpawn.position, spellSpawn.rotation);
             }
-            else if (ShapeDrawn == "square")
+            else if (ShapeDrawn == "arc")
             {
                 //cast square spell here by instatiating spell object.
                 //Debug.Log("square");

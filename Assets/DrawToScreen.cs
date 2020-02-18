@@ -113,16 +113,20 @@ public class DrawToScreen : MonoBehaviour
                 currentGestureLineRenderer.SetPosition(vertexCount - 1, new Vector3(mouseRay.GetPoint(13).x,yPos.y - 13, mouseRay.GetPoint(14).z));
                 
             }
-            Gesture candidate = new Gesture(points.ToArray());
-            Result gestureResult = PointCloudRecognizer.Classify(candidate, gestureCheckList.ToArray());
+            if(Input.GetMouseButtonUp(0))
+            {
+                Gesture candidate = new Gesture(points.ToArray());
+                Result gestureResult = PointCloudRecognizer.Classify(candidate, gestureCheckList.ToArray());
 
-            message = gestureResult.GestureClass + " " + gestureResult.Score;
+                message = gestureResult.GestureClass + " " + gestureResult.Score;
+
+                FindObjectOfType<PlayerMovement>().castSpell(gestureResult.GestureClass, gestureResult.Score);
+                Debug.Log(message);
+
+
+                recognized = true;
+            }
             
-            FindObjectOfType<PlayerMovement>().castSpell(gestureResult.GestureClass, gestureResult.Score);
-            Debug.Log(message);
-            
-            
-            recognized = true;
         }
         else {
             recognized = false;
