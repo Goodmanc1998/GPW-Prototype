@@ -4,28 +4,55 @@ using UnityEngine;
 
 public class Entities : MonoBehaviour
 {
-    public int health;
-    public float speed;
-    public Rigidbody entityRgbdy;
+    public Wave wave; // The wave the enemy was spawned in
 
-    public int applyDamage(int dmgToDo, int currentHealth)
+    public float startingHealth;
+    public float health;
+    protected bool dead;
+
+    public enum weaknessEnum
     {
-        //applies a damage to current health and returns the value;
-         var newHealth = currentHealth - dmgToDo;
-        return newHealth;
+        Nothing,
+        Fire,
+        Earth,
+        Wind,
+        Water,
+        Melee
+    };
+
+    public weaknessEnum weakness;
+
+    protected virtual void Start()
+    {
+        health = startingHealth;
+        
     }
 
-    public int applyHeal(int healAmount, int currentHealth)
+    public virtual void TakeDamage(float damageIn, string attackType)
     {
-        //applies a heal to current health and returns the value.
-        var newHealth = currentHealth + healAmount;
-        return newHealth;
+
+        if(damageIn >= health)
+        {
+            dead = true;
+
+            // Once the enemy is declared dead, tell the wave an enemy has died if there is one
+            if (wave != null)
+            {
+                wave.EnemyKilled();
+            }
+        }
+        else
+        {
+
+            if(weakness == weaknessEnum.Nothing || attackType != weakness.ToString())
+            {
+                health -= damageIn;
+            }
+            else
+            {
+                health -= damageIn * 1.5f;
+            }
+        }
     }
 
-    public virtual Vector3 applyMovement(Vector3 currentPos, Vector3 dir, float speed)
-    {
-        // implement code here.
-        Vector3 newPos = currentPos + dir * speed;
-        return newPos;
-    }
 }

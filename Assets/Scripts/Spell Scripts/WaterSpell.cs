@@ -2,18 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AirSpell : SpellMovement
+public class WaterSpell : SpellMovement
 {
     public int damage;
-    public float PushRange;
+    public float trapTime;
+    public float trapRange;
 
-    public int pushAmount;
-    public float pushTime;
+    public int pullAmount;
 
 
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         Destroy(gameObject, lifeTime);
     }
@@ -29,12 +28,10 @@ public class AirSpell : SpellMovement
         GetComponent<Rigidbody>().transform.position += (GetComponent<Rigidbody>().transform.forward * speed) * Time.deltaTime;
     }
 
-    public void PushBack()
+    public void PullIn()
     {
 
-        Collider[] collidersWithinRange = Physics.OverlapSphere(transform.position, PushRange);
-
-        //Debug.Log("Colliders in Range :" + collidersWithinRange.Length);
+        Collider[] collidersWithinRange = Physics.OverlapSphere(transform.position, trapRange);
 
         int count = 0;
 
@@ -42,7 +39,7 @@ public class AirSpell : SpellMovement
         {
             if (collidersWithinRange[count].gameObject.GetComponent<EnemyScript>())
             {
-                collidersWithinRange[count].gameObject.GetComponent<EnemyScript>().PushBack(pushTime, pushAmount, transform.forward);
+                collidersWithinRange[count].gameObject.GetComponent<EnemyScript>().PullIn(trapTime, pullAmount, (transform.position - collidersWithinRange[count].gameObject.transform.position));
             }
 
             count++;
@@ -54,14 +51,11 @@ public class AirSpell : SpellMovement
     {
         if (collision.gameObject.GetComponent<EnemyScript>() != null)
         {
-            //collision.gameObject.GetComponent<EnemyScript>().Remove();
-            //Debug.Log("Collision Enemy");
-
             EnemyScript target = collision.gameObject.GetComponent<EnemyScript>();
 
-            target.applyDamage(damage);
+            target.TakeDamage(damage, "Water");
 
-            PushBack();
+            PullIn();
 
             Destroy(gameObject);
 

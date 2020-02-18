@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : Entities
 {
     Camera viewCamera;
-    public NavMeshAgent player;
+    NavMeshAgent agent;
 
-    public Rigidbody playerRigidbody;
-
-    public LayerMask target;
-    public GameObject targetEnemy;
+    GameObject targetEnemy;
     public float targetRange;
+
+    float timebetweenChecks = 0.5f;
+    float nextCheckTime;
 
     private int speedBuffCounter = 0;
 
@@ -60,7 +60,7 @@ public class PlayerMovement : MonoBehaviour
                 //cast lightning spell here by instatiating spell object.
                 Debug.Log("lightning");
                 Instantiate(speedBuff,gameObject.transform.position, Quaternion.identity);
-                player.speed += 5;
+                agent.speed += 5;
                 speedBuffCounter += 1;
             }
         }
@@ -72,10 +72,13 @@ public class PlayerMovement : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
+        base.Start();
+
         viewCamera = Camera.main;
 
+        agent = GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
@@ -87,7 +90,7 @@ public class PlayerMovement : MonoBehaviour
             speedBuffCounter++;
             if(speedBuffCounter >= 300)
             {
-                player.speed -= 5;
+                agent.speed -= 5;
                 speedBuffCounter = 0;
             }
         }
@@ -104,7 +107,7 @@ public class PlayerMovement : MonoBehaviour
 
                 if(hit.collider.gameObject.name == "Terrain")
                 {
-                    player.SetDestination(hitPoint);
+                    agent.SetDestination(hitPoint);
                 }
 
             }
@@ -112,9 +115,10 @@ public class PlayerMovement : MonoBehaviour
 
         CheckTarget();
 
-        if (targetEnemy != null)
+        if (targetEnemy != null && Time.time > nextCheckTime)
         {
             PlayerLook();
+            nextCheckTime = Time.time + timebetweenChecks;
         }
 
 
@@ -126,7 +130,7 @@ public class PlayerMovement : MonoBehaviour
 
         Quaternion lookRotation = Quaternion.LookRotation(lookDir);
 
-        Vector3 rotation = Quaternion.Lerp(transform.rotation, lookRotation, Time.deltaTime * player.angularSpeed).eulerAngles;
+        Vector3 rotation = Quaternion.Lerp(transform.rotation, lookRotation, Time.deltaTime * agent.angularSpeed).eulerAngles;
 
         transform.rotation = Quaternion.Euler(0.0f, rotation.y, 0.0f);
     }

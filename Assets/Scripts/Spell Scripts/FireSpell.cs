@@ -35,7 +35,7 @@ public class FireSpell : SpellMovement
         {
             if(collidersWithinRange[count].gameObject.GetComponent<Entities>())
             {
-                collidersWithinRange[count].gameObject.GetComponent<EnemyScript>().applyDamage(damage);
+                collidersWithinRange[count].gameObject.GetComponent<EnemyScript>().TakeDamage(damage, "Fire");
             }
 
             count++;
@@ -51,7 +51,7 @@ public class FireSpell : SpellMovement
 
             EnemyScript target = collision.gameObject.GetComponent<EnemyScript>();
 
-            target.applyDamage(damage);
+            target.TakeDamage(damage, "Fire");
 
             FireDamage();
 
