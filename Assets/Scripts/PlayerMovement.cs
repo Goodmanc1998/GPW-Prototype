@@ -34,7 +34,7 @@ public class PlayerMovement : Entities
                 //cast circle spell here by instatiating spell object.
                 //Debug.Log("Circle");
 
-                Instantiate(waterSpell, spellSpawn.position, spellSpawn.rotation);
+                Instantiate(FireSpell, spellSpawn.position, spellSpawn.rotation);
 
             }else if (ShapeDrawn == "lightening")
             {
@@ -48,21 +48,7 @@ public class PlayerMovement : Entities
                 //Debug.Log("square");
                 Instantiate(groundSpell, spellSpawn.position, spellSpawn.rotation);
             }
-            else if (ShapeDrawn == "skull")
-            {
-                //cast skull spell here by instatiating spell object.
-                Debug.Log("skull");
-                Instantiate(FireSpell, spellSpawn.position, spellSpawn.rotation);
-
-            }
-            else if (ShapeDrawn == "lightning")
-            {
-                //cast lightning spell here by instatiating spell object.
-                Debug.Log("lightning");
-                Instantiate(speedBuff,gameObject.transform.position, Quaternion.identity);
-                agent.speed += 5;
-                speedBuffCounter += 1;
-            }
+            
         }
         else
         {
