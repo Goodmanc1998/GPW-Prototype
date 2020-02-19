@@ -10,6 +10,7 @@ public class AreaStart : MonoBehaviour
     public int waveNumber = 1; // The wave number that will be started when the player reaches this collider
 
     EnemySpawnManager manager;
+    bool started = false;
 
     private void Start()
     {
@@ -19,14 +20,15 @@ public class AreaStart : MonoBehaviour
             Debug.LogWarning("AreaStart collider must be of type Trigger. Setting isTrigger to true.");
             GetComponent<Collider>().isTrigger = true;
         }
+        gameObject.layer = 2;
     }
 
     private void OnTriggerEnter(Collider c)
     {
-        if (c.tag == playerTag)
+        if (c.tag == playerTag && !started)
         {
+            started = true;
             manager.StartWave(waveNumber - 1);
-            Debug.Log("Started Wave");
         }
     }
 }
