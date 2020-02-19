@@ -20059,7 +20059,7 @@ MonoBehaviour:
     type: 3}
   waterSpell: {fileID: 7033720853173906871, guid: 0217e34eda5bff94bb65fa47c3054cc8,
     type: 3}
-  groundSpell: {fileID: 1926935264743425830, guid: 1e52974ebe6900f43aac54026371d1aa,
+  groundSpell: {fileID: 1211848735058172307, guid: 119580189c49ecc478eac0c43051e3ae,
     type: 3}
   spellSpawn: {fileID: 372136813}
 --- !u!195 &1544748239
