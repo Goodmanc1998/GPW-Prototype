@@ -5,9 +5,7 @@ using UnityEngine.AI;
 
 public class PawnScript : Entities
 {
-    //Storing the players Transform, and Agent for movement
-    Transform player;
-    NavMeshAgent agent;
+    
 
     public PawnSpawnerScript pawnSpawner;
 
@@ -23,12 +21,6 @@ public class PawnScript : Entities
     protected override void Start()
     {
         base.Start();
-
-        if (player == null || agent == null)
-        {
-            player = GameObject.FindGameObjectWithTag("Player").transform;
-            agent = GetComponent<NavMeshAgent>();
-        }
 
         timeTillNextAttack = Time.time + timeBetweenAttack;
 
@@ -87,7 +79,8 @@ public class PawnScript : Entities
             yield return null;
         }
 
-        Debug.Log("Attack finished");
+        timeTillNextAttack = Time.time + timeBetweenAttack;
+
         attacking = false;
         agent.enabled = true;
     }

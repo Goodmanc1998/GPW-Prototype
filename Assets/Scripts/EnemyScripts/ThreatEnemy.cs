@@ -1,0 +1,59 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.AI;
+public class ThreatEnemy : Entities
+{
+    bool beginExploding;
+
+    public float distanceBeforeExploding;
+
+    public float timeUntilExplosion;
+    float timeOfExplosion;
+
+    public float explosionRanage;
+    public float explosionDamage;
+
+    // Start is called before the first frame update
+    protected override void Start()
+    {
+        base.Start();
+
+    }
+
+
+    // Update is called once per frame
+    void Update()
+    {
+        if(Vector3.Distance(player.position, transform.position) <= distanceBeforeExploding && beginExploding == false)
+        {
+            timeOfExplosion = Time.time + timeUntilExplosion;
+            beginExploding = true;
+            //Debug.Log("Starting Count Down");
+            
+        }
+        else
+        {
+            agent.SetDestination(player.position);
+        }
+
+        if(Time.time >= timeOfExplosion)
+        {
+            Explosion();
+        }
+
+        
+
+    }
+
+    void Explosion()
+    {
+        Debug.Log("Explosion");
+
+        if(Vector3.Distance(player.position, transform.position) <= explosionRanage)
+        {
+            player.GetComponent<Entities>().TakeDamage(explosionDamage, "Explosion");
+            Destroy(gameObject);
+        }
+    }
+}
