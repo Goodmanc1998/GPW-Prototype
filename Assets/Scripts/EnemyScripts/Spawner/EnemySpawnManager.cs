@@ -12,11 +12,7 @@ public class EnemySpawnManager : MonoBehaviour
     // Currently has no use
     public int enemySpawnLimit; // The maximum amount of enemies across all waves allowed to be present in the world, set to 0 for no limit (only applies to wave spawned enemies)
 
-    private void Start()
-    {
-        StartCoroutine(StartSpawning());
-    }
-
+    /*
     IEnumerator StartSpawning()
     {
         for (int i = 0; i < waves.Count; i++)
@@ -24,6 +20,12 @@ public class EnemySpawnManager : MonoBehaviour
             StartCoroutine(SpawnWave(waves[i]));
             if (i < waves.Count - 1) yield return new WaitForSeconds(waves[i + 1].waveStartTime - waves[i].waveStartTime);
         }
+    }
+    */
+
+    public void StartWave(int waveNumber)
+    {
+        StartCoroutine(SpawnWave(waves[waveNumber]));
     }
 
     IEnumerator SpawnWave(Wave wave)

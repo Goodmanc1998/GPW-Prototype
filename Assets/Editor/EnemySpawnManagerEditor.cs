@@ -91,15 +91,11 @@ public class EnemySpawnManagerEditor : Editor
                 EditorGUILayout.EndVertical();
             }
 
+            manager.waves[i].startTrigger = (AreaStart)EditorGUILayout.ObjectField(new GUIContent("Start Trigger"), manager.waves[i].startTrigger, typeof(AreaStart), true);
+
             manager.waves[i].enemy = (Entities)EditorGUILayout.ObjectField(new GUIContent("Enemy"), manager.waves[i].enemy, typeof(Entities), true);
 
             manager.waves[i].enemyAmount = EditorGUILayout.IntField("Enemy Amount", manager.waves[i].enemyAmount);
-
-            EditorGUILayout.BeginHorizontal();
-            EditorGUILayout.PrefixLabel("Time Wave Begins");
-            GUILayout.Label(string.Format("{0:0}:{1:00}", Mathf.FloorToInt(manager.waves[i].waveStartTime / 60), manager.waves[i].waveStartTime % 60), GUILayout.MaxWidth(40));
-            manager.waves[i].waveStartTime = GUILayout.HorizontalSlider(manager.waves[i].waveStartTime, 0, 300);
-            EditorGUILayout.EndHorizontal();
 
             EditorGUILayout.BeginHorizontal();
             EditorGUILayout.PrefixLabel("Estimated Wave Duration");

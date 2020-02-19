@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class AreaGate : MonoBehaviour
 {
-    public int waveNumber; // The wave number that will open this upon completion
+    public int waveNumber = 1; // The wave number that will open this upon completion
 
     EnemySpawnManager manager;
 
