@@ -25,7 +25,7 @@ public class PlayerMovement : Entities
     public GameObject groundSpell;
     public Transform spellSpawn;
 
-    public void castSpell(string ShapeDrawn,float percentMatch)
+    public void castSpell(LineRenderer GestureTransform,string ShapeDrawn,float percentMatch)
     {
         if(percentMatch >= 0.9f)
         {
@@ -34,7 +34,7 @@ public class PlayerMovement : Entities
                 //cast circle spell here by instatiating spell object.
                 //Debug.Log("Circle");
 
-                Instantiate(waterSpell, spellSpawn.position, spellSpawn.rotation);
+                Instantiate(FireSpell, spellSpawn.position, spellSpawn.rotation);
 
             }else if (ShapeDrawn == "lightening")
             {
@@ -46,23 +46,27 @@ public class PlayerMovement : Entities
             {
                 //cast square spell here by instatiating spell object.
                 //Debug.Log("square");
-                Instantiate(groundSpell, spellSpawn.position, spellSpawn.rotation);
+                //depth for rotating the wall correctly
+                float minusOneMid = GestureTransform.GetPosition((GestureTransform.positionCount / 2) - 1).z;
+                float plusOneMid = GestureTransform.GetPosition((GestureTransform.positionCount / 2) + 1).z;
+                Debug.Log(GestureTransform.positionCount);
+                for (int i = 0; i < GestureTransform.positionCount; i++)
+                {
+                    Instantiate(groundSpell, GestureTransform.GetPosition(i), Quaternion.Euler(0, 90, 0));
+                }
+                //if(minusOneMid < plusOneMid)
+                //{
+                //    Instantiate(groundSpell, GestureTransform.GetPosition(GestureTransform.positionCount / 2), Quaternion.Euler(0,90,0));
+                //    Debug.Log("cast here and the angle is still wrong");
+                //}else if (minusOneMid > plusOneMid)
+                //{
+                //    Instantiate(groundSpell, GestureTransform.GetPosition(GestureTransform.positionCount / 2), Quaternion.Euler(0, 0, 0));
+                //    Debug.Log("cast here and the angle is still wrong");
+                //}
+                
+                
             }
-            else if (ShapeDrawn == "skull")
-            {
-                //cast skull spell here by instatiating spell object.
-                Debug.Log("skull");
-                Instantiate(FireSpell, spellSpawn.position, spellSpawn.rotation);
-
-            }
-            else if (ShapeDrawn == "lightning")
-            {
-                //cast lightning spell here by instatiating spell object.
-                Debug.Log("lightning");
-                Instantiate(speedBuff,gameObject.transform.position, Quaternion.identity);
-                agent.speed += 5;
-                speedBuffCounter += 1;
-            }
+            
         }
         else
         {

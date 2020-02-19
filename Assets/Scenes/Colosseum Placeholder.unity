@@ -693,11 +693,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1479717892}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
-        type: 3}
-      propertyPath: m_Name
-      value: Colosseum_wall_str_cleaned (17)
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 496070789b4445f439fd44be55d81510,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -762,6 +757,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
+        type: 3}
+      propertyPath: m_Name
+      value: Colosseum_wall_str_cleaned (17)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 496070789b4445f439fd44be55d81510, type: 3}
@@ -3327,11 +3327,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1479717892}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
-        type: 3}
-      propertyPath: m_Name
-      value: Colosseum_wall_str_cleaned (12)
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 496070789b4445f439fd44be55d81510,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3396,6 +3391,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
+        type: 3}
+      propertyPath: m_Name
+      value: Colosseum_wall_str_cleaned (12)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 496070789b4445f439fd44be55d81510, type: 3}
@@ -3872,11 +3872,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1479717892}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
-        type: 3}
-      propertyPath: m_Name
-      value: Colosseum_wall_str_cleaned (20)
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 496070789b4445f439fd44be55d81510,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3941,6 +3936,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
+        type: 3}
+      propertyPath: m_Name
+      value: Colosseum_wall_str_cleaned (20)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 496070789b4445f439fd44be55d81510, type: 3}
@@ -4298,11 +4298,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1479717892}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
-        type: 3}
-      propertyPath: m_Name
-      value: Colosseum_wall_str_cleaned (9)
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 496070789b4445f439fd44be55d81510,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4367,6 +4362,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
+        type: 3}
+      propertyPath: m_Name
+      value: Colosseum_wall_str_cleaned (9)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 496070789b4445f439fd44be55d81510, type: 3}
@@ -4866,11 +4866,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1479717892}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
-        type: 3}
-      propertyPath: m_Name
-      value: Colosseum_wall_str_cleaned (15)
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 496070789b4445f439fd44be55d81510,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4935,6 +4930,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
+        type: 3}
+      propertyPath: m_Name
+      value: Colosseum_wall_str_cleaned (15)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 496070789b4445f439fd44be55d81510, type: 3}
@@ -6043,11 +6043,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1479717892}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
-        type: 3}
-      propertyPath: m_Name
-      value: Colosseum_wall_str_cleaned (16)
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 496070789b4445f439fd44be55d81510,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6112,6 +6107,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
+        type: 3}
+      propertyPath: m_Name
+      value: Colosseum_wall_str_cleaned (16)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 496070789b4445f439fd44be55d81510, type: 3}
@@ -6514,11 +6514,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1479717892}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
-        type: 3}
-      propertyPath: m_Name
-      value: Colosseum_wall_str_cleaned (13)
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 496070789b4445f439fd44be55d81510,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6583,6 +6578,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
+        type: 3}
+      propertyPath: m_Name
+      value: Colosseum_wall_str_cleaned (13)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 496070789b4445f439fd44be55d81510, type: 3}
@@ -7381,11 +7381,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1479717892}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
-        type: 3}
-      propertyPath: m_Name
-      value: Colosseum_wall_str_cleaned (5)
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 496070789b4445f439fd44be55d81510,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7450,6 +7445,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
+        type: 3}
+      propertyPath: m_Name
+      value: Colosseum_wall_str_cleaned (5)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 496070789b4445f439fd44be55d81510, type: 3}
@@ -16407,11 +16407,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1479717892}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
-        type: 3}
-      propertyPath: m_Name
-      value: Colosseum_wall_str_cleaned (2)
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 496070789b4445f439fd44be55d81510,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -16476,6 +16471,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
+        type: 3}
+      propertyPath: m_Name
+      value: Colosseum_wall_str_cleaned (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 496070789b4445f439fd44be55d81510, type: 3}
@@ -16564,11 +16564,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1479717892}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
-        type: 3}
-      propertyPath: m_Name
-      value: Colosseum_wall_str_cleaned (7)
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 496070789b4445f439fd44be55d81510,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -16633,6 +16628,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
+        type: 3}
+      propertyPath: m_Name
+      value: Colosseum_wall_str_cleaned (7)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 496070789b4445f439fd44be55d81510, type: 3}
@@ -17721,11 +17721,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1479717892}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
-        type: 3}
-      propertyPath: m_Name
-      value: Colosseum_wall_str_cleaned (19)
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 496070789b4445f439fd44be55d81510,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -17790,6 +17785,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
+        type: 3}
+      propertyPath: m_Name
+      value: Colosseum_wall_str_cleaned (19)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 496070789b4445f439fd44be55d81510, type: 3}
@@ -17894,11 +17894,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1479717892}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
-        type: 3}
-      propertyPath: m_Name
-      value: Colosseum_wall_str_cleaned (11)
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 496070789b4445f439fd44be55d81510,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -17963,6 +17958,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
+        type: 3}
+      propertyPath: m_Name
+      value: Colosseum_wall_str_cleaned (11)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 496070789b4445f439fd44be55d81510, type: 3}
@@ -18476,11 +18476,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1479717892}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
-        type: 3}
-      propertyPath: m_Name
-      value: Colosseum_wall_str_cleaned (18)
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 496070789b4445f439fd44be55d81510,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -18545,6 +18540,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
+        type: 3}
+      propertyPath: m_Name
+      value: Colosseum_wall_str_cleaned (18)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 496070789b4445f439fd44be55d81510, type: 3}
@@ -18947,11 +18947,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1479717892}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
-        type: 3}
-      propertyPath: m_Name
-      value: Colosseum_wall_str_cleaned
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 496070789b4445f439fd44be55d81510,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -19016,6 +19011,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
+        type: 3}
+      propertyPath: m_Name
+      value: Colosseum_wall_str_cleaned
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 496070789b4445f439fd44be55d81510, type: 3}
@@ -20053,13 +20053,13 @@ MonoBehaviour:
   weakness: 0
   targetRange: 10
   speedBuff: {fileID: 0}
-  FireSpell: {fileID: 6599201895962909512, guid: 75772c5a105c10d4498b4830bf617dd4,
+  FireSpell: {fileID: 5449359006027912479, guid: a53274d3da584b24994155c2db51baa0,
     type: 3}
   AirSpell: {fileID: 6888926045383392168, guid: 3b782e28cae7fff4793b22cb0a3e82d2,
     type: 3}
   waterSpell: {fileID: 7033720853173906871, guid: 0217e34eda5bff94bb65fa47c3054cc8,
     type: 3}
-  groundSpell: {fileID: 1926935264743425830, guid: 1e52974ebe6900f43aac54026371d1aa,
+  groundSpell: {fileID: 1211848735058172307, guid: 119580189c49ecc478eac0c43051e3ae,
     type: 3}
   spellSpawn: {fileID: 372136813}
 --- !u!195 &1544748239
@@ -21207,11 +21207,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1479717892}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
-        type: 3}
-      propertyPath: m_Name
-      value: Colosseum_wall_str_cleaned (8)
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 496070789b4445f439fd44be55d81510,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -21276,6 +21271,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
+        type: 3}
+      propertyPath: m_Name
+      value: Colosseum_wall_str_cleaned (8)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 496070789b4445f439fd44be55d81510, type: 3}
@@ -21701,11 +21701,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1479717892}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
-        type: 3}
-      propertyPath: m_Name
-      value: Colosseum_wall_str_cleaned (14)
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 496070789b4445f439fd44be55d81510,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -21770,6 +21765,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
+        type: 3}
+      propertyPath: m_Name
+      value: Colosseum_wall_str_cleaned (14)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 496070789b4445f439fd44be55d81510, type: 3}
@@ -24007,11 +24007,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1479717892}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
-        type: 3}
-      propertyPath: m_Name
-      value: Colosseum_wall_str_cleaned (21)
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 496070789b4445f439fd44be55d81510,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -24076,6 +24071,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
+        type: 3}
+      propertyPath: m_Name
+      value: Colosseum_wall_str_cleaned (21)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 496070789b4445f439fd44be55d81510, type: 3}
@@ -24164,11 +24164,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1479717892}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
-        type: 3}
-      propertyPath: m_Name
-      value: Colosseum_wall_str_cleaned (10)
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 496070789b4445f439fd44be55d81510,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -24233,6 +24228,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
+        type: 3}
+      propertyPath: m_Name
+      value: Colosseum_wall_str_cleaned (10)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 496070789b4445f439fd44be55d81510, type: 3}
@@ -26222,11 +26222,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1479717892}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
-        type: 3}
-      propertyPath: m_Name
-      value: Colosseum_wall_str_cleaned (4)
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 496070789b4445f439fd44be55d81510,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -26291,6 +26286,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
+        type: 3}
+      propertyPath: m_Name
+      value: Colosseum_wall_str_cleaned (4)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 496070789b4445f439fd44be55d81510, type: 3}
@@ -26379,11 +26379,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1479717892}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
-        type: 3}
-      propertyPath: m_Name
-      value: Colosseum_wall_str_cleaned (1)
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 496070789b4445f439fd44be55d81510,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -26448,6 +26443,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
+        type: 3}
+      propertyPath: m_Name
+      value: Colosseum_wall_str_cleaned (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 496070789b4445f439fd44be55d81510, type: 3}
@@ -26567,11 +26567,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1479717892}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
-        type: 3}
-      propertyPath: m_Name
-      value: Colosseum_wall_str_cleaned (6)
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 496070789b4445f439fd44be55d81510,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -26636,6 +26631,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
+        type: 3}
+      propertyPath: m_Name
+      value: Colosseum_wall_str_cleaned (6)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 496070789b4445f439fd44be55d81510, type: 3}
@@ -27921,11 +27921,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1479717892}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
-        type: 3}
-      propertyPath: m_Name
-      value: Colosseum_wall_str_cleaned (3)
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 496070789b4445f439fd44be55d81510,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -27990,6 +27985,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
+        type: 3}
+      propertyPath: m_Name
+      value: Colosseum_wall_str_cleaned (3)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 496070789b4445f439fd44be55d81510, type: 3}
