@@ -54,6 +54,8 @@ public class PlayerMovement : Entities
                 {
                     Instantiate(groundSpell, GestureTransform.GetPosition(i), Quaternion.Euler(0, 90, 0));
                 }
+                //deprecated was original process of spawn the ice wall but then moved onto the approach.!!
+                //LEFT here incase we could make use of this for any other reasons.
                 //if(minusOneMid < plusOneMid)
                 //{
                 //    Instantiate(groundSpell, GestureTransform.GetPosition(GestureTransform.positionCount / 2), Quaternion.Euler(0,90,0));
