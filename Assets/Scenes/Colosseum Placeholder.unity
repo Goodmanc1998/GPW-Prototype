@@ -693,11 +693,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1479717892}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
-        type: 3}
-      propertyPath: m_Name
-      value: Colosseum_wall_str_cleaned (17)
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 496070789b4445f439fd44be55d81510,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -762,6 +757,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
+        type: 3}
+      propertyPath: m_Name
+      value: Colosseum_wall_str_cleaned (17)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 496070789b4445f439fd44be55d81510, type: 3}
@@ -3327,11 +3327,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1479717892}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
-        type: 3}
-      propertyPath: m_Name
-      value: Colosseum_wall_str_cleaned (12)
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 496070789b4445f439fd44be55d81510,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3396,6 +3391,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
+        type: 3}
+      propertyPath: m_Name
+      value: Colosseum_wall_str_cleaned (12)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 496070789b4445f439fd44be55d81510, type: 3}
@@ -3872,11 +3872,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1479717892}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
-        type: 3}
-      propertyPath: m_Name
-      value: Colosseum_wall_str_cleaned (20)
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 496070789b4445f439fd44be55d81510,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3941,6 +3936,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
+        type: 3}
+      propertyPath: m_Name
+      value: Colosseum_wall_str_cleaned (20)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 496070789b4445f439fd44be55d81510, type: 3}
@@ -4298,11 +4298,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1479717892}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
-        type: 3}
-      propertyPath: m_Name
-      value: Colosseum_wall_str_cleaned (9)
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 496070789b4445f439fd44be55d81510,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4367,6 +4362,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
+        type: 3}
+      propertyPath: m_Name
+      value: Colosseum_wall_str_cleaned (9)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 496070789b4445f439fd44be55d81510, type: 3}
@@ -4866,11 +4866,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1479717892}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
-        type: 3}
-      propertyPath: m_Name
-      value: Colosseum_wall_str_cleaned (15)
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 496070789b4445f439fd44be55d81510,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4935,6 +4930,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
+        type: 3}
+      propertyPath: m_Name
+      value: Colosseum_wall_str_cleaned (15)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 496070789b4445f439fd44be55d81510, type: 3}
@@ -5309,9 +5309,9 @@ Camera:
     height: 768
   near clip plane: 0.01
   far clip plane: 33
-  field of view: 60
+  field of view: 45
   orthographic: 0
-  orthographic size: 5
+  orthographic size: 9
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -5548,36 +5548,6 @@ Transform:
   - {fileID: 61669948}
   - {fileID: 61669946}
   m_Father: {fileID: 302292019}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &372136812
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 372136813}
-  m_Layer: 0
-  m_Name: SpawnPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &372136813
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 372136812}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.44}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1544748244}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &373176075
@@ -6043,11 +6013,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1479717892}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
-        type: 3}
-      propertyPath: m_Name
-      value: Colosseum_wall_str_cleaned (16)
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 496070789b4445f439fd44be55d81510,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6112,6 +6077,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
+        type: 3}
+      propertyPath: m_Name
+      value: Colosseum_wall_str_cleaned (16)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 496070789b4445f439fd44be55d81510, type: 3}
@@ -6514,11 +6484,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1479717892}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
-        type: 3}
-      propertyPath: m_Name
-      value: Colosseum_wall_str_cleaned (13)
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 496070789b4445f439fd44be55d81510,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6583,6 +6548,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
+        type: 3}
+      propertyPath: m_Name
+      value: Colosseum_wall_str_cleaned (13)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 496070789b4445f439fd44be55d81510, type: 3}
@@ -7381,11 +7351,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1479717892}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
-        type: 3}
-      propertyPath: m_Name
-      value: Colosseum_wall_str_cleaned (5)
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 496070789b4445f439fd44be55d81510,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7450,6 +7415,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
+        type: 3}
+      propertyPath: m_Name
+      value: Colosseum_wall_str_cleaned (5)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 496070789b4445f439fd44be55d81510, type: 3}
@@ -15655,12 +15625,6 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0.011000001, z: 0}
   m_TimeToStationary: 0.5
---- !u!4 &1206503076 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 201ef7f0afac40a4da4a933d3356ded5,
-    type: 3}
-  m_PrefabInstance: {fileID: 1489646704}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1223815543
 GameObject:
   m_ObjectHideFlags: 0
@@ -16407,11 +16371,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1479717892}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
-        type: 3}
-      propertyPath: m_Name
-      value: Colosseum_wall_str_cleaned (2)
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 496070789b4445f439fd44be55d81510,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -16476,6 +16435,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
+        type: 3}
+      propertyPath: m_Name
+      value: Colosseum_wall_str_cleaned (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 496070789b4445f439fd44be55d81510, type: 3}
@@ -16564,11 +16528,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1479717892}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
-        type: 3}
-      propertyPath: m_Name
-      value: Colosseum_wall_str_cleaned (7)
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 496070789b4445f439fd44be55d81510,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -16633,6 +16592,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
+        type: 3}
+      propertyPath: m_Name
+      value: Colosseum_wall_str_cleaned (7)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 496070789b4445f439fd44be55d81510, type: 3}
@@ -17721,11 +17685,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1479717892}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
-        type: 3}
-      propertyPath: m_Name
-      value: Colosseum_wall_str_cleaned (19)
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 496070789b4445f439fd44be55d81510,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -17790,6 +17749,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
+        type: 3}
+      propertyPath: m_Name
+      value: Colosseum_wall_str_cleaned (19)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 496070789b4445f439fd44be55d81510, type: 3}
@@ -17894,11 +17858,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1479717892}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
-        type: 3}
-      propertyPath: m_Name
-      value: Colosseum_wall_str_cleaned (11)
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 496070789b4445f439fd44be55d81510,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -17963,6 +17922,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
+        type: 3}
+      propertyPath: m_Name
+      value: Colosseum_wall_str_cleaned (11)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 496070789b4445f439fd44be55d81510, type: 3}
@@ -18476,11 +18440,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1479717892}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
-        type: 3}
-      propertyPath: m_Name
-      value: Colosseum_wall_str_cleaned (18)
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 496070789b4445f439fd44be55d81510,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -18545,6 +18504,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
+        type: 3}
+      propertyPath: m_Name
+      value: Colosseum_wall_str_cleaned (18)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 496070789b4445f439fd44be55d81510, type: 3}
@@ -18947,11 +18911,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1479717892}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
-        type: 3}
-      propertyPath: m_Name
-      value: Colosseum_wall_str_cleaned
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 496070789b4445f439fd44be55d81510,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -19016,6 +18975,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
+        type: 3}
+      propertyPath: m_Name
+      value: Colosseum_wall_str_cleaned
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 496070789b4445f439fd44be55d81510, type: 3}
@@ -19140,115 +19104,6 @@ Transform:
   m_Father: {fileID: 703680218}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1489646704
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1544748244}
-    m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 201ef7f0afac40a4da4a933d3356ded5,
-        type: 3}
-      propertyPath: m_Name
-      value: doc_colour
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 201ef7f0afac40a4da4a933d3356ded5,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 201ef7f0afac40a4da4a933d3356ded5,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.968
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 201ef7f0afac40a4da4a933d3356ded5,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 201ef7f0afac40a4da4a933d3356ded5,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 201ef7f0afac40a4da4a933d3356ded5,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 201ef7f0afac40a4da4a933d3356ded5,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 201ef7f0afac40a4da4a933d3356ded5,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 201ef7f0afac40a4da4a933d3356ded5,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 201ef7f0afac40a4da4a933d3356ded5,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 201ef7f0afac40a4da4a933d3356ded5,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 201ef7f0afac40a4da4a933d3356ded5,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 201ef7f0afac40a4da4a933d3356ded5,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 201ef7f0afac40a4da4a933d3356ded5,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: -4216859302048453862, guid: 201ef7f0afac40a4da4a933d3356ded5,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: -9038582491841374055, guid: 201ef7f0afac40a4da4a933d3356ded5,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: b0c1bddf40a476b429cd655a7835398c, type: 2}
-    - target: {fileID: -7410213101905906703, guid: 201ef7f0afac40a4da4a933d3356ded5,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: b0c1bddf40a476b429cd655a7835398c, type: 2}
-    - target: {fileID: -2160538185192768936, guid: 201ef7f0afac40a4da4a933d3356ded5,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 8e9cc448d15a8be47b4e32302051d305, type: 2}
-    - target: {fileID: 1848274782026017801, guid: 201ef7f0afac40a4da4a933d3356ded5,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: b0c1bddf40a476b429cd655a7835398c, type: 2}
-    - target: {fileID: 1848274782026017801, guid: 201ef7f0afac40a4da4a933d3356ded5,
-        type: 3}
-      propertyPath: m_Materials.Array.data[1]
-      value: 
-      objectReference: {fileID: 2100000, guid: b0c1bddf40a476b429cd655a7835398c, type: 2}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 201ef7f0afac40a4da4a933d3356ded5, type: 3}
 --- !u!1 &1492944310
 GameObject:
   m_ObjectHideFlags: 0
@@ -20002,200 +19857,12 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0.004, z: 0}
   m_TimeToStationary: 0.5
---- !u!1 &1544748237
+--- !u!1 &1544748237 stripped
 GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1544748244}
-  - component: {fileID: 1544748243}
-  - component: {fileID: 1544748242}
-  - component: {fileID: 1544748241}
-  - component: {fileID: 1544748240}
-  - component: {fileID: 1544748239}
-  - component: {fileID: 1544748238}
-  - component: {fileID: 1544748245}
-  m_Layer: 0
-  m_Name: Player
-  m_TagString: Player
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1544748238
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1544748237}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c71d100f2633f2499d11f3286e859c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wave:
-    spawnpoints: []
-    enemy: {fileID: 0}
-    startTrigger: {fileID: 0}
-    enemyAmount: 10
-    difficulty: 1
-    averageSpawningDuration: 5
-    spawnDurationRandomness: 0
-    enemiesRemaining: 0
-    spawnpointColour: {r: 0, g: 0, b: 0, a: 0}
-    showSpawnpoints: 0
-  startingHealth: 100
-  health: 0
-  movementSpeed: 5
-  angularSpeed: 180
-  acceleration: 8
-  stoppingDistance: 0.5
-  weakness: 0
-  targetRange: 10
-  speedBuff: {fileID: 0}
-  FireSpell: {fileID: 5449359006027912479, guid: a53274d3da584b24994155c2db51baa0,
+  m_CorrespondingSourceObject: {fileID: 7536951372367297129, guid: 650224ca304bbdf40b0819ff90561c5e,
     type: 3}
-  AirSpell: {fileID: 6888926045383392168, guid: 3b782e28cae7fff4793b22cb0a3e82d2,
-    type: 3}
-  waterSpell: {fileID: 7033720853173906871, guid: 0217e34eda5bff94bb65fa47c3054cc8,
-    type: 3}
-  groundSpell: {fileID: 1211848735058172307, guid: 119580189c49ecc478eac0c43051e3ae,
-    type: 3}
-  spellSpawn: {fileID: 372136813}
---- !u!195 &1544748239
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_PrefabInstance: {fileID: 7536951373238797988}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1544748237}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 5
-  m_Acceleration: 4
-  avoidancePriority: 50
-  m_AngularSpeed: 180
-  m_StoppingDistance: 0.5
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 1
-  m_WalkableMask: 5
-  m_ObstacleAvoidanceType: 4
---- !u!136 &1544748240
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1544748237}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &1544748241
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1544748237}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: bff4abd80809a2143b988975297cc199, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!54 &1544748242
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1544748237}
-  serializedVersion: 2
-  m_Mass: 10
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 112
-  m_CollisionDetection: 2
---- !u!33 &1544748243
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1544748237}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &1544748244
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1544748237}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 372136813}
-  - {fileID: 1206503076}
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!208 &1544748245
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1544748237}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 0
-  m_Extents: {x: 0.5, y: 1, z: 0.5}
-  m_MoveThreshold: 0.1
-  m_Carve: 0
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: 0.5
 --- !u!1 &1554193170
 GameObject:
   m_ObjectHideFlags: 0
@@ -21211,11 +20878,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1479717892}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
-        type: 3}
-      propertyPath: m_Name
-      value: Colosseum_wall_str_cleaned (8)
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 496070789b4445f439fd44be55d81510,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -21280,6 +20942,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
+        type: 3}
+      propertyPath: m_Name
+      value: Colosseum_wall_str_cleaned (8)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 496070789b4445f439fd44be55d81510, type: 3}
@@ -21705,11 +21372,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1479717892}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
-        type: 3}
-      propertyPath: m_Name
-      value: Colosseum_wall_str_cleaned (14)
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 496070789b4445f439fd44be55d81510,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -21774,6 +21436,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
+        type: 3}
+      propertyPath: m_Name
+      value: Colosseum_wall_str_cleaned (14)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 496070789b4445f439fd44be55d81510, type: 3}
@@ -24011,11 +23678,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1479717892}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
-        type: 3}
-      propertyPath: m_Name
-      value: Colosseum_wall_str_cleaned (21)
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 496070789b4445f439fd44be55d81510,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -24080,6 +23742,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
+        type: 3}
+      propertyPath: m_Name
+      value: Colosseum_wall_str_cleaned (21)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 496070789b4445f439fd44be55d81510, type: 3}
@@ -24168,11 +23835,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1479717892}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
-        type: 3}
-      propertyPath: m_Name
-      value: Colosseum_wall_str_cleaned (10)
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 496070789b4445f439fd44be55d81510,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -24237,6 +23899,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
+        type: 3}
+      propertyPath: m_Name
+      value: Colosseum_wall_str_cleaned (10)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 496070789b4445f439fd44be55d81510, type: 3}
@@ -26226,11 +25893,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1479717892}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
-        type: 3}
-      propertyPath: m_Name
-      value: Colosseum_wall_str_cleaned (4)
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 496070789b4445f439fd44be55d81510,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -26295,6 +25957,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
+        type: 3}
+      propertyPath: m_Name
+      value: Colosseum_wall_str_cleaned (4)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 496070789b4445f439fd44be55d81510, type: 3}
@@ -26383,11 +26050,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1479717892}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
-        type: 3}
-      propertyPath: m_Name
-      value: Colosseum_wall_str_cleaned (1)
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 496070789b4445f439fd44be55d81510,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -26452,6 +26114,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
+        type: 3}
+      propertyPath: m_Name
+      value: Colosseum_wall_str_cleaned (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 496070789b4445f439fd44be55d81510, type: 3}
@@ -26571,11 +26238,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1479717892}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
-        type: 3}
-      propertyPath: m_Name
-      value: Colosseum_wall_str_cleaned (6)
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 496070789b4445f439fd44be55d81510,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -26640,6 +26302,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
+        type: 3}
+      propertyPath: m_Name
+      value: Colosseum_wall_str_cleaned (6)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 496070789b4445f439fd44be55d81510, type: 3}
@@ -27925,11 +27592,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1479717892}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
-        type: 3}
-      propertyPath: m_Name
-      value: Colosseum_wall_str_cleaned (3)
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 496070789b4445f439fd44be55d81510,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -27994,6 +27656,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 496070789b4445f439fd44be55d81510,
+        type: 3}
+      propertyPath: m_Name
+      value: Colosseum_wall_str_cleaned (3)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 496070789b4445f439fd44be55d81510, type: 3}
@@ -28546,6 +28213,75 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5161416675341669602}
   m_Mesh: {fileID: -3758573805739257388, guid: 459150d8767d35b429865c68d40ebad8, type: 3}
+--- !u!1001 &7536951373238797988
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7536951372367297129, guid: 650224ca304bbdf40b0819ff90561c5e,
+        type: 3}
+      propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7536951372367297136, guid: 650224ca304bbdf40b0819ff90561c5e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7536951372367297136, guid: 650224ca304bbdf40b0819ff90561c5e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7536951372367297136, guid: 650224ca304bbdf40b0819ff90561c5e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7536951372367297136, guid: 650224ca304bbdf40b0819ff90561c5e,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7536951372367297136, guid: 650224ca304bbdf40b0819ff90561c5e,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7536951372367297136, guid: 650224ca304bbdf40b0819ff90561c5e,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7536951372367297136, guid: 650224ca304bbdf40b0819ff90561c5e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7536951372367297136, guid: 650224ca304bbdf40b0819ff90561c5e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7536951372367297136, guid: 650224ca304bbdf40b0819ff90561c5e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7536951372367297136, guid: 650224ca304bbdf40b0819ff90561c5e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7536951372367297136, guid: 650224ca304bbdf40b0819ff90561c5e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 650224ca304bbdf40b0819ff90561c5e, type: 3}
 --- !u!4 &7969590478922959991
 Transform:
   m_ObjectHideFlags: 0

@@ -33,13 +33,14 @@ public class PlayerMovement : Entities
             {
                 //cast circle spell here by instatiating spell object.
                 //Debug.Log("Circle");
-
+                transform.LookAt(GestureTransform.GetPosition(GestureTransform.positionCount-1));
                 Instantiate(FireSpell, spellSpawn.position, spellSpawn.rotation);
 
             }else if (ShapeDrawn == "lightening")
             {
                 //cast triangle spell here by instatiating spell object.
                 //Debug.Log("triangle");
+                transform.LookAt(GestureTransform.GetPosition(GestureTransform.positionCount - 1));
                 Instantiate(AirSpell, spellSpawn.position, spellSpawn.rotation);
             }
             else if (ShapeDrawn == "arc")

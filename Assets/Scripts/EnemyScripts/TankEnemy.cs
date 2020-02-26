@@ -27,7 +27,7 @@ public class TankEnemy : Entities
         
         if(Vector3.Distance(player.position, transform.position) <= rangeOfGrab && Time.time >= timeTillNextGrab)
         {
-            StartCoroutine(Attack());
+            //StartCoroutine(Attack());
         }
         else
         {
