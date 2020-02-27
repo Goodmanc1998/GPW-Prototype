@@ -27,9 +27,9 @@ public class PlayerMovement : Entities
 
     public void castSpell(LineRenderer GestureTransform,string ShapeDrawn,float percentMatch)
     {
-        if(percentMatch >= 0.9f)
+        if(percentMatch >= 0.8f)
         {
-            if(ShapeDrawn == "line")
+            if(ShapeDrawn == "line" && percentMatch >=0.9f)
             {
                 //cast circle spell here by instatiating spell object.
                 //Debug.Log("Circle");
