@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 5896912929952776827}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.7, z: 5.82}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -106,14 +106,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96723d5a6c6296b4c84cf5adde8ad98a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  agent: {fileID: 0}
   wave:
     spawnpoints: []
     enemy: {fileID: 0}
+    startTrigger: {fileID: 0}
     enemyAmount: 10
     difficulty: 1
-    waveStartTime: 0
     averageSpawningDuration: 5
     spawnDurationRandomness: 0
     enemiesRemaining: 0

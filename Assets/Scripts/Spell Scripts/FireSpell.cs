@@ -45,15 +45,15 @@ public class FireSpell : SpellMovement
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.GetComponent<EnemyScript>() != null)
+        if (collision.gameObject.GetComponent<Entities>() != null && collision.gameObject.tag != "Player")
         {
             Debug.Log("Collision Enemy");
 
-            EnemyScript target = collision.gameObject.GetComponent<EnemyScript>();
+            Entities target = collision.gameObject.GetComponent<Entities>();
 
             target.TakeDamage(damage, "Fire");
 
-            FireDamage();
+            //FireDamage();
 
             Destroy(gameObject);
 

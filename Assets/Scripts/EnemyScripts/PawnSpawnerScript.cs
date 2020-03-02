@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class PawnSpawnerScript : Entities
 {
-
+    
     //Storing the players Transform, and Agent for movement
     Transform player;
     NavMeshAgent agent;

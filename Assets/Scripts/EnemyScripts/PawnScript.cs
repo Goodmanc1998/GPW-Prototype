@@ -16,6 +16,8 @@ public class PawnScript : Entities
     public float timeBetweenAttack;
     float timeTillNextAttack;
 
+    Material material;
+
 
     // Start is called before the first frame update
     protected override void Start()
@@ -24,6 +26,8 @@ public class PawnScript : Entities
 
         timeTillNextAttack = Time.time + timeBetweenAttack;
 
+        material = GetComponent<Renderer>().material;
+
     }
 
     // Update is called once per frame
@@ -31,6 +35,7 @@ public class PawnScript : Entities
     {
         if(attacking == false)
         {
+            agent.enabled = true;
             agent.SetDestination(player.position);
         }
 
@@ -45,6 +50,7 @@ public class PawnScript : Entities
         if(dead)
         {
             pawnSpawner.PawnDied();
+            material.color = Color.green;
         }
         
     }
@@ -53,7 +59,7 @@ public class PawnScript : Entities
     {
         agent.enabled = false;
         attacking = true;
-        Debug.Log("Attacking");
+        //Debug.Log("Attacking");
 
         Vector3 startingAttackPosition = transform.position;
         Vector3 dirToTarget = (player.position - transform.position).normalized;

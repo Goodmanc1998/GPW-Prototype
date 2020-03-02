@@ -20,8 +20,7 @@ public class PlayerMovement : Entities
     public Transform speedBuff;
 
     public GameObject FireSpell;
-    public GameObject AirSpell;
-    public GameObject waterSpell;
+    public GameObject LightningSpell;
     public GameObject groundSpell;
     public Transform spellSpawn;
 
@@ -41,7 +40,7 @@ public class PlayerMovement : Entities
                 //cast triangle spell here by instatiating spell object.
                 //Debug.Log("triangle");
                 transform.LookAt(GestureTransform.GetPosition(GestureTransform.positionCount - 1));
-                Instantiate(AirSpell, spellSpawn.position, spellSpawn.rotation);
+                Instantiate(LightningSpell, spellSpawn.position, spellSpawn.rotation);
             }
             else if (ShapeDrawn == "arc")
             {
@@ -112,7 +111,7 @@ public class PlayerMovement : Entities
 
                 Vector3 hitPoint = hit.point;
 
-                if(hit.collider.gameObject.name == "Terrain")
+                if(hit.collider.gameObject.tag == "Platform")
                 {
                     agent.SetDestination(hitPoint);
                 }
