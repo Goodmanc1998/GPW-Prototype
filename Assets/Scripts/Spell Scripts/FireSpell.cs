@@ -5,12 +5,14 @@ using UnityEngine;
 public class FireSpell : SpellMovement
 {
     public int damage;
-    public float fireRange;
+    public int totalCollisions;
+    int currentCollisions;
 
     // Start is called before the first frame update
     void Start()
     {
         Destroy(gameObject, lifeTime);
+
     }
 
     // Update is called once per frame
@@ -21,31 +23,12 @@ public class FireSpell : SpellMovement
 
     public override void Movement()
     {
-        GetComponent<Rigidbody>().transform.position += (GetComponent<Rigidbody>().transform.forward * speed )* Time.deltaTime;
-    }
-
-    public void FireDamage()
-    {
-
-        Collider[] collidersWithinRange = Physics.OverlapSphere(transform.position, fireRange);
-
-        int count = 0;
-
-        while (count < collidersWithinRange.Length)
-        {
-            if(collidersWithinRange[count].gameObject.GetComponent<Entities>())
-            {
-                collidersWithinRange[count].gameObject.GetComponent<EnemyScript>().TakeDamage(damage, "Fire");
-            }
-
-            count++;
-        }
-
+        transform.position += (transform.forward * speed )* Time.deltaTime;
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.GetComponent<Entities>() != null && collision.gameObject.tag != "Player")
+        if (collision.gameObject.GetComponent<Entities>() == true && collision.gameObject.tag == "Target")
         {
             Debug.Log("Collision Enemy");
 
@@ -55,9 +38,18 @@ public class FireSpell : SpellMovement
 
             //FireDamage();
 
-            Destroy(gameObject);
+            currentCollisions++; 
+
+            if(currentCollisions == totalCollisions)
+            {
+                Destroy(this.gameObject);
+
+            }
+
 
         }
     }
+
+
 
 }

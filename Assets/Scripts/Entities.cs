@@ -62,13 +62,20 @@ public class Entities : MonoBehaviour
 
         if(damageIn >= health)
         {
+            health -= damageIn;
+
             dead = true;
+
+            Destroy(this.gameObject);
+
 
             // Once the enemy is declared dead, tell the wave an enemy has died if there is one
             if (wave != null)
             {
                 wave.EnemyKilled();
             }
+
+
         }
         else
         {
