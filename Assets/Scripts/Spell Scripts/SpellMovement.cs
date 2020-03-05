@@ -9,7 +9,7 @@ public class SpellMovement : MonoBehaviour
 
     public virtual void Movement()
     {
-        GetComponent<Rigidbody>().transform.position += GetComponent<Rigidbody>().transform.forward * Time.deltaTime;
+        transform.position += (transform.forward * speed) * Time.deltaTime;
     }
 
 }

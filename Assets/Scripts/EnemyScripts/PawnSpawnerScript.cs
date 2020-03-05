@@ -6,9 +6,6 @@ using UnityEngine.AI;
 public class PawnSpawnerScript : Entities
 {
     
-    //Storing the players Transform, and Agent for movement
-    Transform player;
-    NavMeshAgent agent;
 
     //Float to store distance that the player must be in to run away
     public float runAwayDistance;
@@ -30,12 +27,6 @@ public class PawnSpawnerScript : Entities
     protected override void Start()
     {
         base.Start();
-        
-        if(player == null || agent == null)
-        {
-            player = GameObject.FindGameObjectWithTag("Player").transform;
-            agent = GetComponent<NavMeshAgent>();
-        }
 
         timeTillNextSpawn = Time.time + timeBetweenSpawns;
 

@@ -6,7 +6,6 @@ using UnityEngine.AI;
 public class PlayerMovement : Entities
 {
     Camera viewCamera;
-    NavMeshAgent agent;
 
     GameObject targetEnemy;
     public float targetRange;
@@ -32,15 +31,24 @@ public class PlayerMovement : Entities
             {
                 //cast circle spell here by instatiating spell object.
                 //Debug.Log("Circle");
-                transform.LookAt(GestureTransform.GetPosition(GestureTransform.positionCount-1));
-                Instantiate(FireSpell, spellSpawn.position, spellSpawn.rotation);
+                //transform.LookAt(GestureTransform.GetPosition(GestureTransform.positionCount-1));
 
-            }else if (ShapeDrawn == "lightening")
+                transform.LookAt(new Vector3(GestureTransform.GetPosition(GestureTransform.positionCount - 1).x, transform.position.y, GestureTransform.GetPosition(GestureTransform.positionCount - 1).z));
+
+
+                Instantiate(FireSpell, spellSpawn.position, transform.localRotation);
+
+                Debug.Log(transform.localRotation);
+                Debug.Log(GestureTransform.GetPosition(GestureTransform.positionCount - 1));
+
+
+            }
+            else if (ShapeDrawn == "lightening")
             {
                 //cast triangle spell here by instatiating spell object.
                 //Debug.Log("triangle");
                 transform.LookAt(GestureTransform.GetPosition(GestureTransform.positionCount - 1));
-                Instantiate(LightningSpell, spellSpawn.position, spellSpawn.rotation);
+                Instantiate(LightningSpell, spellSpawn.position, spellSpawn.localRotation);
             }
             else if (ShapeDrawn == "arc")
             {
@@ -83,8 +91,6 @@ public class PlayerMovement : Entities
         base.Start();
 
         viewCamera = Camera.main;
-
-        agent = GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
