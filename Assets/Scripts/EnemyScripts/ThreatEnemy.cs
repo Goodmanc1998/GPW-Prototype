@@ -54,9 +54,6 @@ public class ThreatEnemy : Entities
 
     IEnumerator Explosion()
     {
-
-        material.color = Color.black;
-
         yield return new WaitForSeconds(timeUntilExplosion);
 
         if (Vector3.Distance(player.position, transform.position) <= explosionRanage)
