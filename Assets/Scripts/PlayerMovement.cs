@@ -49,6 +49,7 @@ public class PlayerMovement : Entities
                 //Debug.Log("triangle");
                 transform.LookAt(GestureTransform.GetPosition(GestureTransform.positionCount - 1));
                 Instantiate(LightningSpell, spellSpawn.position, spellSpawn.localRotation);
+                Debug.Log("cast lightening");
             }
             else if (ShapeDrawn == "arc")
             {
