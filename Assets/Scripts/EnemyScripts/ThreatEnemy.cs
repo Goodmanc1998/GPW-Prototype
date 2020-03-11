@@ -14,11 +14,14 @@ public class ThreatEnemy : Entities
     public float explosionRanage;
     public float explosionDamage;
 
+    Material material;
+
     // Start is called before the first frame update
     protected override void Start()
     {
         base.Start();
 
+        material = GetComponent<Renderer>().material;
     }
 
 
@@ -39,18 +42,21 @@ public class ThreatEnemy : Entities
 
         if(Time.time >= timeOfExplosion)
         {
-            Explosion();
+            
+
+            StartCoroutine(Explosion());
         }
 
         
 
     }
 
-    void Explosion()
-    {
-        Debug.Log("Explosion");
 
-        if(Vector3.Distance(player.position, transform.position) <= explosionRanage)
+    IEnumerator Explosion()
+    {
+        yield return new WaitForSeconds(timeUntilExplosion);
+
+        if (Vector3.Distance(player.position, transform.position) <= explosionRanage)
         {
             player.GetComponent<Entities>().TakeDamage(explosionDamage, "Explosion");
             Destroy(gameObject);

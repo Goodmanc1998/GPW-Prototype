@@ -14,14 +14,14 @@ public class CameraFollow : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        transform.position = new Vector3(player.transform.position.x + sideOffset, (player.transform.position.y + 1) + heightOffset, player.transform.position.z + forawrdOffset);
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        Vector3 newCameraPosition = new Vector3(player.transform.position.x + sideOffset, player.transform.position.y + heightOffset, player.transform.position.z + forawrdOffset);
+        Vector3 newCameraPosition = new Vector3((player.transform.position.x + 14) + sideOffset, (player.transform.position.y+ 20) + heightOffset, (player.transform.position.z+1-12+20) + forawrdOffset);
 
         transform.position = Vector3.Lerp(transform.position, newCameraPosition, delay);
         
