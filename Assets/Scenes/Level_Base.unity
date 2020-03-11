@@ -3920,7 +3920,7 @@ Camera:
     width: 1920
     height: 1080
   near clip plane: 0.01
-  far clip plane: 50
+  far clip plane: 65
   field of view: 50
   orthographic: 0
   orthographic size: 8
@@ -3946,7 +3946,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1298118366}
-  m_LocalRotation: {x: 0.27059805, y: -0.6532815, z: 0.27059805, w: 0.6532815}
+  m_LocalRotation: {x: -0.17670354, y: 0.8194912, z: -0.33944437, w: -0.42660013}
   m_LocalPosition: {x: -2.12, y: 55.72, z: -49.33}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -3954,7 +3954,7 @@ Transform:
   - {fileID: 596707164}
   m_Father: {fileID: 0}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 45, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 45, y: 235, z: 0}
 --- !u!114 &1298118371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4202,6 +4202,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1298118370}
     m_Modifications:
+    - target: {fileID: 100000, guid: 971129baafd304455a111daa5207b8a1, type: 3}
+      propertyPath: m_Name
+      value: GestureOnScreen
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 971129baafd304455a111daa5207b8a1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.12
@@ -4245,10 +4249,6 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 971129baafd304455a111daa5207b8a1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 971129baafd304455a111daa5207b8a1, type: 3}
-      propertyPath: m_Name
-      value: GestureOnScreen
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 971129baafd304455a111daa5207b8a1, type: 3}
@@ -5275,8 +5275,7 @@ MonoBehaviour:
   speedBuff: {fileID: 0}
   FireSpell: {fileID: 6599201895962909512, guid: 75772c5a105c10d4498b4830bf617dd4,
     type: 3}
-  LightningSpell: {fileID: 3590606600384848729, guid: cee465b050f18e449847d3e4595079d4,
-    type: 3}
+  LightningSpell: {fileID: 0}
   groundSpell: {fileID: 1211848735058172307, guid: 119580189c49ecc478eac0c43051e3ae,
     type: 3}
   spellSpawn: {fileID: 1390320711}

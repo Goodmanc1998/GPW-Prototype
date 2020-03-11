@@ -113,7 +113,7 @@ public class DrawToScreen : MonoBehaviour
                 Ray mouseRay = Camera.main.ScreenPointToRay(virtualKeyPosition);
                 //set the gesture y height using done this way incase of player stading on object etc it will grab the mouse one in screen space then minus 13 give us middle of the player character.
                 Vector2 yPos = Camera.main.ScreenToWorldPoint(virtualKeyPosition);
-                currentGestureLineRenderer.SetPosition(vertexCount - 1, new Vector3(mouseRay.GetPoint(dis2Plyr).x,yPos.y - 20, mouseRay.GetPoint(dis2Plyr).z));
+                currentGestureLineRenderer.SetPosition(vertexCount - 1, new Vector3(mouseRay.GetPoint(dis2Plyr).x,yPos.y - 19, mouseRay.GetPoint(dis2Plyr).z));
                 
             }
             if(Input.GetMouseButtonUp(0))
