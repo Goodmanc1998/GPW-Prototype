@@ -16,7 +16,6 @@ public class PawnScript : Entities
     public float timeBetweenAttack;
     float timeTillNextAttack;
 
-    Material material;
 
 
     // Start is called before the first frame update
@@ -25,8 +24,6 @@ public class PawnScript : Entities
         base.Start();
 
         timeTillNextAttack = Time.time + timeBetweenAttack;
-
-        material = GetComponent<Renderer>().material;
 
     }
 
@@ -47,10 +44,12 @@ public class PawnScript : Entities
             }
         }
 
-        if(dead)
+        if(dead || health < 0)
         {
-            pawnSpawner.PawnDied();
-            material.color = Color.green;
+            if(pawnSpawner != null)
+                pawnSpawner.PawnDied();
+
+            Destroy(this.gameObject);
         }
         
     }

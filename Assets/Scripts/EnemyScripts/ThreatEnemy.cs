@@ -47,7 +47,11 @@ public class ThreatEnemy : Entities
             StartCoroutine(Explosion());
         }
 
-        
+        if (dead)
+        {
+            Destroy(this.gameObject);
+        }
+
 
     }
 

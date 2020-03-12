@@ -20,7 +20,7 @@ public class PawnSpawnerScript : Entities
     //Int to store max amount of pawns
     public int maxAmountToSpawn;
 
-    int currentSpawned;
+    public int currentSpawned;
 
 
     // Start is called before the first frame update
@@ -47,6 +47,11 @@ public class PawnSpawnerScript : Entities
             SpawnPawn();
             //Debug.Log("Spawning");
 
+        }
+
+        if (dead)
+        {
+            Destroy(this.gameObject);
         }
     }
 

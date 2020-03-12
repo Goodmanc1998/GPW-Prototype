@@ -19,15 +19,23 @@ public class PlayerMovement : Entities
     public Transform speedBuff;
 
     public GameObject FireSpell;
+    public int maxFireSpell;
+    int currentFireSpell;
+
     public GameObject LightningSpell;
+    public int maxLightingSpell;
+    int currentLightingSpell;
+
     public GameObject groundSpell;
     public Transform spellSpawn;
+
+    public GameObject healthBar;
 
     public void castSpell(LineRenderer GestureTransform,string ShapeDrawn,float percentMatch)
     {
         if(percentMatch >= 0.8f)
         {
-            if(ShapeDrawn == "line" && percentMatch >=0.9f)
+            if(ShapeDrawn == "line" && percentMatch >=0.9f && currentFireSpell < maxFireSpell)
             {
                 //cast circle spell here by instatiating spell object.
                 //Debug.Log("Circle");
@@ -41,15 +49,19 @@ public class PlayerMovement : Entities
                 Debug.Log(transform.localRotation);
                 Debug.Log(GestureTransform.GetPosition(GestureTransform.positionCount - 1));
 
+                currentFireSpell++;
+
 
             }
-            else if (ShapeDrawn == "lightening")
+            else if (ShapeDrawn == "lightening" && currentLightingSpell < maxFireSpell)
             {
                 //cast triangle spell here by instatiating spell object.
                 //Debug.Log("triangle");
                 transform.LookAt(GestureTransform.GetPosition(GestureTransform.positionCount - 1));
                 Instantiate(LightningSpell, spellSpawn.position, spellSpawn.localRotation);
                 Debug.Log("cast lightening");
+
+                currentLightingSpell++;
             }
             else if (ShapeDrawn == "arc")
             {
@@ -97,7 +109,9 @@ public class PlayerMovement : Entities
     // Update is called once per frame
     void Update()
     {
-        
+
+        healthBar.GetComponent<RectTransform>().sizeDelta = new Vector2(health, 100);
+
         if(speedBuffCounter >= 1)
         {
             speedBuffCounter++;
@@ -176,6 +190,16 @@ public class PlayerMovement : Entities
         {
             targetEnemy = null;
         }
+    }
+
+    public void RemoveFireSpell()
+    {
+        currentFireSpell--;
+    }
+
+    public void RemoveLightingSpell()
+    {
+        currentLightingSpell--;
     }
 
 

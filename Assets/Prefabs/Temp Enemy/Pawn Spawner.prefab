@@ -144,7 +144,8 @@ MonoBehaviour:
   pawnEnemy: {fileID: 2825201350892901495, guid: e343e6bca32db0b4f8f5670d5cc9e4f3,
     type: 3}
   timeBetweenSpawns: 1
-  maxAmountToSpawn: 5
+  maxAmountToSpawn: 3
+  currentSpawned: 0
 --- !u!54 &-566418399916445137
 Rigidbody:
   m_ObjectHideFlags: 0

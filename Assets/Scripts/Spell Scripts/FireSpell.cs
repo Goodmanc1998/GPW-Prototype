@@ -5,8 +5,8 @@ using UnityEngine;
 public class FireSpell : SpellMovement
 {
     public int damage;
-    public int totalCollisions;
-    int currentCollisions;
+    public int AOERange;
+
 
     // Start is called before the first frame update
     void Start()
@@ -28,28 +28,45 @@ public class FireSpell : SpellMovement
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.GetComponent<Entities>() == true && collision.gameObject.tag == "Target")
+        if (collision.gameObject.GetComponent<Entities>() == true && collision.gameObject.tag != "Player")
         {
-            Debug.Log("Collision Enemy");
-
             Entities target = collision.gameObject.GetComponent<Entities>();
 
             target.TakeDamage(damage, "Fire");
 
-            //FireDamage();
-
-            currentCollisions++; 
-
-            if(currentCollisions == totalCollisions)
-            {
-                Destroy(this.gameObject);
-
-            }
-
+            FireAOE();
 
         }
+
     }
 
+    public void FireAOE()
+    {
+
+        Collider[] collidersWithinRange = Physics.OverlapSphere(transform.position, AOERange);
+
+        int count = 0;
+
+        while (count < collidersWithinRange.Length)
+        {
+            if (collidersWithinRange[count].gameObject.GetComponent<Entities>() && collidersWithinRange[count].gameObject.tag != "Player")
+            {
+                collidersWithinRange[count].gameObject.GetComponent<Entities>().TakeDamage(damage, "Fire");
+            }
+
+            count++;
+        }
+
+        Destroy(this.gameObject);
+
+    }
+
+    private void OnDestroy()
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+
+        player.GetComponent<PlayerMovement>().RemoveFireSpell();
+    }
 
 
 }

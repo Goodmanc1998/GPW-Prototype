@@ -106,5 +106,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
-  damage: 4
+  damage: 2
   direction: {x: 0, y: 0, z: 0}

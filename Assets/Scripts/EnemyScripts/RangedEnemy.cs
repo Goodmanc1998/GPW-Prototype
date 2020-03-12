@@ -33,6 +33,11 @@ public class RangedEnemy : Entities
             Debug.Log("Fleeing");
             agent.Move((transform.position - player.position).normalized * fleeSpeed * Time.deltaTime);
         }
+
+        if (dead)
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     IEnumerator Shoot()

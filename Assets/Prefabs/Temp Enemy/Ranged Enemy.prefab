@@ -118,7 +118,7 @@ MonoBehaviour:
     enemiesRemaining: 0
     spawnpointColour: {r: 0, g: 0, b: 0, a: 0}
     showSpawnpoints: 0
-  startingHealth: 10
+  startingHealth: 4
   health: 0
   movementSpeed: 2.5
   angularSpeed: 120
@@ -129,7 +129,7 @@ MonoBehaviour:
   shootRange: 12
   fireRate: 2
   fleeSpeed: 4
-  projectile: {fileID: 5571760799683643939, guid: 39dd2adbac52bcb4e93566168dc89c3d,
+  projectile: {fileID: 5571760799683643939, guid: 6554c93d261e17d4b843e74a17bd7788,
     type: 3}
 --- !u!195 &-590270849801541807
 NavMeshAgent:

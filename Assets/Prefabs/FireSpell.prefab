@@ -5221,7 +5221,7 @@ MonoBehaviour:
   speed: 15
   lifeTime: 3
   damage: 2
-  totalCollisions: 3
+  AOERange: 10
 --- !u!1 &7526923318453590138
 GameObject:
   m_ObjectHideFlags: 0

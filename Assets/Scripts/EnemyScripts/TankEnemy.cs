@@ -35,6 +35,11 @@ public class TankEnemy : Entities
 
         }
 
+        if (dead)
+        {
+            Destroy(this.gameObject);
+        }
+
     }
 
     IEnumerator Grab()
