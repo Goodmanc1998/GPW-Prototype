@@ -20,9 +20,10 @@ public class AreaStart : MonoBehaviour
             Debug.LogWarning("AreaStart collider must be of type Trigger. Setting isTrigger to true.");
             GetComponent<Collider>().isTrigger = true;
         }
-        gameObject.layer = 2;
+        gameObject.layer = 2; // Sets the collider to ignore raycasts
     }
 
+    // When the player is in range, the wave will begin
     private void OnTriggerEnter(Collider c)
     {
         if (c.tag == playerTag && !started)

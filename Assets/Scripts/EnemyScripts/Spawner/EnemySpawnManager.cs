@@ -12,22 +12,12 @@ public class EnemySpawnManager : MonoBehaviour
     // Currently has no use
     public int enemySpawnLimit; // The maximum amount of enemies across all waves allowed to be present in the world, set to 0 for no limit (only applies to wave spawned enemies)
 
-    /*
-    IEnumerator StartSpawning()
-    {
-        for (int i = 0; i < waves.Count; i++)
-        {
-            StartCoroutine(SpawnWave(waves[i]));
-            if (i < waves.Count - 1) yield return new WaitForSeconds(waves[i + 1].waveStartTime - waves[i].waveStartTime);
-        }
-    }
-    */
-
     public void StartWave(int waveNumber)
     {
         StartCoroutine(SpawnWave(waves[waveNumber]));
     }
 
+    // Coroutine that spawns enemies with a random delay
     IEnumerator SpawnWave(Wave wave)
     {
         if (wave.enemy == null)
@@ -47,6 +37,7 @@ public class EnemySpawnManager : MonoBehaviour
         }
     }
 
+    // Spawns a single enemy and keeps track of the wave it is in
     public bool SpawnEnemy(Wave wave)
     {
         List<EnemySpawn> possibleSpawns = new List<EnemySpawn>();
@@ -76,6 +67,7 @@ public class EnemySpawnManager : MonoBehaviour
         return true;
     }
 
+    // Draws the wire sphere to see where each spawnpoint has been set
     private void OnDrawGizmos()
     {
         Color original = Gizmos.color;

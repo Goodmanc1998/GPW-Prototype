@@ -8,6 +8,7 @@ public abstract class AreaGate : MonoBehaviour
 
     EnemySpawnManager manager;
 
+    // Subscribes the open method to the specified wave
     void Start()
     {
         manager = (EnemySpawnManager)FindObjectOfType(typeof(EnemySpawnManager));
@@ -19,5 +20,6 @@ public abstract class AreaGate : MonoBehaviour
         manager.waves[waveNumber-1].EndWave += OpenArea;
     }
 
+    // Abstract method, write a new monobehaviour for each gate using the OpenArea() method to handle individual opening code
     public abstract void OpenArea();
 }

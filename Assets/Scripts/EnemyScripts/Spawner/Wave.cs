@@ -31,7 +31,7 @@ public class Wave
         showSpawnpoints = false;
     }
 
-    // Calculates the time before the next enemy is spawned
+    // Calculates the time before the next enemy should be spawned
     public float SpawnRate()
     {
         return Random.Range(averageSpawningDuration - spawnDurationRandomness, averageSpawningDuration + spawnDurationRandomness) / enemyAmount;
