@@ -3,11 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider))]
-public class AreaStart : MonoBehaviour
+public class SpawnTrigger : MonoBehaviour
 {
     public static string playerTag = "Player";
-
-    public int waveNumber = 1; // The wave number that will be started when the player reaches this collider
 
     EnemySpawnManager manager;
     bool started = false;
@@ -20,7 +18,6 @@ public class AreaStart : MonoBehaviour
             Debug.LogWarning("AreaStart collider must be of type Trigger. Setting isTrigger to true.");
             GetComponent<Collider>().isTrigger = true;
         }
-        gameObject.layer = 2; // Sets the collider to ignore raycasts
     }
 
     // When the player is in range, the wave will begin
@@ -29,7 +26,16 @@ public class AreaStart : MonoBehaviour
         if (c.tag == playerTag && !started)
         {
             started = true;
-            manager.StartWave(waveNumber - 1);
+            manager.StartWave(this);
+        }
+    }
+
+    private void Reset()
+    {
+        if (gameObject.layer != 2)
+        {
+            Debug.LogWarning("Area triggers layer must be set to IgnoreRaycast");
+            gameObject.layer = 2; // Sets the collider to ignore raycasts
         }
     }
 }

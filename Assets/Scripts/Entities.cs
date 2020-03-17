@@ -69,7 +69,7 @@ public class Entities : MonoBehaviour
             // Once the enemy is declared dead, tell the wave an enemy has died if there is one
             if (wave != null)
             {
-                //wave.EnemyKilled();
+                wave.EnemyKilled();
             }
 
 

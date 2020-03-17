@@ -12,9 +12,16 @@ public class EnemySpawnManager : MonoBehaviour
     // Currently has no use
     public int enemySpawnLimit; // The maximum amount of enemies across all waves allowed to be present in the world, set to 0 for no limit (only applies to wave spawned enemies)
 
-    public void StartWave(int waveNumber)
+    public void StartWave(SpawnTrigger trigger)
     {
-        StartCoroutine(SpawnWave(waves[waveNumber]));
+        foreach (Wave wave in waves)
+        {
+            if (wave.startTrigger == trigger)
+            {
+                Debug.Log(wave.enemy.name + "wave has started.");
+                StartCoroutine(SpawnWave(wave));
+            }
+        }
     }
 
     // Coroutine that spawns enemies with a random delay
@@ -63,7 +70,7 @@ public class EnemySpawnManager : MonoBehaviour
         }
         Entities spawnedEnemy = Instantiate(wave.enemy, possibleSpawns[Random.Range(0, possibleSpawns.Count)].position, Quaternion.identity);
         spawnedEnemy.wave = wave;
-        spawnedEnemy.startingHealth = (int)(spawnedEnemy.startingHealth * wave.difficulty);
+        //spawnedEnemy.startingHealth = (int)(spawnedEnemy.startingHealth * wave.difficulty);
         return true;
     }
 

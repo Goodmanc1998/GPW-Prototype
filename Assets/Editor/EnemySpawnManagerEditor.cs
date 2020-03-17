@@ -91,8 +91,9 @@ public class EnemySpawnManagerEditor : Editor
                 EditorGUILayout.EndVertical();
             }
 
-            manager.waves[i].startTrigger = (AreaStart)EditorGUILayout.ObjectField(new GUIContent("Start Trigger"), manager.waves[i].startTrigger, typeof(AreaStart), true);
+            manager.waves[i].startTrigger = (SpawnTrigger)EditorGUILayout.ObjectField(new GUIContent("Start Trigger"), manager.waves[i].startTrigger, typeof(SpawnTrigger), true);
 
+            
             manager.waves[i].enemy = (Entities)EditorGUILayout.ObjectField(new GUIContent("Enemy"), manager.waves[i].enemy, typeof(Entities), true);
 
             manager.waves[i].enemyAmount = EditorGUILayout.IntField("Enemy Amount", manager.waves[i].enemyAmount);
@@ -103,7 +104,7 @@ public class EnemySpawnManagerEditor : Editor
             manager.waves[i].averageSpawningDuration = GUILayout.HorizontalSlider(manager.waves[i].averageSpawningDuration, 0, 300);
             EditorGUILayout.EndHorizontal();
 
-            manager.waves[i].difficulty = EditorGUILayout.Slider("Difficulty Scaling", manager.waves[i].difficulty, 0.5f, 2f);
+            //manager.waves[i].difficulty = EditorGUILayout.Slider("Difficulty Scaling", manager.waves[i].difficulty, 0.5f, 2f);
 
             EditorGUILayout.EndVertical();
             EditorGUILayout.Space();
