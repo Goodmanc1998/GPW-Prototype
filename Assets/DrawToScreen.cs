@@ -119,11 +119,19 @@ public class DrawToScreen : MonoBehaviour
             if(Input.GetMouseButtonUp(0))
             {
                 Gesture candidate = new Gesture(points.ToArray());
+                Debug.Log("this are the points" + currentGestureLineRenderer.positionCount);
                 Result gestureResult = PointCloudRecognizer.Classify(candidate, gestureCheckList.ToArray());
 
                 message = gestureResult.GestureClass + " " + gestureResult.Score;
-
-                FindObjectOfType<PlayerMovement>().castSpell(currentGestureLineRenderer,gestureResult.GestureClass, gestureResult.Score);
+                if(currentGestureLineRenderer.positionCount < 20)
+                {
+                    FindObjectOfType<PlayerMovement>().castSpell(currentGestureLineRenderer, "line", gestureResult.Score);
+                }
+                else
+                {
+                    FindObjectOfType<PlayerMovement>().castSpell(currentGestureLineRenderer, gestureResult.GestureClass, gestureResult.Score);
+                }
+                
                 Debug.Log(message);
 
 
@@ -148,10 +156,4 @@ public class DrawToScreen : MonoBehaviour
         }
     }
 
-    void OnGUI()
-    {
-        // lables the draw area
-        
-
-    }
 }

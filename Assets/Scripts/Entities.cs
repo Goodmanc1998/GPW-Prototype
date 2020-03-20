@@ -88,4 +88,17 @@ public class Entities : MonoBehaviour
         }
     }
 
+    //steering behaviours.
+    public virtual void SB(string calledFor)
+    {
+        if(calledFor != "")
+        {
+            //so steeringbehaviours have a call made by one of the AI to make a move what move is it?
+            //seek
+            //flee
+            //persue
+            //avoid
+
+        }
+    }
 }

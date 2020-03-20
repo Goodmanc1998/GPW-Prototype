@@ -33,9 +33,9 @@ public class PlayerMovement : Entities
 
     public void castSpell(LineRenderer GestureTransform,string ShapeDrawn,float percentMatch)
     {
-        if(percentMatch >= 0.8f)
+        if(percentMatch >= 0.9f)
         {
-            if(ShapeDrawn == "line" && percentMatch >=0.9f && currentFireSpell < maxFireSpell)
+            if(ShapeDrawn == "line" && percentMatch >=0.95f && currentFireSpell < maxFireSpell)
             {
                 //cast circle spell here by instatiating spell object.
                 //Debug.Log("Circle");
@@ -57,8 +57,8 @@ public class PlayerMovement : Entities
             {
                 //cast triangle spell here by instatiating spell object.
                 //Debug.Log("triangle");
-                transform.LookAt(GestureTransform.GetPosition(GestureTransform.positionCount - 1));
-                Instantiate(LightningSpell, spellSpawn.position, spellSpawn.localRotation);
+                transform.LookAt(new Vector3(GestureTransform.GetPosition(GestureTransform.positionCount - 1).x, transform.position.y, GestureTransform.GetPosition(GestureTransform.positionCount - 1).z));
+                Instantiate(LightningSpell, spellSpawn.position, transform.localRotation);
                 Debug.Log("cast lightening");
 
                 currentLightingSpell++;
