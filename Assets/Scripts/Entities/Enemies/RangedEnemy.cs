@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RangedEnemy : Entities
+public class RangedEnemy : Enemy
 {
     public float fleeRange; // Enemy will attempt to flee from the player when in this range
     public float shootRange; // Enemy will not fire at the player unless within this range

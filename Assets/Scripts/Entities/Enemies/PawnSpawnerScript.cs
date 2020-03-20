@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class PawnSpawnerScript : Entities
+public class PawnSpawnerScript : Enemy
 {
-    
-
     //Float to store distance that the player must be in to run away
     public float runAwayDistance;
 

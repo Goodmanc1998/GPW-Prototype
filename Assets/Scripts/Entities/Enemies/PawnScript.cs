@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class PawnScript : Entities
+public class PawnScript : Enemy
 {
-    
-
     public PawnSpawnerScript pawnSpawner;
 
     bool attacking;

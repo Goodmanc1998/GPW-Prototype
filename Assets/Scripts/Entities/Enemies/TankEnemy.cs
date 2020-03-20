@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class TankEnemy : Entities
+public class TankEnemy : Enemy
 {
-
     public float rangeOfGrab;
     public float grabTime;
 

@@ -94,7 +94,7 @@ public class EnemySpawnManagerEditor : Editor
             manager.waves[i].startTrigger = (SpawnTrigger)EditorGUILayout.ObjectField(new GUIContent("Start Trigger"), manager.waves[i].startTrigger, typeof(SpawnTrigger), true);
 
             
-            manager.waves[i].enemy = (Entities)EditorGUILayout.ObjectField(new GUIContent("Enemy"), manager.waves[i].enemy, typeof(Entities), true);
+            manager.waves[i].enemy = (Enemy)EditorGUILayout.ObjectField(new GUIContent("Enemy"), manager.waves[i].enemy, typeof(Enemy), true);
 
             manager.waves[i].enemyAmount = EditorGUILayout.IntField("Enemy Amount", manager.waves[i].enemyAmount);
 

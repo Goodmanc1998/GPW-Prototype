@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-public class ThreatEnemy : Entities
+
+public class ThreatEnemy : Enemy
 {
     bool beginExploding;
 

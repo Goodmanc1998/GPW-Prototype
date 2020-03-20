@@ -5,30 +5,22 @@ using UnityEngine.AI;
 
 public class Entities : MonoBehaviour
 {
-
     //Storing the players Transform, and Agent for movement
     protected Transform player;
     protected NavMeshAgent agent;
 
-    
-
-    public Wave wave; // The wave the enemy was spawned in
-
     [Header("Health")]
-
     public float startingHealth;
     public float health;
     protected bool dead;
 
-    [Header("Movemnt")]
-
-
+    [Header("Movement")]
     public float movementSpeed;
     public float angularSpeed;
     public float acceleration;
     public float stoppingDistance;
 
-    public enum weaknessEnum
+    public enum WeaknessEnum
     {
         Nothing,
         Fire,
@@ -36,7 +28,7 @@ public class Entities : MonoBehaviour
         Melee
     };
 
-    public weaknessEnum weakness;
+    public WeaknessEnum weakness;
 
     protected virtual void Start()
     {
@@ -63,21 +55,11 @@ public class Entities : MonoBehaviour
             health -= damageIn;
 
             dead = true;
-
-
-
-            // Once the enemy is declared dead, tell the wave an enemy has died if there is one
-            if (wave != null)
-            {
-                wave.EnemyKilled();
-            }
-
-
         }
         else
         {
 
-            if(weakness == weaknessEnum.Nothing || attackType != weakness.ToString())
+            if(weakness == WeaknessEnum.Nothing || attackType != weakness.ToString())
             {
                 health -= damageIn;
             }
@@ -85,20 +67,6 @@ public class Entities : MonoBehaviour
             {
                 health -= damageIn * 1.5f;
             }
-        }
-    }
-
-    //steering behaviours.
-    public virtual void SB(string calledFor)
-    {
-        if(calledFor != "")
-        {
-            //so steeringbehaviours have a call made by one of the AI to make a move what move is it?
-            //seek
-            //flee
-            //persue
-            //avoid
-
         }
     }
 }
