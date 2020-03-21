@@ -14,12 +14,6 @@ public class Entities : MonoBehaviour
     public float health;
     protected bool dead;
 
-    [Header("Movement")]
-    public float movementSpeed;
-    public float angularSpeed;
-    public float acceleration;
-    public float stoppingDistance;
-
     public enum WeaknessEnum
     {
         Nothing,
@@ -39,12 +33,6 @@ public class Entities : MonoBehaviour
             player = GameObject.FindGameObjectWithTag("Player").transform;
             agent = GetComponent<NavMeshAgent>();
         }
-
-        agent.speed = movementSpeed;
-        agent.angularSpeed = angularSpeed;
-        agent.acceleration = acceleration;
-        agent.stoppingDistance = stoppingDistance;
-
     }
 
     public virtual void TakeDamage(float damageIn, string attackType)

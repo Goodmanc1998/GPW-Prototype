@@ -42,7 +42,7 @@ public class Wave
         enemiesRemaining--;
         if (enemiesRemaining <= 0)
         {
-            Debug.Log(enemy.name + "wave has been eliminated.");
+            Debug.Log("Wave eliminated.");
             EndWave();
         }
     }

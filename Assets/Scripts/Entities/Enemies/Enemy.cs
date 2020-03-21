@@ -4,7 +4,24 @@ using UnityEngine;
 
 public class Enemy : Entities
 {
+    [Header("Movement")]
+    public float movementSpeed;
+    public float angularSpeed;
+    public float acceleration;
+    public float stoppingDistance;
+
+    [HideInInspector]
     public Wave wave; // The wave the enemy was spawned in
+
+    protected override void Start()
+    {
+        base.Start();
+
+        agent.speed = movementSpeed;
+        agent.angularSpeed = angularSpeed;
+        agent.acceleration = acceleration;
+        agent.stoppingDistance = stoppingDistance;
+    }
 
     public override void TakeDamage(float damageIn, string attackType)
     {
