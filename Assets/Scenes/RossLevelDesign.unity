@@ -158,7 +158,7 @@ MonoBehaviour:
     averageSpawningDuration: 5
     spawnDurationRandomness: 0
     enemiesRemaining: 0
-    spawnpointColour: {r: 0, g: 0, b: 0, a: 1}
+    spawnpointColour: {r: 1, g: 0, b: 0, a: 1}
     showSpawnpoints: 1
   - spawnpoints:
     - position: {x: -11.295959, y: 3.1478322, z: -25.90654}
@@ -173,7 +173,7 @@ MonoBehaviour:
   - spawnpoints:
     - position: {x: -20.036163, y: -5.550443, z: 1.7229156}
     enemy: {fileID: 4749731231068673967, guid: 21d95c59a339106428a50a9d01436306, type: 3}
-    startTrigger: {fileID: 0}
+    startTrigger: {fileID: 800535591}
     enemyAmount: 2
     averageSpawningDuration: 5
     spawnDurationRandomness: 0
@@ -465,7 +465,7 @@ GameObject:
   - component: {fileID: 800535593}
   - component: {fileID: 800535592}
   - component: {fileID: 800535591}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: 'Wave 3 Trigger '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -495,7 +495,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 800535589}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5609ec00f720ace4ea03b628c0b04ded, type: 3}
+  m_Script: {fileID: 11500000, guid: 1702f29bb728ddf4995bf9c6e8bd51a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!65 &800535592
@@ -537,7 +537,7 @@ GameObject:
   - component: {fileID: 831450935}
   - component: {fileID: 831450934}
   - component: {fileID: 831450933}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Wave 1 Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -553,7 +553,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 831450932}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5609ec00f720ace4ea03b628c0b04ded, type: 3}
+  m_Script: {fileID: 11500000, guid: 1702f29bb728ddf4995bf9c6e8bd51a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!65 &831450934
@@ -1031,6 +1031,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1165225849}
   m_CullTransparentMesh: 0
+--- !u!1 &1208407215
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1208407216}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1208407216
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1208407215}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -80.71194, y: -31.96577, z: -60.750156}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1227441369
 GameObject:
   m_ObjectHideFlags: 0
@@ -1224,7 +1254,7 @@ GameObject:
   - component: {fileID: 1436360927}
   - component: {fileID: 1436360926}
   - component: {fileID: 1436360925}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Wave 2 Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1240,7 +1270,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1436360924}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5609ec00f720ace4ea03b628c0b04ded, type: 3}
+  m_Script: {fileID: 11500000, guid: 1702f29bb728ddf4995bf9c6e8bd51a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!65 &1436360926
