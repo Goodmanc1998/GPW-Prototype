@@ -1099,22 +1099,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c71d100f2633f2499d11f3286e859c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wave:
-    spawnpoints: []
-    enemy: {fileID: 0}
-    startTrigger: {fileID: 0}
-    enemyAmount: 10
-    averageSpawningDuration: 5
-    spawnDurationRandomness: 0
-    enemiesRemaining: 0
-    spawnpointColour: {r: 0, g: 0, b: 0, a: 0}
-    showSpawnpoints: 0
   startingHealth: 20
   health: 0
-  movementSpeed: 4
-  angularSpeed: 180
-  acceleration: 8
-  stoppingDistance: 0.5
   weakness: 0
   targetRange: 0
   speedBuff: {fileID: 0}
@@ -1696,7 +1682,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2118721376
 MonoBehaviour:
   m_ObjectHideFlags: 0

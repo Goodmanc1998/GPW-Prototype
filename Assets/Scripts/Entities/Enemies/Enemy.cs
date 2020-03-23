@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Enemy : Entities
 {
@@ -37,13 +38,20 @@ public class Enemy : Entities
     //steering behaviours.
     public virtual void SB(string calledFor)
     {
-        if (calledFor != "")
+        NavMeshAgent playerNvAgnt = player.GetComponent<NavMeshAgent>();
+        //seek
+        //flee
+        //persue
+        //avoid
+        if (calledFor == "seek")
         {
-            //so steeringbehaviours have a call made by one of the AI to make a move what move is it?
-            //seek
-            //flee
-            //persue
-            //avoid
+            agent.SetDestination(player.position); 
+        }else if(calledFor == "flee")
+        {
+            agent.SetDestination(-player.position);
+        }else if(calledFor == "intercept")
+        {
+            agent.SetDestination(player.position + playerNvAgnt.velocity);
         }
     }
 }
