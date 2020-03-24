@@ -20,7 +20,7 @@ public class RangedEnemy : Enemy
         // If the enemy is out of shooting range, move towards the player
         if (distance > shootRange)
         {
-            agent.SetDestination(player.position);
+            SB("intercept");
         }
         // If the enemy gets within range of the player, shoot at them
         else if (distance > fleeRange)
@@ -29,7 +29,7 @@ public class RangedEnemy : Enemy
             {
                 firing = StartCoroutine(Shoot());
             }
-            agent.SetDestination(transform.position); // Effectively stops the enemy from moving
+            SB("flee"); // Effectively stops the enemy from moving
         }
         // If the player gets too close the enemy will stop shooting and attempt to run away from the player
         else

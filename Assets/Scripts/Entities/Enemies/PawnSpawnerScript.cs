@@ -35,7 +35,8 @@ public class PawnSpawnerScript : Enemy
     {
         if(Vector3.Distance(transform.position, player.position) < runAwayDistance)
         {
-            MoveAwayFromPlayer();
+            SB("flee");
+           
             //Debug.Log("Running away");
 
         }
@@ -72,13 +73,5 @@ public class PawnSpawnerScript : Enemy
         currentSpawned--;
     }
 
-    void MoveAwayFromPlayer()
-    {
-        Vector3 dirToPlayer = Vector3.Normalize(transform.position - player.position);
-
-        Vector3 movePosition = transform.position + dirToPlayer;
-
-        agent.SetDestination(movePosition);
-
-    }
+ 
 }

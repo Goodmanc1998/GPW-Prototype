@@ -197,7 +197,7 @@ Transform:
   - {fileID: 1436360928}
   - {fileID: 800535590}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &252713550
 PrefabInstance:
@@ -446,7 +446,7 @@ RectTransform:
   m_Children:
   - {fileID: 1165225850}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1174,7 +1174,7 @@ Transform:
   - {fileID: 328416354}
   - {fileID: 362744786}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1407799418
 GameObject:
@@ -1727,7 +1727,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - spawnpoints:
-    - position: {x: -20.3, y: 14.7, z: -56.9}
+    - position: {x: -19.8, y: 14.7, z: -56.9}
     enemy: {fileID: 3228493842885784040, guid: a8fca0f1dd3ea45458fa43b7bce2b6a6, type: 3}
     startTrigger: {fileID: 871268838}
     enemyAmount: 2

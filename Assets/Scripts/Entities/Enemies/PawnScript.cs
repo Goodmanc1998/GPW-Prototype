@@ -31,7 +31,8 @@ public class PawnScript : Enemy
         if(attacking == false)
         {
             agent.enabled = true;
-            agent.SetDestination(player.position);
+            SB("seek");
+            
         }
 
         if (attacking == false && Vector3.Distance(transform.position, player.position) < meleeAttackRange)
