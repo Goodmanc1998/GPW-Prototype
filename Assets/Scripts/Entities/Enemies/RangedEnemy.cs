@@ -16,25 +16,28 @@ public class RangedEnemy : Enemy
     private void Update()
     {
         float distance = Vector3.Distance(player.position, transform.position); // Calculates the distance between the player and enemy
-
-        // If the enemy is out of shooting range, move towards the player
-        if (distance > shootRange)
+        if(!froze)
         {
-            SB("intercept");
-        }
-        // If the enemy gets within range of the player, shoot at them
-        else if (distance > fleeRange)
-        {
-            if (firing == null)
+            // If the enemy is out of shooting range, move towards the player
+            if (distance > shootRange)
             {
-                firing = StartCoroutine(Shoot());
+                SB("persue");
             }
-            SB("flee"); // Effectively stops the enemy from moving
-        }
-        // If the player gets too close the enemy will stop shooting and attempt to run away from the player
-        else
-        {
-            agent.Move((transform.position - player.position).normalized * fleeSpeed * Time.deltaTime);
+            // If the enemy gets within range of the player, shoot at them
+            else if (distance > fleeRange)
+            {
+                if (firing == null)
+                {
+                    firing = StartCoroutine(Shoot());
+                }
+                SB("flee"); // Effectively stops the enemy from moving
+            }
+            // If the player gets too close the enemy will stop shooting and attempt to run away from the player
+            else
+            {
+                agent.Move((transform.position - player.position).normalized * fleeSpeed * Time.deltaTime);
+            }
+
         }
 
         // Destroys the enemy when they die

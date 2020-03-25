@@ -23,16 +23,19 @@ public class TankEnemy : Enemy
     // Update is called once per frame
     void Update()
     {
-        
-        if(Vector3.Distance(player.position, transform.position) <= rangeOfGrab && Time.time >= timeTillNextGrab)
+        if(!froze)
         {
-            //StartCoroutine(Attack());
-        }
-        else
-        {
-            agent.SetDestination(player.position);
+            if (Vector3.Distance(player.position, transform.position) <= rangeOfGrab && Time.time >= timeTillNextGrab)
+            {
+                //StartCoroutine(Attack());
+            }
+            else
+            {
+                SB("persue");
 
+            }
         }
+        
 
         if (dead)
         {
