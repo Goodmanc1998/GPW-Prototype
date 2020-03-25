@@ -8,6 +8,7 @@ TagManager:
   - Grapple
   - Target
   - SpellBook
+  - Enviroment
   layers:
   - Default
   - TransparentFX
