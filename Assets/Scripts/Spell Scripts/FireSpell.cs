@@ -32,10 +32,14 @@ public class FireSpell : SpellMovement
         {
             Entities target = collision.gameObject.GetComponent<Entities>();
 
-            target.TakeDamage(damage, "Fire");
-
             FireAOE();
 
+            target.TakeDamage(damage, "Fire");
+
+        }
+        else if(collision.gameObject.tag != "Player" && collision.gameObject.tag != "Platform")
+        {
+            Destroy(this.gameObject);
         }
 
     }

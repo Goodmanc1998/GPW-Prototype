@@ -132,7 +132,7 @@ public class PlayerMovement : Entities
 
                 Vector3 hitPoint = hit.point;
 
-                if(hit.collider.gameObject.tag == "Platform")
+                if(hit.collider.gameObject.tag == "Platform" || hit.collider.gameObject.tag == "Enviroment")
                 {
                     agent.SetDestination(hitPoint);
                 }
