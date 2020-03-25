@@ -9,20 +9,13 @@ public class ThreatEnemy : Enemy
 
     public float distanceBeforeExploding;
 
-    public float timeUntilExplosion;
     float timeOfExplosion;
 
-    public float explosionRanage;
-    public float explosionDamage;
-
-    Material material;
 
     // Start is called before the first frame update
     protected override void Start()
     {
         base.Start();
-
-        material = GetComponent<Renderer>().material;
     }
 
 
@@ -36,7 +29,6 @@ public class ThreatEnemy : Enemy
                 timeOfExplosion = Time.time + timeUntilExplosion;
                 beginExploding = true;
                 //Debug.Log("Starting Count Down");
-
             }
             else
             {
@@ -47,8 +39,6 @@ public class ThreatEnemy : Enemy
 
         if(Time.time >= timeOfExplosion)
         {
-            
-
             StartCoroutine(Explosion());
         }
 
@@ -61,14 +51,5 @@ public class ThreatEnemy : Enemy
     }
 
 
-    IEnumerator Explosion()
-    {
-        yield return new WaitForSeconds(timeUntilExplosion);
 
-        if (Vector3.Distance(player.position, transform.position) <= explosionRanage)
-        {
-            player.GetComponent<Entities>().TakeDamage(explosionDamage, "Explosion");
-            Destroy(gameObject);
-        }
-    }
 }

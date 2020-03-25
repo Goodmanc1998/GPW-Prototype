@@ -6,12 +6,8 @@ public class RangedEnemy : Enemy
 {
     public float fleeRange; // Enemy will attempt to flee from the player when in this range
     public float shootRange; // Enemy will not fire at the player unless within this range
-    public float fireRate; // The time in seconds between each shot projectile
     public float fleeSpeed; // The speed the enemy will move whilst trying to get away from the player
 
-    public Projectile projectile; // The projectile that will be shot by this enemy
-
-    Coroutine firing; // Keeps track of the shooting coroutine to ensure a delay between each shot
 
     private void Update()
     {
@@ -48,12 +44,5 @@ public class RangedEnemy : Enemy
         }
     }
 
-    // Shoots a single projectile and stops more from being shot until a set time has passed
-    IEnumerator Shoot()
-    {
-        Projectile p = Instantiate(projectile, transform.position + Vector3.forward, Quaternion.identity);
-        p.direction = new Vector3(player.position.x - transform.position.x, 0, player.position.z - transform.position.z).normalized;
-        yield return new WaitForSeconds(fireRate);
-        firing = null;
-    }
+
 }
