@@ -74,6 +74,7 @@ public class EnemySpawnManager : MonoBehaviour
         return true;
     }
 
+#if UNITY_EDITOR
     // Draws the wire sphere to see where each spawnpoint has been set
     private void OnDrawGizmos()
     {
@@ -93,6 +94,7 @@ public class EnemySpawnManager : MonoBehaviour
         Gizmos.color = original;
     }
 }
+#endif
 
 [System.Serializable]
 public class EnemySpawn
