@@ -74,6 +74,7 @@ public class EnemySpawnManager : MonoBehaviour
         return true;
     }
 
+#if UNITY_EDITOR
     // Draws the wire sphere to see where each spawnpoint has been set
     private void OnDrawGizmos()
     {
@@ -86,13 +87,14 @@ public class EnemySpawnManager : MonoBehaviour
                 for (int j = 0; j < waves[i].spawnpoints.Count; j++)
                 {
                     Vector3 pos = waves[i].spawnpoints[j].position;
-                    //Gizmos.DrawWireSphere(pos, 0.025f * Vector3.Distance(pos, UnityEditor.SceneView.lastActiveSceneView.camera.transform.position));
+                    Gizmos.DrawWireSphere(pos, 0.025f * Vector3.Distance(pos, UnityEditor.SceneView.lastActiveSceneView.camera.transform.position));
                 }
             }
         }
         Gizmos.color = original;
     }
 }
+#endif
 
 [System.Serializable]
 public class EnemySpawn
