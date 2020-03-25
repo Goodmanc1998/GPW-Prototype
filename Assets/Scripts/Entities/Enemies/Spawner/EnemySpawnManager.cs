@@ -86,7 +86,7 @@ public class EnemySpawnManager : MonoBehaviour
                 for (int j = 0; j < waves[i].spawnpoints.Count; j++)
                 {
                     Vector3 pos = waves[i].spawnpoints[j].position;
-                    Gizmos.DrawWireSphere(pos, 0.025f * Vector3.Distance(pos, UnityEditor.SceneView.lastActiveSceneView.camera.transform.position));
+                    //Gizmos.DrawWireSphere(pos, 0.025f * Vector3.Distance(pos, UnityEditor.SceneView.lastActiveSceneView.camera.transform.position));
                 }
             }
         }
