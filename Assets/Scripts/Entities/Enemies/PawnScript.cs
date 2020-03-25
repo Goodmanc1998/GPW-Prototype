@@ -28,20 +28,24 @@ public class PawnScript : Enemy
     // Update is called once per frame
     void Update()
     {
-        if(attacking == false)
+        if(!froze)
         {
-            agent.enabled = true;
-            SB("seek");
-            
-        }
-
-        if (attacking == false && Vector3.Distance(transform.position, player.position) < meleeAttackRange)
-        {
-            if(Time.time >= timeTillNextAttack)
+            if (attacking == false)
             {
-                StartCoroutine(Attack());
+                agent.enabled = true;
+                SB("seek");
+
+            }
+
+            if (attacking == false && Vector3.Distance(transform.position, player.position) < meleeAttackRange)
+            {
+                if (Time.time >= timeTillNextAttack)
+                {
+                    StartCoroutine(Attack());
+                }
             }
         }
+        
 
         if(dead || health < 0)
         {

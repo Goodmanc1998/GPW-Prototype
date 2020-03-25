@@ -33,20 +33,24 @@ public class PawnSpawnerScript : Enemy
     // Update is called once per frame
     void Update()
     {
-        if(Vector3.Distance(transform.position, player.position) < runAwayDistance)
+        if(!froze)
         {
-            SB("flee");
-           
-            //Debug.Log("Running away");
+            if (Vector3.Distance(transform.position, player.position) < runAwayDistance)
+            {
+                SB("flee");
 
+                //Debug.Log("Running away");
+
+            }
+
+            if (Time.time >= timeTillNextSpawn & currentSpawned < maxAmountToSpawn)
+            {
+                SpawnPawn();
+                //Debug.Log("Spawning");
+
+            }
         }
-
-        if (Time.time >= timeTillNextSpawn & currentSpawned < maxAmountToSpawn)
-        {
-            SpawnPawn();
-            //Debug.Log("Spawning");
-
-        }
+        
 
         if (dead)
         {

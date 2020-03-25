@@ -29,17 +29,21 @@ public class ThreatEnemy : Enemy
     // Update is called once per frame
     void Update()
     {
-        if(Vector3.Distance(player.position, transform.position) <= distanceBeforeExploding && beginExploding == false)
+        if(!froze)
         {
-            timeOfExplosion = Time.time + timeUntilExplosion;
-            beginExploding = true;
-            //Debug.Log("Starting Count Down");
-            
+            if (Vector3.Distance(player.position, transform.position) <= distanceBeforeExploding && beginExploding == false)
+            {
+                timeOfExplosion = Time.time + timeUntilExplosion;
+                beginExploding = true;
+                //Debug.Log("Starting Count Down");
+
+            }
+            else
+            {
+                SB("persue");
+            }
         }
-        else
-        {
-            SB("persue");
-        }
+        
 
         if(Time.time >= timeOfExplosion)
         {

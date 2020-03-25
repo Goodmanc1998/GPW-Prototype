@@ -13,6 +13,7 @@ public class Enemy : Entities
 
     [HideInInspector]
     public Wave wave; // The wave the enemy was spawned in
+    public bool froze = false;
 
     protected override void Start()
     {
@@ -55,6 +56,17 @@ public class Enemy : Entities
         }else if(calledFor == "evade")
         {
             agent.SetDestination(player.position - playerNvAgnt.velocity);
+        }else if (calledFor == "freeze")
+        {
+            agent.SetDestination(transform.position);
+            froze = true;
+            for (int i = 0; i < 1320; i++)
+            {
+                if(i == 1319)
+                {
+                    froze = false;
+                }
+            }
         }
     }
 }

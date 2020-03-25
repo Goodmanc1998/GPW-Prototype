@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class iceBarrier : Entities
 {
+    private void OnTriggerEnter(Collider other)
+    {
+        other.GetComponent<Enemy>().SB("freeze");
+    }
     // allows the designer to access the time that the ice barrier is on screen.
     [Header("Ice Barrier LifeTime")]
     [Tooltip("Health value of ice barrier determines how long stays on screen higher value less screen time it will have!")]
