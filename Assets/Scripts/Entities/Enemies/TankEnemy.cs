@@ -30,7 +30,7 @@ public class TankEnemy : Enemy
         }
         else
         {
-            agent.SetDestination(player.position);
+            SB("persue");
 
         }
 

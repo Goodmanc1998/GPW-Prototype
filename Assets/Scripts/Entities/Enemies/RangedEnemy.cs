@@ -20,7 +20,7 @@ public class RangedEnemy : Enemy
         // If the enemy is out of shooting range, move towards the player
         if (distance > shootRange)
         {
-            SB("intercept");
+            SB("persue");
         }
         // If the enemy gets within range of the player, shoot at them
         else if (distance > fleeRange)

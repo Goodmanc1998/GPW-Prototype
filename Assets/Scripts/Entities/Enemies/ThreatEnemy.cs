@@ -38,7 +38,7 @@ public class ThreatEnemy : Enemy
         }
         else
         {
-            agent.SetDestination(player.position);
+            SB("persue");
         }
 
         if(Time.time >= timeOfExplosion)
