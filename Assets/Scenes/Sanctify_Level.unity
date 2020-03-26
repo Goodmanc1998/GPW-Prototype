@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1929,6 +1929,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Town_Door
       objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: 67b189d1baa22d141b7841aa13057bd4,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: eda941697607e1d4bbe07b3c13ac9807, type: 2}
     - target: {fileID: -4216859302048453862, guid: 67b189d1baa22d141b7841aa13057bd4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1947,17 +1952,17 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 67b189d1baa22d141b7841aa13057bd4,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 67b189d1baa22d141b7841aa13057bd4,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 67b189d1baa22d141b7841aa13057bd4,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 67b189d1baa22d141b7841aa13057bd4,
         type: 3}
@@ -3127,6 +3132,25 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: -3109269226189777751, guid: b8eea9861deb20b4096704a2d3f0ca94, type: 3}
+--- !u!1 &1272747657 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 67b189d1baa22d141b7841aa13057bd4,
+    type: 3}
+  m_PrefabInstance: {fileID: 860065937}
+  m_PrefabAsset: {fileID: 0}
+--- !u!135 &1272747658
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1272747657}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 10.76
+  m_Center: {x: 0, y: 16.17, z: -141.4}
 --- !u!1 &1284712244 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -1622541861662732193, guid: b8eea9861deb20b4096704a2d3f0ca94,
@@ -3739,6 +3763,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 6e964d372d682234597e51467b3f5226,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7c659ba1a1fb1c04bbdb3fa2c79e3092, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e964d372d682234597e51467b3f5226, type: 3}
 --- !u!1 &1496293541 stripped
