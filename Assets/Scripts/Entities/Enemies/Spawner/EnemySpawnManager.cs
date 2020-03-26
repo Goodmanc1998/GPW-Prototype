@@ -93,8 +93,8 @@ public class EnemySpawnManager : MonoBehaviour
         }
         Gizmos.color = original;
     }
-}
 #endif
+}
 
 [System.Serializable]
 public class EnemySpawn
