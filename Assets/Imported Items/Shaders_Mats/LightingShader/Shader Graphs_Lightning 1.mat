@@ -7,14 +7,14 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PS_LightningPulse
-  m_Shader: {fileID: -6465566751694194690, guid: 2124be70a790fbd48a5687dfc59f3758,
+  m_Name: Shader Graphs_Lightning 1
+  m_Shader: {fileID: -6465566751694194690, guid: 7771560515aadb94ab5b949ac6f5dbf4,
     type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2000
+  m_CustomRenderQueue: -1
   stringTagMap:
     MotionVector: User
   disabledShaderPasses:
@@ -23,10 +23,10 @@ Material:
     serializedVersion: 3
     m_TexEnvs: []
     m_Floats:
-    - Vector1_265F79C3: 1.5
-    - Vector1_5F9ED307: 4
-    - Vector1_A08ABDB7: 20
+    - Vector1_4711AFBC: 4
+    - Vector1_4F46F684: 20
+    - Vector1_BA9C6CDC: 1.5
     m_Colors:
-    - Color_690C2202: {r: 15.999998, g: 15.999998, b: 15.999998, a: 0}
-    - Vector2_530191A2: {r: 0, g: 0.5, b: 0, a: 0}
-    - Vector2_58EA17A5: {r: 0.1, g: -0.5, b: 0, a: 0}
+    - Color_FE62126D: {r: 0.8982905, g: 7.4767256, b: 9.068457, a: 1}
+    - Vector2_16C50BD: {r: 0.1, g: -0.5, b: 0, a: 0}
+    - Vector2_396F8085: {r: 0, g: 0.5, b: 0, a: 0}
