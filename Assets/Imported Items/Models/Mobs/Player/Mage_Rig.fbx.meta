@@ -1,11 +1,8 @@
 fileFormatVersion: 2
-guid: d00781f9aab8b044088a3a7b9920b6fa
+guid: 9a2ea3acc2769c846a21aead2db611b8
 ModelImporter:
   serializedVersion: 26
-  internalIDToNameTable:
-  - first:
-      74: 1827226128182048838
-    second: Run
+  internalIDToNameTable: []
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -19,72 +16,21 @@ ModelImporter:
     optimizeGameObjects: 0
     motionNodeName: 
     rigImportErrors: 
-    rigImportWarnings: "Avatar Rig Configuration mis-match. Bone length in configuration
-      does not match position in animation file:\n\t'Mage_Rig:AA_Character:PC_L_Ball_Jnt_01'
-      : position error = 25.663048 mm\n\t'Mage_Rig:AA_Character:PC_R_Ball_Jnt_01'
-      : position error = 16.165054 mm\nAvatar Rig Configuration mis-match. Inbetween
-      bone rotation in configuration does not match rotation in animation file:\n\t'Mage_Rig:AA_Character:PC_L_Knee_Jnt_02'
-      : rotation error = 13.927487 deg\n\t'Mage_Rig:AA_Character:PC_L_Ball_Jnt_01'
-      : rotation error = 12.988307 deg\n\t'Mage_Rig:AA_Character:PC_R_Knee_Jnt_02'
-      : rotation error = 3.980192 deg\n\t'Mage_Rig:AA_Character:PC_R_Ball_Jnt_01'
-      : rotation error = 8.574244 deg\n"
+    rigImportWarnings: 
     animationImportErrors: 
-    animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
-      might lower retargeting quality:\nNote: Activate translation DOF on avatar to
-      improve retargeting quality.\n\t'Mage_Rig:AA_Character:PC_Spine_Jnt_03' has
-      translation animation that will be discarded.\n\t'Mage_Rig:AA_Character:PC_Spine_Jnt_03'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Mage_Rig:PC_L_Elbow_Jnt_03'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Mage_Rig:PC_L_ForearmTwist1'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Mage_Rig:PC_L_Elbow_Jnt_02'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Mage_Rig:AA_Character:PC_Neck_Jnt_01'
-      has translation animation that will be discarded.\n\t'Mage_Rig:AA_Character:PC_L_Knee_Jnt_02'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Mage_Rig:AA_Character:PC_L_Ball_Jnt_01'
-      has translation animation that will be discarded.\n\t'Mage_Rig:AA_Character:PC_L_Ball_Jnt_01'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Mage_Rig:AA_Character:PC_R_Knee_Jnt_02'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'Mage_Rig:AA_Character:PC_R_Ball_Jnt_01'
-      has translation animation that will be discarded.\n\t'Mage_Rig:AA_Character:PC_R_Ball_Jnt_01'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n"
+    animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
-    importConstraints: 1
+    importConstraints: 0
     animationCompression: 3
-    animationRotationError: 1
-    animationPositionError: 1
-    animationScaleError: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: Run
-      takeName: Take 001
-      internalID: 0
-      firstFrame: 2
-      lastFrame: 18
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 0
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 1
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0.9
+    clipAnimations: []
     isReadable: 0
   meshes:
     lODScreenPercentages: []
@@ -93,10 +39,10 @@ ModelImporter:
     addColliders: 0
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
-    importVisibility: 1
+    importVisibility: 0
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -122,7 +68,7 @@ ModelImporter:
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   referencedClips: []
-  importAnimation: 1
+  importAnimation: 0
   copyAvatar: 0
   humanDescription:
     serializedVersion: 3
