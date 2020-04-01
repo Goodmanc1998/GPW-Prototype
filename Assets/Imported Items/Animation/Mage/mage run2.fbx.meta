@@ -8,7 +8,7 @@ ModelImporter:
     second: Run
   externalObjects: {}
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -19,15 +19,16 @@ ModelImporter:
     optimizeGameObjects: 0
     motionNodeName: 
     rigImportErrors: 
-    rigImportWarnings: "Avatar Rig Configuration mis-match. Bone length in configuration
-      does not match position in animation file:\n\t'Mage_Rig:AA_Character:PC_L_Ball_Jnt_01'
+    rigImportWarnings: "Copied Avatar Rig Configuration mis-match. Bone length in
+      copied configuration does not match position in animation file:\n\t'Mage_Rig:AA_Character:PC_L_Ball_Jnt_01'
       : position error = 25.663048 mm\n\t'Mage_Rig:AA_Character:PC_R_Ball_Jnt_01'
-      : position error = 16.165054 mm\nAvatar Rig Configuration mis-match. Inbetween
-      bone rotation in configuration does not match rotation in animation file:\n\t'Mage_Rig:AA_Character:PC_L_Knee_Jnt_02'
-      : rotation error = 13.927487 deg\n\t'Mage_Rig:AA_Character:PC_L_Ball_Jnt_01'
-      : rotation error = 12.988307 deg\n\t'Mage_Rig:AA_Character:PC_R_Knee_Jnt_02'
-      : rotation error = 3.980192 deg\n\t'Mage_Rig:AA_Character:PC_R_Ball_Jnt_01'
-      : rotation error = 8.574244 deg\n"
+      : position error = 16.165054 mm\nCopied Avatar Rig Configuration mis-match.
+      Inbetween bone rotation in copied configuration does not match rotation in animation
+      file:\n\t'Mage_Rig:AA_Character:PC_L_Knee_Jnt_02' : rotation error = 13.927487
+      deg\n\t'Mage_Rig:AA_Character:PC_L_Ball_Jnt_01' : rotation error = 12.988307
+      deg\n\t'Mage_Rig:AA_Character:PC_R_Knee_Jnt_02' : rotation error = 3.980192
+      deg\n\t'Mage_Rig:AA_Character:PC_R_Ball_Jnt_01' : rotation error = 8.574244
+      deg\n"
     animationImportErrors: 
     animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
       might lower retargeting quality:\nNote: Activate translation DOF on avatar to
@@ -47,11 +48,11 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
-    importConstraints: 1
+    importConstraints: 0
     animationCompression: 3
-    animationRotationError: 1
-    animationPositionError: 1
-    animationScaleError: 1
+    animationRotationError: 0.1
+    animationPositionError: 0.5
+    animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
@@ -73,10 +74,10 @@ ModelImporter:
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 0
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
@@ -123,7 +124,7 @@ ModelImporter:
     normalSmoothingSource: 0
   referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
+  copyAvatar: 1
   humanDescription:
     serializedVersion: 3
     human:
@@ -1184,7 +1185,8 @@ ModelImporter:
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
-  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 9a2ea3acc2769c846a21aead2db611b8,
+    type: 3}
   animationType: 3
   humanoidOversampling: 1
   additionalBone: 0
