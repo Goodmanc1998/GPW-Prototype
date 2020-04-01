@@ -204,11 +204,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3386653527456620405}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: abb6c4cc544a711478c8c88236125c25,
-        type: 3}
-      propertyPath: m_Name
-      value: Bandit
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: abb6c4cc544a711478c8c88236125c25,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -279,6 +274,31 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: abb6c4cc544a711478c8c88236125c25,
+        type: 3}
+      propertyPath: m_Name
+      value: Bandit
+      objectReference: {fileID: 0}
+    - target: {fileID: -4284525131230273051, guid: abb6c4cc544a711478c8c88236125c25,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ce2cc237962085e419b8878383190bbd, type: 2}
+    - target: {fileID: -4284525131230273051, guid: abb6c4cc544a711478c8c88236125c25,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: ce2cc237962085e419b8878383190bbd, type: 2}
+    - target: {fileID: -4284525131230273051, guid: abb6c4cc544a711478c8c88236125c25,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: ce2cc237962085e419b8878383190bbd, type: 2}
+    - target: {fileID: -4284525131230273051, guid: abb6c4cc544a711478c8c88236125c25,
+        type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: ce2cc237962085e419b8878383190bbd, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abb6c4cc544a711478c8c88236125c25, type: 3}
 --- !u!4 &3569534374077995428 stripped
