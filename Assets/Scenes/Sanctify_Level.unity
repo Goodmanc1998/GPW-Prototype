@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.049089823, g: 0.06908732, b: 0.10852629, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -108,8 +108,8 @@ NavMeshSettings:
     agentTypeID: 0
     agentRadius: 0.5
     agentHeight: 2
-    agentSlope: 55
-    agentClimb: 0.7
+    agentSlope: 60
+    agentClimb: 1.57
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     minRegionArea: 2
@@ -12036,7 +12036,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 9861882c3407d234f8f29beb6df935aa,
         type: 3}
       propertyPath: m_NavMeshLayer
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 9861882c3407d234f8f29beb6df935aa,
         type: 3}
@@ -23443,6 +23443,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Path_1
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 304483726dff5da498d5659b2283356d,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 304483726dff5da498d5659b2283356d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -24938,7 +24943,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!23 &2406916847113241606
 MeshRenderer:
@@ -26715,7 +26720,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &5006512735680389387
 Transform:
@@ -28019,7 +28024,7 @@ GameObject:
   m_TagString: Enviroment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!33 &6805667705724390509
 MeshFilter:
@@ -28135,7 +28140,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!1 &7024021246055602667
 GameObject:

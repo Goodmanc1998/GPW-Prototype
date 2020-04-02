@@ -4,7 +4,8 @@ using UnityEngine;
 
 public abstract class AreaGate : MonoBehaviour
 {
-    public int waveNumber = 1; // The wave number that will open this upon completion
+    public int[] waveNumbers; // The wave number that will open this upon completion
+    int completedWaves;
 
     EnemySpawnManager manager;
 
@@ -12,12 +13,27 @@ public abstract class AreaGate : MonoBehaviour
     void Start()
     {
         manager = (EnemySpawnManager)FindObjectOfType(typeof(EnemySpawnManager));
-        if (waveNumber <= 0 || waveNumber > manager.waves.Count)
+
+        completedWaves = waveNumbers.Length;
+        for (int i = 0; i < waveNumbers.Length; i++)
         {
-            Debug.LogWarning("Wave number out of range.");
-            return;
+            if (waveNumbers[i] <= 0 || waveNumbers[i] > manager.waves.Count)
+            {
+                Debug.LogWarning("Wave number out of range.");
+                return;
+            }
+            manager.waves[waveNumbers[i] - 1].EndWave += CompletedWave;
         }
-        manager.waves[waveNumber-1].EndWave += OpenArea;
+    }
+
+    // Notes that a wave has been completed and checks to see if OpenArea() should be called
+    public void CompletedWave()
+    {
+        completedWaves--;
+        if (completedWaves <= 0)
+        {
+            OpenArea();
+        }
     }
 
     // Abstract method, write a new monobehaviour for each gate using the OpenArea() method to handle individual opening code
