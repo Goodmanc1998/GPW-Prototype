@@ -10,7 +10,6 @@ public class DrawToScreen : MonoBehaviour
 {
     public Transform gesturePrefab;
     public Canvas drawCanvas;
-
     private List<Gesture> gestureCheckList = new List<Gesture>();
 
     private List<Point> points = new List<Point>();
@@ -24,12 +23,13 @@ public class DrawToScreen : MonoBehaviour
 
     private List<LineRenderer> gestureLinesRenderer = new List<LineRenderer>();
     private LineRenderer currentGestureLineRenderer;
-
+    public Plane drawPlane;
 
     private bool recognized;
     private string message;
     void Start()
     {
+        drawPlane = new Plane(Camera.main.transform.forward * -1, FindObjectOfType<PlayerMovement>().transform.position);
 
         Debug.Log("datapath : " + Application.persistentDataPath);
         platform = Application.platform;
@@ -48,6 +48,9 @@ public class DrawToScreen : MonoBehaviour
 
     void Update()
     {
+        drawPlane.SetNormalAndPosition(Vector3.up, FindObjectOfType<PlayerMovement>().transform.position);
+
+
         //cross compatbility is running windows android or iphone set the input to be correct style of input.
         if (platform == RuntimePlatform.Android || platform == RuntimePlatform.IPhonePlayer)
         {
@@ -63,7 +66,7 @@ public class DrawToScreen : MonoBehaviour
                 virtualKeyPosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y);
             }
         }
-        
+
         // is the virtual keys in our draw area ?
         if (drawArea.Contains(virtualKeyPosition) && Input.GetKey(KeyCode.Q))
         {
@@ -111,19 +114,30 @@ public class DrawToScreen : MonoBehaviour
                 currentGestureLineRenderer.SetVertexCount(++vertexCount);
                 // using the mouse postion and the camera to cast a ray to post point location
                 Ray mouseRay = Camera.main.ScreenPointToRay(virtualKeyPosition);
+                Ray mouseRay2 = Camera.main.ScreenPointToRay(Input.mousePosition);
+                float intersect = 0.0f;
+                if (drawPlane.Raycast(mouseRay2, out intersect))
+                {
+                    Vector2 yPos = Camera.main.ScreenToWorldPoint(virtualKeyPosition);
+                    //get our point on the plane clicked by the mouse 
+                    Vector3 intersectPoint = mouseRay2.GetPoint(intersect);
+                    currentGestureLineRenderer.SetPosition(vertexCount - 1, new Vector3(intersectPoint.x, yPos.y - 19, intersectPoint.z));
+                }
+
+                // Camera.main.ScreenToViewportPoint(mouseRay.GetPoint(dis2Plyr));
                 //set the gesture y height using done this way incase of player stading on object etc it will grab the mouse one in screen space then minus 13 give us middle of the player character.
-                Vector2 yPos = Camera.main.ScreenToWorldPoint(virtualKeyPosition);
-                currentGestureLineRenderer.SetPosition(vertexCount - 1, new Vector3(mouseRay.GetPoint(dis2Plyr).x,yPos.y - 19, mouseRay.GetPoint(dis2Plyr).z));
-                
+
+                //currentGestureLineRenderer.SetPosition(vertexCount - 1, new Vector3(mouseRay.GetPoint(dis2Plyr).x,yPos.y - 17, mouseRay.GetPoint(dis2Plyr).z));
+
             }
-            if(Input.GetMouseButtonUp(0))
+            if (Input.GetMouseButtonUp(0))
             {
                 Gesture candidate = new Gesture(points.ToArray());
                 Debug.Log("this are the points" + currentGestureLineRenderer.positionCount);
                 Result gestureResult = PointCloudRecognizer.Classify(candidate, gestureCheckList.ToArray());
 
                 message = gestureResult.GestureClass + " " + gestureResult.Score;
-                if(currentGestureLineRenderer.positionCount < 20)
+                if (currentGestureLineRenderer.positionCount < 20)
                 {
                     FindObjectOfType<PlayerMovement>().castSpell(currentGestureLineRenderer, "line", gestureResult.Score);
                 }
@@ -131,15 +145,16 @@ public class DrawToScreen : MonoBehaviour
                 {
                     FindObjectOfType<PlayerMovement>().castSpell(currentGestureLineRenderer, gestureResult.GestureClass, gestureResult.Score);
                 }
-                
+
                 Debug.Log(message);
 
 
                 recognized = true;
             }
-            
+
         }
-        else {
+        else
+        {
             recognized = false;
             strokeId = -1;
 
@@ -155,5 +170,13 @@ public class DrawToScreen : MonoBehaviour
             gestureLinesRenderer.Clear();
         }
     }
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawCube(FindObjectOfType<PlayerMovement>().transform.position, new Vector3(100, 0.1f, 100));
+        Ray mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Gizmos.color = Color.green;
+        Gizmos.DrawLine(mouseRay.origin, mouseRay.GetPoint(50));
 
+    }
 }
