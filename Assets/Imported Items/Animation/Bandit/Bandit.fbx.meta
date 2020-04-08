@@ -1,11 +1,8 @@
 fileFormatVersion: 2
-guid: a94f182cce34b424988c125891e7066e
+guid: a64a90bc396c2c24eaf4a730a1dd1da4
 ModelImporter:
   serializedVersion: 26
-  internalIDToNameTable:
-  - first:
-      74: 1827226128182048838
-    second: Take 001
+  internalIDToNameTable: []
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -85,7 +82,7 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     globalScale: 1
-    rootMotionBoneName: WR_Root_Jnt_01
+    rootMotionBoneName: joint20
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
