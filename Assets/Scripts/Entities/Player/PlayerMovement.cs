@@ -9,7 +9,7 @@ public class PlayerMovement : Entities
 
     GameObject targetEnemy;
     public float targetRange;
-
+    public Animator entitiesAnimator;
     float timebetweenChecks = 0.5f;
     float nextCheckTime;
 
@@ -30,7 +30,7 @@ public class PlayerMovement : Entities
     public Transform spellSpawn;
 
     public GameObject healthBar;
-
+    Vector3 hitPoint;
     public void castSpell(LineRenderer GestureTransform,string ShapeDrawn,float percentMatch)
     {
         if(percentMatch >= 0.9f)
@@ -109,7 +109,10 @@ public class PlayerMovement : Entities
     // Update is called once per frame
     void Update()
     {
-
+        if(Vector3.Distance(hitPoint,transform.position) <= 0.5)
+        {
+            entitiesAnimator.SetBool("PlayerMove", false);
+        }
         healthBar.GetComponent<RectTransform>().sizeDelta = new Vector2(health, 100);
 
         if(speedBuffCounter >= 1)
@@ -130,16 +133,17 @@ public class PlayerMovement : Entities
             if (Physics.Raycast(ray, out hit))
             {
 
-                Vector3 hitPoint = hit.point;
+                hitPoint = hit.point;
 
                 if(hit.collider.gameObject.tag == "Platform" || hit.collider.gameObject.tag == "Enviroment")
                 {
                     agent.SetDestination(hitPoint);
+                    entitiesAnimator.SetBool("PlayerMove", true);
                 }
 
             }
         }
-
+        
         CheckTarget();
 
         if (targetEnemy != null && Time.time > nextCheckTime)
