@@ -12561,6 +12561,7 @@ MonoBehaviour:
     averageSpawningDuration: 5
     spawnDurationRandomness: 0
     enemiesRemaining: 0
+    started: 0
     spawnpointColour: {r: 1, g: 0.71209943, b: 0, a: 1}
     showSpawnpoints: 1
   - spawnpoints:
@@ -12571,6 +12572,7 @@ MonoBehaviour:
     averageSpawningDuration: 5
     spawnDurationRandomness: 0
     enemiesRemaining: 0
+    started: 0
     spawnpointColour: {r: 0, g: 1, b: 0.8591552, a: 1}
     showSpawnpoints: 1
   - spawnpoints:
@@ -12581,6 +12583,7 @@ MonoBehaviour:
     averageSpawningDuration: 5
     spawnDurationRandomness: 0
     enemiesRemaining: 0
+    started: 0
     spawnpointColour: {r: 0, g: 1, b: 0.8588236, a: 1}
     showSpawnpoints: 1
   - spawnpoints:
@@ -12591,6 +12594,7 @@ MonoBehaviour:
     averageSpawningDuration: 5
     spawnDurationRandomness: 0
     enemiesRemaining: 0
+    started: 0
     spawnpointColour: {r: 1, g: 0, b: 0.9601979, a: 1}
     showSpawnpoints: 1
   - spawnpoints:
@@ -12601,6 +12605,7 @@ MonoBehaviour:
     averageSpawningDuration: 5
     spawnDurationRandomness: 0
     enemiesRemaining: 0
+    started: 0
     spawnpointColour: {r: 1, g: 0, b: 0.9607844, a: 1}
     showSpawnpoints: 1
   - spawnpoints:
@@ -12611,6 +12616,7 @@ MonoBehaviour:
     averageSpawningDuration: 5
     spawnDurationRandomness: 0
     enemiesRemaining: 0
+    started: 0
     spawnpointColour: {r: 1, g: 0, b: 0.9607844, a: 1}
     showSpawnpoints: 1
   - spawnpoints: []
@@ -12620,6 +12626,7 @@ MonoBehaviour:
     averageSpawningDuration: 5
     spawnDurationRandomness: 0
     enemiesRemaining: 0
+    started: 0
     spawnpointColour: {r: 0.12834764, g: 1, b: 0, a: 1}
     showSpawnpoints: 0
   blockOnScreenSpawns: 0
@@ -31232,6 +31239,7 @@ Transform:
   - {fileID: 359738961}
   - {fileID: 406201695}
   - {fileID: 2062767388}
+  - {fileID: 1524912583}
   - {fileID: 1007351804}
   - {fileID: 771309057}
   - {fileID: 579493135}
@@ -31334,8 +31342,8 @@ Transform:
   - {fileID: 1564786065}
   - {fileID: 1298524676}
   - {fileID: 1936293828}
-  - {fileID: 1524912583}
   - {fileID: 428001268}
+  - {fileID: 2026962558}
   - {fileID: 1954712546}
   - {fileID: 166546454}
   - {fileID: 475213873}
@@ -31367,7 +31375,6 @@ Transform:
   - {fileID: 1670308415}
   - {fileID: 1143710340}
   - {fileID: 1609306143}
-  - {fileID: 2026962558}
   - {fileID: 728667985}
   - {fileID: 1317548267}
   - {fileID: 129621930}
@@ -31440,11 +31447,11 @@ Transform:
   - {fileID: 47892101}
   - {fileID: 1129266155}
   - {fileID: 652188532}
-  - {fileID: 2063954000}
   - {fileID: 1742801264}
+  - {fileID: 2063954000}
   - {fileID: 138671945}
-  - {fileID: 1084255758}
   - {fileID: 1497768477}
+  - {fileID: 1084255758}
   - {fileID: 1750689917}
   - {fileID: 1139351373}
   - {fileID: 468457840}
@@ -46642,6 +46649,7 @@ GameObject:
   - component: {fileID: 1399748166}
   - component: {fileID: 1399748165}
   - component: {fileID: 1399748164}
+  - component: {fileID: 1399748169}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -46659,7 +46667,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 5
   m_Acceleration: 10
   avoidancePriority: 50
   m_AngularSpeed: 180
@@ -46697,6 +46705,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c71d100f2633f2499d11f3286e859c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  entitiesAnimator: {fileID: 0}
   startingHealth: 20
   health: 0
   weakness: 0
@@ -46744,6 +46753,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1399748169
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1399748163}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 6e964d372d682234597e51467b3f5226, type: 3}
+  m_Controller: {fileID: 9100000, guid: a3ff6b55f72e70d42ab3307c214a697e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 2
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1404448156
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48977,6 +49005,7 @@ MonoBehaviour:
     averageSpawningDuration: 5
     spawnDurationRandomness: 0
     enemiesRemaining: 0
+    started: 0
     spawnpointColour: {r: 1, g: 0.71209943, b: 0, a: 1}
     showSpawnpoints: 1
   - spawnpoints:
@@ -48987,6 +49016,7 @@ MonoBehaviour:
     averageSpawningDuration: 5
     spawnDurationRandomness: 0
     enemiesRemaining: 0
+    started: 0
     spawnpointColour: {r: 0, g: 1, b: 0.8591552, a: 1}
     showSpawnpoints: 1
   - spawnpoints:
@@ -48997,6 +49027,7 @@ MonoBehaviour:
     averageSpawningDuration: 5
     spawnDurationRandomness: 0
     enemiesRemaining: 0
+    started: 0
     spawnpointColour: {r: 0, g: 1, b: 0.8588236, a: 1}
     showSpawnpoints: 1
   - spawnpoints:
@@ -49007,6 +49038,7 @@ MonoBehaviour:
     averageSpawningDuration: 5
     spawnDurationRandomness: 0
     enemiesRemaining: 0
+    started: 0
     spawnpointColour: {r: 1, g: 0, b: 0.9601979, a: 1}
     showSpawnpoints: 1
   - spawnpoints:
@@ -49017,6 +49049,7 @@ MonoBehaviour:
     averageSpawningDuration: 5
     spawnDurationRandomness: 0
     enemiesRemaining: 0
+    started: 0
     spawnpointColour: {r: 1, g: 0, b: 0.9607844, a: 1}
     showSpawnpoints: 1
   - spawnpoints:
@@ -49027,6 +49060,7 @@ MonoBehaviour:
     averageSpawningDuration: 5
     spawnDurationRandomness: 0
     enemiesRemaining: 0
+    started: 0
     spawnpointColour: {r: 1, g: 0, b: 0.9607844, a: 1}
     showSpawnpoints: 1
   - spawnpoints: []
@@ -49036,6 +49070,7 @@ MonoBehaviour:
     averageSpawningDuration: 5
     spawnDurationRandomness: 0
     enemiesRemaining: 0
+    started: 0
     spawnpointColour: {r: 0.12834764, g: 1, b: 0, a: 1}
     showSpawnpoints: 0
   blockOnScreenSpawns: 0
@@ -49427,7 +49462,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 934936277}
-  m_RootOrder: 376
+  m_RootOrder: 274
   m_LocalEulerAnglesHint: {x: 11.17, y: 0.147, z: -150.53401}
 --- !u!64 &1524912584
 MeshCollider:
@@ -66171,7 +66206,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 934936277}
-  m_RootOrder: 409
+  m_RootOrder: 378
   m_LocalEulerAnglesHint: {x: 11.17, y: 0.147, z: -150.53401}
 --- !u!64 &2026962559
 MeshCollider:

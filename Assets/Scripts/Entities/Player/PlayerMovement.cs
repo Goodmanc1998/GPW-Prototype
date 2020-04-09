@@ -33,7 +33,7 @@ public class PlayerMovement : Entities
     public Transform spellSpawn;
 
     public GameObject healthBar;
-
+    Vector3 hitPoint;
     public void castSpell(LineRenderer GestureTransform,string ShapeDrawn,float percentMatch)
     {
         if(percentMatch >= 0.9f)
@@ -46,7 +46,7 @@ public class PlayerMovement : Entities
 
                 transform.LookAt(new Vector3(GestureTransform.GetPosition(GestureTransform.positionCount - 1).x, transform.position.y, GestureTransform.GetPosition(GestureTransform.positionCount - 1).z));
 
-
+                entitiesAnimator.SetBool("SpellDrawn", true);
                 Instantiate(FireSpell, spellSpawn.position, transform.localRotation);
 
                 Debug.Log(transform.localRotation);
@@ -61,6 +61,7 @@ public class PlayerMovement : Entities
                 //cast triangle spell here by instatiating spell object.
                 //Debug.Log("triangle");
                 transform.LookAt(new Vector3(GestureTransform.GetPosition(GestureTransform.positionCount - 1).x, transform.position.y, GestureTransform.GetPosition(GestureTransform.positionCount - 1).z));
+                entitiesAnimator.SetBool("SpellDrawn", true);
                 Instantiate(LightningSpell, spellSpawn.position, transform.localRotation);
                 Debug.Log("cast lightening");
 
@@ -74,8 +75,10 @@ public class PlayerMovement : Entities
                 float minusOneMid = GestureTransform.GetPosition((GestureTransform.positionCount / 2) - 1).z;
                 float plusOneMid = GestureTransform.GetPosition((GestureTransform.positionCount / 2) + 1).z;
                 Debug.Log(GestureTransform.positionCount);
+                entitiesAnimator.SetBool("SpellDrawn", true);
                 for (int i = 0; i < GestureTransform.positionCount; i++)
                 {
+                    
                     Instantiate(groundSpell, GestureTransform.GetPosition(i), Quaternion.Euler(0, 90, 0));
                 }
                 //deprecated was original process of spawn the ice wall but then moved onto the approach.!!
@@ -96,8 +99,10 @@ public class PlayerMovement : Entities
         }
         else
         {
+            
             //spell was a failure do little fizzle out of a spell to indicate to player they were close to casting.
         }
+        
     }
 
 
@@ -105,14 +110,24 @@ public class PlayerMovement : Entities
     protected override void Start()
     {
         base.Start();
-
+        entitiesAnimator.updateMode = UnityEngine.AnimatorUpdateMode.Normal;
         viewCamera = Camera.main;
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if(entitiesAnimator.GetBool("SpellDrawn") == true)
+        {
+            for (int i = 0; i < 120; i++)
+            {
+                entitiesAnimator.SetBool("SpellDrawn", false);
+            }
+        }
+        if(Vector3.Distance(hitPoint,transform.position) <= 0.5f)
+        {
+            entitiesAnimator.SetBool("PlayerMove", false);
+        }
         healthBar.GetComponent<RectTransform>().sizeDelta = new Vector2(health, 100);
 
         if(speedBuffCounter >= 1)
@@ -133,11 +148,12 @@ public class PlayerMovement : Entities
             if (Physics.Raycast(ray, out hit))
             {
 
-                Vector3 hitPoint = hit.point;
+                hitPoint = hit.point;
 
                 if(hit.collider.gameObject.tag == "Platform" || hit.collider.gameObject.tag == "Enviroment")
                 {
                     agent.SetDestination(hitPoint);
+                    entitiesAnimator.SetBool("PlayerMove", true);
                 }
 
             }

@@ -8,6 +8,7 @@ public class Entities : MonoBehaviour
     //Storing the players Transform, and Agent for movement
     protected Transform player;
     protected NavMeshAgent agent;
+    public Animator entitiesAnimator;
 
     [Header("Health")]
     public float startingHealth;
@@ -30,6 +31,7 @@ public class Entities : MonoBehaviour
 
         if (player == null || agent == null)
         {
+            entitiesAnimator = GetComponent<Animator>();
             player = GameObject.FindGameObjectWithTag("Player").transform;
             agent = GetComponent<NavMeshAgent>();
         }
