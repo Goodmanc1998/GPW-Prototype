@@ -8,7 +8,6 @@ public class SpawnTrigger : MonoBehaviour
     public static string playerTag = "Player";
 
     EnemySpawnManager manager;
-    bool started = false;
 
     private void Start()
     {
@@ -20,12 +19,11 @@ public class SpawnTrigger : MonoBehaviour
         }
     }
 
-    // When the player is in range, the wave will begin
+    // When the player is in range, the wave will begin (a check is done after StartWave() is called to see if the wave has already been triggered)
     private void OnTriggerEnter(Collider c)
     {
-        if (c.tag == playerTag && !started)
+        if (c.tag == playerTag)
         {
-            started = true;
             manager.StartWave(this);
         }
     }
