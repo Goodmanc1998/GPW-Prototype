@@ -7,6 +7,9 @@ public class PlayerMovement : Entities
 {
     Camera viewCamera;
 
+    Checkpoint checkpoint;
+    EnemySpawnManager enemySpawnManager;
+
     GameObject targetEnemy;
     public float targetRange;
 
@@ -148,7 +151,10 @@ public class PlayerMovement : Entities
             nextCheckTime = Time.time + timebetweenChecks;
         }
 
-
+        if (dead)
+        {
+            Respawn(); // If the player dies, respawn them
+        }
     }
 
     public void PlayerLook()
@@ -202,5 +208,18 @@ public class PlayerMovement : Entities
         currentLightingSpell--;
     }
 
+    // Set the location the player should be spawned at when they die
+    public void SetCheckpoint(Checkpoint newCheckpoint)
+    {
+        Debug.Log("Set checkpoint");
+        checkpoint = newCheckpoint;
+    }
 
+    // Respawn the player
+    public void Respawn()
+    {
+        transform.position = checkpoint.transform.position; // Set the player to the checkpoints location
+        health = startingHealth; // Reset the players health
+        enemySpawnManager.ResetWaves(); // Reset all waves that are currently active or have yet to fought
+    }
 }

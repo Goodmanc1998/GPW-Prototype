@@ -8,9 +8,9 @@ public class EnemySpawnManager : MonoBehaviour
     public List<Wave> waves; // List of waves currently in use
 
     public bool blockOnScreenSpawns; // When a spawn location is within this range of the player, no enemies will be spawned from it
-    
-    // Currently has no use
     public int enemySpawnLimit; // The maximum amount of enemies across all waves allowed to be present in the world, set to 0 for no limit (only applies to wave spawned enemies)
+
+    List<Enemy> enemies; // Keeps track of enemies currently in the scene
 
     public void StartWave(SpawnTrigger trigger)
     {
@@ -18,6 +18,7 @@ public class EnemySpawnManager : MonoBehaviour
         {
             if (wave.startTrigger == trigger)
             {
+                wave.started = true;
                 Debug.Log(wave.enemy.name + "wave has started.");
                 StartCoroutine(SpawnWave(wave));
             }
@@ -70,8 +71,25 @@ public class EnemySpawnManager : MonoBehaviour
         }
         Enemy spawnedEnemy = Instantiate(wave.enemy, possibleSpawns[Random.Range(0, possibleSpawns.Count)].position, Quaternion.identity);
         spawnedEnemy.wave = wave;
-        //spawnedEnemy.startingHealth = (int)(spawnedEnemy.startingHealth * wave.difficulty);
+        enemies.Add(spawnedEnemy);
         return true;
+    }
+
+    // Destroy all the current enemies in the scene and reset waves that have started but not all enemies have been killed
+    public void ResetWaves()
+    {
+        foreach (Wave wave in waves)
+        {
+            if (wave.started = true && wave.enemiesRemaining > 0)
+            {
+                wave.started = false;
+                wave.enemiesRemaining = 0;
+            }
+        }
+        foreach (Enemy enemy in enemies)
+        {
+            Destroy(enemy);
+        }
     }
 
 #if UNITY_EDITOR

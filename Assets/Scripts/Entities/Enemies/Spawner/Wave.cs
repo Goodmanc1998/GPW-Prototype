@@ -9,11 +9,11 @@ public class Wave
     public Enemy enemy; // Enemy that will be spawned in this wave
     public SpawnTrigger startTrigger; // Trigger collider that will start the wave once the player has entered it
     public int enemyAmount; // The total number of enemies that are spawned throughout the wave
-    //public float difficulty; // Can be used to balance enemy health, strength etc. individually for each wave
     public float averageSpawningDuration; // The length of time enemies are spawned for, a time of 0 will spawn all enemies instantly
     public float spawnDurationRandomness; // The amount of irregularity of enemy spawns, a time of 0 will make each enemy spawn in regular intervals
 
-    public int enemiesRemaining; // When no more enemies are remaining the end wave method is called
+    public int enemiesRemaining = 0; // When no more enemies are remaining the end wave method is called
+    public bool started = false;
 
     // Editor variables, do not affect gameplay
     public Color spawnpointColour; // Colour of the spawnpoint gizmos for the wave
