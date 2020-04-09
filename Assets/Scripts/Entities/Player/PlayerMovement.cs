@@ -99,7 +99,7 @@ public class PlayerMovement : Entities
         }
         else
         {
-            
+            entitiesAnimator.SetTrigger("SpellFail");
             //spell was a failure do little fizzle out of a spell to indicate to player they were close to casting.
         }
         
@@ -166,7 +166,10 @@ public class PlayerMovement : Entities
             PlayerLook();
             nextCheckTime = Time.time + timebetweenChecks;
         }
-
+        if(health <= 0)
+        {
+            entitiesAnimator.SetBool("Dead", true);
+        }
         if (dead)
         {
             Respawn(); // If the player dies, respawn them
