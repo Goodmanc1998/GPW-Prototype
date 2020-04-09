@@ -15872,7 +15872,6 @@ GameObject:
   - component: {fileID: 1399748166}
   - component: {fileID: 1399748165}
   - component: {fileID: 1399748164}
-  - component: {fileID: 1399748169}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -15932,7 +15931,6 @@ MonoBehaviour:
   health: 0
   weakness: 0
   targetRange: 0
-  entitiesAnimator: {fileID: 1399748169}
   speedBuff: {fileID: 0}
   FireSpell: {fileID: 6599201895962909512, guid: 75772c5a105c10d4498b4830bf617dd4,
     type: 3}
@@ -15976,25 +15974,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &1399748169
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1399748163}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 6e964d372d682234597e51467b3f5226, type: 3}
-  m_Controller: {fileID: 9100000, guid: a3ff6b55f72e70d42ab3307c214a697e, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &1405216695 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 2bbf50a146a3d6c428b826f3cfa53f53,
