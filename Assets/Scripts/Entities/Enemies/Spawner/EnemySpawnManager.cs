@@ -10,7 +10,7 @@ public class EnemySpawnManager : MonoBehaviour
     public bool blockOnScreenSpawns; // When a spawn location is within this range of the player, no enemies will be spawned from it
     public int enemySpawnLimit; // The maximum amount of enemies across all waves allowed to be present in the world, set to 0 for no limit (only applies to wave spawned enemies)
 
-    List<Enemy> enemies; // Keeps track of enemies currently in the scene
+    public static List<Enemy> enemies = new List<Enemy>(); // Keeps track of enemies currently in the scene
 
     public void StartWave(SpawnTrigger trigger)
     {
@@ -76,9 +76,10 @@ public class EnemySpawnManager : MonoBehaviour
     }
 
     // Destroy all the current enemies in the scene and reset waves that have started but not all enemies have been killed
-    public void ResetWaves()
+    public static void ResetWaves()
     {
-        foreach (Wave wave in waves)
+        EnemySpawnManager manager = FindObjectOfType<EnemySpawnManager>();
+        foreach (Wave wave in manager.waves)
         {
             if (wave.started = true && wave.enemiesRemaining > 0)
             {

@@ -109,7 +109,7 @@ public class Enemy : Entities
         Vector3 spawnPosition = transform.position + (transform.forward * 2);
 
         //Creating the Pawn
-        Instantiate(pawnEnemy, spawnPosition, transform.rotation);
+        EnemySpawnManager.enemies.Add(Instantiate(pawnEnemy, spawnPosition, transform.rotation));
 
         //Storing this spawner in the Pawn
         pawnEnemy.pawnSpawner = GetComponent<PawnSpawnerScript>();
