@@ -168,7 +168,7 @@ public class PlayerMovement : Entities
         if (dead)
         {
             entitiesAnimator.SetBool("Dead", true);
-            Respawn(); // If the player dies, respawn them
+            StartCoroutine(Respawn(3f)); // If the player dies, respawn them
         }
     }
 
@@ -226,13 +226,15 @@ public class PlayerMovement : Entities
     // Set the location the player should be spawned at when they die
     public void SetCheckpoint(Checkpoint newCheckpoint)
     {
-        Debug.Log("Set checkpoint");
         checkpoint = newCheckpoint;
     }
 
     // Respawn the player
-    public void Respawn()
+    public IEnumerator Respawn(float timeBeforeRespawn)
     {
+        Debug.Log("Player Respawning");
+        yield return new WaitForSeconds(timeBeforeRespawn); // Allow time for the death animation to play
+        entitiesAnimator.SetBool("Dead", false); // Reset the animators death state
         transform.position = checkpoint.transform.position; // Set the player to the checkpoints location
         health = startingHealth; // Reset the players health
         EnemySpawnManager.ResetWaves(); // Reset all waves that are currently active or have yet to fought

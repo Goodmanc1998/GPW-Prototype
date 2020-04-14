@@ -9,6 +9,15 @@ public class Checkpoint : MonoBehaviour
 
     static int currentCheckpoint = -1; // The current checkpoint the player will respawn at
 
+    private void Start()
+    {
+        if (GetComponent<Collider>().isTrigger)
+        {
+            Debug.LogWarning("Checkpoint colliders must be triggers. Setting Collider.isTrigger to true");
+            GetComponent<Collider>().isTrigger = true;
+        }
+    }
+
     // When the player comes into contact with the attached collider, check to see if their spawnpoint should be set
     private void OnTriggerEnter(Collider c)
     {
