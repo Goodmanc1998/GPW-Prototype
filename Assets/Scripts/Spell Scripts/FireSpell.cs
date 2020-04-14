@@ -4,73 +4,98 @@ using UnityEngine;
 
 public class FireSpell : SpellMovement
 {
+    //int used to store damage delt
     public int damage;
+    //int used to store AOE damage
     public int AOERange;
-
+    //bool used to register when hit
+    bool hit;
+    //float used to store the time the gameObject has been alive for
+    float timeAlive;
 
     // Start is called before the first frame update
     void Start()
     {
+        //Destroying the GameObject after its lifetime
         Destroy(gameObject, lifeTime);
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        Movement();
+        //If there has not been a colision yet it will carry on forward
+        if (hit != true)
+        {
+            //Moving the spell forward
+            Movement();
+        }
+
+        //Updating the time alive
+        timeAlive += Time.deltaTime;
     }
 
     public override void Movement()
     {
+        //Moving the transform forward 
         transform.position += (transform.forward * speed )* Time.deltaTime;
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.GetComponent<Entities>() == true && collision.gameObject.tag != "Player")
+        //If there is a collision with an enemy
+
+        if (collision.gameObject.GetComponent<Enemy>() == true)
         {
-            Entities target = collision.gameObject.GetComponent<Entities>();
+            //Dealing damage to the hit enemy
+            collision.gameObject.GetComponent<Entities>().TakeDamage(damage, "Fire");
 
-            FireAOE();
+            //Starting the fire AOE
+            StartCoroutine(FireAOE());
 
-            target.TakeDamage(damage, "Fire");
-
-        }
-        else if(collision.gameObject.tag != "Player" && collision.gameObject.tag != "Platform")
+        }//else if the collision is not with the player and the time alive is greater than 0.25
+        else if (collision.gameObject.tag != "Player" && timeAlive > 0.25f)
         {
-            Destroy(this.gameObject);
+            //starting the fire AOE
+            StartCoroutine(FireAOE());
         }
 
     }
 
-    public void FireAOE()
+    IEnumerator FireAOE()
     {
+        //Setting hit to True
+        hit = true;
 
+        //Storing colliders within ranage of the AOE Range
         Collider[] collidersWithinRange = Physics.OverlapSphere(transform.position, AOERange);
 
-        int count = 0;
-
-        while (count < collidersWithinRange.Length)
+        //For each loop to run through each collider within array
+        foreach (Collider c in collidersWithinRange)
         {
-            if (collidersWithinRange[count].gameObject.GetComponent<Entities>() && collidersWithinRange[count].gameObject.tag != "Player")
+            //If the collider has the enemy script
+            if (c.gameObject.GetComponent<Enemy>() == true)
             {
-                collidersWithinRange[count].gameObject.GetComponent<Entities>().TakeDamage(damage, "Fire");
+                //Dealing damage
+                c.gameObject.GetComponent<Entities>().TakeDamage(damage, "Fire");
             }
-
-            count++;
         }
 
-        Destroy(this.gameObject);
+        //Waiting for length of fire aoe effect 
+        yield return new WaitForSeconds(1);
 
+        //Removing the gameObject
+        Destroy(this.gameObject);
     }
 
+    //Called just before Destroyed
     private void OnDestroy()
     {
+        //Finding the player gameObject
         GameObject player = GameObject.FindGameObjectWithTag("Player");
-
+        //Updating the now current fire spell amount
         player.GetComponent<PlayerMovement>().RemoveFireSpell();
     }
+    
 
 
 }
