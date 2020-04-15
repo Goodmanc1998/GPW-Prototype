@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Boss : Enemy
 {
     public float shootRange;
     public float disToPlayer;
-
+    float distance;
     private int shot;
     protected override void Start()
     {
@@ -14,17 +15,19 @@ public class Boss : Enemy
         health = startingHealth;
         dead = false;
         shot = 0;
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        agent = GetComponent<NavMeshAgent>();
     }
     private void Update()
     {
         //fight starts
-        
+        distance = Vector3.Distance(player.position, transform.position); // Calculates the distance between the player and enemy
         if (!froze)
         {
             //health is > 33%
-            if (health > health / 100 * 33)
+            if (health > startingHealth / 100 * 33)
             {
-                float distance = Vector3.Distance(player.position, transform.position); // Calculates the distance between the player and enemy
+                
                 if (!froze)
                 {
                     //keep distance to player 
@@ -52,10 +55,10 @@ public class Boss : Enemy
                     
                 }
             }
-            else if(health <= health/100*33)
+            else if(health <= startingHealth/100*33)
             {
                 //health is < 33%
-                float distance = Vector3.Distance(player.position, transform.position); // Calculates the distance between the player and enemy
+                
                 //keep distance to player 
                 // If the enemy is out of shooting range, move towards the player
                 if (distance > shootRange)
@@ -73,6 +76,7 @@ public class Boss : Enemy
                     {
                         //after special attack froze in place take double damage.
                         SB("freeze");
+                        shot = 0;
                     }
 
                     SB("flee"); // Effectively stops the enemy from moving

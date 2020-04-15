@@ -51,7 +51,8 @@ public class Enemy : Entities
     protected override void Start()
     {
         base.Start();
-
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        agent = GetComponent<NavMeshAgent>();
         agent.speed = movementSpeed;
         agent.angularSpeed = angularSpeed;
         agent.acceleration = acceleration;
