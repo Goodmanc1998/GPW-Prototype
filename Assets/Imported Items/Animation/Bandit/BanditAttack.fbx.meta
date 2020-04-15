@@ -1,8 +1,11 @@
 fileFormatVersion: 2
-guid: e57ab377c05e0414bb54c6e320170cf9
+guid: 41f55825382006a4e83335e946b9cd19
 ModelImporter:
   serializedVersion: 26
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: 6720303635017113406
+    second: Attack
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -69,7 +72,7 @@ ModelImporter:
     normalSmoothingSource: 0
   referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
+  copyAvatar: 1
   humanDescription:
     serializedVersion: 3
     human: []
@@ -82,12 +85,13 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     globalScale: 1
-    rootMotionBoneName: 
+    rootMotionBoneName: joint20
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
-  lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: a64a90bc396c2c24eaf4a730a1dd1da4,
+    type: 3}
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

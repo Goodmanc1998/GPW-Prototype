@@ -98,7 +98,7 @@ MonoBehaviour:
     m_Value: 0
   fogHeightAttenuation:
     m_OverrideState: 1
-    m_Value: 0.2
+    m_Value: 0.005
     min: 0
     max: 1
 --- !u!114 &-1856071509007546196
@@ -120,7 +120,7 @@ MonoBehaviour:
     m_Value: 2
   skyAmbientMode:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 1
   fogType:
     m_OverrideState: 1
     m_Value: 2
@@ -179,14 +179,14 @@ MonoBehaviour:
     m_Value: 20000
   updateMode:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 2
   updatePeriod:
     m_OverrideState: 1
     m_Value: 0
     min: 0
   includeSunInBaking:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 1
   sunSize:
     m_OverrideState: 1
     m_Value: 0.04
