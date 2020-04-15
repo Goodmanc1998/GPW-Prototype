@@ -148,6 +148,8 @@ MonoBehaviour:
   startingHealth: 0
   health: 0
   weakness: 0
+  JumpPoint: {fileID: 5652665797778428093, guid: 0477d054b090d2c4e81143ba35546a9e,
+    type: 3}
   movementSpeed: 5
   angularSpeed: 180
   acceleration: 3

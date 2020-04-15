@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class Enemy : Entities
 {
+    public Transform JumpPoint;
     [Header("Movement")]
     public float movementSpeed;
     public float angularSpeed;
