@@ -9,6 +9,9 @@ TagManager:
   - Target
   - SpellBook
   - Enviroment
+  - Dirt
+  - Stone
+  - Wood
   layers:
   - Default
   - TransparentFX
@@ -21,7 +24,7 @@ TagManager:
   - PostProcessing
   - Target
   - INGAME UI
-  - 
+  - Player
   - 
   - 
   - 

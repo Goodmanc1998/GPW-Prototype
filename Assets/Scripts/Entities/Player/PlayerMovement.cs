@@ -146,10 +146,10 @@ public class PlayerMovement : Entities
 
             if (Physics.Raycast(ray, out hit))
             {
-
                 hitPoint = hit.point;
 
-                if(hit.collider.gameObject.tag == "Platform" || hit.collider.gameObject.tag == "Enviroment")
+                string tag = hit.collider.gameObject.tag;
+                if(tag == "Platform" || tag == "Enviroment" || tag == "Dirt" || tag == "Stone" || tag == "Wood")
                 {
                     agent.SetDestination(hitPoint);
                     entitiesAnimator.SetBool("PlayerMove", true);
