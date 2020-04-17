@@ -10,6 +10,8 @@ public class DoorAnimation : MonoBehaviour
 
     Animator animator;
 
+    TutorialScript tutorial;
+
 
     // Start is called before the first frame update
     void Start()
@@ -17,11 +19,13 @@ public class DoorAnimation : MonoBehaviour
             animator = GetComponent<Animator>();
             animator.SetBool("Dooropen", false);
 
+        tutorial = GameObject.FindGameObjectWithTag("Tutorial").GetComponent<TutorialScript>();
+
     }
 
     private void OnTriggerEnter(Collider c)
     {
-        if (c.tag == playerTag)
+        if (c.tag == playerTag && tutorial.tutorialComplete)
         {
             animator.SetBool("Dooropen", true);
 
@@ -29,7 +33,7 @@ public class DoorAnimation : MonoBehaviour
     }
     private void OnTriggerExit(Collider c)
     {
-        if (c.tag == playerTag)
+        if (c.tag == playerTag && tutorial.tutorialComplete)
         {
             animator.SetBool("Dooropen", false);
 

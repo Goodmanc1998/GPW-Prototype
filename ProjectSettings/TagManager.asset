@@ -12,6 +12,7 @@ TagManager:
   - Dirt
   - Stone
   - Wood
+  - Tutorial
   layers:
   - Default
   - TransparentFX
