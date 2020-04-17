@@ -33,6 +33,9 @@ public class PlayerMovement : Entities
 
     public GameObject healthBar;
     Vector3 hitPoint;
+
+    TutorialScript tutorial;
+
     public void castSpell(LineRenderer GestureTransform,string ShapeDrawn,float percentMatch)
     {
         if(percentMatch >= 0.9f)
@@ -53,6 +56,9 @@ public class PlayerMovement : Entities
 
                 currentFireSpell++;
 
+                if (tutorial.spellOneCast == false)
+                    tutorial.spellOneCast = true;
+
 
             }
             else if (ShapeDrawn == "lightening" && currentLightingSpell < maxFireSpell)
@@ -65,6 +71,9 @@ public class PlayerMovement : Entities
                 Debug.Log("cast lightening");
 
                 currentLightingSpell++;
+
+                if (tutorial.spellTwoCast == false)
+                    tutorial.spellTwoCast = true;
             }
             else if (ShapeDrawn == "arc")
             {
@@ -91,8 +100,10 @@ public class PlayerMovement : Entities
                 //    Instantiate(groundSpell, GestureTransform.GetPosition(GestureTransform.positionCount / 2), Quaternion.Euler(0, 0, 0));
                 //    Debug.Log("cast here and the angle is still wrong");
                 //}
-                
-                
+
+                if (tutorial.spellThreeCast == false)
+                    tutorial.spellThreeCast = true;
+
             }
             
         }
@@ -111,6 +122,8 @@ public class PlayerMovement : Entities
         base.Start();
         entitiesAnimator.updateMode = UnityEngine.AnimatorUpdateMode.Normal;
         viewCamera = Camera.main;
+
+        tutorial = GameObject.FindGameObjectWithTag("Tutorial").GetComponent<TutorialScript>();
     }
 
     // Update is called once per frame
@@ -127,7 +140,7 @@ public class PlayerMovement : Entities
         {
             entitiesAnimator.SetBool("PlayerMove", false);
         }
-        healthBar.GetComponent<RectTransform>().sizeDelta = new Vector2(health, 100);
+
 
         if(speedBuffCounter >= 1)
         {
