@@ -11,7 +11,7 @@ public class Checkpoint : MonoBehaviour
 
     private void Start()
     {
-        if (GetComponent<Collider>().isTrigger)
+        if (!GetComponent<Collider>().isTrigger)
         {
             Debug.LogWarning("Checkpoint colliders must be triggers. Setting Collider.isTrigger to true");
             GetComponent<Collider>().isTrigger = true;

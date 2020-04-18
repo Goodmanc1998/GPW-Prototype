@@ -109,7 +109,7 @@ NavMeshSettings:
     agentRadius: 0.5
     agentHeight: 2
     agentSlope: 60
-    agentClimb: 1.57
+    agentClimb: 1
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     minRegionArea: 2
@@ -21837,7 +21837,7 @@ GameObject:
   m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &418413954
 Transform:
@@ -24361,6 +24361,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bridge_2
       objectReference: {fileID: 0}
+    - target: {fileID: -7226659709031041683, guid: 51070fbbe3c51984c930e12dc9109242,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 3517721924116292806, guid: 51070fbbe3c51984c930e12dc9109242,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 8559151021083913040, guid: 51070fbbe3c51984c930e12dc9109242,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: -4820134495595288415, guid: 51070fbbe3c51984c930e12dc9109242,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: -3588329912711987755, guid: 51070fbbe3c51984c930e12dc9109242,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: -5602314551947084761, guid: 51070fbbe3c51984c930e12dc9109242,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: -7130681092565988319, guid: 51070fbbe3c51984c930e12dc9109242,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: -8923308831364506616, guid: 51070fbbe3c51984c930e12dc9109242,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -24461,6 +24496,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 7c6a60dfbbec2964a8ab3d0337322ea5, type: 2}
+    - target: {fileID: 3589432023420163849, guid: 51070fbbe3c51984c930e12dc9109242,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 51070fbbe3c51984c930e12dc9109242, type: 3}
 --- !u!4 &474449810 stripped
@@ -28072,7 +28112,7 @@ GameObject:
   m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &541726041
 Transform:
@@ -31177,6 +31217,16 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Wood
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 7e780eee92fcc3a4b95df7ab6d2dc805,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 7e780eee92fcc3a4b95df7ab6d2dc805,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 7e780eee92fcc3a4b95df7ab6d2dc805,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -31185,7 +31235,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 7e780eee92fcc3a4b95df7ab6d2dc805,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.28
+      value: 0.19
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 7e780eee92fcc3a4b95df7ab6d2dc805,
         type: 3}
@@ -31246,6 +31296,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.1366005
+      objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 7e780eee92fcc3a4b95df7ab6d2dc805,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e780eee92fcc3a4b95df7ab6d2dc805, type: 3}
@@ -57175,10 +57230,20 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Stone
       objectReference: {fileID: 0}
+    - target: {fileID: -3500204117492817884, guid: c7f22da4af0f54b458a8e519aba29299,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: -5247632285144093202, guid: c7f22da4af0f54b458a8e519aba29299,
         type: 3}
       propertyPath: m_TagString
       value: Stone
+      objectReference: {fileID: 0}
+    - target: {fileID: -5247632285144093202, guid: c7f22da4af0f54b458a8e519aba29299,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: -4776977510559047327, guid: c7f22da4af0f54b458a8e519aba29299,
         type: 3}
@@ -57194,6 +57259,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Stone
+      objectReference: {fileID: 0}
+    - target: {fileID: 7265568853651429322, guid: c7f22da4af0f54b458a8e519aba29299,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1820141438178062014, guid: c7f22da4af0f54b458a8e519aba29299,
         type: 3}
@@ -72061,7 +72131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f43672a50ad3201479ad29174dab36cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedBeforePlayingSound: 1
+  speedBeforePlayingSound: 1.1
   footstepSounds:
   - name: dirt
     sound: {fileID: 8300000, guid: a20e9f9bd2886c642974031bd33760b5, type: 3}
@@ -90737,7 +90807,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 610654522}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &1786610279
+--- !u!64 &1786610277
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -104626,7 +104696,7 @@ Camera:
     height: 1080
   near clip plane: 0.01
   far clip plane: 120
-  field of view: 63.23288
+  field of view: 60
   orthographic: 0
   orthographic size: 8
   m_Depth: 0
@@ -106538,7 +106608,7 @@ GameObject:
   m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &2087498353
 Transform:
