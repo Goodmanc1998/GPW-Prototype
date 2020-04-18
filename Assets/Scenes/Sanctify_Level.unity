@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.050041594, g: 0.06993472, b: 0.109132946, a: 1}
+  m_IndirectSpecularColor: {r: 0.05004207, g: 0.06993472, b: 0.1091339, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -692,7 +692,7 @@ GameObject:
   - component: {fileID: 5465823}
   m_Layer: 0
   m_Name: Object080 (4)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -916,7 +916,7 @@ GameObject:
   - component: {fileID: 7588233}
   m_Layer: 0
   m_Name: Object083 (5)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1915,7 +1915,7 @@ GameObject:
   - component: {fileID: 19987858}
   m_Layer: 0
   m_Name: Object083 (20)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2495,6 +2495,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rocks&Grass
       objectReference: {fileID: 0}
+    - target: {fileID: 1003863624361960922, guid: 0daeb66ef64bda647b46a18922e1f806,
+        type: 3}
+      propertyPath: m_Name
+      value: Cave
+      objectReference: {fileID: 0}
+    - target: {fileID: -2530895045393947740, guid: 0daeb66ef64bda647b46a18922e1f806,
+        type: 3}
+      propertyPath: m_Name
+      value: Rock
+      objectReference: {fileID: 0}
     - target: {fileID: -6287836789983732601, guid: 0daeb66ef64bda647b46a18922e1f806,
         type: 3}
       propertyPath: m_Name
@@ -2570,21 +2580,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -2530895045393947740, guid: 0daeb66ef64bda647b46a18922e1f806,
-        type: 3}
-      propertyPath: m_Name
-      value: Rock
-      objectReference: {fileID: 0}
     - target: {fileID: -810789432960345454, guid: 0daeb66ef64bda647b46a18922e1f806,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: be10e77ac9dd3274da1e90e025c165cc, type: 2}
-    - target: {fileID: 1003863624361960922, guid: 0daeb66ef64bda647b46a18922e1f806,
-        type: 3}
-      propertyPath: m_Name
-      value: Cave
-      objectReference: {fileID: 0}
     - target: {fileID: 2102159042361312085, guid: 0daeb66ef64bda647b46a18922e1f806,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -2772,7 +2772,7 @@ GameObject:
   - component: {fileID: 31055628}
   m_Layer: 0
   m_Name: Object081 (13)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3349,7 +3349,7 @@ GameObject:
   - component: {fileID: 42233880}
   m_Layer: 0
   m_Name: Object081 (1)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4186,7 +4186,7 @@ GameObject:
   - component: {fileID: 63439628}
   m_Layer: 0
   m_Name: Object083 (10)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4595,7 +4595,7 @@ GameObject:
   - component: {fileID: 65967494}
   m_Layer: 0
   m_Name: Object081 (18)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4986,7 +4986,7 @@ GameObject:
   - component: {fileID: 77082078}
   m_Layer: 0
   m_Name: Object086 (4)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6743,7 +6743,7 @@ GameObject:
   - component: {fileID: 114811172}
   m_Layer: 0
   m_Name: Object082 (1)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9303,7 +9303,7 @@ GameObject:
   - component: {fileID: 169340192}
   m_Layer: 0
   m_Name: Object082 (5)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12875,7 +12875,7 @@ GameObject:
   - component: {fileID: 245857678}
   m_Layer: 0
   m_Name: Object084 (2)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13293,7 +13293,7 @@ GameObject:
   - component: {fileID: 259910921}
   m_Layer: 0
   m_Name: Object086 (5)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16810,7 +16810,7 @@ GameObject:
   - component: {fileID: 333600446}
   m_Layer: 0
   m_Name: Object081 (8)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16904,7 +16904,7 @@ GameObject:
   - component: {fileID: 334314017}
   m_Layer: 0
   m_Name: Object080 (7)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17875,7 +17875,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 355263663}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GameObject (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19414,7 +19414,7 @@ GameObject:
   - component: {fileID: 387330474}
   m_Layer: 0
   m_Name: Object081 (7)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19969,7 +19969,7 @@ GameObject:
   - component: {fileID: 397579918}
   m_Layer: 0
   m_Name: Object081 (14)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21442,7 +21442,7 @@ GameObject:
   - component: {fileID: 414924969}
   m_Layer: 0
   m_Name: Object081 (23)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21834,7 +21834,7 @@ GameObject:
   - component: {fileID: 418413955}
   m_Layer: 0
   m_Name: Object078 (2)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24871,7 +24871,7 @@ GameObject:
   - component: {fileID: 476159224}
   m_Layer: 0
   m_Name: Object081 (10)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26362,7 +26362,7 @@ GameObject:
   - component: {fileID: 508246949}
   m_Layer: 0
   m_Name: Object081 (5)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26777,7 +26777,7 @@ GameObject:
   - component: {fileID: 515756892}
   m_Layer: 0
   m_Name: Object080 (6)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28069,7 +28069,7 @@ GameObject:
   - component: {fileID: 541726042}
   m_Layer: 0
   m_Name: Object078 (3)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28419,7 +28419,7 @@ GameObject:
   - component: {fileID: 545663707}
   m_Layer: 0
   m_Name: Object082 (3)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29933,7 +29933,7 @@ GameObject:
   - component: {fileID: 585798774}
   m_Layer: 0
   m_Name: Object080 (5)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31175,7 +31175,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 7e780eee92fcc3a4b95df7ab6d2dc805,
         type: 3}
       propertyPath: m_TagString
-      value: Enviroment
+      value: Wood
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 7e780eee92fcc3a4b95df7ab6d2dc805,
         type: 3}
@@ -32364,7 +32364,7 @@ GameObject:
   - component: {fileID: 650116870}
   m_Layer: 0
   m_Name: Object081 (9)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33101,7 +33101,7 @@ GameObject:
   - component: {fileID: 674810682}
   m_Layer: 0
   m_Name: Object083 (18)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33531,7 +33531,7 @@ GameObject:
   - component: {fileID: 688963637}
   m_Layer: 0
   m_Name: Object083 (15)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37552,7 +37552,7 @@ GameObject:
   - component: {fileID: 756233291}
   m_Layer: 0
   m_Name: Object083 (9)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38308,7 +38308,7 @@ GameObject:
   - component: {fileID: 764938687}
   m_Layer: 0
   m_Name: Object086 (2)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38501,7 +38501,7 @@ GameObject:
   - component: {fileID: 768529839}
   m_Layer: 0
   m_Name: Object082 (4)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39926,7 +39926,7 @@ GameObject:
   - component: {fileID: 794145334}
   m_Layer: 0
   m_Name: Object081 (12)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40720,7 +40720,7 @@ GameObject:
   - component: {fileID: 800901842}
   m_Layer: 0
   m_Name: Object083 (6)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40924,7 +40924,7 @@ GameObject:
   - component: {fileID: 804159743}
   m_Layer: 0
   m_Name: Object083 (11)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -41581,7 +41581,7 @@ GameObject:
   - component: {fileID: 813252487}
   m_Layer: 0
   m_Name: Object083 (12)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42887,7 +42887,7 @@ GameObject:
   - component: {fileID: 837277507}
   m_Layer: 0
   m_Name: Object081 (11)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42985,6 +42985,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bridge
       objectReference: {fileID: 0}
+    - target: {fileID: 7500330674795292204, guid: 8fd68c14366378d499091be49b5d3060,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7500330674795292204, guid: 8fd68c14366378d499091be49b5d3060,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7500330674795292204, guid: 8fd68c14366378d499091be49b5d3060,
+        type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
     - target: {fileID: -6724102053977584019, guid: 8fd68c14366378d499091be49b5d3060,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -42994,6 +43009,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -6724102053977584019, guid: 8fd68c14366378d499091be49b5d3060,
+        type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
+    - target: {fileID: 2418636992016899566, guid: 8fd68c14366378d499091be49b5d3060,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2418636992016899566, guid: 8fd68c14366378d499091be49b5d3060,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2418636992016899566, guid: 8fd68c14366378d499091be49b5d3060,
+        type: 3}
+      propertyPath: m_TagString
+      value: Stone
       objectReference: {fileID: 0}
     - target: {fileID: -4743803536807110548, guid: 8fd68c14366378d499091be49b5d3060,
         type: 3}
@@ -43060,31 +43095,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 6d4f8e45f3bea4646ad15d8548c8391f, type: 2}
-    - target: {fileID: 2418636992016899566, guid: 8fd68c14366378d499091be49b5d3060,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 2418636992016899566, guid: 8fd68c14366378d499091be49b5d3060,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4810020258743022488, guid: 8fd68c14366378d499091be49b5d3060,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 6d4f8e45f3bea4646ad15d8548c8391f, type: 2}
-    - target: {fileID: 7500330674795292204, guid: 8fd68c14366378d499091be49b5d3060,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7500330674795292204, guid: 8fd68c14366378d499091be49b5d3060,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8fd68c14366378d499091be49b5d3060, type: 3}
 --- !u!4 &840761146 stripped
@@ -43310,7 +43325,7 @@ GameObject:
   - component: {fileID: 846228624}
   m_Layer: 0
   m_Name: Object081 (6)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43982,16 +43997,21 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
-    - target: {fileID: -6057140222963153312, guid: 67b189d1baa22d141b7841aa13057bd4,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: eda941697607e1d4bbe07b3c13ac9807, type: 2}
     - target: {fileID: -5922138703930032696, guid: 67b189d1baa22d141b7841aa13057bd4,
         type: 3}
       propertyPath: m_Layer
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5862113624617543367, guid: 67b189d1baa22d141b7841aa13057bd4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: 67b189d1baa22d141b7841aa13057bd4,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: eda941697607e1d4bbe07b3c13ac9807, type: 2}
     - target: {fileID: -4216859302048453862, guid: 67b189d1baa22d141b7841aa13057bd4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -44057,11 +44077,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 9e53985f5fbbbf748a8e325da8baf28e, type: 2}
-    - target: {fileID: 5862113624617543367, guid: 67b189d1baa22d141b7841aa13057bd4,
-        type: 3}
-      propertyPath: m_Layer
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67b189d1baa22d141b7841aa13057bd4, type: 3}
 --- !u!4 &860065938 stripped
@@ -44637,7 +44652,7 @@ GameObject:
   - component: {fileID: 869846586}
   m_Layer: 0
   m_Name: Object081 (2)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44908,7 +44923,7 @@ GameObject:
   - component: {fileID: 876662113}
   m_Layer: 0
   m_Name: Object083 (4)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46645,7 +46660,7 @@ GameObject:
   - component: {fileID: 903781070}
   m_Layer: 0
   m_Name: Object083 (16)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46988,7 +47003,7 @@ GameObject:
   - component: {fileID: 906921653}
   m_Layer: 0
   m_Name: Object085 (1)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48692,6 +48707,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Water
       objectReference: {fileID: 0}
+    - target: {fileID: 5975585337510352905, guid: a722a51599cb42646848536c1d6ba603,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5975585337510352905, guid: a722a51599cb42646848536c1d6ba603,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -1528764006384398482, guid: a722a51599cb42646848536c1d6ba603,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -1528764006384398482, guid: a722a51599cb42646848536c1d6ba603,
+        type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -6690830499782420071, guid: a722a51599cb42646848536c1d6ba603,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -48757,26 +48792,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 4665eafdf193a7b44826f8783b29b1c5, type: 2}
-    - target: {fileID: -1528764006384398482, guid: a722a51599cb42646848536c1d6ba603,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: -1528764006384398482, guid: a722a51599cb42646848536c1d6ba603,
-        type: 3}
-      propertyPath: m_NavMeshLayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5975585337510352905, guid: a722a51599cb42646848536c1d6ba603,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5975585337510352905, guid: a722a51599cb42646848536c1d6ba603,
-        type: 3}
-      propertyPath: m_NavMeshLayer
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a722a51599cb42646848536c1d6ba603, type: 3}
 --- !u!4 &935552134 stripped
@@ -49194,7 +49209,7 @@ GameObject:
   - component: {fileID: 945167696}
   m_Layer: 0
   m_Name: Object083 (17)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50457,7 +50472,7 @@ GameObject:
   - component: {fileID: 981608234}
   m_Layer: 0
   m_Name: Object081 (3)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51494,7 +51509,7 @@ GameObject:
   - component: {fileID: 1028693681}
   m_Layer: 0
   m_Name: Object083 (22)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51896,7 +51911,7 @@ GameObject:
   - component: {fileID: 1041250266}
   m_Layer: 0
   m_Name: Object083 (8)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -53051,7 +53066,7 @@ GameObject:
   - component: {fileID: 1056872893}
   m_Layer: 0
   m_Name: Object081 (24)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -53475,7 +53490,7 @@ GameObject:
   - component: {fileID: 1067530218}
   m_Layer: 0
   m_Name: Object085 (2)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55525,7 +55540,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: f3a93966e90c34147bf33998e5f06207,
         type: 3}
       propertyPath: m_TagString
-      value: Platform
+      value: Dirt
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: f3a93966e90c34147bf33998e5f06207,
         type: 3}
@@ -55609,7 +55624,7 @@ GameObject:
   - component: {fileID: 1115655691}
   m_Layer: 0
   m_Name: Object083 (21)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -56432,7 +56447,7 @@ GameObject:
   - component: {fileID: 1125411373}
   m_Layer: 0
   m_Name: Object081 (26)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57145,15 +57160,85 @@ PrefabInstance:
       propertyPath: m_Name
       value: BossArena (1)
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c7f22da4af0f54b458a8e519aba29299,
+        type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
+    - target: {fileID: 3985681347641349975, guid: c7f22da4af0f54b458a8e519aba29299,
+        type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
+    - target: {fileID: -3500204117492817884, guid: c7f22da4af0f54b458a8e519aba29299,
+        type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
+    - target: {fileID: -5247632285144093202, guid: c7f22da4af0f54b458a8e519aba29299,
+        type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
+    - target: {fileID: -4776977510559047327, guid: c7f22da4af0f54b458a8e519aba29299,
+        type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
+    - target: {fileID: 5340430910435833371, guid: c7f22da4af0f54b458a8e519aba29299,
+        type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
+    - target: {fileID: 7265568853651429322, guid: c7f22da4af0f54b458a8e519aba29299,
+        type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820141438178062014, guid: c7f22da4af0f54b458a8e519aba29299,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820141438178062014, guid: c7f22da4af0f54b458a8e519aba29299,
+        type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
     - target: {fileID: -9221304998070821381, guid: c7f22da4af0f54b458a8e519aba29299,
         type: 3}
       propertyPath: m_TagString
-      value: Enviroment
+      value: Stone
+      objectReference: {fileID: 0}
+    - target: {fileID: -5466323587100661074, guid: c7f22da4af0f54b458a8e519aba29299,
+        type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
+    - target: {fileID: -2918284634418174436, guid: c7f22da4af0f54b458a8e519aba29299,
+        type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
+    - target: {fileID: -4623229706487271994, guid: c7f22da4af0f54b458a8e519aba29299,
+        type: 3}
+      propertyPath: m_TagString
+      value: Stone
       objectReference: {fileID: 0}
     - target: {fileID: -8194498295211850671, guid: c7f22da4af0f54b458a8e519aba29299,
         type: 3}
       propertyPath: m_TagString
-      value: Enviroment
+      value: Stone
+      objectReference: {fileID: 0}
+    - target: {fileID: -1936909918559200153, guid: c7f22da4af0f54b458a8e519aba29299,
+        type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
+    - target: {fileID: -2499964046834840220, guid: c7f22da4af0f54b458a8e519aba29299,
+        type: 3}
+      propertyPath: m_TagString
+      value: Stone
       objectReference: {fileID: 0}
     - target: {fileID: -7213493173575810606, guid: c7f22da4af0f54b458a8e519aba29299,
         type: 3}
@@ -57254,26 +57339,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -4.025
-      objectReference: {fileID: 0}
-    - target: {fileID: -5466323587100661074, guid: c7f22da4af0f54b458a8e519aba29299,
-        type: 3}
-      propertyPath: m_TagString
-      value: Enviroment
-      objectReference: {fileID: 0}
-    - target: {fileID: -5247632285144093202, guid: c7f22da4af0f54b458a8e519aba29299,
-        type: 3}
-      propertyPath: m_TagString
-      value: Enviroment
-      objectReference: {fileID: 0}
-    - target: {fileID: -4776977510559047327, guid: c7f22da4af0f54b458a8e519aba29299,
-        type: 3}
-      propertyPath: m_TagString
-      value: Enviroment
-      objectReference: {fileID: 0}
-    - target: {fileID: -4623229706487271994, guid: c7f22da4af0f54b458a8e519aba29299,
-        type: 3}
-      propertyPath: m_TagString
-      value: Enviroment
       objectReference: {fileID: 0}
     - target: {fileID: -4255697650347094225, guid: c7f22da4af0f54b458a8e519aba29299,
         type: 3}
@@ -57415,11 +57480,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: c87d0f03e9c36b44fb1968fad1e59397, type: 2}
-    - target: {fileID: -3500204117492817884, guid: c7f22da4af0f54b458a8e519aba29299,
-        type: 3}
-      propertyPath: m_TagString
-      value: Enviroment
-      objectReference: {fileID: 0}
     - target: {fileID: -3236787309708792881, guid: c7f22da4af0f54b458a8e519aba29299,
         type: 3}
       propertyPath: m_Materials.Array.size
@@ -57435,16 +57495,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: c87d0f03e9c36b44fb1968fad1e59397, type: 2}
-    - target: {fileID: -2918284634418174436, guid: c7f22da4af0f54b458a8e519aba29299,
-        type: 3}
-      propertyPath: m_TagString
-      value: Enviroment
-      objectReference: {fileID: 0}
-    - target: {fileID: -2499964046834840220, guid: c7f22da4af0f54b458a8e519aba29299,
-        type: 3}
-      propertyPath: m_TagString
-      value: Enviroment
-      objectReference: {fileID: 0}
     - target: {fileID: -1981634579210421804, guid: c7f22da4af0f54b458a8e519aba29299,
         type: 3}
       propertyPath: m_Materials.Array.size
@@ -57460,11 +57510,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: c87d0f03e9c36b44fb1968fad1e59397, type: 2}
-    - target: {fileID: -1936909918559200153, guid: c7f22da4af0f54b458a8e519aba29299,
-        type: 3}
-      propertyPath: m_TagString
-      value: Enviroment
-      objectReference: {fileID: 0}
     - target: {fileID: 522162542848726249, guid: c7f22da4af0f54b458a8e519aba29299,
         type: 3}
       propertyPath: m_Materials.Array.size
@@ -57495,16 +57540,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: c87d0f03e9c36b44fb1968fad1e59397, type: 2}
-    - target: {fileID: 1820141438178062014, guid: c7f22da4af0f54b458a8e519aba29299,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1820141438178062014, guid: c7f22da4af0f54b458a8e519aba29299,
-        type: 3}
-      propertyPath: m_TagString
-      value: Enviroment
-      objectReference: {fileID: 0}
     - target: {fileID: 2019395139696444087, guid: c7f22da4af0f54b458a8e519aba29299,
         type: 3}
       propertyPath: m_Materials.Array.size
@@ -57615,11 +57650,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: c87d0f03e9c36b44fb1968fad1e59397, type: 2}
-    - target: {fileID: 3985681347641349975, guid: c7f22da4af0f54b458a8e519aba29299,
-        type: 3}
-      propertyPath: m_TagString
-      value: Enviroment
-      objectReference: {fileID: 0}
     - target: {fileID: 4778145092586059149, guid: c7f22da4af0f54b458a8e519aba29299,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -57649,11 +57679,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.2954
-      objectReference: {fileID: 0}
-    - target: {fileID: 5340430910435833371, guid: c7f22da4af0f54b458a8e519aba29299,
-        type: 3}
-      propertyPath: m_TagString
-      value: Enviroment
       objectReference: {fileID: 0}
     - target: {fileID: 5682315859398108741, guid: c7f22da4af0f54b458a8e519aba29299,
         type: 3}
@@ -57754,11 +57779,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.0931265
-      objectReference: {fileID: 0}
-    - target: {fileID: 7265568853651429322, guid: c7f22da4af0f54b458a8e519aba29299,
-        type: 3}
-      propertyPath: m_TagString
-      value: Enviroment
       objectReference: {fileID: 0}
     - target: {fileID: 7476273094470857415, guid: c7f22da4af0f54b458a8e519aba29299,
         type: 3}
@@ -58768,7 +58788,7 @@ GameObject:
   - component: {fileID: 1144715089}
   m_Layer: 0
   m_Name: Object080 (1)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59385,7 +59405,7 @@ GameObject:
   - component: {fileID: 1157363450}
   m_Layer: 0
   m_Name: Object081 (22)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60199,7 +60219,7 @@ GameObject:
   - component: {fileID: 1170647754}
   m_Layer: 0
   m_Name: Object085 (3)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61223,6 +61243,26 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1185012173}
   m_Mesh: {fileID: -7102589008999902672, guid: 53f608ea39531694a9a6e5f94df59338, type: 3}
+--- !u!1 &1188555212 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2418636992016899566, guid: 8fd68c14366378d499091be49b5d3060,
+    type: 3}
+  m_PrefabInstance: {fileID: 840761145}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1188555216
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1188555212}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -4922941303680110733, guid: 8fd68c14366378d499091be49b5d3060, type: 3}
 --- !u!4 &1189314590 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: c0c04c6bf7d1e8747a58e1f90cabadb1,
@@ -61720,6 +61760,26 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1200973303}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1201112282 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -6724102053977584019, guid: 8fd68c14366378d499091be49b5d3060,
+    type: 3}
+  m_PrefabInstance: {fileID: 840761145}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1201112286
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201112282}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -7214853976536745875, guid: 8fd68c14366378d499091be49b5d3060, type: 3}
 --- !u!1001 &1206571424
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -63012,7 +63072,7 @@ GameObject:
   - component: {fileID: 1242896006}
   m_Layer: 0
   m_Name: Object081 (19)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -65671,7 +65731,7 @@ GameObject:
   - component: {fileID: 1282993123}
   m_Layer: 0
   m_Name: Object082 (2)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -66362,7 +66422,7 @@ GameObject:
   - component: {fileID: 1292655813}
   m_Layer: 0
   m_Name: Object081 (20)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -67535,7 +67595,7 @@ GameObject:
   - component: {fileID: 1314485761}
   m_Layer: 0
   m_Name: Object081 (15)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -69295,7 +69355,7 @@ GameObject:
   - component: {fileID: 1342050907}
   m_Layer: 0
   m_Name: Object082 (6)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71854,7 +71914,8 @@ GameObject:
   - component: {fileID: 1399748164}
   - component: {fileID: 1399748170}
   - component: {fileID: 1399748169}
-  m_Layer: 0
+  - component: {fileID: 1399748171}
+  m_Layer: 2
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -71988,6 +72049,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e99a9435e0138b5418fb70db5ed9e25a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1399748171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1399748163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f43672a50ad3201479ad29174dab36cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedBeforePlayingSound: 1
+  footstepSounds:
+  - name: dirt
+    sound: {fileID: 8300000, guid: a20e9f9bd2886c642974031bd33760b5, type: 3}
+    volume: 0.05
+  - name: stone
+    sound: {fileID: 8300000, guid: b3ffb480f90be0048bace299f7a8e57d, type: 3}
+    volume: 0.1
+  - name: wood
+    sound: {fileID: 8300000, guid: f896574cf7e1b9f40961084546972d36, type: 3}
+    volume: 0.1
 --- !u!1001 &1404448156
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -72810,7 +72894,7 @@ GameObject:
   - component: {fileID: 1427722513}
   - component: {fileID: 1427722512}
   - component: {fileID: 1427722511}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Default Checkpoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74369,6 +74453,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mage 1
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -1942059856913879394, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: -4600183005366930821, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -74428,6 +74522,621 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8370532827433332379, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2031689814416824735, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8083749280269810032, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 840361985959041292, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200180386971731260, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282488311090953034, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9112589796978292074, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4769391572922148048, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -6061050450703060228, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3827268405237657153, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -316421643689260926, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -680552233101776901, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108782019113777421, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7718564005422961751, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6960788973031767821, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7191724666031072754, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7067716678020648739, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8915245067401806816, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7137204541136077384, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6278670540770251282, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -5303222443295189613, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -6185257140564121367, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6500957558385392270, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7491949572473133921, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3843470729804780672, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8369196487627879548, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7029500369666242907, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -2870500318438387655, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1274236133292185554, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 737390316602164700, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6316305323460538104, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8807679315031806052, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3139402139717288103, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -1157608428018528582, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2302786049361018544, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -619629748553541049, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8502856882107559601, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3948356052132586918, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8429335171599281691, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 805173875390566645, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3256507433221866062, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8736424514753394463, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3801309952729555880, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5279913555050339611, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7015608015426272198, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -6450952787876485000, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4208981160000717400, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3662994441525896758, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3967540025159991704, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -948765553996898838, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -5372670131760297987, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 585691496454284477, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 710212203792400785, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -684869041715646713, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6421773979393658259, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -295288632648979960, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -268262210844509178, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7206852441808560958, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5922868188069005807, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -135617270696622347, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7385787204514467498, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1146251843944205220, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4725370021987119614, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1703008734260227065, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7870184004989203367, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9140911001858260031, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -2519921041965326354, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2243466786949958690, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -4066356068621107860, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7530577429080938458, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -4752310670258437231, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2313966360130112041, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3533337079079107899, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4755214343225167625, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7041931443325316101, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5436031558851217023, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -9194749304428592876, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -811864412300401216, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7248753465574635465, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3377485767464797214, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5231021194658925901, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8395940345880460103, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3795857158765937711, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -6903148859972917982, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 973372770314338416, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7212726297215551494, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -5789275754553328034, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -2515958850435973070, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -5780726396534670651, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -319440773409638066, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -6368505709399968411, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8325264935033260236, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8872517169754876863, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1497992904201436932, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -6303522271047272094, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -6764618669281002661, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -1369379308905549349, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3057270841848161591, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6477342244548685676, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -2026746664358969057, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3777645059127886545, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7392069088223654447, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -5208643891504547283, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8793169240444459861, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6327195199129091851, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -1570616204954950851, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7323181717149835065, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3671120108028896414, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1066346696496450542, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2251266596523277660, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7151988448848078329, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7282953559143688687, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -2357186709918632484, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3270226809172895593, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6734510716171995328, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -1928002238173020502, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3796557827940663999, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8696130001595781125, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4677030229035409296, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7926267741568054830, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3221705897129415271, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -6055417431419670089, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -3438980599631857752, guid: f3b3d7d25a0c87e48964af9ce1b32deb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3b3d7d25a0c87e48964af9ce1b32deb, type: 3}
@@ -74633,7 +75342,7 @@ GameObject:
   - component: {fileID: 1477149923}
   m_Layer: 0
   m_Name: Object081 (17)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -83744,7 +84453,7 @@ GameObject:
   - component: {fileID: 1661621480}
   m_Layer: 0
   m_Name: Object083 (14)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84121,7 +84830,7 @@ GameObject:
   - component: {fileID: 1663142677}
   m_Layer: 0
   m_Name: Object086 (1)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84719,7 +85428,7 @@ GameObject:
   - component: {fileID: 1682988911}
   m_Layer: 0
   m_Name: Object086 (3)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -85472,7 +86181,7 @@ GameObject:
   - component: {fileID: 1691133745}
   m_Layer: 0
   m_Name: Object080 (2)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -86611,7 +87320,7 @@ GameObject:
   - component: {fileID: 1719202162}
   m_Layer: 0
   m_Name: Object080 (3)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -87075,7 +87784,7 @@ GameObject:
   - component: {fileID: 1726586305}
   m_Layer: 0
   m_Name: Object083 (19)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -87359,7 +88068,7 @@ GameObject:
   - component: {fileID: 1736086541}
   m_Layer: 0
   m_Name: Object083 (3)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -90022,6 +90731,26 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1783739906}
   m_Mesh: {fileID: -932227452383083054, guid: b8eea9861deb20b4096704a2d3f0ca94, type: 3}
+--- !u!1 &1786610276 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 7e780eee92fcc3a4b95df7ab6d2dc805,
+    type: 3}
+  m_PrefabInstance: {fileID: 610654522}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1786610279
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1786610276}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 361570060702241720, guid: 7e780eee92fcc3a4b95df7ab6d2dc805, type: 3}
 --- !u!1 &1786735116
 GameObject:
   m_ObjectHideFlags: 0
@@ -90996,7 +91725,7 @@ GameObject:
   - component: {fileID: 1811493799}
   m_Layer: 0
   m_Name: Object081 (16)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -91728,7 +92457,7 @@ GameObject:
   - component: {fileID: 1825790656}
   m_Layer: 0
   m_Name: Object083 (2)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -91995,7 +92724,7 @@ GameObject:
   - component: {fileID: 1829030512}
   m_Layer: 0
   m_Name: Object081 (4)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -93645,7 +94374,7 @@ GameObject:
   - component: {fileID: 1862059955}
   m_Layer: 0
   m_Name: Object081 (21)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -93739,7 +94468,7 @@ GameObject:
   - component: {fileID: 1863562350}
   m_Layer: 0
   m_Name: Object082 (7)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -95160,7 +95889,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1882019687}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95535,7 +96264,7 @@ GameObject:
   - component: {fileID: 1888974458}
   m_Layer: 0
   m_Name: Object083 (7)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98801,7 +99530,7 @@ GameObject:
   - component: {fileID: 1967964855}
   m_Layer: 0
   m_Name: Object084 (1)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -103089,6 +103818,26 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2036754231}
   m_Mesh: {fileID: -8879626735686362149, guid: bd019289a6dbe154f86365c553365962, type: 3}
+--- !u!1 &2038218136 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7500330674795292204, guid: 8fd68c14366378d499091be49b5d3060,
+    type: 3}
+  m_PrefabInstance: {fileID: 840761145}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &2038218140
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2038218136}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 674340280032488212, guid: 8fd68c14366378d499091be49b5d3060, type: 3}
 --- !u!1001 &2038337766
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -103276,7 +104025,7 @@ GameObject:
   - component: {fileID: 2039375512}
   m_Layer: 0
   m_Name: Object081 (25)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -103841,10 +104590,10 @@ GameObject:
   - component: {fileID: 2049237096}
   - component: {fileID: 2049237099}
   - component: {fileID: 2049237098}
-  - component: {fileID: 2049237097}
   - component: {fileID: 2049237101}
   - component: {fileID: 2049237103}
   - component: {fileID: 2049237102}
+  - component: {fileID: 2049237097}
   m_Layer: 0
   m_Name: 'Main Camera '
   m_TagString: MainCamera
@@ -103895,18 +104644,14 @@ Camera:
   m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!114 &2049237097
-MonoBehaviour:
+--- !u!81 &2049237097
+AudioListener:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2049237095}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2049237098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104694,7 +105439,7 @@ GameObject:
   - component: {fileID: 2062192646}
   m_Layer: 0
   m_Name: Object083 (13)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -105696,7 +106441,7 @@ GameObject:
   - component: {fileID: 2087210020}
   m_Layer: 0
   m_Name: Object083 (1)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -105790,7 +106535,7 @@ GameObject:
   - component: {fileID: 2087498354}
   m_Layer: 0
   m_Name: Object078 (1)
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -108060,7 +108805,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 304483726dff5da498d5659b2283356d,
         type: 3}
       propertyPath: m_TagString
-      value: Enviroment
+      value: Dirt
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 304483726dff5da498d5659b2283356d,
         type: 3}
@@ -111319,7 +112064,7 @@ GameObject:
   - component: {fileID: 5002808698914322515}
   m_Layer: 0
   m_Name: Path_2
-  m_TagString: Enviroment
+  m_TagString: Dirt
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -112655,7 +113400,7 @@ GameObject:
   - component: {fileID: 1490878183}
   m_Layer: 0
   m_Name: Object008
-  m_TagString: Enviroment
+  m_TagString: Dirt
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -112772,7 +113517,7 @@ GameObject:
   - component: {fileID: 7009638483554428107}
   m_Layer: 0
   m_Name: Object079
-  m_TagString: Enviroment
+  m_TagString: Dirt
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -114044,7 +114789,7 @@ GameObject:
   - component: {fileID: 92953676}
   m_Layer: 0
   m_Name: Town_Wall
-  m_TagString: Enviroment
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
