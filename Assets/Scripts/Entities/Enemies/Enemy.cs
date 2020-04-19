@@ -88,7 +88,12 @@ public class Enemy : Entities
         }else if(calledFor == "persue")
         {
             agent.SetDestination(player.position + playerNvAgnt.velocity);
-        }else if(calledFor == "evade")
+        }
+        else if (calledFor == "stop")
+        {
+            agent.SetDestination(transform.position);
+        }
+        else if(calledFor == "evade")
         {
             agent.SetDestination(player.position - playerNvAgnt.velocity);
         }else if (calledFor == "freeze")

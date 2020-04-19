@@ -129,7 +129,20 @@ public class PlayerMovement : Entities
     // Update is called once per frame
     void Update()
     {
-        if(entitiesAnimator.GetBool("SpellDrawn") == true)
+
+// Allows us to speed up the game in the unity editor for quick testing
+#if UNITY_EDITOR
+        if (Input.GetKey(KeyCode.KeypadMultiply))
+        {
+            Time.timeScale++;
+        }
+        if (Input.GetKey(KeyCode.KeypadDivide))
+        {
+            Time.timeScale--;
+        }
+#endif
+
+        if (entitiesAnimator.GetBool("SpellDrawn") == true)
         {
             for (int i = 0; i < 120; i++)
             {
@@ -181,7 +194,7 @@ public class PlayerMovement : Entities
         if (dead)
         {
             entitiesAnimator.SetBool("Dead", true);
-            StartCoroutine(Respawn(3f)); // If the player dies, respawn them
+            StartCoroutine(Respawn(4f)); // If the player dies, respawn them
         }
     }
 
@@ -250,6 +263,7 @@ public class PlayerMovement : Entities
         entitiesAnimator.SetBool("Dead", false); // Reset the animators death state
         transform.position = checkpoint.transform.position; // Set the player to the checkpoints location
         health = startingHealth; // Reset the players health
+        viewCamera.GetComponent<CameraFollow>().ResetCamera(); // Reset the camera position
         EnemySpawnManager.ResetWaves(); // Reset all waves that are currently active or have yet to fought
     }
 }

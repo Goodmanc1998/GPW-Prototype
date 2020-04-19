@@ -8,7 +8,6 @@ public class RangedEnemy : Enemy
     public float shootRange; // Enemy will not fire at the player unless within this range
     public float fleeSpeed; // The speed the enemy will move whilst trying to get away from the player
 
-
     private void Update()
     {
         float distance = Vector3.Distance(player.position, transform.position); // Calculates the distance between the player and enemy
@@ -26,7 +25,7 @@ public class RangedEnemy : Enemy
                 {
                     firing = StartCoroutine(Shoot());
                 }
-                SB("flee"); // Effectively stops the enemy from moving
+                SB("stop");
             }
             // If the player gets too close the enemy will stop shooting and attempt to run away from the player
             else
