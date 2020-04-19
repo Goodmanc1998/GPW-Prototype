@@ -16,7 +16,7 @@ public class EnemySpawnManager : MonoBehaviour
     {
         foreach (Wave wave in waves)
         {
-            if (wave.startTrigger == trigger)
+            if (wave.startTrigger == trigger && !wave.started)
             {
                 wave.started = true;
                 Debug.Log(wave.enemy.name + "wave has started.");
