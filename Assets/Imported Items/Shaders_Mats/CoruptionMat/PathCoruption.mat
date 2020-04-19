@@ -35,5 +35,8 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Vector1_56730927: 0.54
+    - _Brazier1Radius: 2.73
+    - _Brazier2Radius: 0.95
     - _Radius: 3
     m_Colors: []

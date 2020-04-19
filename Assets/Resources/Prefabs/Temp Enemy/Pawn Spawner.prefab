@@ -53,7 +53,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 397934073ddf2d04e9d0b3ddfebf2ed8, type: 2}
+  - {fileID: 2100000, guid: 07a92150463af3e44a9c3b0111a7af6f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -122,9 +122,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66434dceb3f7bd040a6c5854a2102a37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  entitiesAnimator: {fileID: 0}
   startingHealth: 8
   health: 0
   weakness: 1
+  JumpPoint: {fileID: 0}
   movementSpeed: 5
   angularSpeed: 180
   acceleration: 2
@@ -152,6 +154,7 @@ MonoBehaviour:
     averageSpawningDuration: 5
     spawnDurationRandomness: 0
     enemiesRemaining: 0
+    started: 0
     spawnpointColour: {r: 0, g: 0, b: 0, a: 0}
     showSpawnpoints: 0
   froze: 0
@@ -290,7 +293,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 397934073ddf2d04e9d0b3ddfebf2ed8, type: 2}
+      objectReference: {fileID: 2100000, guid: 07a92150463af3e44a9c3b0111a7af6f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d347356c1f9b226489a0f0c3173760c1, type: 3}
 --- !u!4 &8805334986781153070 stripped

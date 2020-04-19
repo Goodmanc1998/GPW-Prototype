@@ -140,9 +140,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10a83b1aa3f6d9f49ad81f585a8051d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  entitiesAnimator: {fileID: 0}
   startingHealth: 1
   health: 0
   weakness: 1
+  JumpPoint: {fileID: 0}
   movementSpeed: 3
   angularSpeed: 180
   acceleration: 3
@@ -169,6 +171,7 @@ MonoBehaviour:
     averageSpawningDuration: 5
     spawnDurationRandomness: 0
     enemiesRemaining: 0
+    started: 0
     spawnpointColour: {r: 0, g: 0, b: 0, a: 0}
     showSpawnpoints: 0
   froze: 0
@@ -223,26 +226,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crow
       objectReference: {fileID: 0}
-    - target: {fileID: -8115073597772074523, guid: e69705c194f12df41ad358a07f57047b,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8115073597772074523, guid: e69705c194f12df41ad358a07f57047b,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8115073597772074523, guid: e69705c194f12df41ad358a07f57047b,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -6057140222963153312, guid: e69705c194f12df41ad358a07f57047b,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: e091e457f890ff144adba8fb1a9cd3a1, type: 2}
     - target: {fileID: -4216859302048453862, guid: e69705c194f12df41ad358a07f57047b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -298,17 +281,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -3871832357317087447, guid: e69705c194f12df41ad358a07f57047b,
+    - target: {fileID: -8115073597772074523, guid: e69705c194f12df41ad358a07f57047b,
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -3871832357317087447, guid: e69705c194f12df41ad358a07f57047b,
+    - target: {fileID: -8115073597772074523, guid: e69705c194f12df41ad358a07f57047b,
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -3871832357317087447, guid: e69705c194f12df41ad358a07f57047b,
+    - target: {fileID: -8115073597772074523, guid: e69705c194f12df41ad358a07f57047b,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
@@ -328,6 +311,31 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -3871832357317087447, guid: e69705c194f12df41ad358a07f57047b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3871832357317087447, guid: e69705c194f12df41ad358a07f57047b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3871832357317087447, guid: e69705c194f12df41ad358a07f57047b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: e69705c194f12df41ad358a07f57047b,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: e091e457f890ff144adba8fb1a9cd3a1, type: 2}
+    - target: {fileID: -1533046467736855122, guid: e69705c194f12df41ad358a07f57047b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9eb5d707f9bb20c419176cb90985bbc4, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e69705c194f12df41ad358a07f57047b, type: 3}
 --- !u!4 &7948545649380400915 stripped
