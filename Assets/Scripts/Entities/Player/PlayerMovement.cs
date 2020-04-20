@@ -164,7 +164,7 @@ public class PlayerMovement : Entities
                 speedBuffCounter = 0;
             }
         }
-        if (Input.GetKeyDown(KeyCode.Mouse0) && !Input.GetKey(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Mouse0) && !Input.GetKey(KeyCode.Q) || Input.GetKey(KeyCode.LeftAlt))
         {
 
             Ray ray = viewCamera.ScreenPointToRay(Input.mousePosition);
