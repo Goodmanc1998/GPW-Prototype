@@ -134,11 +134,11 @@ public class PlayerMovement : Entities
 #if UNITY_EDITOR
         if (Input.GetKey(KeyCode.KeypadMultiply))
         {
-            Time.timeScale++;
+            Time.timeScale += 0.1f;
         }
         if (Input.GetKey(KeyCode.KeypadDivide))
         {
-            Time.timeScale--;
+            Time.timeScale -= 0.1f;
         }
 #endif
 
