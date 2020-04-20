@@ -31,6 +31,7 @@ public class Enemy : Entities
     //Variables used for the Grab Attack
     public float grabTime;
     public float timeUntillGrab;
+    public float grabDamage;
     protected float timeTillNextGrab;
 
     [Header("Explosion")]
@@ -204,6 +205,8 @@ public class Enemy : Entities
             {
                 //Stopping the players agent and setting grabbed to true
                 player.GetComponent<NavMeshAgent>().enabled = false;
+                player.GetComponent<Entities>().TakeDamage(grabDamage, "none");
+
                 hasGrabbed = true;
             }
 
