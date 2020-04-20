@@ -13,6 +13,10 @@ TagManager:
   - Stone
   - Wood
   - Tutorial
+  - Boss
+  - attackPoint
+  - returnPoint
+  - block
   layers:
   - Default
   - TransparentFX

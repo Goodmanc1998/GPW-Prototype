@@ -5,7 +5,6 @@ using UnityEngine.AI;
 
 public class Enemy : Entities
 {
-    public Transform JumpPoint;
     [Header("Movement")]
     public float movementSpeed;
     public float angularSpeed;
@@ -65,16 +64,20 @@ public class Enemy : Entities
         base.TakeDamage(damageIn, attackType);
 
         // Once the enemy is declared dead, tell the wave an enemy has died if there is one
-        if (wave != null)
+        if (wave != null && dead)
         {
-            wave.EnemyKilled();
+
+            if(this.gameObject.GetComponent<PawnScript>() != true)
+            {
+                wave.EnemyKilled();
+            }
         }
     }
 
     //steering behaviours.
     public virtual void SB(string calledFor)
     {
-        NavMeshAgent playerNvAgnt = player.GetComponent<NavMeshAgent>();
+        NavMeshAgent playerNvAgnt = player.gameObject.GetComponent<NavMeshAgent>();
         //seek
         //flee
         //persue
@@ -84,7 +87,7 @@ public class Enemy : Entities
             agent.SetDestination(player.position); 
         }else if(calledFor == "flee")
         {
-            agent.SetDestination(-player.position);
+            agent.SetDestination(transform.position - (transform.position + player.position).normalized);
         }else if(calledFor == "persue")
         {
             agent.SetDestination(player.position + playerNvAgnt.velocity);
@@ -93,7 +96,7 @@ public class Enemy : Entities
         {
             agent.SetDestination(transform.position);
         }
-        else if(calledFor == "evade")
+        else if (calledFor == "evade")
         {
             agent.SetDestination(player.position - playerNvAgnt.velocity);
         }else if (calledFor == "freeze")
@@ -138,7 +141,20 @@ public class Enemy : Entities
         //Getting the start position, direction to player and attack position
         Vector3 startingAttackPosition = transform.position;
         Vector3 dirToTarget = (player.position - transform.position).normalized;
-        Vector3 attackPosition = player.position - dirToTarget;
+        Vector3 attackPosition;
+
+        if (Vector3.Distance(transform.position, player.position) > meleeAttackRange)
+        {
+            attackPosition = new Vector3(transform.position.x + (dirToTarget.x * meleeAttackRange), player.position.y + dirToTarget.y, transform.position.z + (dirToTarget.z * meleeAttackRange));
+
+        }
+        else
+        {
+            attackPosition = new Vector3(player.position.x - dirToTarget.x, player.position.y + dirToTarget.y, player.position.z - dirToTarget.z);
+
+        }
+
+        //player.position - dirToTarget;
 
         float percent = 0;
         bool hasAppliedDamage = false;
@@ -154,7 +170,7 @@ public class Enemy : Entities
 
             //Moving the player between the starting position, and attack position then back to the starting position
             percent += Time.deltaTime * meleeAttackSpeed;
-            float interpolation = (-Mathf.Pow(percent, 2) + percent) * 4;
+            float interpolation = (-Mathf.Pow(percent, 2) + percent) * 2;
             transform.position = Vector3.Lerp(startingAttackPosition, attackPosition, interpolation);
 
             yield return null;
@@ -168,7 +184,7 @@ public class Enemy : Entities
         agent.enabled = true;
     }
 
-    IEnumerator Grab()
+    protected IEnumerator Grab()
     {
         //Stopping the agent
         agent.enabled = false;

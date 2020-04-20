@@ -34,7 +34,13 @@ public class Projectile : MonoBehaviour
         if (collision.gameObject.GetComponent<PlayerMovement>())
         {
             collision.gameObject.GetComponent<PlayerMovement>().TakeDamage(damage, "None");
+
+            Destroy(gameObject);
         }
-        Destroy(gameObject);
+        else if(collision.gameObject.tag != "Boss")
+        {
+            Destroy(gameObject);
+        }
+        
     }
 }

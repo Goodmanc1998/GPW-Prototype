@@ -22,7 +22,7 @@ public class TankEnemy : Enemy
         {
             if (Vector3.Distance(player.position, transform.position) <= rangeOfGrab && Time.time >= timeTillNextGrab)
             {
-                //StartCoroutine(Attack());
+                StartCoroutine(Grab());
             }
             else
             {
