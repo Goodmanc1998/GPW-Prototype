@@ -17,6 +17,7 @@ TagManager:
   - attackPoint
   - returnPoint
   - block
+  - UI
   layers:
   - Default
   - TransparentFX

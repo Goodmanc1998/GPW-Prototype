@@ -51,8 +51,8 @@ public class PlayerMovement : Entities
                 entitiesAnimator.SetBool("SpellDrawn", true);
                 Instantiate(FireSpell, spellSpawn.position, transform.localRotation);
 
-                Debug.Log(transform.localRotation);
-                Debug.Log(GestureTransform.GetPosition(GestureTransform.positionCount - 1));
+                //Debug.Log(transform.localRotation);
+                //Debug.Log(GestureTransform.GetPosition(GestureTransform.positionCount - 1));
 
                 currentFireSpell++;
 
@@ -68,7 +68,7 @@ public class PlayerMovement : Entities
                 transform.LookAt(new Vector3(GestureTransform.GetPosition(GestureTransform.positionCount - 1).x, transform.position.y, GestureTransform.GetPosition(GestureTransform.positionCount - 1).z));
                 entitiesAnimator.SetBool("SpellDrawn", true);
                 Instantiate(LightningSpell, spellSpawn.position, transform.localRotation);
-                Debug.Log("cast lightening");
+                //Debug.Log("cast lightening");
 
                 currentLightingSpell++;
 
@@ -82,7 +82,7 @@ public class PlayerMovement : Entities
                 //depth for rotating the wall correctly
                 float minusOneMid = GestureTransform.GetPosition((GestureTransform.positionCount / 2) - 1).z;
                 float plusOneMid = GestureTransform.GetPosition((GestureTransform.positionCount / 2) + 1).z;
-                Debug.Log(GestureTransform.positionCount);
+                //Debug.Log(GestureTransform.positionCount);
                 entitiesAnimator.SetBool("SpellDrawn", true);
                 for (int i = 0; i < GestureTransform.positionCount; i++)
                 {
@@ -164,7 +164,7 @@ public class PlayerMovement : Entities
                 speedBuffCounter = 0;
             }
         }
-        if (Input.GetKeyDown(KeyCode.Mouse0) && !Input.GetKey(KeyCode.Q) || !Input.GetKey(KeyCode.LeftAlt))
+        if (Input.GetKeyDown(KeyCode.Mouse0) && !Input.GetKey(KeyCode.Q) && !Input.GetKey(KeyCode.LeftAlt))
         {
 
             Ray ray = viewCamera.ScreenPointToRay(Input.mousePosition);

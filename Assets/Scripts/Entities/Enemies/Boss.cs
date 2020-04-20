@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SocialPlatforms;
 
 public class Boss : Enemy
 {
@@ -12,13 +13,11 @@ public class Boss : Enemy
 
     float distToPlayer;
 
-    bool dashAttack;
-
-    bool phaseOne;
-
     bool bossAttack;
-    bool flee;
+    bool firstFlee;
+    bool secondFlee;
 
+    bool takenHitAttack;
     public int amountofHits;
     int currentHits;
 
@@ -27,6 +26,11 @@ public class Boss : Enemy
     GameObject block;
 
     public GameObject bossSpell;
+
+    Rigidbody rb;
+    bool LookPlayer;
+
+    
 
 
     protected override void Start()
@@ -37,155 +41,85 @@ public class Boss : Enemy
         returnPoint = GameObject.FindGameObjectWithTag("returnPoint").transform;
         block = GameObject.FindGameObjectWithTag("block");
 
+        GameObject.FindGameObjectWithTag("UI").GetComponent<UIScript>().boss = this;
+
+        rb = GetComponent<Rigidbody>();
+
     }
     private void Update()
     {
         //fight starts
         distToPlayer = Vector3.Distance(player.position, transform.position); // Calculates the distance between the player and enemy
 
-        if(health > startingHealth / 100 * 33)
+        if(!dead && !bossAttack)
         {
-            phaseOne = true;
+            if (health < startingHealth / 100 * 66 && !firstFlee)
+            {
+                StartCoroutine(FleeShootAttack());   
+            }
+
+            if (health < startingHealth / 100 * 33 && !secondFlee)
+            {
+                StartCoroutine(FleeShootAttack());
+            }
+
+            if(takenHitAttack && !bossAttack)
+            {
+                StartCoroutine(DashAttack());
+
+                takenHitAttack = false;
+            }
+
+            if(distToPlayer >= maxShootRange && !bossAttack)
+            {
+                SB("seek");
+            }
+
+            if(distToPlayer <= maxShootRange && distToPlayer >= minShootRange && !bossAttack)
+            {
+                StartCoroutine(RangedAttack());
+            }
+
+            if(distToPlayer <= meleeAttackRange && !bossAttack)
+            {
+                if(Time.time > timeTillNextAttack && !attacking)
+                {
+                    StartCoroutine(MeleeAttack());
+
+                    Debug.Log("Melee Attack");
+                }
+
+
+            }
+
+
+
+        }     
+        
+        if(LookPlayer)
+        {
+            LookAtPlayer();
         }
         else
         {
-            phaseOne = false;
+            rb.constraints = RigidbodyConstraints.FreezeAll;
         }
 
-        if(!dead && !bossAttack)
-        {
+    }
 
-            if(phaseOne || !phaseOne)
-            {
-                if(currentHits >= amountofHits && !bossAttack)
-                {
-                    StartCoroutine(FleeShootAttack());
-                }
+    void LookAtPlayer()
+    {
+        rb.constraints = RigidbodyConstraints.None;
+        rb.constraints = RigidbodyConstraints.FreezePosition | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
 
+        Vector3 direction = new Vector3((player.position.x - transform.position.x), 0, (player.position.z - transform.position.z)).normalized;
+            //(player.position - transform.position).normalized;
 
-                if(distToPlayer > maxShootRange)
-                {
-                    if(!bossAttack)
-                    {
-                        StartCoroutine(DashAttack());
-                    }
-                }
-                else if(distToPlayer < maxShootRange && distToPlayer > minShootRange)
-                {
-                    float rndNo = Random.Range(0, 100);
+        float step = agent.angularSpeed * Time.deltaTime;
 
-                    if(!bossAttack && rndNo < 75)
-                    {
-                        StartCoroutine(RangedAttack());
-                    }
-                }
-                else if(distToPlayer < meleeAttackRange)
-                {
-                    float rndNo = Random.Range(0, 100);
+        Vector3 newDir = Vector3.RotateTowards(transform.forward, direction, step, 0.0f);
 
-                    if (!attacking && !bossAttack && rndNo < 75)
-                    {
-                        StartCoroutine(MeleeAttack());
-                    }
-
-                }
-            }
-
-
-
-
-        }
-
-        /*
-
-        if(seenPlayer == true)
-        {
-            if (!froze)
-            {
-                //health is > 33%
-                if (health > startingHealth / 100 * 33)
-                {
-
-                    if (!froze)
-                    {
-                        //If the player is outside Melee & shoot range persue player
-                        if(distance > maxShootRange && distance > meleeAttackRange)
-                        {
-                            SB("persue");
-                        }
-                        else if(distance < meleeAttackRange)
-                        {
-                            if(!dashAttack)
-                                StartCoroutine(DashAttack());
-
-                        }
-
-                        
-
-                        //keep distance to player 
-                        // If the enemy is out of shooting range, move towards the player
-                        if (distance > shootRange && distance > meleeAttackRange)
-                        {
-                            SB("persue");
-                        }
-                        // If the enemy gets within range of the player, shoot at them
-                        else 
-                        {
-
-
-
-                            //dashes in to melee attack flurry of 4 strikes
-                            MeleeAttack();
-                            MeleeAttack();
-                            MeleeAttack();
-                            MeleeAttack();
-                            //froze in place take double damage.
-                            SB("freeze");
-
-                            SB("flee"); // Effectively stops the enemy from moving
-                        }
-
-                    
-
-
-
-                    }
-                }
-                else if (health <= startingHealth / 100 * 33)
-                {
-                    //health is < 33%
-
-                    //keep distance to player 
-                    // If the enemy is out of shooting range, move towards the player
-                    if (distance > maxShootRange)
-                    {
-                        SB("persue");
-                    }
-                    // If the enemy gets within range of the player, shoot at them
-                    else if (distance < maxShootRange)
-                    {
-                        //dashes in to melee attack flurry of 4 strikes
-                        Shoot();
-                        shot += 1;
-                        // range attacks and special attacks in sequence
-                        if (shot >= 4)
-                        {
-                            //after special attack froze in place take double damage.
-                            SB("freeze");
-                            shot = 0;
-                        }
-
-                        SB("flee"); // Effectively stops the enemy from moving
-                    }
-
-
-                }
-            }
-        }
-       
-        */
-        
-
+        transform.rotation = Quaternion.LookRotation(newDir);
     }
 
     IEnumerator DashAttack()
@@ -209,23 +143,27 @@ public class Boss : Enemy
         //Waits till the player is within melee range
         yield return new WaitUntil(() => distToPlayer < meleeAttackRange);
 
+        //Resseting the movement stats
+
+        ResetMovementStats();
+
+        LookPlayer = true;
+
         //For loop to run for as many melee attacks
         for (int i = 0; i < 2; i++)
         {
-            //Resseting the movement stats
-            ResetMovementStats();
-
             //Starting the melee attack
             StartCoroutine(MeleeAttack());
 
             //Setting up the next attack time
-            timeTillNextAttack = Time.time + timeBetweenAttack;
+            timeTillNextAttack = Time.time + 1;
 
             //Waiting until attack is finished and can attack again
             yield return new WaitUntil(() => attacking == false && Time.time > timeTillNextAttack);
 
         }
 
+        LookPlayer = false;
         bossAttack = false;
 
     }
@@ -235,87 +173,79 @@ public class Boss : Enemy
 
         Debug.Log("Ranged Attack");
 
+        //Setting Boss attack true
         bossAttack = true;
 
+        //Fleeing for X seconds
         SB("flee");
+        yield return new WaitForSeconds(2f);
 
-        yield return new WaitForSeconds(1f);
-
+        //For loop to shoot X amount 
         for (int i = 0; i < 2; i++)
         {
-            Vector3 lookDir = player.transform.position - transform.position;
+            //looking at the player
+            LookPlayer = true;
 
-            Quaternion lookRotation = Quaternion.LookRotation(lookDir);
-
-            Vector3 rotation = Quaternion.Lerp(transform.rotation, lookRotation, Time.deltaTime * agent.angularSpeed).eulerAngles;
-
-            transform.rotation = Quaternion.Euler(0.0f, rotation.y, 0.0f);
-
+            //Shooting and waiting X seconds
             StartCoroutine(Shoot());
-
             yield return new WaitForSeconds(1f);
 
         }
 
-        bossAttack = false;
 
+
+        //Boss attack set to false
+        bossAttack = false;
+        LookPlayer = false;
     }
 
     IEnumerator FleeShootAttack()
     {
         Debug.Log("Flee Shoot Attack");
 
+        //Boss attack set to True
         bossAttack = true;
 
-
+        //Setting the destination to the attack position untill the boss has reached the position
         agent.SetDestination(attackPoint.position);
-
         yield return new WaitUntil(() => Vector3.Distance(transform.position, attackPoint.position) <= 1);
 
-        Debug.Log("Reached Point");
-
-
+        //Making the boss inaccessable
         block.GetComponent<NavMeshObstacle>().enabled = true;
 
-        Debug.Log("Block True");
-
-
-        for (int i = 0; i < 4; i++)
+        //Boss shoots X amount of spells
+        for (int i = 0; i < 8; i++)
         {
-            Vector3 lookDir = player.transform.position - transform.position;
-
-            Quaternion lookRotation = Quaternion.LookRotation(lookDir);
-
-            Vector3 rotation = Quaternion.Lerp(transform.rotation, lookRotation, Time.deltaTime * agent.angularSpeed).eulerAngles;
-
-            transform.rotation = Quaternion.Euler(0.0f, rotation.y, 0.0f);
+            //looking at the player
+            LookPlayer = true;
 
             yield return new WaitForSeconds(1f);
-
+            //Creating the bos spell
             Instantiate(bossSpell, transform.position + ((transform.forward * 2) + (transform.up * 2)), transform.rotation);
 
         }
 
-        yield return new WaitForSeconds(3f);
+        LookPlayer = false;
 
+        //Waiting X seconds after casting spells
+        yield return new WaitForSeconds(2f);
 
-        Debug.Log("Fin Shoot");
-
-
+        //Disabling the block to allow boss to return to the arena 
         block.GetComponent<NavMeshObstacle>().enabled = false;
 
-        Debug.Log("Block false");
-
+        //Moving the boss back to the arena 
         agent.SetDestination(returnPoint.position);
-
         yield return new WaitUntil(() => Vector3.Distance(transform.position, attackPoint.position) <= 1);
 
-        Debug.Log("Returned");
+        if(!firstFlee)
+        {
+            firstFlee = true;
 
-        flee = false;
+            if (!secondFlee)
+                secondFlee = true;
+        }
 
-        currentHits = 0;
-
+        //Boss attack to false
         bossAttack = false;
     }
 
@@ -323,14 +253,18 @@ public class Boss : Enemy
     {
         base.TakeDamage(damageIn, attackType);
 
+        //Storing the amount of hits 
         currentHits++;
 
+        //Checking if boss should do taken to many hit attack
         if(currentHits >= amountofHits)
         {
-            flee = true;
+            //Setting taken hit attack to true
+            takenHitAttack = true;
         }
     }
 
+    //Functions used for updating the bosses movement stats and restting them
     void UpdateMovementStats(float newMovement, float newAngular, float newAcceleration)
     {
         agent.speed = newMovement;

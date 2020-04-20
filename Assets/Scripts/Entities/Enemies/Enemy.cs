@@ -166,7 +166,11 @@ public class Enemy : Entities
             if (percent >= .5f && !hasAppliedDamage)
             {
                 hasAppliedDamage = true;
-                player.gameObject.GetComponent<PlayerMovement>().TakeDamage(meleeAttackDamage, "Melee");
+                if(Vector3.Distance(transform.position, player.position) < 1)
+                {
+                    player.gameObject.GetComponent<PlayerMovement>().TakeDamage(meleeAttackDamage, "Melee");
+
+                }
             }
 
             //Moving the player between the starting position, and attack position then back to the starting position

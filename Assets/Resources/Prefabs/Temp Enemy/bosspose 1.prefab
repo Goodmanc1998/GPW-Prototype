@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 8207196817526690358}
   m_Layer: 0
   m_Name: bosspose 1
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,7 +30,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 199353638162460916}
-  m_LocalRotation: {x: -0, y: 0.9913959, z: -0, w: 0.1308976}
+  m_LocalRotation: {x: 0, y: 0.99139583, z: 0, w: 0.13089819}
   m_LocalPosition: {x: 46.205143, y: 14.167901, z: 163.19}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -116,7 +116,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!136 &8207196817526690356
 CapsuleCollider:
@@ -128,10 +128,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.8921355
-  m_Height: 2.8107054
+  m_Radius: 1
+  m_Height: 2.8
   m_Direction: 1
-  m_Center: {x: 0.06831381, y: 0.00000023841858, z: 0.19869524}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8207196817526690507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,28 +145,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entitiesAnimator: {fileID: 6491205534280626077}
-  startingHealth: 0
+  startingHealth: 60
   health: 0
   weakness: 0
-  JumpPoint: {fileID: 5652665797778428093, guid: 0477d054b090d2c4e81143ba35546a9e,
-    type: 3}
-  movementSpeed: 5
-  angularSpeed: 180
-  acceleration: 3
-  stoppingDistance: 0.5
+  movementSpeed: 10
+  angularSpeed: 300
+  acceleration: 8
+  stoppingDistance: 1
   meleeAttackRange: 5
-  meleeAttackDamage: 1
-  meleeAttackSpeed: 1
-  timeBetweenAttack: 3
+  meleeAttackDamage: 2
+  meleeAttackSpeed: 3
+  timeBetweenAttack: 2
   pawnEnemy: {fileID: 0}
   currentSpawned: 0
   timeBetweenSpawns: 0
   grabTime: 0
   timeUntillGrab: 0
+  grabDamage: 0
   explosionRanage: 0
   explosionDamage: 0
   timeUntilExplosion: 0
-  projectile: {fileID: 0}
+  projectile: {fileID: 5571760799683643939, guid: 6554c93d261e17d4b843e74a17bd7788,
+    type: 3}
   fireRate: 2
   wave:
     spawnpoints: []
@@ -180,8 +180,11 @@ MonoBehaviour:
     spawnpointColour: {r: 0, g: 0, b: 0, a: 0}
     showSpawnpoints: 0
   froze: 0
-  shootRange: 12
-  disToPlayer: 4
+  minShootRange: 5
+  maxShootRange: 10
+  amountofHits: 3
+  bossSpell: {fileID: 4391072087174101407, guid: 8e34ee0dc01204e4bbcc6b39d466fab6,
+    type: 3}
 --- !u!195 &8207196817526690358
 NavMeshAgent:
   m_ObjectHideFlags: 0
