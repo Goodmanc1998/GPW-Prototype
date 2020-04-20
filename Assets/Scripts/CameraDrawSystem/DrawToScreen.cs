@@ -68,7 +68,7 @@ public class DrawToScreen : MonoBehaviour
         }
 
         // is the virtual keys in our draw area ?
-        if (drawArea.Contains(virtualKeyPosition) && Input.GetKey(KeyCode.Q))
+        if (drawArea.Contains(virtualKeyPosition) && (Input.GetKey(KeyCode.Q) || Input.GetKey(KeyCode.LeftAlt)))
         {
             //if they are and the mouse left button is being pressed.
             if (Input.GetMouseButtonDown(0))
