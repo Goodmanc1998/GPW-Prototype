@@ -10,16 +10,16 @@ public class PawnSpawnerScript : Enemy
 
     //Int to store max amount of pawns
     public int maxAmountToSpawn;
-
-
-    // Start is called before the first frame update
-    protected override void Start()
+    private void Awake()
     {
-        base.Start();
+        entitiesAnimator = gameObject.GetComponent<Animator>();
+        entitiesAnimator.updateMode = UnityEngine.AnimatorUpdateMode.Normal; base.Start();
 
         timeTillNextSpawn = Time.time + timeBetweenSpawns;
-
     }
+
+    
+    
 
     // Update is called once per frame
     void Update()

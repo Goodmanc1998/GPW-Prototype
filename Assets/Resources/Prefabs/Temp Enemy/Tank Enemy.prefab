@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1983914396549413338}
   - component: {fileID: 1983914396549413337}
   - component: {fileID: 495814781844215799}
+  - component: {fileID: 1169312006984313431}
   m_Layer: 0
   m_Name: Tank Enemy
   m_TagString: Target
@@ -113,7 +114,6 @@ MonoBehaviour:
   startingHealth: 15
   health: 0
   weakness: 0
-  JumpPoint: {fileID: 0}
   movementSpeed: 2
   angularSpeed: 190
   acceleration: 4
@@ -127,6 +127,7 @@ MonoBehaviour:
   timeBetweenSpawns: 0
   grabTime: 1.5
   timeUntillGrab: 2
+  grabDamage: 0
   explosionRanage: 0
   explosionDamage: 0
   timeUntilExplosion: 0
@@ -183,6 +184,25 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!95 &1169312006984313431
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1983914396549413336}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 6eb81a3cbaf01644cb06b42aebc1edd9, type: 3}
+  m_Controller: {fileID: 9100000, guid: aad6e533b41c94349bdd628a45b341ad, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 2
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3443496204020620888
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,7 +311,8 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: e36769803b2824142a667970f270512f, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -6057140222963153312, guid: 6eb81a3cbaf01644cb06b42aebc1edd9, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6eb81a3cbaf01644cb06b42aebc1edd9, type: 3}
 --- !u!4 &2012502316688178452 stripped
 Transform:

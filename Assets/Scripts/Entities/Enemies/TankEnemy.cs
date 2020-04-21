@@ -6,14 +6,15 @@ using UnityEngine.AI;
 public class TankEnemy : Enemy
 {
     public float rangeOfGrab;
-
-    // Start is called before the first frame update
-    protected override void Start()
+    private void Awake()
     {
+        entitiesAnimator = gameObject.GetComponent<Animator>();
+        entitiesAnimator.updateMode = UnityEngine.AnimatorUpdateMode.Normal;
         base.Start();
 
         timeTillNextGrab = timeUntillGrab + Time.time;
     }
+    
 
     // Update is called once per frame
     void Update()

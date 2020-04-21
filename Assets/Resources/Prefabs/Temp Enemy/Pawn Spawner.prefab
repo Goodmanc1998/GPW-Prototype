@@ -9,11 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3228493842885784039}
-  - component: {fileID: 3228493842885784037}
   - component: {fileID: 3228493842885784042}
   - component: {fileID: 3228493842885784043}
   - component: {fileID: 3228493842885784040}
   - component: {fileID: -566418399916445137}
+  - component: {fileID: 2815159113167406681}
   m_Layer: 0
   m_Name: Pawn Spawner
   m_TagString: Target
@@ -29,51 +29,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3228493842885784041}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 6.2}
+  m_LocalPosition: {x: 0, y: 2.682, z: 6.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2757786136965452339}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &3228493842885784037
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3228493842885784041}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 07a92150463af3e44a9c3b0111a7af6f, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
 --- !u!136 &3228493842885784042
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -126,7 +88,6 @@ MonoBehaviour:
   startingHealth: 8
   health: 0
   weakness: 1
-  JumpPoint: {fileID: 0}
   movementSpeed: 5
   angularSpeed: 180
   acceleration: 2
@@ -141,6 +102,7 @@ MonoBehaviour:
   timeBetweenSpawns: 1
   grabTime: 0
   timeUntillGrab: 0
+  grabDamage: 0
   explosionRanage: 0
   explosionDamage: 0
   timeUntilExplosion: 0
@@ -176,6 +138,25 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!95 &2815159113167406681
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3228493842885784041}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 8f31ae78c62d94245bde5aafc030efbd, type: 3}
+  m_Controller: {fileID: 9100000, guid: 72eb3ebba4f316447a92880e6766d9a8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 2
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5550577984211291141
 GameObject:
   m_ObjectHideFlags: 0
@@ -294,7 +275,8 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 07a92150463af3e44a9c3b0111a7af6f, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -6057140222963153312, guid: d347356c1f9b226489a0f0c3173760c1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d347356c1f9b226489a0f0c3173760c1, type: 3}
 --- !u!4 &8805334986781153070 stripped
 Transform:
