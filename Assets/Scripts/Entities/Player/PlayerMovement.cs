@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class PlayerMovement : Entities
 {
@@ -35,6 +36,11 @@ public class PlayerMovement : Entities
     Vector3 hitPoint;
 
     TutorialScript tutorial;
+
+    Coroutine respawning;
+    public float currentTime = 0f;
+    public Image screenFade; // Blank image used to fade the players screen in and out - when they die, for example
+    public Gradient fadeGradient; // Gradient used to fade the screen in and out
 
     public void castSpell(LineRenderer GestureTransform,string ShapeDrawn,float percentMatch)
     {
@@ -132,11 +138,11 @@ public class PlayerMovement : Entities
 
 // Allows us to speed up the game in the unity editor for quick testing
 #if UNITY_EDITOR
-        if (Input.GetKey(KeyCode.KeypadMultiply))
+        if (Input.GetKeyDown(KeyCode.KeypadMultiply))
         {
             Time.timeScale++;
         }
-        if (Input.GetKey(KeyCode.KeypadDivide))
+        if (Input.GetKeyDown(KeyCode.KeypadDivide))
         {
             Time.timeScale--;
         }
@@ -191,10 +197,9 @@ public class PlayerMovement : Entities
             PlayerLook();
             nextCheckTime = Time.time + timebetweenChecks;
         }
-        if (dead)
+        if (dead && respawning == null)
         {
-            entitiesAnimator.SetBool("Dead", true);
-            StartCoroutine(Respawn(4f)); // If the player dies, respawn them
+            respawning = StartCoroutine(Respawn(3f, 3f)); // If the player dies, respawn them
         }
     }
 
@@ -256,14 +261,39 @@ public class PlayerMovement : Entities
     }
 
     // Respawn the player
-    public IEnumerator Respawn(float timeBeforeRespawn)
+    public IEnumerator Respawn(float timeBeforeFade, float fadeTime)
     {
+        entitiesAnimator.SetBool("Dead", true);
         Debug.Log("Player Respawning");
-        yield return new WaitForSeconds(timeBeforeRespawn); // Allow time for the death animation to play
-        entitiesAnimator.SetBool("Dead", false); // Reset the animators death state
-        transform.position = checkpoint.transform.position; // Set the player to the checkpoints location
+        yield return new WaitForSeconds(timeBeforeFade); // Allow time for the death animation to play
+
+        StartCoroutine(ScreenFade(fadeTime));
+
+        yield return new WaitForSeconds(fadeTime / 2f);
+
+        entitiesAnimator.SetBool("Dead", false);
+        entitiesAnimator.Play("Idle");
+
         health = startingHealth; // Reset the players health
-        viewCamera.GetComponent<CameraFollow>().ResetCamera(); // Reset the camera position
+
         EnemySpawnManager.ResetWaves(); // Reset all waves that are currently active or have yet to fought
+        transform.position = checkpoint.transform.position; // Set the player to the checkpoints location
+        agent.SetDestination(transform.position); // Reset the navmesh agents target position
+        viewCamera.GetComponent<CameraFollow>().ResetCamera(); // Reset the camera position
+
+        dead = false;
+        respawning = null;
+    }
+
+    // Fades the screen in and out of black over a specified time
+    IEnumerator ScreenFade(float fadeTime)
+    {
+        currentTime = 0f;
+        while (currentTime < fadeTime)
+        {
+            screenFade.color = fadeGradient.Evaluate(currentTime / fadeTime);
+            currentTime += Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
     }
 }

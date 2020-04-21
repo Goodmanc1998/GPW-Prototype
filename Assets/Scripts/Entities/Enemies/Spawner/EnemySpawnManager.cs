@@ -89,7 +89,10 @@ public class EnemySpawnManager : MonoBehaviour
         }
         foreach (Enemy enemy in enemies)
         {
-            Destroy(enemy);
+            if (enemy != null)
+            {
+                Destroy(enemy.gameObject);
+            }
         }
     }
 
