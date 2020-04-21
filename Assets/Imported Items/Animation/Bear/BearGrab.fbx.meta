@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 86ef59c92ba714744adb3ffd4c488cc0
+guid: 2aa09e2dcd3ff1345bbf5eaa967b5bdd
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable:
   - first:
-      74: 3651350446308603674
-    second: Damage
+      74: -3443985681492114326
+    second: Grab
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -33,36 +33,7 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: Damage
-      takeName: Damage
-      internalID: 0
-      firstFrame: 1
-      lastFrame: 59
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 1
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+    clipAnimations: []
     isReadable: 0
   meshes:
     lODScreenPercentages: []
@@ -113,12 +84,12 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
-    rootMotionBoneName: joint20
+    globalScale: 0.01
+    rootMotionBoneName: joint14
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
-  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: a64a90bc396c2c24eaf4a730a1dd1da4,
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 6eb81a3cbaf01644cb06b42aebc1edd9,
     type: 3}
   animationType: 2
   humanoidOversampling: 1
