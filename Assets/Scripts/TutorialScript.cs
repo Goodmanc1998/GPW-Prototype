@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class TutorialScript : MonoBehaviour
 {
+
+    public GameObject[] tutorialImagesText;
+
+
     //Bools used to store if each spell has been casted 
     public bool spellOneCast;
     public bool spellTwoCast;
@@ -17,6 +21,16 @@ public class TutorialScript : MonoBehaviour
 
     //A count used to make sure the 
     int count;
+
+    private void Start()
+    {
+        for (int i = 0; i < tutorialImagesText.Length; i++)
+        {
+            tutorialImagesText[i].SetActive(true);
+            Destroy(tutorialImagesText[i], 7);
+
+        }
+    }
 
     // Update is called once per frame
     void Update()

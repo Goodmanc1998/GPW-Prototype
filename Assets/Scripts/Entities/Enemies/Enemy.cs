@@ -183,7 +183,7 @@ public class Enemy : Entities
             if (percent >= .5f && !hasAppliedDamage)
             {
                 hasAppliedDamage = true;
-                if(Vector3.Distance(transform.position, player.position) < 2)
+                if(Vector3.Distance(transform.position, player.position) < 3)
                 {
                     player.gameObject.GetComponent<PlayerMovement>().TakeDamage(meleeAttackDamage, "Melee");
 

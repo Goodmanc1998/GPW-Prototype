@@ -33,12 +33,12 @@ public class Projectile : MonoBehaviour
     private void OnTriggerEnter(Collider collider)
     {
         string tag = collider.gameObject.tag;
-        if (tag == "Player") // If it hits the player they take damage
+        if (tag == "Player" && tag != "Boss") // If it hits the player they take damage
         {
             collider.gameObject.GetComponent<PlayerMovement>().TakeDamage(damage, "None");
             Destroy(gameObject);
         }
-        if (tag == "Enviroment" || tag == "Stone" || tag == "Dirt" || tag == "Wood") // Pass through other enemies
+        if (tag == "Enviroment" || tag == "Stone" || tag == "Dirt" || tag == "Wood" && tag != "Boss") // Pass through other enemies
         {
             Destroy(gameObject); // Destroy the projectile when it hits something other than an enemy
         }
