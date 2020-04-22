@@ -22,7 +22,7 @@ public class TriggerText : MonoBehaviour
     }
     IEnumerator WaitForSec()
     {
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(6);
         Destroy(uiObject);
         Destroy(gameObject);
     }

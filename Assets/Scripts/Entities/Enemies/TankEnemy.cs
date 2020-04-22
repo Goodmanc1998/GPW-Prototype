@@ -29,7 +29,7 @@ public class TankEnemy : Enemy
             }
             else
             {
-                SB("persue");
+                SB("pursue");
                 entitiesAnimator.SetBool("Walk", true);
             }
         }
