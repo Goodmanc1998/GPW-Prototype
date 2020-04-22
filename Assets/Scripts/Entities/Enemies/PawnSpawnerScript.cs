@@ -29,13 +29,17 @@ public class PawnSpawnerScript : Enemy
             if (Vector3.Distance(transform.position, player.position) < runAwayDistance)
             {
                 SB("flee");
-
+                entitiesAnimator.SetBool("Walk", true);
                 //Debug.Log("Running away");
 
+            }else
+            {
+                entitiesAnimator.SetBool("Walk", false);
             }
 
             if (Time.time >= timeTillNextSpawn & currentSpawned < maxAmountToSpawn)
             {
+                entitiesAnimator.SetTrigger("Summon");
                 SpawnPawn();
                 //Debug.Log("Spawning");
 

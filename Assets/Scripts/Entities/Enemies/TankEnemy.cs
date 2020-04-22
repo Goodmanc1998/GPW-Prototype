@@ -23,14 +23,17 @@ public class TankEnemy : Enemy
         {
             if (Vector3.Distance(player.position, transform.position) <= rangeOfGrab && Time.time >= timeTillNextGrab)
             {
+                entitiesAnimator.SetBool("Walk", false);
                 StartCoroutine(Grab());
+                entitiesAnimator.SetTrigger("Attack");
             }
             else
             {
                 SB("persue");
-
+                entitiesAnimator.SetBool("Walk", true);
             }
         }
+        
         
 
         if (dead)
