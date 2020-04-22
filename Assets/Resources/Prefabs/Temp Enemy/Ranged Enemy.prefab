@@ -125,7 +125,8 @@ MonoBehaviour:
   projectile: {fileID: 5571760799683643939, guid: 6554c93d261e17d4b843e74a17bd7788,
     type: 3}
   fireRate: 2
-  randomAimRadius: 0
+  projectileSpeed: 20
+  randomAimRadius: 1
   wave:
     spawnpoints: []
     enemy: {fileID: 0}
