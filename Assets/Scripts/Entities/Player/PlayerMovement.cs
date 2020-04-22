@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class PlayerMovement : Entities
 {
     Camera viewCamera;
+    NavMeshAgent agent;
 
     Checkpoint checkpoint;
 
@@ -128,6 +129,7 @@ public class PlayerMovement : Entities
         base.Start();
         entitiesAnimator.updateMode = UnityEngine.AnimatorUpdateMode.Normal;
         viewCamera = Camera.main;
+        agent = GetComponent<NavMeshAgent>();
 
         tutorial = GameObject.FindGameObjectWithTag("Tutorial").GetComponent<TutorialScript>();
     }
@@ -263,16 +265,19 @@ public class PlayerMovement : Entities
     // Respawn the player
     public IEnumerator Respawn(float timeBeforeFade, float fadeTime)
     {
-        entitiesAnimator.SetBool("Dead", true);
+        entitiesAnimator.SetBool("Dead", true); // Play the players death animation
+        agent.isStopped = true; // Freeze the player from moving
         Debug.Log("Player Respawning");
         yield return new WaitForSeconds(timeBeforeFade); // Allow time for the death animation to play
 
-        StartCoroutine(ScreenFade(fadeTime));
+        StartCoroutine(ScreenFade(fadeTime)); // Start the screen fade
 
         yield return new WaitForSeconds(fadeTime / 2f);
 
-        entitiesAnimator.SetBool("Dead", false);
-        entitiesAnimator.Play("Idle");
+        entitiesAnimator.SetBool("Dead", false); // Reset the death animation
+        entitiesAnimator.Play("Idle"); // Play the players idle animation
+
+        agent.isStopped = false; // Allow the player to move again
 
         health = startingHealth; // Reset the players health
 
