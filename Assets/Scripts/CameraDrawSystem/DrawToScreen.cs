@@ -170,13 +170,13 @@ public class DrawToScreen : MonoBehaviour
             gestureLinesRenderer.Clear();
         }
     }
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawCube(FindObjectOfType<PlayerMovement>().transform.position, new Vector3(100, 0.1f, 100));
-        Ray mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-        Gizmos.color = Color.green;
-        Gizmos.DrawLine(mouseRay.origin, mouseRay.GetPoint(50));
+    //private void OnDrawGizmos()
+    //{
+    //    Gizmos.color = Color.red;
+    //    Gizmos.DrawCube(FindObjectOfType<PlayerMovement>().transform.position, new Vector3(100, 0.1f, 100));
+    //    Ray mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+    //    Gizmos.color = Color.green;
+    //    Gizmos.DrawLine(mouseRay.origin, mouseRay.GetPoint(50));
 
-    }
+    //}
 }
