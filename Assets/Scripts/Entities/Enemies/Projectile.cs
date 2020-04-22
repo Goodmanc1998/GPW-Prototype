@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    public float speed; // The speed of the projectile
     public float damage; // How much damage will be done to the player
     public float timeBeforeDestroyed; // How long before the projectile is destroyed in the event it dosen't hit anything
     [HideInInspector]
-    public Vector3 direction;
+    public Vector3 direction; // The direction of the projectile
+    [HideInInspector]
+    public float speed; // The speed of the projectile
 
     float age;
 

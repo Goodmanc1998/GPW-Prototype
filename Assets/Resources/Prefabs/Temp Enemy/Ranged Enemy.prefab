@@ -125,6 +125,7 @@ MonoBehaviour:
   projectile: {fileID: 5571760799683643939, guid: 6554c93d261e17d4b843e74a17bd7788,
     type: 3}
   fireRate: 2
+  randomAimRadius: 0
   wave:
     spawnpoints: []
     enemy: {fileID: 0}
@@ -263,6 +264,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -1381886020629568032, guid: a64a90bc396c2c24eaf4a730a1dd1da4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5e7cde0dfab20514dab1648c28b02baf, type: 2}
     - target: {fileID: -6057140222963153312, guid: a64a90bc396c2c24eaf4a730a1dd1da4,
         type: 3}
       propertyPath: m_Controller
@@ -273,11 +279,6 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -1381886020629568032, guid: a64a90bc396c2c24eaf4a730a1dd1da4,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 5e7cde0dfab20514dab1648c28b02baf, type: 2}
     m_RemovedComponents:
     - {fileID: -6057140222963153312, guid: a64a90bc396c2c24eaf4a730a1dd1da4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a64a90bc396c2c24eaf4a730a1dd1da4, type: 3}

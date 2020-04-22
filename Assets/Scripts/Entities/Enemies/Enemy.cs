@@ -44,10 +44,14 @@ public class Enemy : Entities
     public Projectile projectile; // The projectile that will be shot by this enemy
     protected Coroutine firing; // Keeps track of the shooting coroutine to ensure a delay between each shot
     public float fireRate; // The time in seconds between each shot projectile
+    public float projectileSpeed; // The speed of the fired projectile
+    public float randomAimRadius; // The size of the radius that the aim can be randomly off by
 
     [HideInInspector]
     public Wave wave; // The wave the enemy was spawned in
     public bool froze = false;
+
+    NavMeshAgent playerNvAgnt;
 
     protected override void Start()
     {
@@ -59,6 +63,8 @@ public class Enemy : Entities
         agent.angularSpeed = angularSpeed;
         agent.acceleration = acceleration;
         agent.stoppingDistance = stoppingDistance;
+
+        playerNvAgnt = player.gameObject.GetComponent<NavMeshAgent>();
     }
 
     public override void TakeDamage(float damageIn, string attackType)
@@ -79,7 +85,6 @@ public class Enemy : Entities
     //steering behaviours.
     public virtual void SB(string calledFor)
     {
-        NavMeshAgent playerNvAgnt = player.gameObject.GetComponent<NavMeshAgent>();
         //seek
         //flee
         //persue
@@ -247,8 +252,16 @@ public class Enemy : Entities
     // Shoots a single projectile and stops more from being shot until a set time has passed
     protected IEnumerator Shoot()
     {
+        // Instantiate the projectile
         Projectile p = Instantiate(projectile, transform.position, Quaternion.identity);
-        p.direction = new Vector3(player.position.x - transform.position.x, 0, player.position.z - transform.position.z).normalized;
+
+        // Predict the position of the player and add a random amount of variation
+        Vector3 predictedPosition = player.position + playerNvAgnt.velocity * Time.deltaTime * projectileSpeed;
+        predictedPosition += Random.insideUnitSphere * randomAimRadius;
+
+        // Set the direction and speed of the projectile
+        p.direction = new Vector3(predictedPosition.x - transform.position.x, 0, predictedPosition.z - transform.position.z).normalized;
+        p.speed = projectileSpeed;
         yield return new WaitForSeconds(fireRate);
         firing = null;
     }
