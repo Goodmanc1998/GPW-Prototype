@@ -247,7 +247,7 @@ public class Enemy : Entities
     // Shoots a single projectile and stops more from being shot until a set time has passed
     protected IEnumerator Shoot()
     {
-        Projectile p = Instantiate(projectile, transform.position + Vector3.forward, Quaternion.identity);
+        Projectile p = Instantiate(projectile, transform.position, Quaternion.identity);
         p.direction = new Vector3(player.position.x - transform.position.x, 0, player.position.z - transform.position.z).normalized;
         yield return new WaitForSeconds(fireRate);
         firing = null;

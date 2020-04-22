@@ -29,15 +29,16 @@ public class Projectile : MonoBehaviour
     }
 
     // If the projectile hits something other than another enemy, destroy it and deal damage to the player if it hits them
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collider)
     {
-        string tag = collision.gameObject.tag;
-        if (tag != "Target") // Pass through other enemies
+        string tag = collider.gameObject.tag;
+        if (tag == "Player") // If it hits the player they take damage
         {
-            if (tag == "Player") // If it hits the player they take damage
-            {
-                collision.gameObject.GetComponent<PlayerMovement>().TakeDamage(damage, "None");
-            }
+            collider.gameObject.GetComponent<PlayerMovement>().TakeDamage(damage, "None");
+            Destroy(gameObject);
+        }
+        if (tag == "Enviroment" || tag == "Stone" || tag == "Dirt" || tag == "Wood") // Pass through other enemies
+        {
             Destroy(gameObject); // Destroy the projectile when it hits something other than an enemy
         }
     }
