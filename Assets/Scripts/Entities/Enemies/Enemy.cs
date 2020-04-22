@@ -10,6 +10,7 @@ public class Enemy : Entities
     public float angularSpeed;
     public float acceleration;
     public float stoppingDistance;
+    public float randomPursueRadius; // Randomness of the enemies choise when pursuing the player
 
     [Header("Melee Attack")]
     //Variables Used for Melee Attack
@@ -51,7 +52,9 @@ public class Enemy : Entities
     public Wave wave; // The wave the enemy was spawned in
     public bool froze = false;
 
-    NavMeshAgent playerNvAgnt;
+    NavMeshAgent playerNvAgnt; // The players navmesh agent
+    [HideInInspector]
+    public bool enemyChosePosition = false; // If the enemy has chosen a random position when pursuing, makes sure to not call it repeatedly
 
     protected override void Start()
     {
@@ -87,7 +90,7 @@ public class Enemy : Entities
     {
         //seek
         //flee
-        //persue
+        //pursue
         //avoid
         if (calledFor == "seek")
         {
@@ -95,9 +98,17 @@ public class Enemy : Entities
         }else if(calledFor == "flee")
         {
             agent.SetDestination(transform.position - (transform.position + player.position).normalized);
-        }else if(calledFor == "persue")
+        }else if(calledFor == "pursue")
         {
-            agent.SetDestination(player.position + playerNvAgnt.velocity);
+            if (!enemyChosePosition)
+            {
+                enemyChosePosition = true;
+                agent.SetDestination(PredictPlayerPosition(movementSpeed, randomPursueRadius, true));
+            }
+            else
+            {
+                agent.SetDestination(PredictPlayerPosition(movementSpeed));
+            }
         }
         else if (calledFor == "stop")
         {
@@ -256,13 +267,44 @@ public class Enemy : Entities
         Projectile p = Instantiate(projectile, transform.position, Quaternion.identity);
 
         // Predict the position of the player and add a random amount of variation
-        Vector3 predictedPosition = player.position + playerNvAgnt.velocity * Time.deltaTime * projectileSpeed;
-        predictedPosition += Random.insideUnitSphere * randomAimRadius;
+        Vector3 predictedPosition = PredictPlayerPosition(projectileSpeed, randomAimRadius);
 
         // Set the direction and speed of the projectile
         p.direction = new Vector3(predictedPosition.x - transform.position.x, 0, predictedPosition.z - transform.position.z).normalized;
         p.speed = projectileSpeed;
         yield return new WaitForSeconds(fireRate);
         firing = null;
+    }
+
+    // Predicts the player position to intercept them and ensures the point is on the navmeshif sampleNavMesh is true adds a degree of variation
+    public Vector3 PredictPlayerPosition(float pursuerVelocity, float randomRadius, bool sampleNavMesh)
+    {
+        Vector3 newPosition = player.position + playerNvAgnt.velocity * Time.deltaTime * pursuerVelocity;
+        newPosition += Random.insideUnitSphere * randomRadius;
+        if (sampleNavMesh)
+        {
+            NavMeshHit nmh;
+            if (NavMesh.SamplePosition(newPosition, out nmh, randomRadius, NavMesh.AllAreas)) // Function is more expensive the larger randomRadius is
+            {
+                Debug.Log(nmh.position);
+                return nmh.position;
+            }
+        }
+        return newPosition;
+    }
+
+    // Predicts the player position to intercept them and adds a degree of variation
+    public Vector3 PredictPlayerPosition(float pursuerVelocity, float randomRadius)
+    {
+        Vector3 newPosition = player.position + playerNvAgnt.velocity * Time.deltaTime * pursuerVelocity;
+        newPosition += Random.insideUnitSphere * randomRadius;
+        return newPosition;
+    }
+
+    // Predicts the player position to intercept them
+    public Vector3 PredictPlayerPosition(float pursuerVelocity)
+    {
+        Vector3 newPosition = player.position + playerNvAgnt.velocity * Time.deltaTime * projectileSpeed;
+        return newPosition;
     }
 }

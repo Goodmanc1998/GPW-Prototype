@@ -20,11 +20,12 @@ public class RangedEnemy : Enemy
             // If the enemy is out of shooting range, move towards the player
             if (distance > shootRange)
             {
-                SB("persue");
+                SB("pursue");
             }
             // If the enemy gets within range of the player, shoot at them
             else if (distance > fleeRange)
             {
+                enemyChosePosition = false;
                 if (firing == null)
                 {
                     firing = StartCoroutine(Shoot());

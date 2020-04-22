@@ -32,7 +32,7 @@ public class ThreatEnemy : Enemy
             }
             else
             {
-                SB("persue");
+                SB("pursue");
             }
         }
         
