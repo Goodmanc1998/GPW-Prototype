@@ -37,7 +37,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 2
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -84,12 +84,12 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.01
+    globalScale: 0.02
     rootMotionBoneName: joint14
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
-  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 6eb81a3cbaf01644cb06b42aebc1edd9,
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 8aeb6d791406d2441893c79b831b15d9,
     type: 3}
   animationType: 2
   humanoidOversampling: 1

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b0e2b06df27d8e040aa6a5802bc198b1
+guid: c5fb8e111191dcf40aca912caffded31
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable:
   - first:
-      74: 3651350446308603674
+      74: 1827226128182048838
     second: Damage
   externalObjects: {}
   materials:
@@ -36,22 +36,22 @@ ModelImporter:
     clipAnimations:
     - serializedVersion: 16
       name: Damage
-      takeName: Damage
+      takeName: Take 001
       internalID: 0
       firstFrame: 1
-      lastFrame: 34
+      lastFrame: 50
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
-      keepOriginalOrientation: 1
+      keepOriginalOrientation: 0
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0
       heightFromFeet: 0
@@ -62,11 +62,11 @@ ModelImporter:
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 1
+      additiveReferencePoseFrame: 0
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 40
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -113,12 +113,12 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.39999998
-    rootMotionBoneName: WR_Root_Jnt_01
+    globalScale: 1
+    rootMotionBoneName: joint1
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
-  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 8f31ae78c62d94245bde5aafc030efbd,
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 15c08bfff66efeb4c92a4fe0ef42c45a,
     type: 3}
   animationType: 2
   humanoidOversampling: 1
