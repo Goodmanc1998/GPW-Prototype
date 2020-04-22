@@ -6,18 +6,25 @@ using UnityEngine.AI;
 public class Footsteps : MonoBehaviour
 {
     public float speedBeforePlayingSound; // The players velocity required before footsteps are played
-    public SoundEffect[] footstepSounds; // Array of possible footstep sounds
+    public FootstepArray[] footstepSounds; // Array of sounds by their surface, each surface contains an array of possible sounds
+
+    FootstepArray currentSoundArray; // Players current possible footstep sounds based on where they are walking
 
     AudioSource source; // The audio source attached to the player used for playing footstep sounds
     bool playFootsteps = true; // Uses to determine if footstep sound effects should be playing
 
-    NavMeshAgent player; // Uses to check if the player is moving
+    NavMeshAgent player; // Used to check if the player is moving
 
     private void Start()
     {
         // Locate the NavMeshAgent and AudioSource on the player object
         player = gameObject.GetComponent<NavMeshAgent>();
         source = gameObject.AddComponent<AudioSource>();
+
+        foreach (FootstepArray array in footstepSounds)
+        {
+            array.InitArray();
+        }
     }
 
     private void FixedUpdate()
@@ -26,7 +33,6 @@ public class Footsteps : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, 2f))
         {
-            //Debug.Log(hit.transform.gameObject.name + " @ " + hit.transform.tag + " | " + playFootsteps);
             SetFootstepSound(hit.transform.gameObject.tag.ToLower()); // Set the footstep sound according to the players walking surface
         }
     }
@@ -43,9 +49,10 @@ public class Footsteps : MonoBehaviour
             playFootsteps = false;
         }
 
-        // If the audio source is stopped and footsteps should be playing then play the audio source
+        // If the audio source is stopped and footsteps should be playing then choose a footstep sound and play the audio source
         if (!source.isPlaying && playFootsteps)
         {
+            SetRandomSound(currentSoundArray);
             source.Play();
         }
         // If the audio source is playing and footsteps should not be played then pause the audio source
@@ -61,10 +68,25 @@ public class Footsteps : MonoBehaviour
         for (int i = 0; i < footstepSounds.Length; i++)
         {
             // Surface tag should be same as the corresponding sound effect name
-            if (footstepSounds[i].name == name)
+            if (footstepSounds[i].surfaceName == name)
             {
-                source.clip = footstepSounds[i].sound;
-                source.volume = footstepSounds[i].volume;
+                currentSoundArray = footstepSounds[i];
+            }
+        }
+    }
+
+    // Chooses a weighted random sound from the surfaces possible footstep sounds
+    void SetRandomSound(FootstepArray sounds)
+    {
+        int random = Random.Range(0, sounds.totalWeighting);
+        for (int i = 0, current = 0; i < sounds.possibleSounds.Length; i++)
+        {
+            current += sounds.possibleSounds[i].weight;
+            if (random < current)
+            {
+                source.clip = sounds.possibleSounds[i].sound;
+                source.volume = sounds.possibleSounds[i].volume;
+                return;
             }
         }
     }

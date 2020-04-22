@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    public SoundEffect[] sounds;
+    public FootstepSound[] sounds;
 
     static AudioManager audioManager;
 
