@@ -50,10 +50,13 @@ public class Footsteps : MonoBehaviour
         }
 
         // If the audio source is stopped and footsteps should be playing then choose a footstep sound and play the audio source
-        if (!source.isPlaying && playFootsteps)
+        if (!source.isPlaying && playFootsteps && currentSoundArray != null)
         {
-            SetRandomSound(currentSoundArray);
-            source.Play();
+            if (currentSoundArray.possibleSounds.Length > 0)
+            {
+                SetRandomSound(currentSoundArray);
+                source.Play();
+            }
         }
         // If the audio source is playing and footsteps should not be played then pause the audio source
         else if (source.isPlaying && !playFootsteps)
