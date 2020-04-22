@@ -30,8 +30,14 @@ public class Boss : Enemy
     Rigidbody rb;
     bool LookPlayer;
 
-    
 
+    private void Awake()
+    {
+        entitiesAnimator = gameObject.GetComponent<Animator>();
+
+        entitiesAnimator.updateMode = UnityEngine.AnimatorUpdateMode.Normal;
+
+    }
 
     protected override void Start()
     {
@@ -43,7 +49,14 @@ public class Boss : Enemy
 
         GameObject.FindGameObjectWithTag("UI").GetComponent<UIScript>().boss = this;
 
-        rb = GetComponent<Rigidbody>();
+        rb = gameObject.GetComponent<Rigidbody>();
+
+
+        entitiesAnimator.SetBool("bossIdle", true);
+
+        
+        //entitiesAnimator.SetBool("SpawnPlaceholder", true);
+
 
     }
     private void Update()
@@ -73,6 +86,7 @@ public class Boss : Enemy
             if(distToPlayer >= maxShootRange && !bossAttack)
             {
                 SB("seek");
+                //entitiesAnimator.SetBool("Walk", true);
             }
 
             if(distToPlayer <= maxShootRange && distToPlayer >= minShootRange && !bossAttack)
@@ -136,7 +150,13 @@ public class Boss : Enemy
             SB("seek");
 
             //Updating the movement starts for the Boss to chase player
-            UpdateMovementStats(movementSpeed + 5, angularSpeed + 180, acceleration + 5);
+            UpdateMovementStats(movementSpeed + 2, angularSpeed + 50, acceleration + 2);
+
+            if(entitiesAnimator.GetBool("bossWalk") != true)
+            {
+                entitiesAnimator.SetBool("bossWalk", true);
+
+            }
 
         }
 
@@ -149,17 +169,24 @@ public class Boss : Enemy
 
         LookPlayer = true;
 
+        entitiesAnimator.SetBool("bossWalk", false);
+
+
         //For loop to run for as many melee attacks
         for (int i = 0; i < 2; i++)
         {
             //Starting the melee attack
             StartCoroutine(MeleeAttack());
 
+            entitiesAnimator.SetBool("bossMelee", true);
+
             //Setting up the next attack time
             timeTillNextAttack = Time.time + 1;
 
             //Waiting until attack is finished and can attack again
             yield return new WaitUntil(() => attacking == false && Time.time > timeTillNextAttack);
+
+            entitiesAnimator.SetBool("bossMelee", false);
 
         }
 
@@ -178,7 +205,11 @@ public class Boss : Enemy
 
         //Fleeing for X seconds
         SB("flee");
+
+        entitiesAnimator.SetBool("bossWalk", true);
         yield return new WaitForSeconds(2f);
+
+        entitiesAnimator.SetBool("bossWalk", false);
 
         //For loop to shoot X amount 
         for (int i = 0; i < 2; i++)
@@ -188,11 +219,15 @@ public class Boss : Enemy
 
             //Shooting and waiting X seconds
             StartCoroutine(Shoot());
+
+            entitiesAnimator.SetBool("bossSpell", true);
+
             yield return new WaitForSeconds(1f);
 
         }
 
 
+        entitiesAnimator.SetBool("bossSpell", false);
 
         //Boss attack set to false
         bossAttack = false;
@@ -208,7 +243,13 @@ public class Boss : Enemy
 
         //Setting the destination to the attack position untill the boss has reached the position
         agent.SetDestination(attackPoint.position);
+
+        entitiesAnimator.SetBool("bossWalk", true);
+
         yield return new WaitUntil(() => Vector3.Distance(transform.position, attackPoint.position) <= 1);
+
+        entitiesAnimator.SetBool("bossWalk", false);
+
 
         //Making the boss inaccessable
         block.GetComponent<NavMeshObstacle>().enabled = true;
@@ -216,22 +257,33 @@ public class Boss : Enemy
         //Boss shoots X amount of spells
         for (int i = 0; i < 8; i++)
         {
+
             //looking at the player
             LookPlayer = true;
 
             yield return new WaitForSeconds(1f);
+            entitiesAnimator.SetBool("bossSpell", false);
+
+            entitiesAnimator.SetBool("bossSpell", true);
+
+
             //Creating the bos spell
             Instantiate(bossSpell, transform.position + ((transform.forward * 2) + (transform.up * 2)), transform.rotation);
+
 
         }
 
         LookPlayer = false;
+
+        entitiesAnimator.SetBool("bossSpell", false);
 
         //Waiting X seconds after casting spells
         yield return new WaitForSeconds(2f);
 
         //Disabling the block to allow boss to return to the arena 
         block.GetComponent<NavMeshObstacle>().enabled = false;
+
+        entitiesAnimator.SetBool("bossWalk", true);
 
         //Moving the boss back to the arena 
         agent.SetDestination(returnPoint.position);
@@ -245,6 +297,9 @@ public class Boss : Enemy
                 secondFlee = true;
         }
 
+        entitiesAnimator.SetBool("bossWalk", false);
+
+
         //Boss attack to false
         bossAttack = false;
     }
@@ -252,6 +307,8 @@ public class Boss : Enemy
     public override void TakeDamage(float damageIn, string attackType)
     {
         base.TakeDamage(damageIn, attackType);
+
+        entitiesAnimator.SetBool("bossDamage", true);
 
         //Storing the amount of hits 
         currentHits++;
@@ -262,6 +319,8 @@ public class Boss : Enemy
             //Setting taken hit attack to true
             takenHitAttack = true;
         }
+
+        entitiesAnimator.SetBool("bossDamage", false);
     }
 
     //Functions used for updating the bosses movement stats and restting them

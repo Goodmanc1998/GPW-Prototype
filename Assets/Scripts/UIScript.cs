@@ -30,7 +30,7 @@ public class UIScript : MonoBehaviour
 
         healthBar.localScale = new Vector3(healthPercent, 1f);
 
-        if (bossUI == null) bossUI = new GameObject();
+        //if (bossUI == null) bossUI = new GameObject();
 
         if(boss != null)
         {
