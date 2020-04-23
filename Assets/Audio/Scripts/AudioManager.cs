@@ -22,7 +22,11 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        PlayMusic(openingMusic);
+        // Play opening music if there is any
+        if (openingMusic != "")
+        {
+            PlayMusic(openingMusic);
+        }
     }
 
     // Play an assigned song, by fading it in and fading out the current music.
