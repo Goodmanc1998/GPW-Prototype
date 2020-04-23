@@ -31,11 +31,13 @@ public class AmbientZone : MonoBehaviour
     // Draw wire spheres to show the near and far ranges
     private void OnDrawGizmos()
     {
+#if UNITY_EDITOR
         if (UnityEditor.Selection.activeObject != transform.gameObject) return;
         Gizmos.color = new Color(0.54f, 0.69f, 0.81f, 0.6f);
         Gizmos.DrawWireSphere(gameObject.transform.position, nearRange);
         Gizmos.color = new Color(0.27f, 0.53f, 0.74f, 0.8f);
         Gizmos.DrawWireSphere(gameObject.transform.position, farRange);
+#endif
     }
 
     // Ensures both ranges are at least 0 and that the far range is always at least as large as the near range
