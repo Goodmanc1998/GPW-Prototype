@@ -11,7 +11,12 @@ public class AmbientZone : MonoBehaviour
     public AudioListener listener; // Audio listener, should be set as the player
 
     [HideInInspector]
-    public float volumeRange = 0f; // Between 0-1, the volume the ambient sounds should be played at, 0 means no sounds will play
+    public AudioSource source;
+
+    private void Awake()
+    {
+        source = gameObject.AddComponent<AudioSource>();
+    }
 
     // Check if the target is in range every frame and update the volume of the ambience accordingly
     private void Update()
@@ -25,7 +30,7 @@ public class AmbientZone : MonoBehaviour
 
         // Calculate how much the volume should be set to
         float distance = Vector3.Distance(gameObject.transform.position, listener.gameObject.transform.position);
-        volumeRange = Mathf.Clamp(1 - (distance - nearRange) / (farRange - nearRange), 0f, 1f);         
+        source.volume = Mathf.Clamp(1 - (distance - nearRange) / (farRange - nearRange), 0f, 1f);         
     }
 
     // Draw wire spheres to show the near and far ranges

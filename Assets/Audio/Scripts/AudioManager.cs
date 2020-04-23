@@ -19,17 +19,17 @@ public class AudioManager : MonoBehaviour
         {
             m.InitMusic(gameObject);
         }
+    }
 
+    private void Start()
+    {
         // Initialise the games ambient sounds
         foreach (AmbientSound ambientArea in ambientSounds)
         {
             ambientArea.InitArray();
             StartCoroutine(PlayAmbience(ambientArea));
         }
-    }
 
-    private void Start()
-    {
         // Play opening music if there is any
         if (openingMusic != "")
         {
@@ -117,19 +117,29 @@ public class AudioManager : MonoBehaviour
     // Play a random ambient sound every so many seconds
     IEnumerator PlayAmbience(AmbientSound sounds)
     {
+        AudioSource audioSource = sounds.zone.gameObject.GetComponent<AudioSource>();
+
         // Keep playing while the audio manager exists
-        while (true && sounds.soundArray.Length > 0 && sounds.zone != null)
+        while (true && sounds.zone != null)
         {
+            // Play a random sound around the listener
+            SoundEffect randomSound = sounds.GetRandomSound();
+            audioSource.clip = randomSound.sound;
+
             // If the sound is able to be heard
-            if (sounds.zone.volumeRange > 0)
+            if (sounds.zone.source.volume > 0)
             {
-                // Play a random sound around the listener
-                SoundEffect randomSound = sounds.GetRandomSound();
-                AudioSource.PlayClipAtPoint(randomSound.sound, sounds.zone.listener.gameObject.transform.position + UnityEngine.Random.onUnitSphere, randomSound.volume * sounds.zone.volumeRange);
+                // Play the effect
+                audioSource.Play();
+
+                // Wait the average time before playing the next sound
+                yield return new WaitForSeconds(
+                    sounds.averageSecondsPerNoise * UnityEngine.Random.Range(
+                        Mathf.Max(0, sounds.averageSecondsPerNoise - sounds.randomSecondDeviation),
+                        sounds.averageSecondsPerNoise + sounds.randomSecondDeviation)
+                    + randomSound.sound.length);
             }
-            // Wait between 50% and 150% of the average time before playing the next sound
-            // Would be better to use a random distribution function instead
-            yield return new WaitForSeconds(sounds.averageSecondsPerNoise * UnityEngine.Random.Range(0.5f, 1.5f));
+            yield return new WaitForEndOfFrame();
         }
     }
 }
