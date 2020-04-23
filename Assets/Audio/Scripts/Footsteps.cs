@@ -52,7 +52,7 @@ public class Footsteps : MonoBehaviour
         // If the audio source is stopped and footsteps should be playing then choose a footstep sound and play the audio source
         if (!source.isPlaying && playFootsteps && currentSoundArray != null)
         {
-            if (currentSoundArray.possibleSounds.Length > 0)
+            if (currentSoundArray.soundArray.Length > 0)
             {
                 SetRandomSound(currentSoundArray);
                 source.Play();
@@ -82,13 +82,13 @@ public class Footsteps : MonoBehaviour
     void SetRandomSound(FootstepArray sounds)
     {
         int random = Random.Range(0, sounds.totalWeighting);
-        for (int i = 0, current = 0; i < sounds.possibleSounds.Length; i++)
+        for (int i = 0, current = 0; i < sounds.soundArray.Length; i++)
         {
-            current += sounds.possibleSounds[i].weight;
+            current += sounds.soundArray[i].weight;
             if (random < current)
             {
-                source.clip = sounds.possibleSounds[i].sound;
-                source.volume = sounds.possibleSounds[i].volume;
+                source.clip = sounds.soundArray[i].sound;
+                source.volume = sounds.soundArray[i].volume;
                 return;
             }
         }

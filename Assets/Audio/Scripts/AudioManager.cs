@@ -6,17 +6,25 @@ using System;
 public class AudioManager : MonoBehaviour
 {
     public Music[] music; // Array of assigned music
+    public string openingMusic; // Play music as soon as the game launches
+
+    public AmbientSound[] ambientSounds; // Array of ambient zones used to play random ambient sounds as the player is inside them
 
     Music currentMusic; // The music currently playing
 
-    public string openingMusic; // Play music as soon as the game launches
-
     private void Awake()
     {
-        // Initiate the games music
+        // Initialise the games music
         foreach (Music m in music)
         {
             m.InitMusic(gameObject);
+        }
+
+        // Initialise the games ambient sounds
+        foreach (AmbientSound ambientArea in ambientSounds)
+        {
+            ambientArea.InitArray();
+            StartCoroutine(PlayAmbience(ambientArea));
         }
     }
 
@@ -104,5 +112,24 @@ public class AudioManager : MonoBehaviour
     void FadeIn(Music music, float fadeTime)
     {
         StartCoroutine(music.Fade(0f, 1f, fadeTime));
+    }
+
+    // Play a random ambient sound every so many seconds
+    IEnumerator PlayAmbience(AmbientSound sounds)
+    {
+        // Keep playing while the audio manager exists
+        while (true && sounds.soundArray.Length > 0 && sounds.zone != null)
+        {
+            // If the sound is able to be heard
+            if (sounds.zone.volumeRange > 0)
+            {
+                // Play a random sound around the listener
+                SoundEffect randomSound = sounds.GetRandomSound();
+                AudioSource.PlayClipAtPoint(randomSound.sound, sounds.zone.listener.gameObject.transform.position + UnityEngine.Random.onUnitSphere, randomSound.volume * sounds.zone.volumeRange);
+            }
+            // Wait between 50% and 150% of the average time before playing the next sound
+            // Would be better to use a random distribution function instead
+            yield return new WaitForSeconds(sounds.averageSecondsPerNoise * UnityEngine.Random.Range(0.5f, 1.5f));
+        }
     }
 }
