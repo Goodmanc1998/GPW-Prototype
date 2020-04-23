@@ -32,7 +32,7 @@ public class BossSpell : SpellMovement
     {
         timeAlive += Time.deltaTime;
 
-        if (timeAlive > 0.25)
+        if (timeAlive > 0.25f)
             follow = true;
 
         if (!follow)
@@ -59,6 +59,9 @@ public class BossSpell : SpellMovement
 
     private void OnCollisionEnter(Collision collision)
     {
+
+        Debug.Log(collision.gameObject.name);
+
         if(collision.gameObject.GetComponent<PlayerMovement>() == true)
         {
             collision.gameObject.GetComponent<PlayerMovement>().TakeDamage(damage, "none");
@@ -66,7 +69,7 @@ public class BossSpell : SpellMovement
             Destroy(gameObject);
 
         }
-        else if(collision.gameObject.tag != "boss")
+        else if(collision.gameObject.tag != "Boss" && !collision.gameObject.GetComponent<BossSpell>())
         {
             Destroy(gameObject);
         }

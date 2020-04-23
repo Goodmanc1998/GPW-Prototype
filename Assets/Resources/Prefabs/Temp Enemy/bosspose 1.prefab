@@ -122,14 +122,14 @@ MonoBehaviour:
   health: 0
   weakness: 0
   movementSpeed: 10
-  angularSpeed: 300
+  angularSpeed: 0
   acceleration: 8
   stoppingDistance: 1
   randomPursueRadius: 0
   meleeAttackRange: 5
   meleeAttackDamage: 2
   meleeAttackSpeed: 2
-  timeBetweenAttack: 2
+  timeBetweenAttack: 3
   pawnEnemy: {fileID: 0}
   currentSpawned: 0
   timeBetweenSpawns: 0
@@ -160,9 +160,12 @@ MonoBehaviour:
   minShootRange: 5
   maxShootRange: 10
   amountofHits: 3
+  attackPoint: {fileID: 0}
+  returnPoint: {fileID: 0}
+  block: {fileID: 0}
   bossSpell: {fileID: 4391072087174101407, guid: 8e34ee0dc01204e4bbcc6b39d466fab6,
     type: 3}
-  LookPlayer: 0
+  LookPlayer: 1
 --- !u!195 &8207196817526690358
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -176,7 +179,7 @@ NavMeshAgent:
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 0
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
@@ -215,21 +218,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Boss
-      objectReference: {fileID: 0}
-    - target: {fileID: -6057140222963153312, guid: 15c08bfff66efeb4c92a4fe0ef42c45a,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 2545a9e1023520c4eb298473f88fcf4f, type: 2}
-    - target: {fileID: -6057140222963153312, guid: 15c08bfff66efeb4c92a4fe0ef42c45a,
-        type: 3}
-      propertyPath: m_UpdateMode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -6057140222963153312, guid: 15c08bfff66efeb4c92a4fe0ef42c45a,
-        type: 3}
-      propertyPath: m_CullingMode
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 15c08bfff66efeb4c92a4fe0ef42c45a,
         type: 3}
@@ -286,8 +274,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: -6057140222963153312, guid: 15c08bfff66efeb4c92a4fe0ef42c45a, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15c08bfff66efeb4c92a4fe0ef42c45a, type: 3}
 --- !u!4 &8019286928274870881 stripped
 Transform:

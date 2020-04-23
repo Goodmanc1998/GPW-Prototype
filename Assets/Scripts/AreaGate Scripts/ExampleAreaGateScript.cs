@@ -6,7 +6,10 @@ using UnityEngine;
 
 public class ExampleAreaGateScript : AreaGate
 {
+   public GameObject Firearea;
+   public GameObject FireCone;
     // Use override keyword
+
     public override void OpenArea()
     {
         // Stick all code
@@ -15,5 +18,13 @@ public class ExampleAreaGateScript : AreaGate
         // after a group of
         // waves is finished
         // in here.
+        Instantiate(Firearea);
+        Instantiate(FireCone);
+
+        void update()
+        {
+            Shader.SetGlobalVector("_Braizer1Radius", new Vector4(38, 0, 0, 0));
+        }
+      
     }
 }
