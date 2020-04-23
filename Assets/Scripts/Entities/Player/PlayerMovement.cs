@@ -6,6 +6,11 @@ using UnityEngine.UI;
 
 public class PlayerMovement : Entities
 {
+    public AudioClip castFireSound;
+    public AudioClip castLightningSound;
+    public AudioClip castIcewallSound;
+    public AudioClip misCastSound;
+
     Camera viewCamera;
 
     Checkpoint checkpoint;
@@ -54,6 +59,7 @@ public class PlayerMovement : Entities
 
                 transform.LookAt(new Vector3(GestureTransform.GetPosition(GestureTransform.positionCount - 1).x, transform.position.y, GestureTransform.GetPosition(GestureTransform.positionCount - 1).z));
 
+                AudioSource.PlayClipAtPoint(castFireSound, transform.position);
                 entitiesAnimator.SetBool("SpellDrawn", true);
                 Instantiate(FireSpell, spellSpawn.position, transform.localRotation);
 
@@ -72,6 +78,8 @@ public class PlayerMovement : Entities
                 //cast triangle spell here by instatiating spell object.
                 //Debug.Log("triangle");
                 transform.LookAt(new Vector3(GestureTransform.GetPosition(GestureTransform.positionCount - 1).x, transform.position.y, GestureTransform.GetPosition(GestureTransform.positionCount - 1).z));
+
+                AudioSource.PlayClipAtPoint(castLightningSound, transform.position);
                 entitiesAnimator.SetBool("SpellDrawn", true);
                 Instantiate(LightningSpell, spellSpawn.position, transform.localRotation);
                 //Debug.Log("cast lightening");
@@ -89,6 +97,8 @@ public class PlayerMovement : Entities
                 float minusOneMid = GestureTransform.GetPosition((GestureTransform.positionCount / 2) - 1).z;
                 float plusOneMid = GestureTransform.GetPosition((GestureTransform.positionCount / 2) + 1).z;
                 //Debug.Log(GestureTransform.positionCount);
+
+                AudioSource.PlayClipAtPoint(castIcewallSound, transform.position);
                 entitiesAnimator.SetBool("SpellDrawn", true);
                 for (int i = 0; i < GestureTransform.positionCount; i++)
                 {
@@ -115,6 +125,7 @@ public class PlayerMovement : Entities
         }
         else
         {
+            AudioSource.PlayClipAtPoint(misCastSound, transform.position);
             entitiesAnimator.SetTrigger("SpellFail");
             //spell was a failure do little fizzle out of a spell to indicate to player they were close to casting.
         }

@@ -10,6 +10,9 @@ public class Entities : MonoBehaviour
     protected NavMeshAgent agent;
     public Animator entitiesAnimator;
 
+    public AudioClip deathSound;
+    public AudioClip takeDamageSound;
+
     [Header("Health")]
     public float startingHealth;
     public float health;
@@ -43,12 +46,12 @@ public class Entities : MonoBehaviour
         if(damageIn >= health && dead == false)
         {
             health -= damageIn;
-
+            AudioSource.PlayClipAtPoint(deathSound, transform.position);
             dead = true;
         }
         else
         {
-
+            AudioSource.PlayClipAtPoint(takeDamageSound, transform.position);
             if(weakness == WeaknessEnum.Nothing || attackType != weakness.ToString())
             {
                 health -= damageIn;
