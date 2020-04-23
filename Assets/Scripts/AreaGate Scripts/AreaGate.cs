@@ -29,6 +29,7 @@ public abstract class AreaGate : MonoBehaviour
     // Notes that a wave has been completed and checks to see if OpenArea() should be called
     public void CompletedWave()
     {
+        Debug.Log("Completed a wave: " + gameObject.name + " | " + completedWaves + " to go.");
         completedWaves--;
         if (completedWaves <= 0)
         {
