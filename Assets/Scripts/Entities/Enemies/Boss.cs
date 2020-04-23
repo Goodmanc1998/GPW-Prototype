@@ -21,9 +21,9 @@ public class Boss : Enemy
     public int amountofHits;
     int currentHits;
 
-    Transform attackPoint;
-    Transform returnPoint;
-    GameObject block;
+    public Transform attackPoint;
+    public Transform returnPoint;
+    public GameObject block;
 
     public GameObject bossSpell;
 
@@ -68,7 +68,10 @@ public class Boss : Enemy
         //fight starts
         distToPlayer = Vector3.Distance(player.position, transform.position); // Calculates the distance between the player and enemy
 
-        if(!dead && !bossAttack && !spawnAnimation)
+        LookAtPlayer();
+
+
+        if (!dead && !bossAttack && !spawnAnimation)
         {
             if (health < startingHealth / 100 * 66 && !firstFlee)
             {
@@ -90,7 +93,7 @@ public class Boss : Enemy
             if(distToPlayer >= maxShootRange && !bossAttack)
             {
                 SB("seek");
-                //entitiesAnimator.SetBool("Walk", true);
+                entitiesAnimator.SetTrigger("bossWalk");
             }
 
             if(distToPlayer <= maxShootRange && distToPlayer >= minShootRange && !bossAttack)
@@ -104,45 +107,28 @@ public class Boss : Enemy
                 {
                     StartCoroutine(BossMelee());
 
-                    entitiesAnimator.SetTrigger("bossMelee");
-
                 }
 
 
             }
 
 
-            if (LookPlayer)
-            {
-                LookAtPlayer();
-            }
-            else
-            {
-                rb.constraints = RigidbodyConstraints.FreezeAll;
-            }
-
-
-        }     
-        
-       
-
+            
+            
+        }         
     }
 
     void LookAtPlayer()
     {
 
-        transform.LookAt(player.position);
-        rb.constraints = RigidbodyConstraints.None;
-        rb.constraints = RigidbodyConstraints.FreezePosition | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+        Vector3 lookDir = transform.position - player.position;
 
-        Vector3 direction = new Vector3((player.position.x - transform.position.x), 0, (player.position.z - transform.position.z)).normalized;
-            //(player.position - transform.position).normalized;
+        Quaternion lookRotation = Quaternion.LookRotation(lookDir);
 
-        float step = agent.angularSpeed * Time.deltaTime;
+        Vector3 rotation = Quaternion.Lerp(transform.rotation, lookRotation, Time.deltaTime * 3).eulerAngles;
 
-        Vector3 newDir = Vector3.RotateTowards(transform.forward, direction, step, 0.0f);
+        transform.rotation = Quaternion.Euler(0.0f, rotation.y, 0.0f);
 
-        transform.rotation = Quaternion.LookRotation(newDir);
     }
 
     IEnumerator BossMelee()
@@ -156,7 +142,11 @@ public class Boss : Enemy
 
         StartCoroutine(MeleeAttack());
 
+
+
         bossAttack = false;
+
+        yield return null;
 
 
     }
@@ -175,10 +165,10 @@ public class Boss : Enemy
             SB("seek");
 
             //Updating the movement starts for the Boss to chase player
-            UpdateMovementStats(movementSpeed + 2, angularSpeed + 50, acceleration + 2);
+            UpdateMovementStats(movementSpeed + 5, 0, acceleration + 5);
 
 
-                entitiesAnimator.SetTrigger("bossWalk");
+            entitiesAnimator.SetTrigger("bossWalk");
 
 
             //Waits till the player is within melee range
@@ -193,25 +183,14 @@ public class Boss : Enemy
 
 
         //For loop to run for as many melee attacks
-        for (int i = 0; i < 2; i++)
-        {
-            entitiesAnimator.SetTrigger("bossMelee");
+        StartCoroutine(BossMelee());
 
 
-            //Starting the melee attack
-            StartCoroutine(MeleeAttack());
-
-
-            //Setting up the next attack time
-            timeTillNextAttack = Time.time + 1;
-
-            //Waiting until attack is finished and can attack again
-            yield return new WaitUntil(() => attacking == false);
-
-        }
-
-        LookPlayer = false;
+        //LookPlayer = false;
         bossAttack = false;
+
+        yield return null;
+
 
     }
 
@@ -226,17 +205,17 @@ public class Boss : Enemy
         //Fleeing for X seconds
         SB("flee");
 
+        Debug.Log("Start boss walk");
+
         entitiesAnimator.SetTrigger("bossWalk");
         yield return new WaitForSeconds(2f);
 
 
         LookPlayer = true;
 
-
-        //For loop to shoot X amount 
         for (int i = 0; i < 2; i++)
         {
-            //looking at the player
+            Debug.Log("Start boss spell");
 
             entitiesAnimator.SetTrigger("bossSpell");
 
@@ -244,13 +223,15 @@ public class Boss : Enemy
 
             StartCoroutine(Shoot());
 
-            yield return new WaitForSeconds(1f);
-
         }
+
+
 
         //Boss attack set to false
         bossAttack = false;
-        LookPlayer = false;
+        //LookPlayer = false;
+
+        yield return null;
     }
 
     IEnumerator FleeShootAttack()
@@ -261,11 +242,16 @@ public class Boss : Enemy
         bossAttack = true;
 
         //Setting the destination to the attack position untill the boss has reached the position
+        if (agent.enabled == false)
+        {
+            agent.enabled = true;
+        }
+
         agent.SetDestination(attackPoint.position);
 
         entitiesAnimator.SetTrigger("bossWalk");
 
-        yield return new WaitUntil(() => Vector3.Distance(transform.position, attackPoint.position) <= 1);
+        yield return new WaitUntil(() => Vector3.Distance(transform.position, attackPoint.position) <= 2);
 
 
 
@@ -283,14 +269,16 @@ public class Boss : Enemy
 
             yield return new WaitForSeconds(1f);
 
+
+
             //Creating the bos spell
-            Instantiate(bossSpell, transform.position + ((transform.forward * 2) + (transform.up * 2)), transform.rotation);
+            Instantiate(bossSpell, transform.position + ((transform.forward * 2) + (transform.up * 2)), Quaternion.Euler(0.0f, transform.rotation.y + 180, 0.0f));
 
             yield return new WaitForSeconds(1f);
 
         }
 
-        LookPlayer = false;
+        //LookPlayer = false;
 
 
         //Waiting X seconds after casting spells
@@ -316,6 +304,9 @@ public class Boss : Enemy
 
         //Boss attack to false
         bossAttack = false;
+
+        yield return null;
+
     }
 
     public override void TakeDamage(float damageIn, string attackType)
@@ -339,11 +330,14 @@ public class Boss : Enemy
     {
         //entitiesAnimator.SetBool("bossSpawn", true);
 
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(7f);
 
         entitiesAnimator.SetBool("bossSpawn", false);
 
         spawnAnimation = false;
+
+        yield return null;
+
     }
 
     //Functions used for updating the bosses movement stats and restting them
