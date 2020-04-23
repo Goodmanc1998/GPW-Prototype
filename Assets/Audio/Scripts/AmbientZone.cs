@@ -7,6 +7,9 @@ public class AmbientZone : MonoBehaviour
 {
     public float farRange; // If the listener is beyond this distance, the sounds will not be played
     public float nearRange; // If the listener is beyond this distance, the sounds will be played at a lower volume, if the player is closer the sounds will be played at full volume
+    
+    [Range(0f, 1f)]
+    public float volume = 1; // The max volume of the zone
 
     public AudioListener listener; // Audio listener, should be set as the player
 
@@ -30,7 +33,7 @@ public class AmbientZone : MonoBehaviour
 
         // Calculate how much the volume should be set to
         float distance = Vector3.Distance(gameObject.transform.position, listener.gameObject.transform.position);
-        source.volume = Mathf.Clamp(1 - (distance - nearRange) / (farRange - nearRange), 0f, 1f);         
+        source.volume = volume * Mathf.Clamp(1 - (distance - nearRange) / (farRange - nearRange), 0f, 1f);         
     }
 
     // Draw wire spheres to show the near and far ranges
