@@ -46,12 +46,12 @@ public class Entities : MonoBehaviour
         if(damageIn >= health && dead == false)
         {
             health -= damageIn;
-            AudioSource.PlayClipAtPoint(deathSound, transform.position);
+            if (deathSound != null) AudioSource.PlayClipAtPoint(deathSound, transform.position);
             dead = true;
         }
         else
         {
-            AudioSource.PlayClipAtPoint(takeDamageSound, transform.position);
+            if (takeDamageSound != null) AudioSource.PlayClipAtPoint(takeDamageSound, transform.position);
             if(weakness == WeaknessEnum.Nothing || attackType != weakness.ToString())
             {
                 health -= damageIn;

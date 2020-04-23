@@ -188,7 +188,7 @@ public class Enemy : Entities
                 if(Vector3.Distance(transform.position, player.position) < 3)
                 {
                     player.gameObject.GetComponent<PlayerMovement>().TakeDamage(meleeAttackDamage, "Melee");
-                    AudioSource.PlayClipAtPoint(dealDamageSound, transform.position);
+                    if (dealDamageSound != null) AudioSource.PlayClipAtPoint(dealDamageSound, transform.position);
                 }
             }
 
@@ -229,7 +229,7 @@ public class Enemy : Entities
                 //Stopping the players agent and setting grabbed to true
                 player.GetComponent<NavMeshAgent>().enabled = false;
                 player.GetComponent<Entities>().TakeDamage(grabDamage, "none");
-                AudioSource.PlayClipAtPoint(dealDamageSound, transform.position);
+                if (dealDamageSound != null) AudioSource.PlayClipAtPoint(dealDamageSound, transform.position);
                 hasGrabbed = true;
             }
 
@@ -268,7 +268,7 @@ public class Enemy : Entities
         // Instantiate the projectile
         Projectile p = Instantiate(projectile, transform.position, Quaternion.identity);
 
-        AudioSource.PlayClipAtPoint(dealDamageSound, transform.position);
+        if (dealDamageSound != null) AudioSource.PlayClipAtPoint(dealDamageSound, transform.position);
 
         // Predict the position of the player and add a random amount of variation
         Vector3 predictedPosition = PredictPlayerPosition(projectileSpeed, randomAimRadius);
