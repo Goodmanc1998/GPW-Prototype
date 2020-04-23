@@ -8,6 +8,11 @@ public class ExampleAreaGateScript : AreaGate
 {
    public GameObject Firearea;
    public GameObject FireCone;
+
+    public float sizeX;
+    public float sizeY;
+    public float sizeZ;
+    public float sizeA;
     // Use override keyword
 
     public override void OpenArea()
@@ -21,10 +26,12 @@ public class ExampleAreaGateScript : AreaGate
         Instantiate(Firearea);
         Instantiate(FireCone);
 
-        void update()
-        {
-            Shader.SetGlobalVector("_Braizer1Radius", new Vector4(38, 0, 0, 0));
-        }
+
       
+    }
+
+    void update()
+    {
+        Shader.SetGlobalVector("_Braizer1Radius", new Vector4(sizeX, sizeY, sizeZ, sizeA));
     }
 }

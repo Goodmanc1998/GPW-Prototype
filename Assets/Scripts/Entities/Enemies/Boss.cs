@@ -27,19 +27,18 @@ public class Boss : Enemy
 
     public GameObject bossSpell;
 
+
     bool spawnAnimation;
 
-    Rigidbody rb;
-    public bool LookPlayer;
+    bool LookPlayer;
+
+    public GameObject boss;
+    public float offset;
 
 
     private void Awake()
     {
         entitiesAnimator = gameObject.GetComponent<Animator>();
-
-
-       
-
 
     }
 
@@ -52,8 +51,6 @@ public class Boss : Enemy
         block = GameObject.FindGameObjectWithTag("block");
 
         GameObject.FindGameObjectWithTag("UI").GetComponent<UIScript>().boss = this;
-
-        rb = gameObject.GetComponent<Rigidbody>();
 
         LookPlayer = true;
 
@@ -123,9 +120,9 @@ public class Boss : Enemy
 
         Vector3 lookDir = transform.position - player.position;
 
-        Quaternion lookRotation = Quaternion.LookRotation(lookDir);
+        Quaternion lookRotation = Quaternion.LookRotation(-lookDir);
 
-        Vector3 rotation = Quaternion.Lerp(transform.rotation, lookRotation, Time.deltaTime * 3).eulerAngles;
+        Vector3 rotation = Quaternion.Lerp(transform.rotation, lookRotation, Time.deltaTime * 12).eulerAngles;
 
         transform.rotation = Quaternion.Euler(0.0f, rotation.y, 0.0f);
 
@@ -138,7 +135,7 @@ public class Boss : Enemy
 
         entitiesAnimator.SetTrigger("bossMelee");
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.5f);
 
         StartCoroutine(MeleeAttack());
 
@@ -162,7 +159,7 @@ public class Boss : Enemy
         //If the player is still outside the melee range see
         if(distToPlayer > meleeAttackRange)
         {
-            SB("seek");
+            SB("pursue");
 
             //Updating the movement starts for the Boss to chase player
             UpdateMovementStats(movementSpeed + 5, 0, acceleration + 5);
@@ -186,10 +183,6 @@ public class Boss : Enemy
         StartCoroutine(BossMelee());
 
 
-        //LookPlayer = false;
-        bossAttack = false;
-
-        yield return null;
 
 
     }
@@ -203,12 +196,12 @@ public class Boss : Enemy
         bossAttack = true;
 
         //Fleeing for X seconds
-        SB("flee");
+        //SB("flee");
 
         Debug.Log("Start boss walk");
 
         entitiesAnimator.SetTrigger("bossWalk");
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1.6f);
 
 
         LookPlayer = true;
@@ -222,6 +215,9 @@ public class Boss : Enemy
             yield return new WaitForSeconds(1f);
 
             StartCoroutine(Shoot());
+
+            yield return new WaitForSeconds(1f);
+
 
         }
 
@@ -328,17 +324,51 @@ public class Boss : Enemy
 
     IEnumerator BossSpawn()
     {
-        //entitiesAnimator.SetBool("bossSpawn", true);
+        entitiesAnimator.SetBool("bossSpawn", true);
 
-        yield return new WaitForSeconds(7f);
+        entitiesAnimator.applyRootMotion = true;
+
+        //StartCoroutine(playerSpawn());
+
+        yield return new WaitForSeconds(5.8f);
+
+        Debug.Log("Spawn fin");
 
         entitiesAnimator.SetBool("bossSpawn", false);
+
+        entitiesAnimator.applyRootMotion = false;
+
 
         spawnAnimation = false;
 
         yield return null;
 
     }
+
+    IEnumerator playerSpawn()
+    {
+
+        float percent = 0;
+        Vector3 startPos = new Vector3(transform.position.x, transform.position.y + offset, transform.position.z);
+
+        //Debug.Log(startPos);
+
+
+        while (percent <= 1)
+        {
+
+            //Moving the player between the starting position, and attack position then back to the starting position
+            percent += Time.deltaTime * 6;
+            boss.transform.position = Vector3.Lerp(startPos, transform.position, percent);
+
+            //Debug.Log(percent);
+
+
+            yield return null;
+        }
+
+    }
+
 
     //Functions used for updating the bosses movement stats and restting them
     void UpdateMovementStats(float newMovement, float newAngular, float newAcceleration)

@@ -165,7 +165,8 @@ MonoBehaviour:
   block: {fileID: 0}
   bossSpell: {fileID: 4391072087174101407, guid: 8e34ee0dc01204e4bbcc6b39d466fab6,
     type: 3}
-  LookPlayer: 1
+  boss: {fileID: 6418019940725891186}
+  offset: -2.5
 --- !u!195 &8207196817526690358
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -222,17 +223,17 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 15c08bfff66efeb4c92a4fe0ef42c45a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.000050378963
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 15c08bfff66efeb4c92a4fe0ef42c45a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.10465622
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 15c08bfff66efeb4c92a4fe0ef42c45a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.10775992
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 15c08bfff66efeb4c92a4fe0ef42c45a,
         type: 3}
@@ -274,8 +275,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -6057140222963153312, guid: 15c08bfff66efeb4c92a4fe0ef42c45a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 15c08bfff66efeb4c92a4fe0ef42c45a, type: 3}
+--- !u!1 &6418019940725891186 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 15c08bfff66efeb4c92a4fe0ef42c45a,
+    type: 3}
+  m_PrefabInstance: {fileID: 3040086118140246395}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8019286928274870881 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 15c08bfff66efeb4c92a4fe0ef42c45a,
