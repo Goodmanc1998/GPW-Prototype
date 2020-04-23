@@ -296,15 +296,12 @@ public class Enemy : Entities
     // Predicts the player position to intercept them and adds a degree of variation
     public Vector3 PredictPlayerPosition(float pursuerVelocity, float randomRadius)
     {
-        Vector3 newPosition = player.position + playerNvAgnt.velocity * Time.deltaTime * pursuerVelocity;
-        newPosition += Random.insideUnitSphere * randomRadius;
-        return newPosition;
+        return PredictPlayerPosition(pursuerVelocity, randomRadius, false);
     }
 
     // Predicts the player position to intercept them
     public Vector3 PredictPlayerPosition(float pursuerVelocity)
     {
-        Vector3 newPosition = player.position + playerNvAgnt.velocity * Time.deltaTime * projectileSpeed;
-        return newPosition;
+        return PredictPlayerPosition(pursuerVelocity, 0f, false);
     }
 }

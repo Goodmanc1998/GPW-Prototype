@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class PlayerMovement : Entities
 {
     Camera viewCamera;
-    NavMeshAgent agent;
 
     Checkpoint checkpoint;
 
