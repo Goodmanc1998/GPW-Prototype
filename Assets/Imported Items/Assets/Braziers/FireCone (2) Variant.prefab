@@ -1,0 +1,106 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4189432376417090547
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -927199367670048503, guid: 8f414255efa84af468bcede78f72cf30,
+        type: 3}
+      propertyPath: m_Name
+      value: FireCone (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8f414255efa84af468bcede78f72cf30,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enviroment
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 8f414255efa84af468bcede78f72cf30,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 8f414255efa84af468bcede78f72cf30,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 44.373
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 8f414255efa84af468bcede78f72cf30,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6.899
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 8f414255efa84af468bcede78f72cf30,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 163.195
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 8f414255efa84af468bcede78f72cf30,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 8f414255efa84af468bcede78f72cf30,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 8f414255efa84af468bcede78f72cf30,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 8f414255efa84af468bcede78f72cf30,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 8f414255efa84af468bcede78f72cf30,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 8f414255efa84af468bcede78f72cf30,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 8f414255efa84af468bcede78f72cf30,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 8f414255efa84af468bcede78f72cf30,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 8f414255efa84af468bcede78f72cf30,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 135.04857
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 8f414255efa84af468bcede78f72cf30,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 60.91704
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 8f414255efa84af468bcede78f72cf30,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 134.5828
+      objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 8f414255efa84af468bcede78f72cf30,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4de30b00a468a714881361e0d6b58648, type: 2}
+    - target: {fileID: -1504981713932161579, guid: 8f414255efa84af468bcede78f72cf30,
+        type: 3}
+      propertyPath: m_RendererPriority
+      value: 3000
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8f414255efa84af468bcede78f72cf30, type: 3}
