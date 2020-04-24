@@ -118,9 +118,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entitiesAnimator: {fileID: 0}
+  deathSound: {fileID: 0}
+  takeDamageSound: {fileID: 0}
   startingHealth: 60
   health: 0
   weakness: 0
+  dealDamageSound: {fileID: 0}
   movementSpeed: 10
   angularSpeed: 0
   acceleration: 8
@@ -177,16 +180,16 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.49999997
-  m_Speed: 3.5
-  m_Acceleration: 8
+  m_Speed: 10
+  m_Acceleration: 12
   avoidancePriority: 50
-  m_AngularSpeed: 0
-  m_StoppingDistance: 0
+  m_AngularSpeed: 180
+  m_StoppingDistance: 0.0013
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 1.9999999
-  m_BaseOffset: 1
+  m_BaseOffset: 2
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!95 &3217214214282553806
@@ -275,6 +278,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9159545365085562911, guid: 15c08bfff66efeb4c92a4fe0ef42c45a,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 57b035b8c6cf6544ab68e7962265fb54, type: 2}
     m_RemovedComponents:
     - {fileID: -6057140222963153312, guid: 15c08bfff66efeb4c92a4fe0ef42c45a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 15c08bfff66efeb4c92a4fe0ef42c45a, type: 3}
