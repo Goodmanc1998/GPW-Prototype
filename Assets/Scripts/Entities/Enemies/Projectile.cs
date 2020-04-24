@@ -11,6 +11,8 @@ public class Projectile : MonoBehaviour
     [HideInInspector]
     public float speed; // The speed of the projectile
 
+    float rotateSpeed = 15f; // Makes the projectile spin in midair
+
     float age;
 
     private void Awake()
@@ -21,6 +23,7 @@ public class Projectile : MonoBehaviour
     // Moves the projectile and checks to see if it should be destroyed
     private void Update()
     {
+        transform.Rotate(Random.onUnitSphere * rotateSpeed);
         transform.position += direction * speed * Time.deltaTime;
         age -= Time.deltaTime;
         if (age <= 0)

@@ -229,7 +229,6 @@ public class Enemy : Entities
                 //Stopping the players agent and setting grabbed to true
                 player.GetComponent<NavMeshAgent>().enabled = false;
                 player.GetComponent<Entities>().TakeDamage(grabDamage, "none");
-                if (dealDamageSound != null) AudioSource.PlayClipAtPoint(dealDamageSound, transform.position);
                 hasGrabbed = true;
             }
 
@@ -240,6 +239,7 @@ public class Enemy : Entities
             yield return null;
 
         }
+
         //Activating the players agent and enemy agent
         player.GetComponent<NavMeshAgent>().enabled = true;
         agent.enabled = true;
