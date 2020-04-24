@@ -209,6 +209,16 @@ PrefabInstance:
       propertyPath: InitialModule.startColor.maxColor.b
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3704360067080754321, guid: cee465b050f18e449847d3e4595079d4,
+        type: 3}
+      propertyPath: TriggerModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3704360067080754321, guid: cee465b050f18e449847d3e4595079d4,
+        type: 3}
+      propertyPath: TriggerModule.collisionShape0
+      value: 
+      objectReference: {fileID: 6185682778370973927}
     - target: {fileID: 3704360068088319743, guid: cee465b050f18e449847d3e4595079d4,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.r

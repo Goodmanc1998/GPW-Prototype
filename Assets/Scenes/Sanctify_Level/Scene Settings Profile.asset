@@ -44,6 +44,63 @@ MonoBehaviour:
   cascadeShadowBorder3:
     m_OverrideState: 1
     m_Value: 0
+--- !u!114 &-3351052818762070349
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2150ee00179b2f4418ea8b21a7e98eea, type: 3}
+  m_Name: ExponentialFog
+  m_EditorClassIdentifier: 
+  active: 1
+  m_AdvancedMode: 0
+  colorMode:
+    m_OverrideState: 1
+    m_Value: 1
+  color:
+    m_OverrideState: 1
+    m_Value: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    hdr: 1
+    showAlpha: 0
+    showEyeDropper: 1
+  density:
+    m_OverrideState: 1
+    m_Value: 1
+    min: 0
+    max: 1
+  maxFogDistance:
+    m_OverrideState: 1
+    m_Value: 5000
+    min: 0
+  mipFogMaxMip:
+    m_OverrideState: 1
+    m_Value: 0.5
+    min: 0
+    max: 1
+  mipFogNear:
+    m_OverrideState: 1
+    m_Value: 0
+    min: 0
+  mipFogFar:
+    m_OverrideState: 1
+    m_Value: 1000
+    min: 0
+  fogDistance:
+    m_OverrideState: 1
+    m_Value: 100
+    min: 0
+  fogBaseHeight:
+    m_OverrideState: 1
+    m_Value: 0
+  fogHeightAttenuation:
+    m_OverrideState: 1
+    m_Value: 0.894
+    min: 0
+    max: 1
 --- !u!114 &-2336583844539266612
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -59,14 +116,14 @@ MonoBehaviour:
   active: 1
   m_AdvancedMode: 0
   shadows:
-    m_OverrideState: 0
-    m_Value: {x: 1, y: 0.99124324, z: 0.9649731, w: 0.13793103}
+    m_OverrideState: 1
+    m_Value: {x: 1, y: 0.99124324, z: 0.9649731, w: -0.2892562}
   midtones:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 1, z: 1, w: -0.055172414}
+    m_Value: {x: 1, y: 0.99003124, z: 0.99750775, w: -0.25145343}
   highlights:
-    m_OverrideState: 0
-    m_Value: {x: 1, y: 1, z: 1, w: 0.08275862}
+    m_OverrideState: 1
+    m_Value: {x: 1, y: 1, z: 1, w: 0.20672557}
   shadowsStart:
     m_OverrideState: 1
     m_Value: 0
@@ -104,7 +161,7 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: 0
   fogType:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 2
 --- !u!114 &11400000
 MonoBehaviour:
@@ -122,3 +179,4 @@ MonoBehaviour:
   - {fileID: -7238914809345767199}
   - {fileID: -1856071509007546196}
   - {fileID: -2336583844539266612}
+  - {fileID: -3351052818762070349}

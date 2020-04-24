@@ -196,16 +196,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5485429287835458078, guid: 848357bc12361444cae9bdb64421d452,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: cb77944702fe0414bba9ec321df5de5e, type: 2}
     - target: {fileID: 1027693126854436494, guid: 848357bc12361444cae9bdb64421d452,
         type: 3}
       propertyPath: m_Radius
       value: 0.52
       objectReference: {fileID: 0}
+    - target: {fileID: 5485429288000945248, guid: 848357bc12361444cae9bdb64421d452,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.a
+      value: 0.9372549
+      objectReference: {fileID: 0}
+    - target: {fileID: 5485429288000945248, guid: 848357bc12361444cae9bdb64421d452,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.93961376
+      objectReference: {fileID: 0}
+    - target: {fileID: 5485429288000945248, guid: 848357bc12361444cae9bdb64421d452,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.9716981
+      objectReference: {fileID: 0}
+    - target: {fileID: 5485429288000945248, guid: 848357bc12361444cae9bdb64421d452,
+        type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.9716981
+      objectReference: {fileID: 0}
+    - target: {fileID: 5485429287835458078, guid: 848357bc12361444cae9bdb64421d452,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: cb77944702fe0414bba9ec321df5de5e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 848357bc12361444cae9bdb64421d452, type: 3}
 --- !u!4 &8345954039082251282 stripped
