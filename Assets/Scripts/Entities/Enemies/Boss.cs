@@ -27,6 +27,9 @@ public class Boss : Enemy
     public Transform returnPoint;
     public GameObject block;
 
+    public Transform startSpawn;
+    public Transform finishSpawn;
+
     public GameObject bossSpell;
 
 
@@ -42,6 +45,8 @@ public class Boss : Enemy
     {
         entitiesAnimator = gameObject.GetComponent<Animator>();
 
+
+
     }
 
     protected override void Start()
@@ -52,6 +57,9 @@ public class Boss : Enemy
         returnPoint = GameObject.FindGameObjectWithTag("returnPoint").transform;
         block = GameObject.FindGameObjectWithTag("block");
 
+        startSpawn = GameObject.FindGameObjectWithTag("SpawnS").transform;
+        finishSpawn = GameObject.FindGameObjectWithTag("SpawnF").transform;
+
         GameObject.FindGameObjectWithTag("UI").GetComponent<UIScript>().boss = this;
 
         LookPlayer = true;
@@ -59,7 +67,10 @@ public class Boss : Enemy
 
         spawnAnimation = true;
         StartCoroutine(BossSpawn());
-        
+
+        gameObject.GetComponent<CapsuleCollider>().enabled = false;
+        agent.enabled = false;
+
 
     }
     private void Update()
@@ -123,9 +134,18 @@ public class Boss : Enemy
         if(dead)
         {
 
-            SceneManager.LoadScene("OutroScene");
-
+            StartCoroutine(LoadNewScene());
         }
+    }
+
+    IEnumerator LoadNewScene()
+    {
+
+        yield return new WaitForSeconds(3f);
+
+        SceneManager.LoadScene("OutroScene");
+
+
     }
 
     void LookAtPlayer()
@@ -339,46 +359,27 @@ public class Boss : Enemy
     {
         entitiesAnimator.SetBool("bossSpawn", true);
 
-        entitiesAnimator.applyRootMotion = true;
-
-        //StartCoroutine(playerSpawn());
-
-        yield return new WaitForSeconds(5.8f);
-
-        Debug.Log("Spawn fin");
-
-        entitiesAnimator.SetBool("bossSpawn", false);
-
-        entitiesAnimator.applyRootMotion = false;
-
-
-        spawnAnimation = false;
-
-        yield return null;
-
-    }
-
-    IEnumerator playerSpawn()
-    {
-
         float percent = 0;
-        Vector3 startPos = new Vector3(transform.position.x, transform.position.y + offset, transform.position.z);
-
-        //Debug.Log(startPos);
-
-
         while (percent <= 1)
         {
 
             //Moving the player between the starting position, and attack position then back to the starting position
             percent += Time.deltaTime * 6;
-            boss.transform.position = Vector3.Lerp(startPos, transform.position, percent);
-
-            //Debug.Log(percent);
-
+            transform.position = Vector3.Lerp(startSpawn.position, finishSpawn.position, percent);
 
             yield return null;
         }
+
+        agent.enabled = true;
+
+        gameObject.GetComponent<CapsuleCollider>().enabled = true;
+        yield return new WaitForSeconds(5.8f);
+
+        entitiesAnimator.SetBool("bossSpawn", false);
+
+        spawnAnimation = false;
+
+        yield return null;
 
     }
 

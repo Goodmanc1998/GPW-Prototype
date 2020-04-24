@@ -100,7 +100,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 199353638162460916}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 1
   m_Height: 2.8
   m_Direction: 1
@@ -166,6 +166,8 @@ MonoBehaviour:
   attackPoint: {fileID: 0}
   returnPoint: {fileID: 0}
   block: {fileID: 0}
+  startSpawn: {fileID: 0}
+  finishSpawn: {fileID: 0}
   bossSpell: {fileID: 4391072087174101407, guid: 8e34ee0dc01204e4bbcc6b39d466fab6,
     type: 3}
   boss: {fileID: 6418019940725891186}
@@ -177,7 +179,7 @@ NavMeshAgent:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 199353638162460916}
-  m_Enabled: 1
+  m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 0.49999997
   m_Speed: 4
@@ -283,8 +285,7 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 57b035b8c6cf6544ab68e7962265fb54, type: 2}
-    m_RemovedComponents:
-    - {fileID: -6057140222963153312, guid: 15c08bfff66efeb4c92a4fe0ef42c45a, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15c08bfff66efeb4c92a4fe0ef42c45a, type: 3}
 --- !u!1 &6418019940725891186 stripped
 GameObject:
