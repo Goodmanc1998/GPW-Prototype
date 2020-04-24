@@ -6,16 +6,16 @@ using UnityEngine;
 
 public class Area2Script : AreaGate
 {
-   public GameObject Firearea;
-   public GameObject FireCone;
-    public GameObject Shield;
+   public GameObject Firearea2;
+   public GameObject FireCone2;
+    public GameObject Shield2;
     int StartRadius2 = 0;
    int BrazierRadius2 = 0;
     int FinalRadius2 = 0;
     // Use override keyword
-    void Start()
+    public override void ShieldClass()
     {
-        Instantiate(Shield);
+        Instantiate(Shield2);
     }
     void Update()
     {
@@ -33,10 +33,10 @@ public class Area2Script : AreaGate
         // after a group of
         // waves is finished
         // in here.
-        Instantiate(Firearea);
-        Instantiate(FireCone);
+        Instantiate(Firearea2);
+        Instantiate(FireCone2);
         BrazierRadius2 = 38;
-        Destroy(Shield);
+        Destroy(Shield2);
 
 
     }

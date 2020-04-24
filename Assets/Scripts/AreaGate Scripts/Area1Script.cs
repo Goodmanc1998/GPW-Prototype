@@ -13,10 +13,7 @@ public class Area1Script : AreaGate
    int BrazierRadius1 = 0;
     int FinalRadius1 = 0;
     // Use override keyword
-    void Start()
-    {
-        Instantiate(Shield);
-    }
+ 
     void Update()
     {
         if (FinalRadius1 < BrazierRadius1)
@@ -24,6 +21,10 @@ public class Area1Script : AreaGate
             FinalRadius1++;
         }
         Shader.SetGlobalFloat("_Brazier1Radius", FinalRadius1);
+    }
+ public override void ShieldClass()
+    {
+        Instantiate(Shield);
     }
     public override void OpenArea()
     {
