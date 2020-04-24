@@ -157,16 +157,16 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.49999997
-  m_Speed: 3.5
-  m_Acceleration: 8
+  m_Speed: 14
+  m_Acceleration: 18
   avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_AngularSpeed: 260
+  m_StoppingDistance: 0.66
   m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
+  m_AutoBraking: 0
   m_AutoRepath: 1
   m_Height: 2
-  m_BaseOffset: 1
+  m_BaseOffset: 1.66
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!95 &8131923017550782084
@@ -199,6 +199,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Bandit
+      objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: a64a90bc396c2c24eaf4a730a1dd1da4,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: ae54ca0e2e8f1b84c9a088d44600fa97, type: 2}
+    - target: {fileID: -6057140222963153312, guid: a64a90bc396c2c24eaf4a730a1dd1da4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: a64a90bc396c2c24eaf4a730a1dd1da4,
         type: 3}
@@ -275,16 +285,6 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 5e7cde0dfab20514dab1648c28b02baf, type: 2}
-    - target: {fileID: -6057140222963153312, guid: a64a90bc396c2c24eaf4a730a1dd1da4,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: ae54ca0e2e8f1b84c9a088d44600fa97, type: 2}
-    - target: {fileID: -6057140222963153312, guid: a64a90bc396c2c24eaf4a730a1dd1da4,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -6057140222963153312, guid: a64a90bc396c2c24eaf4a730a1dd1da4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a64a90bc396c2c24eaf4a730a1dd1da4, type: 3}
