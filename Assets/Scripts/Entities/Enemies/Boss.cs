@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.SocialPlatforms;
+using UnityEngine.SceneManagement;
+
 
 public class Boss : Enemy
 {
@@ -112,7 +114,13 @@ public class Boss : Enemy
 
             
             
-        }         
+        }
+        if(dead)
+        {
+
+            SceneManager.LoadScene("OutroScene");
+
+        }
     }
 
     void LookAtPlayer()
