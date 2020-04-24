@@ -7,6 +7,8 @@ public class Music
 {
     public string name;
     public AudioClip clip;
+    [Range(0, 1)]
+    public float volume;
 
     public AudioSource source { private get; set; }
 
@@ -36,12 +38,12 @@ public class Music
             float currentTime = 0f;
             while (currentTime < time)
             {
-                source.volume = Mathf.Lerp(startVolume, endVolume, currentTime / time);
+                source.volume = Mathf.Lerp(startVolume * volume, endVolume * volume, currentTime / time);
                 yield return new WaitForEndOfFrame();
                 currentTime += Time.deltaTime;
             }
         }
-        source.volume = endVolume; // Set the volume to its final amount
+        source.volume = endVolume * volume; // Set the volume to its final amount
 
         // If the music ends with a volume of 0, it should be turned off
         if (endVolume == 0)
