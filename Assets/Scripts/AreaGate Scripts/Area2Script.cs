@@ -13,7 +13,7 @@ public class Area2Script : AreaGate
    int BrazierRadius2 = 0;
     int FinalRadius2 = 0;
     // Use override keyword
-    public override void ShieldClass()
+    void Awake()
     {
         Instantiate(Shield2);
     }
@@ -35,7 +35,7 @@ public class Area2Script : AreaGate
         // in here.
         Instantiate(Firearea2);
         Instantiate(FireCone2);
-        BrazierRadius2 = 38;
+        BrazierRadius2 = 30;
         Destroy(Shield2);
 
 

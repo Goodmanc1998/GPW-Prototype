@@ -11,8 +11,4 @@ public class AreaBarrier : AreaGate
     {
         Destroy(barrier);
     }
-    public override void ShieldClass()
-    {
-        
-    }
 }

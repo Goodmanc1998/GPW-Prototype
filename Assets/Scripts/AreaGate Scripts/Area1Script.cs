@@ -22,7 +22,7 @@ public class Area1Script : AreaGate
         }
         Shader.SetGlobalFloat("_Brazier1Radius", FinalRadius1);
     }
- public override void ShieldClass()
+    void Awake()
     {
         Instantiate(Shield);
     }

@@ -13,7 +13,7 @@ public abstract class AreaGate : MonoBehaviour
     void Start()
     {
         manager = (EnemySpawnManager)FindObjectOfType(typeof(EnemySpawnManager));
-        ShieldClass();
+      
         completedWaves = waveNumbers.Length;
         for (int i = 0; i < waveNumbers.Length; i++)
         {
@@ -39,5 +39,5 @@ public abstract class AreaGate : MonoBehaviour
 
     // Abstract method, write a new monobehaviour for each gate using the OpenArea() method to handle individual opening code
     public abstract void OpenArea();
-    public abstract void ShieldClass();
+   
 }
