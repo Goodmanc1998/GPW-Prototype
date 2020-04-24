@@ -19,6 +19,9 @@ public class AudioManager : MonoBehaviour
         {
             m.InitMusic(gameObject);
         }
+
+        // Avoid a loud burst of audio by gradually start listening to the scene over a couple seconds
+        StartCoroutine(ListenGradually(2f));
     }
 
     private void Start()
@@ -141,5 +144,18 @@ public class AudioManager : MonoBehaviour
             }
             yield return new WaitForEndOfFrame();
         }
+    }
+
+    // Fade the audio listener in gradually
+    IEnumerator ListenGradually(float time)
+    {
+        float currentTime = 0f;
+        while (currentTime < time)
+        {
+            AudioListener.volume = currentTime / time;
+            currentTime += Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
+        AudioListener.volume = 1f;
     }
 }
