@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.SocialPlatforms;
 using UnityEngine.SceneManagement;
-
+using UnityEditorInternal;
 
 public class Boss : Enemy
 {
@@ -69,6 +69,11 @@ public class Boss : Enemy
 
         LookAtPlayer();
 
+        if(Vector3.Distance(transform.position, agent.destination) < 0.5)
+        {
+            entitiesAnimator.SetBool("bossWalk", false);
+        }
+
 
         if (!dead && !bossAttack && !spawnAnimation)
         {
@@ -92,7 +97,7 @@ public class Boss : Enemy
             if(distToPlayer >= maxShootRange && !bossAttack)
             {
                 SB("seek");
-                entitiesAnimator.SetTrigger("bossWalk");
+                entitiesAnimator.SetBool("bossWalk", true);
             }
 
             if(distToPlayer <= maxShootRange && distToPlayer >= minShootRange && !bossAttack)
@@ -113,7 +118,7 @@ public class Boss : Enemy
 
 
             
-            
+           
         }
         if(dead)
         {
@@ -173,7 +178,7 @@ public class Boss : Enemy
             UpdateMovementStats(movementSpeed + 5, 0, acceleration + 5);
 
 
-            entitiesAnimator.SetTrigger("bossWalk");
+            entitiesAnimator.SetBool("bossWalk", true);
 
 
             //Waits till the player is within melee range
@@ -208,7 +213,7 @@ public class Boss : Enemy
 
         Debug.Log("Start boss walk");
 
-        entitiesAnimator.SetTrigger("bossWalk");
+        entitiesAnimator.SetBool("bossWalk", true);
         yield return new WaitForSeconds(1.6f);
 
 
@@ -253,7 +258,7 @@ public class Boss : Enemy
 
         agent.SetDestination(attackPoint.position);
 
-        entitiesAnimator.SetTrigger("bossWalk");
+        entitiesAnimator.SetBool("bossWalk", true);
 
         yield return new WaitUntil(() => Vector3.Distance(transform.position, attackPoint.position) <= 2);
 
@@ -291,7 +296,7 @@ public class Boss : Enemy
         //Disabling the block to allow boss to return to the arena 
         block.GetComponent<NavMeshObstacle>().enabled = false;
 
-        entitiesAnimator.SetTrigger("bossWalk");
+        entitiesAnimator.SetBool("bossWalk", true);
 
         //Moving the boss back to the arena 
         agent.SetDestination(returnPoint.position);
