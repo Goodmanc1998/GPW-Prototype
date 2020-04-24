@@ -340,13 +340,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entitiesAnimator: {fileID: 0}
+  deathSound: {fileID: 0}
+  takeDamageSound: {fileID: 0}
   startingHealth: 15
   health: 0
   weakness: 0
+  dealDamageSound: {fileID: 0}
   movementSpeed: 2
   angularSpeed: 190
   acceleration: 4
   stoppingDistance: 1
+  randomPursueRadius: 0
   meleeAttackRange: 0
   meleeAttackDamage: 0
   meleeAttackSpeed: 0
@@ -362,6 +366,8 @@ MonoBehaviour:
   timeUntilExplosion: 0
   projectile: {fileID: 0}
   fireRate: 0
+  projectileSpeed: 0
+  randomAimRadius: 0
   wave:
     spawnpoints: []
     enemy: {fileID: 0}
@@ -374,6 +380,7 @@ MonoBehaviour:
     spawnpointColour: {r: 0, g: 0, b: 0, a: 0}
     showSpawnpoints: 0
   froze: 0
+  enemyChosePosition: 0
   rangeOfGrab: 2
 --- !u!195 &1983914396549413337
 NavMeshAgent:
@@ -385,16 +392,16 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.49999997
-  m_Speed: 3.5
-  m_Acceleration: 8
+  m_Speed: 8
+  m_Acceleration: 14
   avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_AngularSpeed: 160
+  m_StoppingDistance: 0.13
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
-  m_BaseOffset: 1
+  m_BaseOffset: 1.33
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!54 &495814781844215799
