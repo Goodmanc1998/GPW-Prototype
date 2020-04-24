@@ -10,6 +10,8 @@ public class DoorAnimation : MonoBehaviour
     public AudioClip openDoorSound;
     public AudioClip closeDoorSound;
 
+    AudioSource source;
+
     Animator animator;
 
     TutorialScript tutorial;
@@ -18,18 +20,21 @@ public class DoorAnimation : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-            animator = GetComponent<Animator>();
-            animator.SetBool("Dooropen", false);
+        animator = GetComponent<Animator>();
+        animator.SetBool("Dooropen", false);
 
         tutorial = GameObject.FindGameObjectWithTag("Tutorial").GetComponent<TutorialScript>();
 
+        source = gameObject.AddComponent<AudioSource>();
     }
 
     private void OnTriggerEnter(Collider c)
     {
         if (c.tag == playerTag && tutorial.tutorialComplete)
         {
-            AudioSource.PlayClipAtPoint(openDoorSound, transform.position);
+            source.clip = openDoorSound;
+            source.volume = 0.8f;
+            source.Play();
             animator.SetBool("Dooropen", true);
         }
     }
@@ -37,7 +42,9 @@ public class DoorAnimation : MonoBehaviour
     {
         if (c.tag == playerTag && tutorial.tutorialComplete)
         {
-            AudioSource.PlayClipAtPoint(closeDoorSound, transform.position);
+            source.clip = closeDoorSound;
+            source.volume = 0.8f;
+            source.Play();
             animator.SetBool("Dooropen", false);
         }
     }

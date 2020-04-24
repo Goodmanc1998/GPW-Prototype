@@ -10,6 +10,7 @@ public class BridgeAnimation : MonoBehaviour
     public GameObject block;
 
     public AudioClip bridgeCollapseSound;
+    AudioSource source;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -19,7 +20,10 @@ public class BridgeAnimation : MonoBehaviour
 
             if(bridgeAnimator != null)
             {
-                AudioSource.PlayClipAtPoint(bridgeCollapseSound, block.transform.position);
+                source = gameObject.AddComponent<AudioSource>();
+                source.clip = bridgeCollapseSound;
+                source.volume = 0.8f;
+                source.Play();
                 bridgeAnimator.SetBool("colapse", true);
             }
         }
