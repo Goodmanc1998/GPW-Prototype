@@ -141,14 +141,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entitiesAnimator: {fileID: 0}
+  deathSound: {fileID: 0}
+  takeDamageSound: {fileID: 0}
   startingHealth: 1
   health: 0
   weakness: 1
-  JumpPoint: {fileID: 0}
+  dealDamageSound: {fileID: 8300000, guid: eb3b14b48f620b841a4e08978dceb80e, type: 3}
   movementSpeed: 3
   angularSpeed: 180
   acceleration: 3
   stoppingDistance: 0.5
+  randomPursueRadius: 0
   meleeAttackRange: 5
   meleeAttackDamage: 1
   meleeAttackSpeed: 1
@@ -158,11 +161,14 @@ MonoBehaviour:
   timeBetweenSpawns: 0
   grabTime: 0
   timeUntillGrab: 0
+  grabDamage: 0
   explosionRanage: 0
   explosionDamage: 0
   timeUntilExplosion: 0
   projectile: {fileID: 0}
   fireRate: 0
+  projectileSpeed: 0
+  randomAimRadius: 0
   wave:
     spawnpoints: []
     enemy: {fileID: 0}
@@ -175,6 +181,7 @@ MonoBehaviour:
     spawnpointColour: {r: 0, g: 0, b: 0, a: 0}
     showSpawnpoints: 0
   froze: 0
+  enemyChosePosition: 0
   pawnSpawner: {fileID: 0}
 --- !u!195 &4474470536400451353
 NavMeshAgent:

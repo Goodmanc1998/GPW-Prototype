@@ -36,7 +36,7 @@ public class AudioManager : MonoBehaviour
         // Play opening music if there is any
         if (openingMusic != "")
         {
-            PlayMusic(openingMusic);
+            PlayMusic(openingMusic, 5f);
         }
     }
 
