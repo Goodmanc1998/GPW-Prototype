@@ -141,8 +141,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entitiesAnimator: {fileID: 0}
-  deathSound: {fileID: 0}
-  takeDamageSound: {fileID: 0}
+  deathSound: {fileID: 8300000, guid: 59c2a5726de72dd4d84bfdab02857263, type: 3}
+  takeDamageSound: {fileID: 8300000, guid: 5624ebbb9e0ee1444b6ced508af447a6, type: 3}
   startingHealth: 1
   health: 0
   weakness: 1
