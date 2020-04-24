@@ -102,13 +102,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entitiesAnimator: {fileID: 0}
+  deathSound: {fileID: 0}
+  takeDamageSound: {fileID: 0}
   startingHealth: 4
   health: 4
   weakness: 0
+  dealDamageSound: {fileID: 0}
   movementSpeed: 2.5
   angularSpeed: 120
   acceleration: 10
   stoppingDistance: 0
+  randomPursueRadius: 0
   meleeAttackRange: 0
   meleeAttackDamage: 0
   meleeAttackSpeed: 0
@@ -139,6 +143,7 @@ MonoBehaviour:
     spawnpointColour: {r: 0, g: 0, b: 0, a: 0}
     showSpawnpoints: 0
   froze: 0
+  enemyChosePosition: 0
   fleeRange: 5
   shootRange: 12
   fleeSpeed: 4
