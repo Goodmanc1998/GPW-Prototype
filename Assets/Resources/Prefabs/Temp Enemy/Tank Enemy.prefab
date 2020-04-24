@@ -340,12 +340,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entitiesAnimator: {fileID: 0}
-  deathSound: {fileID: 0}
-  takeDamageSound: {fileID: 0}
+  deathSound: {fileID: 8300000, guid: ac181f1b59f61cc4c80267ecf7fa4e13, type: 3}
+  takeDamageSound: {fileID: 8300000, guid: 083d11f31a6097b4b93caa9f744be8d1, type: 3}
   startingHealth: 15
   health: 0
   weakness: 0
-  dealDamageSound: {fileID: 0}
+  dealDamageSound: {fileID: 8300000, guid: bb05e9d659c6713439ff56b3152219bd, type: 3}
   movementSpeed: 2
   angularSpeed: 190
   acceleration: 4
