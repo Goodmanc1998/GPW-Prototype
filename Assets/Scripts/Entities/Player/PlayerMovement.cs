@@ -47,7 +47,7 @@ public class PlayerMovement : Entities
     public Image screenFade; // Blank image used to fade the players screen in and out - when they die, for example
     public Gradient fadeGradient; // Gradient used to fade the screen in and out
 
-    public new AudioClip[] takeDamageSound;
+    
 
     public void castSpell(LineRenderer GestureTransform, string ShapeDrawn, float percentMatch)
     {
