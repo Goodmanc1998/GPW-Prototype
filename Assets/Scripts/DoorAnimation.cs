@@ -5,8 +5,10 @@ using UnityEngine;
 [RequireComponent(typeof(Collider))]
 public class DoorAnimation : MonoBehaviour
 {
-
     public static string playerTag = "Player";
+
+    public AudioClip openDoorSound;
+    public AudioClip closeDoorSound;
 
     Animator animator;
 
@@ -27,16 +29,16 @@ public class DoorAnimation : MonoBehaviour
     {
         if (c.tag == playerTag && tutorial.tutorialComplete)
         {
+            AudioSource.PlayClipAtPoint(openDoorSound, transform.position);
             animator.SetBool("Dooropen", true);
-
         }
     }
     private void OnTriggerExit(Collider c)
     {
         if (c.tag == playerTag && tutorial.tutorialComplete)
         {
+            AudioSource.PlayClipAtPoint(closeDoorSound, transform.position);
             animator.SetBool("Dooropen", false);
-
         }
     }
 
