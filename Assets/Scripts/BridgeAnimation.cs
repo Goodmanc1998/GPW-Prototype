@@ -5,10 +5,11 @@ using UnityEngine.AI;
 
 public class BridgeAnimation : MonoBehaviour
 {
-
     public Animator bridgeAnimator;
 
     public GameObject block;
+
+    public AudioClip bridgeCollapseSound;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -18,8 +19,8 @@ public class BridgeAnimation : MonoBehaviour
 
             if(bridgeAnimator != null)
             {
+                AudioSource.PlayClipAtPoint(bridgeCollapseSound, block.transform.position);
                 bridgeAnimator.SetBool("colapse", true);
-
             }
         }
     }
