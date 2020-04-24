@@ -47,89 +47,93 @@ public class PlayerMovement : Entities
     public Image screenFade; // Blank image used to fade the players screen in and out - when they die, for example
     public Gradient fadeGradient; // Gradient used to fade the screen in and out
 
-    public void castSpell(LineRenderer GestureTransform,string ShapeDrawn,float percentMatch)
+    public new AudioClip[] takeDamageSound;
+
+    public void castSpell(LineRenderer GestureTransform, string ShapeDrawn, float percentMatch)
     {
-        if(percentMatch >= 0.8f)
+        if (!dead)
         {
-            if(ShapeDrawn == "line" && percentMatch >=0.95f && currentFireSpell < maxFireSpell)
+            if (percentMatch >= 0.8f)
             {
-                //cast circle spell here by instatiating spell object.
-                //Debug.Log("Circle");
-                //transform.LookAt(GestureTransform.GetPosition(GestureTransform.positionCount-1));
-
-                transform.LookAt(new Vector3(GestureTransform.GetPosition(GestureTransform.positionCount - 1).x, transform.position.y, GestureTransform.GetPosition(GestureTransform.positionCount - 1).z));
-
-                if (castFireSound != null) AudioSource.PlayClipAtPoint(castFireSound, transform.position);
-                entitiesAnimator.SetBool("SpellDrawn", true);
-                Instantiate(FireSpell, spellSpawn.position, transform.localRotation);
-
-                //Debug.Log(transform.localRotation);
-                //Debug.Log(GestureTransform.GetPosition(GestureTransform.positionCount - 1));
-
-                currentFireSpell++;
-
-                if (tutorial.spellOneCast == false)
-                    tutorial.spellOneCast = true;
-
-
-            }
-            else if (ShapeDrawn == "lightening" && currentLightingSpell < maxFireSpell)
-            {
-                //cast triangle spell here by instatiating spell object.
-                //Debug.Log("triangle");
-                transform.LookAt(new Vector3(GestureTransform.GetPosition(GestureTransform.positionCount - 1).x, transform.position.y, GestureTransform.GetPosition(GestureTransform.positionCount - 1).z));
-
-                if (castLightningSound != null) AudioSource.PlayClipAtPoint(castLightningSound, transform.position);
-                entitiesAnimator.SetBool("SpellDrawn", true);
-                Instantiate(LightningSpell, spellSpawn.position, transform.localRotation);
-                //Debug.Log("cast lightening");
-
-                currentLightingSpell++;
-
-                if (tutorial.spellTwoCast == false)
-                    tutorial.spellTwoCast = true;
-            }
-            else if (ShapeDrawn == "arc")
-            {
-                //cast square spell here by instatiating spell object.
-                //Debug.Log("square");
-                //depth for rotating the wall correctly
-                float minusOneMid = GestureTransform.GetPosition((GestureTransform.positionCount / 2) - 1).z;
-                float plusOneMid = GestureTransform.GetPosition((GestureTransform.positionCount / 2) + 1).z;
-                //Debug.Log(GestureTransform.positionCount);
-
-                if (castIcewallSound != null) AudioSource.PlayClipAtPoint(castIcewallSound, transform.position);
-                entitiesAnimator.SetBool("SpellDrawn", true);
-                for (int i = 0; i < GestureTransform.positionCount; i++)
+                if (ShapeDrawn == "line" && percentMatch >= 0.95f && currentFireSpell < maxFireSpell)
                 {
-                    
-                    Instantiate(groundSpell, GestureTransform.GetPosition(i), Quaternion.Euler(0, 90, 0));
-                }
-                //deprecated was original process of spawn the ice wall but then moved onto the approach.!!
-                //LEFT here incase we could make use of this for any other reasons.
-                //if(minusOneMid < plusOneMid)
-                //{
-                //    Instantiate(groundSpell, GestureTransform.GetPosition(GestureTransform.positionCount / 2), Quaternion.Euler(0,90,0));
-                //    Debug.Log("cast here and the angle is still wrong");
-                //}else if (minusOneMid > plusOneMid)
-                //{
-                //    Instantiate(groundSpell, GestureTransform.GetPosition(GestureTransform.positionCount / 2), Quaternion.Euler(0, 0, 0));
-                //    Debug.Log("cast here and the angle is still wrong");
-                //}
+                    //cast circle spell here by instatiating spell object.
+                    //Debug.Log("Circle");
+                    //transform.LookAt(GestureTransform.GetPosition(GestureTransform.positionCount-1));
 
-                if (tutorial.spellThreeCast == false)
-                    tutorial.spellThreeCast = true;
+                    transform.LookAt(new Vector3(GestureTransform.GetPosition(GestureTransform.positionCount - 1).x, transform.position.y, GestureTransform.GetPosition(GestureTransform.positionCount - 1).z));
+
+                    if (castFireSound != null) AudioSource.PlayClipAtPoint(castFireSound, transform.position);
+                    entitiesAnimator.SetBool("SpellDrawn", true);
+                    Instantiate(FireSpell, spellSpawn.position, transform.localRotation);
+
+                    //Debug.Log(transform.localRotation);
+                    //Debug.Log(GestureTransform.GetPosition(GestureTransform.positionCount - 1));
+
+                    currentFireSpell++;
+
+                    if (tutorial.spellOneCast == false)
+                        tutorial.spellOneCast = true;
+
+
+                }
+                else if (ShapeDrawn == "lightening" && currentLightingSpell < maxFireSpell)
+                {
+                    //cast triangle spell here by instatiating spell object.
+                    //Debug.Log("triangle");
+                    transform.LookAt(new Vector3(GestureTransform.GetPosition(GestureTransform.positionCount - 1).x, transform.position.y, GestureTransform.GetPosition(GestureTransform.positionCount - 1).z));
+
+                    if (castLightningSound != null) AudioSource.PlayClipAtPoint(castLightningSound, transform.position);
+                    entitiesAnimator.SetBool("SpellDrawn", true);
+                    Instantiate(LightningSpell, spellSpawn.position, transform.localRotation);
+                    //Debug.Log("cast lightening");
+
+                    currentLightingSpell++;
+
+                    if (tutorial.spellTwoCast == false)
+                        tutorial.spellTwoCast = true;
+                }
+                else if (ShapeDrawn == "arc")
+                {
+                    //cast square spell here by instatiating spell object.
+                    //Debug.Log("square");
+                    //depth for rotating the wall correctly
+                    float minusOneMid = GestureTransform.GetPosition((GestureTransform.positionCount / 2) - 1).z;
+                    float plusOneMid = GestureTransform.GetPosition((GestureTransform.positionCount / 2) + 1).z;
+                    //Debug.Log(GestureTransform.positionCount);
+
+                    if (castIcewallSound != null) AudioSource.PlayClipAtPoint(castIcewallSound, transform.position);
+                    entitiesAnimator.SetBool("SpellDrawn", true);
+                    for (int i = 0; i < GestureTransform.positionCount; i++)
+                    {
+
+                        Instantiate(groundSpell, GestureTransform.GetPosition(i), Quaternion.Euler(0, 90, 0));
+                    }
+                    //deprecated was original process of spawn the ice wall but then moved onto the approach.!!
+                    //LEFT here incase we could make use of this for any other reasons.
+                    //if(minusOneMid < plusOneMid)
+                    //{
+                    //    Instantiate(groundSpell, GestureTransform.GetPosition(GestureTransform.positionCount / 2), Quaternion.Euler(0,90,0));
+                    //    Debug.Log("cast here and the angle is still wrong");
+                    //}else if (minusOneMid > plusOneMid)
+                    //{
+                    //    Instantiate(groundSpell, GestureTransform.GetPosition(GestureTransform.positionCount / 2), Quaternion.Euler(0, 0, 0));
+                    //    Debug.Log("cast here and the angle is still wrong");
+                    //}
+
+                    if (tutorial.spellThreeCast == false)
+                        tutorial.spellThreeCast = true;
+
+                }
 
             }
-            
+            else
+            {
+                if (misCastSound != null) AudioSource.PlayClipAtPoint(misCastSound, transform.position);
+                entitiesAnimator.SetTrigger("SpellFail");
+                //spell was a failure do little fizzle out of a spell to indicate to player they were close to casting.
+            }
         }
-        else
-        {
-            if (misCastSound != null) AudioSource.PlayClipAtPoint(misCastSound, transform.position);
-            entitiesAnimator.SetTrigger("SpellFail");
-            //spell was a failure do little fizzle out of a spell to indicate to player they were close to casting.
-        }
-        
     }
 
 

@@ -58,6 +58,8 @@ public class Enemy : Entities
     [HideInInspector]
     public bool enemyChosePosition = false; // If the enemy has chosen a random position when pursuing, makes sure to not call it repeatedly
 
+    Coroutine waiting = null;
+
     protected override void Start()
     {
         
@@ -228,8 +230,15 @@ public class Enemy : Entities
             {
                 //Stopping the players agent and setting grabbed to true
                 player.GetComponent<NavMeshAgent>().enabled = false;
-                player.GetComponent<Entities>().TakeDamage(grabDamage, "none");
                 hasGrabbed = true;
+
+                // Take damage and play a sound only once per grab
+                if (waiting == null)
+                {
+                    waiting = StartCoroutine(WaitWhileAttacking(1f));
+                    player.GetComponent<Entities>().TakeDamage(grabDamage, "none");
+                    if (dealDamageSound != null) AudioSource.PlayClipAtPoint(dealDamageSound, transform.position);
+                }
             }
 
             //Moving the position the the attack position
@@ -307,5 +316,11 @@ public class Enemy : Entities
     public Vector3 PredictPlayerPosition(float pursuerVelocity)
     {
         return PredictPlayerPosition(pursuerVelocity, 0f, false);
+    }
+
+    IEnumerator WaitWhileAttacking(float time)
+    {
+        yield return new WaitForSeconds(time);
+        waiting = null;
     }
 }

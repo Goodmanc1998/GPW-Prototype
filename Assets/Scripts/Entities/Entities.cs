@@ -42,7 +42,6 @@ public class Entities : MonoBehaviour
 
     public virtual void TakeDamage(float damageIn, string attackType)
     {
-
         if(damageIn >= health && dead == false)
         {
             health -= damageIn;
