@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 199353638162460916}
   m_LocalRotation: {x: 0, y: 0.99139583, z: 0, w: 0.13089819}
   m_LocalPosition: {x: 46.205143, y: 14.167901, z: 163.19}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.99, y: 1.99, z: 1.99}
   m_Children:
   - {fileID: 8019286928274870881}
   m_Father: {fileID: 0}
@@ -86,7 +86,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 126
@@ -124,10 +124,10 @@ MonoBehaviour:
   health: 0
   weakness: 0
   dealDamageSound: {fileID: 0}
-  movementSpeed: 10
-  angularSpeed: 0
-  acceleration: 8
-  stoppingDistance: 1
+  movementSpeed: 6
+  angularSpeed: 180
+  acceleration: 6
+  stoppingDistance: 0.13
   randomPursueRadius: 0
   meleeAttackRange: 5
   meleeAttackDamage: 2
@@ -180,16 +180,16 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.49999997
-  m_Speed: 10
-  m_Acceleration: 12
-  avoidancePriority: 50
+  m_Speed: 4
+  m_Acceleration: 4
+  avoidancePriority: 80
   m_AngularSpeed: 180
-  m_StoppingDistance: 0.0013
+  m_StoppingDistance: 0.13
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 1.9999999
-  m_BaseOffset: 2
+  m_Height: 1
+  m_BaseOffset: 1.66
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!95 &3217214214282553806
