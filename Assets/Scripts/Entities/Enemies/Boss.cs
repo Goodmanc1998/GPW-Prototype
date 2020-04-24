@@ -182,7 +182,7 @@ public class Boss : Enemy
 
 
             //Waits till the player is within melee range
-            yield return new WaitUntil(() => distToPlayer < meleeAttackRange);
+            yield return new WaitUntil(() => distToPlayer < meleeAttackRange + 2);
 
             //Resseting the movement stats
             ResetMovementStats();
@@ -260,9 +260,9 @@ public class Boss : Enemy
 
         entitiesAnimator.SetBool("bossWalk", true);
 
-        yield return new WaitUntil(() => Vector3.Distance(transform.position, attackPoint.position) <= 2);
+        yield return new WaitUntil(() => Vector3.Distance(transform.position, attackPoint.position) <= 3);
 
-
+        Debug.Log("Reached position");
 
         //Making the boss inaccessable
         block.GetComponent<NavMeshObstacle>().enabled = true;
@@ -300,7 +300,7 @@ public class Boss : Enemy
 
         //Moving the boss back to the arena 
         agent.SetDestination(returnPoint.position);
-        yield return new WaitUntil(() => Vector3.Distance(transform.position, attackPoint.position) <= 1);
+        yield return new WaitUntil(() => Vector3.Distance(transform.position, attackPoint.position) <= 3);
 
         if(!firstFlee)
         {

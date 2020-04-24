@@ -13,11 +13,17 @@ public class FireSpell : SpellMovement
     //float used to store the time the gameObject has been alive for
     float timeAlive;
 
+    public ParticleSystem fireBall;
+    public ParticleSystem fireExplosion;
+
+
     // Start is called before the first frame update
     void Start()
     {
         //Destroying the GameObject after its lifetime
         Destroy(gameObject, lifeTime);
+
+        //fireExplosion.sizeOverLifetime.size = new ParticleSystem.MinMaxCurve(1.0f, AOERange);
     }
 
     // Update is called once per frame
@@ -65,6 +71,10 @@ public class FireSpell : SpellMovement
     {
         //Setting hit to True
         hit = true;
+
+        fireBall.Stop();
+
+        fireExplosion.Play();
 
         //Storing colliders within ranage of the AOE Range
         Collider[] collidersWithinRange = Physics.OverlapSphere(transform.position, AOERange);
